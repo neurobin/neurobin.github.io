@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<base href="../../"/>
+				<script>
+	if (window.location.protocol != "http:")
+		window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
+</script>
+
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- CSS -->
+
+<meta name="author" content="Jahidul hamid">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="style/mycss.css" />
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="script/myjs.js"></script>
+
+<link rel="shortcut icon" href="img/logo48.png" type="image/x-icon" />
+
+		<meta name="description" content="Softwares for Linux">
+		<meta name="keywords" content="linux, softwares, shell, softs, software, soft" />
+		<title>Linux Softwares@Neurobin</title>
+
+	</head>
+	<body onload="startTime()">
+
+		<nav class="navbar" id="navbar">
+	<div class="container-fluid" id="bar">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand"><img alt="neurobin logo" id="logo" src="img/neurobin400.png" /></a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav" id="menu">
+				<li class="active">
+					<a href="" target="_parent">Home</a>
+
+				</li>
+
+				<li class="dropdown">
+					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Projects">Projects<span class="caret-down"></span></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="menu-item " href="Projects/Softwares">Softwares<span class="caret-right"></a>
+
+							<ul >
+								<li>
+									<a class="menu-item" href="Projects/Softwares/linsofts.html">Linux</a>
+
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/winsofts.html">Windows</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/andapps.html">Android</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="Projects/Softwares/games.html">Games</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="Projects/Softwares/genericsofts.html">Others</a>
+								</li>
+							</ul>
+
+						</li>
+						<li>
+							<a class="menu-item disabled-link" href="Projects/Research">Research</a>
+						</li>
+						<li>
+							<a class="menu-item disabled-link" href="Projects/Others">Others</a>
+						</li>
+
+					</ul>
+				</li>
+
+				<li class="dropdown">
+					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Tutorials">Tutorials<span class="caret-down"></span></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="menu-item hand-cursor" >Linux<span class="caret-right"></span></a>
+							<ul>
+
+								<li>
+									<a class="menu-item disabled-link" href="#">Generic</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Tutorials/linuxtutorials.html">Ubuntu</a>
+								</li>
+							</ul>
+						</li>
+						<li class="disabled-link">
+							<a class="menu-item disabled-link" >Programming<span class="caret-right"></span></a>
+							<ul class="programming">
+								<li>
+									<a class="menu-item disabled-link" href="#">C</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">C++</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">SQL</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">PHP</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">CSS</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Java</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">HTML</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Matlab</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">JavaScript</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Shell Scripting</a>
+								</li>
+							</ul>
+
+						</li>
+
+						<li>
+							<a class="menu-item disabled-link" href="#">Android</a>
+						</li>
+					</ul>
+
+				</li>
+
+				<!-- <li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Places<span class="caret-down"></span></a>
+				<ul class="dropdown-menu">
+				<li>
+				<a class="menu-item" href="http://github.com/neurobin"><i class="fa fa-github"></i> Github</a>
+
+				</li>
+				<li>
+				<a class="menu-item" href="http://bitbucket.org/neurobin"><i class="fa fa-bitbucket"></i> Bitbucket</a>
+				</li>
+
+				</ul>
+				</li> -->
+
+				<li>
+					<a class="menu-item disabled-link " href="Downloads">Downloads</a>
+				</li>
+
+			</ul>
+			<div class="clock">
+				<ul class="nav navbar-nav navbar-right">
+
+					<li class="clock-item" >
+						<p id="clockTime"></p><p id="clockDate"></p>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>
+		<!--Navigation bar ends here -->
+		<!-- fixed share button-->
+		<div id="share-button-fixed">
+	<a id="share-btn1" href="http://www.facebook.com/sharer.php?u=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="social-button-fixed"><i class="fa fa-facebook"></i> share</a>
+
+	<a id="share-btn2" href="http://twitter.com/home?status=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="social-button-fixed"><i class="fa fa-twitter"></i> share</a>
+
+</div>		<!-- fixed share button end-->
+		<div class="container" id="showoff-lin">
+			<div class="row" >
+				<div class="col-xs-12">
+
+					<div id="container" class="line-after">
+						<p><img alt="linux logo" src="img/linux.jpeg" />Linux<sup>Softwares</sup>
+						</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- show off ends here-->
+
+		<div class="container" id="content-container2">
+
+			<div class="row">
+				<div class="col-xs-2" id="content-left"></div>
+				<div class="col-xs-8" id="content-lin">
+					<ul>
+						<li>
+							<a href="shc">Shell Script Compiler</a>
+						</li>
+						<li>
+							<a href="tartos">Tartos (TAR to self extracting shell script)</a>
+						</li>
+						<li>
+							<a href="JLIVECD">JLIVECD (Live CD/DVD customization tool)</a>
+						</li>
+						<li>
+							<a href="JSiteCopier">JSiteCopier (Website copier)</a>
+						</li>
+						<li>
+							<a href="OracleJDKInstaller">OracleJDKInstaller</a>
+						</li>
+						<li>
+							<a href="php2html">PHP2HTML (PHP To HTML Converter)</a>
+						</li>
+						<li>
+							<a href="gccInstaller">GCC Installer</a>
+						</li>
+						<li>
+							<a href="MT7630E">MT7630E (driver for this Wifi+BT combo chip)</a>
+						</li>
+
+					</ul>
+				</div>
+				<div class="col-xs-2" id="content-right"></div>
+
+			</div>
+		</div>
+
+		<!--Content  ends here -->
+				<div class="container-fluid" id="foot" >
+			<div class="row" id="footer">
+
+				<div class="col-xs-4">
+					<a href="#" id="sitemap">SiteMap</a>
+					<div id="sitemap-poem">
+						Take The Tour
+						<br />
+						Explore The Site
+						<br />
+						From One Place
+						<br />
+						Day Or Night
+						<br />
+					</div>
+				</div>
+				<div class="col-xs-4">
+
+					<ul id="footer-links">
+						<li>
+							<p id="suggested-links">
+								Suggested Links
+							</p>
+						</li>
+						<li>
+							<a href="shc">SHC</a>
+						</li>
+						<li>
+							<a href="tartos">Tartos</a>
+						</li>
+						<li>
+							<a href="JLIVECD">JLIVECD</a>
+						</li>
+						<li>
+							<a href="https://play.google.com/store/apps/details?id=com.jsoft.tictactoe">Tic Tac Toe</a>
+						</li>
+						<li>
+							<a href="#">29 (Card Game)</a>
+						</li>
+						<li>
+							<p id="copyright">
+								&copy; 2015, Neurobin, All rights reserved.
+							</p>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-4">
+					<p id="share-title">
+						Share Me:
+					</p>
+					<div class="share-buttons">
+						<a href="http://www.facebook.com/sharer.php?u=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="btn btn-social btn-facebook"><i class="fa fa-facebook"></i> share</a>
+						<a href="http://twitter.com/home?status=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="btn btn-social btn-twitter"><i class="fa fa-twitter"></i> share</a>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>	</body>
+</html>

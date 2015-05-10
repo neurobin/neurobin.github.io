@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script>
+	if (window.location.protocol != "http:")
+		window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
+</script>
+
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- CSS -->
+
+<meta name="author" content="Jahidul hamid">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="style/mycss.css" />
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="script/myjs.js"></script>
+
+<link rel="shortcut icon" href="img/logo48.png" type="image/x-icon" />
+		<meta name="description" content="Home Page@Neurobin">
+		<meta name="keywords" content="neurobin, c, c++, java, html, javascript, matlab, css, css3, shell, script, program, programming, languages, softwares, computers, software, app, apps, computer, binary, universe, macrocosm" />
+
+		<title>Home@Neurobin</title>
+
+	</head>
+
+	<body onload="startTime()">
+
+		<nav class="navbar" id="navbar">
+	<div class="container-fluid" id="bar">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand"><img alt="neurobin logo" id="logo" src="img/neurobin400.png" /></a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav" id="menu">
+				<li class="active">
+					<a href="" target="_parent">Home</a>
+
+				</li>
+
+				<li class="dropdown">
+					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Projects">Projects<span class="caret-down"></span></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="menu-item " href="Projects/Softwares">Softwares<span class="caret-right"></a>
+
+							<ul >
+								<li>
+									<a class="menu-item" href="Projects/Softwares/linsofts.html">Linux</a>
+
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/winsofts.html">Windows</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/andapps.html">Android</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="Projects/Softwares/games.html">Games</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="Projects/Softwares/genericsofts.html">Others</a>
+								</li>
+							</ul>
+
+						</li>
+						<li>
+							<a class="menu-item disabled-link" href="Projects/Research">Research</a>
+						</li>
+						<li>
+							<a class="menu-item disabled-link" href="Projects/Others">Others</a>
+						</li>
+
+					</ul>
+				</li>
+
+				<li class="dropdown">
+					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Tutorials">Tutorials<span class="caret-down"></span></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="menu-item hand-cursor" >Linux<span class="caret-right"></span></a>
+							<ul>
+
+								<li>
+									<a class="menu-item disabled-link" href="#">Generic</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Tutorials/linuxtutorials.html">Ubuntu</a>
+								</li>
+							</ul>
+						</li>
+						<li class="disabled-link">
+							<a class="menu-item disabled-link" >Programming<span class="caret-right"></span></a>
+							<ul class="programming">
+								<li>
+									<a class="menu-item disabled-link" href="#">C</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">C++</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">SQL</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">PHP</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">CSS</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Java</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">HTML</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Matlab</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">JavaScript</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Shell Scripting</a>
+								</li>
+							</ul>
+
+						</li>
+
+						<li>
+							<a class="menu-item disabled-link" href="#">Android</a>
+						</li>
+					</ul>
+
+				</li>
+
+				<!-- <li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Places<span class="caret-down"></span></a>
+				<ul class="dropdown-menu">
+				<li>
+				<a class="menu-item" href="http://github.com/neurobin"><i class="fa fa-github"></i> Github</a>
+
+				</li>
+				<li>
+				<a class="menu-item" href="http://bitbucket.org/neurobin"><i class="fa fa-bitbucket"></i> Bitbucket</a>
+				</li>
+
+				</ul>
+				</li> -->
+
+				<li>
+					<a class="menu-item disabled-link " href="Downloads">Downloads</a>
+				</li>
+
+			</ul>
+			<div class="clock">
+				<ul class="nav navbar-nav navbar-right">
+
+					<li class="clock-item" >
+						<p id="clockTime"></p><p id="clockDate"></p>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>
+		<!--Navigation bar ends here -->
+		<!-- fixed share button-->
+		<div id="share-button-fixed">
+	<a id="share-btn1" href="http://www.facebook.com/sharer.php?u=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="social-button-fixed"><i class="fa fa-facebook"></i> share</a>
+
+	<a id="share-btn2" href="http://twitter.com/home?status=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="social-button-fixed"><i class="fa fa-twitter"></i> share</a>
+
+</div>		<!-- fixed share button end-->
+		<div class="container" id="showoff">
+			<div class="row" >
+				<div class="col-xs-12">
+
+					<div id="container">
+						<div id="cube" class="animate">
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- show off ends here-->
+
+		<div class="container" id="content-container">
+
+			<div class="row">
+				<div class="col-xs-2" id="content-left"></div>
+				<div class="col-xs-8" id="content">
+					<p>
+						<b id="first_letter">T</b>here's nothing more intriguing or more interesting than exploring the Unknown.<q>The Unknown?</q>, yes, there's so much more to know, that whatever direction
+						you may look, you can only see the ignorance of your poor self. And somewhere there, is a whole universe, yeah, a whole universe, different than the one
+						we live in and know about, waiting patiently, for eternity, for humans to step in and explore. But the thing is, only humans with certain amount
+						of intelligence and certain types of instruments, can enter into that universe and play around with it's resources. And to top it off, this universe
+						has an unlimited supply of resources which is supposed to never end, and that is somewhat unbelievable.
+					</p>
+					<p>
+						Really? is there something that is actually infinite? To answer that question, I should say <q>yes</q>. The universe I am talking about, I call it <q>The
+							Binary Universe</q>. Yap, it's made of binary digits. Now questions may arise, <q>can just two digits make a whole universe? you could say a world, but
+							even that would be exaggerating.</q>
+					</p>
+					<p>
+						Nope, you are wrong, It's really a whole universe, an infinite one, one with galaxies containing numerous planets in it. It's so gigantic that
+						people have never been able to find  any or even dreamt of how might it be in the galaxies other than the native one. Yes, there's a native
+						galaxy out there, just like our long known <q>The Milky Way</q>.
+					</p>
+					<p>
+						The terminologies and names of the members/particles of this universe are quite different than the one we live in. The basic particle is known as
+						digits, basically 1 and 0. A massive amount of this digits once formed into the sky of this new universe and it went into a gaseous state and
+						started reacting with each other and began self compression. This self compression was so powerful that the whole mass of digits came into a
+						single unit which I call a singularity digit. The definition of this primitive digit is unknown, because it defies every definition we have about
+						digits and stuff. But the next thing you know, it exploded, a historical explosion, at the beginning of the Binary Universe when time itself started
+						for this new creation.
+					</p>
+					<p>
+						So what happened after the explosion? Let's see, oh yeah, it made galaxies, and then planets hanging onto those galaxies. And those planets, soon they
+						started showing life signs on them. <q>Life signs? you mean people?</q>, no, certainly not. Those are what we call <q>Softwares</q> now a days.
+						"You must be joking right?" No, again, I am not. They are living things: they can be created, killed, injured, diseased, get old, even born. And top of
+						that they can grow, expand, talk, walk, run, sit and even they can eat or get eaten. They can be stupid, clever, cunning, intelligent and
+						they can be fooled or be deceived. They have quarrels with each other sometimes and engage on wars if needed. They can work and get tired if it's
+						too much. After all this, can you say that they aren't life? Of course they aren't as lively as we humans are, but still they are the basic life force
+						of the Binary Universe.
+					</p>
+					<p>
+						Now, these inhabitants live in groups or solo, in a continent, in a country. <q>Continent? Country?</q> Yap, for example, C, C++, Java are each a
+						different country. And a continent is what we know as a Operating System. A Continent or Operating System is made of or contains a bunch of
+						countries. In Binary Universe lexicon, we call the countries as programming languages, and the continents as Operating Systems or Systems as shorthand.
+						And The Binary Universe, let's call it  "The Binary Macrocosm (BM)", it sounds kinda cool.
+					</p>
+					<p>
+						So, in BM lexicon, houses, buildings or such things are known as disks or drives, rooms are known as sectors, company is unchanged i.e company
+						is company. The inhabitants i.e softwares work on different joint or solo companies or organizations to earn there livings. You might be wondering
+						what might there livings be? certainly, it's not money, it's <q>fame or honor</q>. Yeah, they can live as long as they are famous or at least hold good in
+						front of others. They can eat but that's not necessary for there existence, what's necessary is the "fame" they earn.
+					</p>
+					<p>
+						<q>That's good to know, but how do we explore it? Every single inhabitant is made of binary digits!</q>. As I said earlier, all you need to have is a
+						certain amount of knowledge and a certain types of instrument. The requirement of knowledge is fulfilled if you have at least a little knowledge
+						of programming i.e a little knowledge about at least one of the countries in our native planet in BM. In BM lexicon, country is language. So you
+						need to know one of the languages and then you can start. The instruments are known as <q>Computers</q>.
+					</p>
+					<p>
+						<q>What can You do if you know a language?</q>
+						<br  />
+						That will be the starting point of your sacred journey to the exploration of <q>The Great BM</q>. You can start by creating some new inhabitants of your
+						own and to serve you or work under you and help you finding resources and fun in this new world. And as the word <q>company</q> of human world
+						and in BM is identical, they are mutable, i.e you can earn money and get rich in real life by making your creation (inhabitants) to work in different
+						companies in BM. But let's not look it like that. There's pure bliss in creating something new, you need to feel that, otherwise there's no point
+						in exploring.
+					</p>
+					<p>
+						So, What's your opinion? Are you ready for the ride?
+						<br />
+						Best of luck and hearty blessings to all...
+					</p>
+				</div>
+				<div class="col-xs-2" id="content-right"></div>
+
+			</div>
+		</div>
+
+		<!--Content  ends here -->
+				<div class="container-fluid" id="foot" >
+			<div class="row" id="footer">
+
+				<div class="col-xs-4">
+					<a href="#" id="sitemap">SiteMap</a>
+					<div id="sitemap-poem">
+						Take The Tour
+						<br />
+						Explore The Site
+						<br />
+						From One Place
+						<br />
+						Day Or Night
+						<br />
+					</div>
+				</div>
+				<div class="col-xs-4">
+
+					<ul id="footer-links">
+						<li>
+							<p id="suggested-links">
+								Suggested Links
+							</p>
+						</li>
+						<li>
+							<a href="shc">SHC</a>
+						</li>
+						<li>
+							<a href="tartos">Tartos</a>
+						</li>
+						<li>
+							<a href="JLIVECD">JLIVECD</a>
+						</li>
+						<li>
+							<a href="https://play.google.com/store/apps/details?id=com.jsoft.tictactoe">Tic Tac Toe</a>
+						</li>
+						<li>
+							<a href="#">29 (Card Game)</a>
+						</li>
+						<li>
+							<p id="copyright">
+								&copy; 2015, Neurobin, All rights reserved.
+							</p>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-4">
+					<p id="share-title">
+						Share Me:
+					</p>
+					<div class="share-buttons">
+						<a href="http://www.facebook.com/sharer.php?u=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="btn btn-social btn-facebook"><i class="fa fa-facebook"></i> share</a>
+						<a href="http://twitter.com/home?status=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="btn btn-social btn-twitter"><i class="fa fa-twitter"></i> share</a>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</body>
+</html>

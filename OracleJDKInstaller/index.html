@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<base href="../" />
+				<script>
+	if (window.location.protocol != "http:")
+		window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
+</script>
+
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- CSS -->
+
+<meta name="author" content="Jahidul hamid">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="style/mycss.css" />
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="script/myjs.js"></script>
+
+<link rel="shortcut icon" href="img/logo48.png" type="image/x-icon" />
+		<meta name="description" content="Oracle JDK Installer">
+		<meta name="keywords" content="oracle, jdk, installer, linux" />
+
+		<title>Oraji@Neurobin</title>
+
+	</head>
+	<body onload="startTime()">
+
+		<nav class="navbar" id="navbar">
+	<div class="container-fluid" id="bar">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand"><img alt="neurobin logo" id="logo" src="img/neurobin400.png" /></a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav" id="menu">
+				<li class="active">
+					<a href="" target="_parent">Home</a>
+
+				</li>
+
+				<li class="dropdown">
+					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Projects">Projects<span class="caret-down"></span></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="menu-item " href="Projects/Softwares">Softwares<span class="caret-right"></a>
+
+							<ul >
+								<li>
+									<a class="menu-item" href="Projects/Softwares/linsofts.html">Linux</a>
+
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/winsofts.html">Windows</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/andapps.html">Android</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="Projects/Softwares/games.html">Games</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="Projects/Softwares/genericsofts.html">Others</a>
+								</li>
+							</ul>
+
+						</li>
+						<li>
+							<a class="menu-item disabled-link" href="Projects/Research">Research</a>
+						</li>
+						<li>
+							<a class="menu-item disabled-link" href="Projects/Others">Others</a>
+						</li>
+
+					</ul>
+				</li>
+
+				<li class="dropdown">
+					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Tutorials">Tutorials<span class="caret-down"></span></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="menu-item hand-cursor" >Linux<span class="caret-right"></span></a>
+							<ul>
+
+								<li>
+									<a class="menu-item disabled-link" href="#">Generic</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Tutorials/linuxtutorials.html">Ubuntu</a>
+								</li>
+							</ul>
+						</li>
+						<li class="disabled-link">
+							<a class="menu-item disabled-link" >Programming<span class="caret-right"></span></a>
+							<ul class="programming">
+								<li>
+									<a class="menu-item disabled-link" href="#">C</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">C++</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">SQL</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">PHP</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">CSS</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Java</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">HTML</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Matlab</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">JavaScript</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Shell Scripting</a>
+								</li>
+							</ul>
+
+						</li>
+
+						<li>
+							<a class="menu-item disabled-link" href="#">Android</a>
+						</li>
+					</ul>
+
+				</li>
+
+				<!-- <li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Places<span class="caret-down"></span></a>
+				<ul class="dropdown-menu">
+				<li>
+				<a class="menu-item" href="http://github.com/neurobin"><i class="fa fa-github"></i> Github</a>
+
+				</li>
+				<li>
+				<a class="menu-item" href="http://bitbucket.org/neurobin"><i class="fa fa-bitbucket"></i> Bitbucket</a>
+				</li>
+
+				</ul>
+				</li> -->
+
+				<li>
+					<a class="menu-item disabled-link " href="Downloads">Downloads</a>
+				</li>
+
+			</ul>
+			<div class="clock">
+				<ul class="nav navbar-nav navbar-right">
+
+					<li class="clock-item" >
+						<p id="clockTime"></p><p id="clockDate"></p>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>		<!--Navigation bar ends here -->
+		<!-- fixed share button-->
+		<div id="share-button-fixed">
+	<a id="share-btn1" href="http://www.facebook.com/sharer.php?u=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="social-button-fixed"><i class="fa fa-facebook"></i> share</a>
+
+	<a id="share-btn2" href="http://twitter.com/home?status=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="social-button-fixed"><i class="fa fa-twitter"></i> share</a>
+
+</div>		<!-- fixed share button end-->
+		<div class="container" id="showoff-soft">
+			<div class="row line-after">
+
+				<p class="project-name">
+					Oraji
+				</p>
+				<p class="project-tagline">
+					Oracle JDK Installer
+				</p>
+
+			</div>
+		</div>
+
+		<!-- show off ends here-->
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="head-buttons">
+						<a href="https://github.com/neurobin/OracleJDKInstaller">View On Github</a>
+						<a href="https://github.com/neurobin/OracleJDKInstaller/archive/master.zip">Download .zip</a>
+						<a href="https://github.com/neurobin/OracleJDKInstaller/archive/master.tar.gz">Download .tar.gz</a>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="container" id="content-container2">
+			<div class="row">
+				<div class="col-xs-2" id="content-left"></div>
+				<div class="col-xs-8 " id="content-soft">
+					<p>
+						Oracle JDK installler script for linux.
+					</p>
+					<h2>How To Use:</h2>
+					<ol>
+						<li>
+							Put the <span class="quote">oraji</span> file inside the folder where you have downloaded the archive of oracle jdk (tar.gz)
+						</li>
+						<li>
+							Give the install script execution permission <span class="inline-code">sudo chmod +x path_to_the_folder/oraji</span>
+						</li>
+						<li>
+							Now run the script <span class="quote">oraji</span> in terminal, or just drag and drop it in terminal and hit enter.
+						</li>
+						<li>
+							It will ask for version number. Give the version number. <span class="quote">Example: 8 or 8u25, must match with the archive</span>
+						</li>
+					</ol>
+
+					<h2>Contribute:</h2>
+					<p class="quote">
+						If you have any suggestion or see any problem, please open an issue <a href="https://github.com/neurobin/OracleJDKInstaller/issues">here</a>
+					</p>
+
+				</div>
+				<div class="col-xs-2" id="content-right"></div>
+
+			</div>
+		</div>
+
+		<!--Content  ends here -->
+				<div class="container-fluid" id="foot" >
+			<div class="row" id="footer">
+
+				<div class="col-xs-4">
+					<a href="#" id="sitemap">SiteMap</a>
+					<div id="sitemap-poem">
+						Take The Tour
+						<br />
+						Explore The Site
+						<br />
+						From One Place
+						<br />
+						Day Or Night
+						<br />
+					</div>
+				</div>
+				<div class="col-xs-4">
+
+					<ul id="footer-links">
+						<li>
+							<p id="suggested-links">
+								Suggested Links
+							</p>
+						</li>
+						<li>
+							<a href="shc">SHC</a>
+						</li>
+						<li>
+							<a href="tartos">Tartos</a>
+						</li>
+						<li>
+							<a href="JLIVECD">JLIVECD</a>
+						</li>
+						<li>
+							<a href="https://play.google.com/store/apps/details?id=com.jsoft.tictactoe">Tic Tac Toe</a>
+						</li>
+						<li>
+							<a href="#">29 (Card Game)</a>
+						</li>
+						<li>
+							<p id="copyright">
+								&copy; 2015, Neurobin, All rights reserved.
+							</p>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-4">
+					<p id="share-title">
+						Share Me:
+					</p>
+					<div class="share-buttons">
+						<a href="http://www.facebook.com/sharer.php?u=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="btn btn-social btn-facebook"><i class="fa fa-facebook"></i> share</a>
+						<a href="http://twitter.com/home?status=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="btn btn-social btn-twitter"><i class="fa fa-twitter"></i> share</a>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>	</body>
+</html>
