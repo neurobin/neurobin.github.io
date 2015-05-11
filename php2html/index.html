@@ -250,19 +250,25 @@
 					<p>
 						Both Windows and Linux versions of this tool can be used the same way. It can be run with cmd in windows and with terminal emulator in Linux.
 					</p>
+					<p>In windows it can be run from Desktop Launcher too.</p>
+
+<h3> Simple Usage:</h3>
+<pre><code>php2html phpscript.php</code></pre>					
+<h3>Advanced Usage:</h3>
 					<pre class="light-quote">
 Usage: php2html [options]
 
 options are optional
-options: src dest -q -h --help -o --inplace -v --version
+options: src dest -q -h --help -o -i -v --version -a -rd
 
 src is the source path
 
 dest is the destination directory
 
+options src and dest are sequential, other options can be
+placed anywhere. 
+
 -q means quite (won't print any output other than errors)
--q can be placed anywhere in the
-argument sequence.
 
 -h shows this help menu
 --help shows this help menu
@@ -271,7 +277,7 @@ argument sequence.
 This mode is not dependent on the existence of destination directory
 
 
---inplace is a dangerous option and should be avoided
+-i is a dangerous option and should be avoided
 This replaces all the PHP files to resulting HTML file
 in the source directory. This doesn't require the option dest,
 neither it will prompt for it, and if dest is given as
@@ -279,13 +285,27 @@ command line argument, it will simply ignore that
 
 -v or --version shows version information
 
+-a.htaccess processes the .htaccess file.
+Other access file can be processed by changing the
+.htaccess part to the actual name of the used AccessFile.
+There must not be any white space between -a and .htaccess
+If you pass only -a, it will neither look for any AccessFile and
+nor it will try to process them
+   
+If you don't pass -a as an option, it will look for .htaccess file
+by default
+   
+-rd reserve Directory Structure. By default empty directory will not
+be copied to the destination directory. If -rd is specified, empty directory
+will also be copied to the destination to preserve directory structure
+
 Example:
 php2html
 php2html -q src dest
 php2html src -q dest
-php2html src dest -q
-php2html src dest -q -o
-or if you are in windows, simply run the desktop launcher
+php2html src dest -q -o            //this and above takes .htaccess by default as the access file
+php2html src dest -q -o -a         //This one ignores any accessfile
+php2html src dest -q -o -a.config  //This one takes .config as AccessFile
 					</pre>										
 
  <h2>Disclaimer:</h2>
