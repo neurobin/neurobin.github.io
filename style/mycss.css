@@ -681,13 +681,26 @@ img[alt="soft logo"]{
 
 body pre{
   background-color: #fff;
+  color: darkblue;
+  font-family: droid sans;
+  font-weight: 40;
+  font-size: 14px;
   margin-top: 1em;
+}
+body pre code{
+  background-color: #fff;
+  color: darkblue;
+  font-family: droid sans;
+  font-weight: 40;
+  font-size: 14px;
+  margin-top: 1em;
+  
 }
 
 body code {
-  display: block;
   overflow: auto;
-  color: darkblue;
+  color: #333333;
+  background-color: #F2F2F2;
   font-family: droid sans;
   font-weight: 40;
   font-size: 14px;
@@ -698,8 +711,13 @@ body code {
   font-family: "PT Serif",Georgia,"Times New Roman",serif;
   font-size: 1.25em;
 }
+body blockquote{
+    color: #171515!important;
+  background-color: #FFF8DC;
+  
+}
 .quote{
-  color: #171515!important;;
+  color: #171515!important;
   background-color: #FFF8DC;
 }
 .light-quote{
@@ -736,14 +754,6 @@ body code {
   }
 h2{
   margin-bottom: 1em;
-}
-.inline-code{
-  display: inline-block;
-  background-color: #F0F0F0;
- // color: #000;
-  font-family: droid sans;
-  font-weight: 40;
-  font-size: 14px;
 }
 #showoff-soft{
   display: block;
