@@ -1,36 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<script>
-			if (window.location.protocol != "http:")
-				window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
-		</script>
+	<script>
+	if (window.location.protocol != "http:")
+		window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
+
+		
+		
+</script>
+
 		<link href="http://gmpg.org/xfn/11" rel="profile">
-
-		<meta http-equiv="content-type" content="text/html; charset=utf-8">
-		<meta name="description" content="404 Error">
-		<meta name="author" content="Jahidul Hamid"/>
-
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="description" content="404@Neurobin" >
 		<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 
-		<!-- CSS -->
+<!-- CSS -->
+<meta name="author" content="jahidul hamid" >
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<link rel="shortcut icon" href="img/logo48.png" type="image/x-icon" />
 
 		<title>Wrong Turn, Dead End</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="style/mycss.css" />
-		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<script src="script/myjs.js"></script>
 
-		<link rel="shortcut icon" href="img/logo48.png" type="image/x-icon" />
+<style type="text/css">
+li{
+  margin-top: .6em;
+}
+#bar {width: 100%;
+	background: #fbfbfb;
+}
+#bar a {
+  margin-left: 0;
+	color: darkcyan;
+	border-radius: 2px;
+	outline: none;
+}
+#bar a:hover :not(#logo) {
+	background-color: #f0f0f0;
+}
+#bar a:active{
+  background-color: #ffffff!important;
+  color: blue;
+}
+.icon-bar {
+	background-color: darkblue;
+}
+nav ul *{
+  list-style: none;
+}
+
+
+
+#logo {
+	margin-top: .3em;
+	width: 6em;
+	height: auto;
+}
+#showoff-404{
+	width: 100%;
+  min-height: 700px;
+  background-color: #ffffe0;
+  text-align: left;
+  font-size: 1.35em;
+}
+#showoff-404 button{
+    background: -webkit-linear-gradient( green, lightgreen); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient( green, lightgreen); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient( green, lightgreen); /* For Firefox 3.6 to 15 */
+  background: linear-gradient( green, lightgreen); /* Standard syntax */
+}
+#showoff-404 button:hover{
+    background: -webkit-linear-gradient( lightgreen, green);  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient( lightgreen, green);  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient( lightgreen, green); /* For Firefox 3.6 to 15 */
+  background: linear-gradient( lightgreen, green); /* Standard syntax */
+}
+#title404{
+	text-align: center;
+  font-size: 2em;
+  margin-bottom: .5em;
+  margin-top: .7em;
+}
+.container{
+	width: 100%;
+margin: 0 0 0 0;
+padding: 0 0 0 0;
+}
+.container-fluid{
+	width: 100%;
+margin: 0 0 0 0;
+padding: 0 0 0 0;
+}
+#showoff-404 ol{
+	list-style-position: inside;
+}
+#container{
+	
+	margin: 0 0 0 0;
+padding: 0 0 0 0;
+	width: 100%;
+text-align: left;
+}
+#N404{
+	text-shadow: 8px;
+	display: block;
+	font-weight: 900;
+	font-size: 3em;
+text-transform: capitalize;
+text-align: center;
+text-decoration: blink;
+    background: -webkit-linear-gradient( lightgreen, green);  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient( lightgreen, green);  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient( lightgreen, green); /* For Firefox 3.6 to 15 */
+  background: linear-gradient( lightgreen, green); /* Standard syntax */  
+  
+}
+#goback404{
+width: 100%;
+font-weight: 900;
+font-size: 2em;
+display: block;
+margin-top: 1em;
+}
+#N404exact{
+text-shadow: 6px;
+color: darkred;
+}
+blockquote{
+text-align: justify;
+}
+</style>		
+		
 
 	</head>
-	<body onload="startTime()">
+	<body >
 
 		<nav class="navbar" id="navbar">
 			<div class="container-fluid" id="bar">
@@ -40,71 +148,128 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand"><img alt="neurobin logo" id="logo" src="img/neurobin400.png" /></a>
+					<a class="navbar-brand"><img alt="neurobin logo" id="logo" src="http://neurobin.github.io/img/neurobin400.png" /></a>
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav" id="menu">
 						<li class="active">
-							<a href="http://neurobin.github.io/">Home</a>
+							<a href="http://neurobin.github.io/" id="home">Home</a>
 						</li>
 
 					</ul>
-					<div class="clock">
-						<ul class="nav navbar-nav navbar-right">
-
-							<li class="clock-item" >
-								<p id="clockTime"></p><p id="clockDate"></p>
-							</li>
-						</ul>
-					</div>
 				</div>
 			</div>
 		</nav>
 
 		<!--Navigation bar ends here -->
 
-		<div class="container" id="showoff-404">
-			<div class="row" >
-				<div class="col-xs-12">
+		<div class="container-fluid" id="showoff-404">
+		
+		<div class="row">
+<div class="col-xs-2"></div>		
+<div class="col-xs-8">
 
-					<div id="container" >
+<p id="N404">
+<span id="N404exact">
+./N/404</span>
+</p>
+
+</div>		
+<div class="col-xs-2"></div>		
+		
+		
+		</div>
+		
+		
+			<div class="row" >
+			<div class="col-xs-2"></div>
+				<div class="col-xs-8">
+
+					<div class="row" >
 						<p id="title404">
 							Why are you seeing this?
 						</p>
-						<ul>
+						</div>
+						<div class="row">
+						<div class="col-xs-2"></div>
+						<div class="col-xs-8">
+						
+						<ol>
 
 							<li>
-								<p>
-									You were trying to surpass the boundary
-								</p>
+								
+									You have come to a <b>dead end</b>...
+								
 							</li>
 							<li>
-								<p>
-									This page is beyond the allowable limit
-								</p>
+								
+									There's nothing meant to <b>be</b> here....
+								
 							</li>
 							<li>
-								<p>
-									Simply this page doesn't exist
-								</p>
+								
+									If there was something here <b>before</b>, it's not now...
+								
 							</li>
 							<li>
-								<p>
-									Or more simply, It's a 404 error
-								</p>
+								
+									The page you are trying to visit, doesn't <b>exist</b>...
+								
+							</li>
+							<li>
+								
+									Or may be this page hasn't been <b>born</b> yet...
+								
+							</li>
+														<li>
+								
+									Or may be it's <b>lost</b> into another dimension...
+								
+							</li>
+							<li>
+Who knows, what happened to it, poor <b>page</b> of mine!!!						
 							</li>
 
-						</ul>
 
-						<button id="goback404" onclick="window.history.back()">
+						</ol>
+						<br />
+
+		
+						
+						
+						</div>
+						
+						<div class="col-xs-2"></div>
+</div>
+
+
+					</div>
+					<div class="col-xs-2"></div>	
+				</div>
+				<div class="row" id="button">
+				<div class="col-xs-2"></div>
+				<div class="col-xs-8">
+				<blockquote>
+								
+You sure you haven't made a silly typo? If you insist that none of the above scenario applies for you (Just for you)..., ok then, visit this page once again after some tea break... Let's see what happens (You will probably get to experience the same feel again ). For now please go back.
+</blockquote>	
+									<button id="goback404" onclick="window.history.back()">
+						
 							Go Back
 						</button>
-					</div>
-				</div>
+						</div>
+						<div class="col-xs-2"></div>
+						</div>
+				
 			</div>
 		</div>
 
 		<!-- show off ends here-->
+		
+<script type="text/javascript">
+document.getElementById("home").href="http://"+window.location.hostname;
+</script>		
+		
 
 	</body>
 </html>

@@ -607,38 +607,7 @@ sup{
 #content-container2 ul li a:visited,active{
   color: #660099;
 }
-#showoff-404{
-  min-height: 20em;
-  background-color: #ffffe0;
-  text-align: center;
-  padding-top: 2em;
-  font-size: 2em;
-  overflow: auto;
-  bottom: 2000px;
-  margin-bottom: 3em;
-}
-#showoff-404 ul{
-  list-style: number;
-  text-align: justify;
-  padding-left: 10em;
-  margin-bottom: 2em
-}
-#showoff-404 button{
-    background: -webkit-linear-gradient( green, lightgreen); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient( green, lightgreen); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient( green, lightgreen); /* For Firefox 3.6 to 15 */
-  background: linear-gradient( green, lightgreen); /* Standard syntax */
-}
-#showoff-404 button:hover{
-    background: -webkit-linear-gradient( lightgreen, green);  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient( lightgreen, green);  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient( lightgreen, green); /* For Firefox 3.6 to 15 */
-  background: linear-gradient( lightgreen, green); /* Standard syntax */
-}
-#title404{
-  font-size: 3em;
-  margin-bottom: .4em;
-}
+
 
 #first_letter{
   font-size: 2em;
