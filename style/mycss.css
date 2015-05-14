@@ -648,31 +648,13 @@ img[alt="soft logo"]{
   display: inline-block
 }
 
-body pre{
-  background-color: #fff;
-  color: darkblue;
-  font-family: droid sans;
-  font-weight: 40;
-  font-size: 14px;
-  margin-top: 1em;
-}
-body pre code{
-  background-color: #fff;
-  color: darkblue;
-  font-family: droid sans;
-  font-weight: 40;
-  font-size: 14px;
-  margin-top: 1em;
-  
-}
-
 body code {
-  overflow: auto;
-  color: #333333;
-  background-color: #F2F2F2;
-  font-family: droid sans;
-  font-weight: 40;
-  font-size: 14px;
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif!important;
+  display: inline;
+  text-decoration: none!important;;
+  outline: none;
+  background-color: #F4F4F4;
+  color: #555555;
 
 }
 #content-soft{
@@ -680,8 +662,9 @@ body code {
   font-family: "PT Serif",Georgia,"Times New Roman",serif;
   font-size: 1.25em;
 }
-body blockquote{
-    color: #171515!important;
+blockquote{
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif!important;
+  font-size: .8em;
   background-color: #FFF8DC;
   
 }
@@ -803,7 +786,7 @@ h2{
   color: #4968c9!important;;
 }
 .message{
-  color: #37869E!important;;
+  color: #408B77!important;;
 }
 .comment{
   color: #b8b8b8!important;
@@ -826,14 +809,14 @@ h2{
 #content-links a{
   margin-top: .5em;
   display: block;
-  color: #000;
+  color: #37869E;
   font-size: 15px;
   font-weight: normal;
   text-decoration: none;
   
 }
 #content-links a:hover{
-  color: darkgreen;
+  color: #201F6B;
   
 }
 a {
@@ -856,4 +839,23 @@ a {
 }
 .hand-cursor:hover{
   cursor: pointer!important;
+}
+pre
+{
+  overflow: auto!important;
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif!important;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: white!important;
+  padding-bottom: 20px!ie7;
+  max-height: 600px;
+  font-size: .8em;
+}
+body pre code{
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif!important;
+  background-color: white!important;
+  white-space: pre;
+}
+body a:hover, a:visited{
+  color: #201F6B;
 }
