@@ -927,7 +927,16 @@ body a:visited{
 #toolBar1{
   margin-left: 1em;
   margin-right: 1em;
+  margin-bottom: 1em;
 }
 #ueditor-row{
   width: 100%!important;
+}
+#toolBar1 button{
+  margin-top: .2em;
+  width: 43%;
+  text-shadow: 1px;
+  text-align: center;
+  font-size: 1em;
+  font-family: serif!important;;
 }
