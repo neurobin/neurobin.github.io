@@ -29,10 +29,13 @@ li{
 
 
 
-* {
+*{
 	transition-property: all;
 	transition-duration: .4s;
 
+}
+#editor-container *{
+  transition: none!important;
 }
 
 .container-fluid {
@@ -856,6 +859,75 @@ body pre code{
   background-color: white!important;
   white-space: pre;
 }
-body a:hover, a:visited{
-  color: #201F6B;
+body a:visited{
+  color: #69009D;
+}
+#editor-container{
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif!important;
+  height: 85vh;
+  white-space: pre!important;;
+  border-style: solid!important;;
+  border-color: blue!important;
+  padding: 0 0 0 0!important;;
+  margin: 0 0 0 0!important;;
+  font-size: 1.15em;
+  width: 73vw;
+}
+
+#optionsPanel{
+  margin-left: 0!important;
+  padding-left: 0!important;
+  
+}
+#uedit-settings-menu{
+  padding: 0 0 0 1em;
+  margin: 0 0 0 1em;
+}
+#ueditor{
+  margin: 1em 0 0 0;
+  padding: 0 0 0 0;
+}
+#toolBox{
+ height: 80vh;;
+ overflow: auto;
+ z-index: 999;
+
+}
+
+
+#classBar table {
+  border: solid .1px blue;
+  margin-bottom: 1em;
+  
+}
+#classBar tr{
+  border: dotted .1px aqua;
+}
+#classBar td,th{
+  border: dotted .1px aqua;
+  font-size: 1.25em;
+  font-family: Arial,Liberation Sans,DejaVu Sans,sans-serif;
+  
+}
+#classBar th{
+  text-align: center;
+}
+#navbar {
+  width: 100%;
+  margin: 0 0 0 0!important;;
+  padding: 0 0 0 0!important;
+}
+#fixed-top-navbar{
+  position: fixed;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+#toolBar1{
+  margin-left: 1em;
+  margin-right: 1em;
+}
+#ueditor-row{
+  width: 100%!important;
 }

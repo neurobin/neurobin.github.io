@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en_US">
+	<head>
+		<base href="../" />
+				<script>
+	if (window.location.protocol != "http:")
+		window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
+</script>
+
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- CSS -->
+
+<meta name="author" content="jahidul hamid" >
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="style/mycss.css" />
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="script/myjs.js"></script>
+
+
+<link rel="stylesheet" href="Highlightjs/styles/github.css">
+<script src="Highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link rel="shortcut icon" href="img/logo48.png" type="image/x-icon" />
+		<!--<script src="uedit/uedit.js"></script>-->
+		<meta name="description" content="Universal Text Editor">
+		<meta name="keywords" content="neurobin,text,editor,uedit" />
+		<title>Uedit @ Neurobin</title>
+		
+		
+<link rel="stylesheet" href="uedit/codemirror/lib/codemirror.css">
+<script src="uedit/codemirror/lib/codemirror.js"></script>
+
+
+	</head>
+	<body onload="startTime()">
+
+		<nav class="navbar" id="navbar">
+	<div class="container-fluid" id="bar">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand"><img alt="neurobin logo" id="logo" src="img/neurobin400.png" /></a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav" id="menu">
+				<li class="active">
+					<a href="" target="_parent">Home</a>
+
+				</li>
+
+				<li class="dropdown">
+					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Projects">Projects<span class="caret-down"></span></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="menu-item " href="Projects/Softwares">Softwares<span class="caret-right"></a>
+
+							<ul >
+								<li>
+									<a class="menu-item" href="Projects/Softwares/linsofts.html">Linux</a>
+
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/winsofts.html">Windows</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/andapps.html">Android</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/games.html">Games</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="Projects/Softwares/genericsofts.html">Others</a>
+								</li>
+							</ul>
+
+						</li>
+						<li>
+							<a class="menu-item disabled-link" href="Projects/Research">Research</a>
+						</li>
+						<li>
+							<a class="menu-item disabled-link" href="Projects/Others">Others</a>
+						</li>
+
+					</ul>
+				</li>
+
+				<li class="dropdown">
+					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Tutorials">Tutorials<span class="caret-down"></span></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="menu-item hand-cursor" >Linux<span class="caret-right"></span></a>
+							<ul>
+
+								<li>
+									<a class="menu-item disabled-link" href="#">Generic</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Tutorials/linuxtutorials.html">Ubuntu</a>
+								</li>
+							</ul>
+						</li>
+						<li class="disabled-link">
+							<a class="menu-item disabled-link" >Programming<span class="caret-right"></span></a>
+							<ul class="programming">
+								<li>
+									<a class="menu-item disabled-link" href="#">C</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">C++</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">SQL</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">PHP</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">CSS</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Java</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">HTML</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Matlab</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">JavaScript</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Shell Scripting</a>
+								</li>
+							</ul>
+
+						</li>
+
+						<li>
+							<a class="menu-item disabled-link" href="#">Android</a>
+						</li>
+					</ul>
+
+				</li>
+
+				<!-- <li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Places<span class="caret-down"></span></a>
+				<ul class="dropdown-menu">
+				<li>
+				<a class="menu-item" href="http://github.com/neurobin"><i class="fa fa-github"></i> Github</a>
+
+				</li>
+				<li>
+				<a class="menu-item" href="http://bitbucket.org/neurobin"><i class="fa fa-bitbucket"></i> Bitbucket</a>
+				</li>
+
+				</ul>
+				</li> -->
+
+				<li>
+					<a class="menu-item disabled-link " href="Downloads">Downloads</a>
+				</li>
+
+			</ul>
+			<div class="clock">
+				<ul class="nav navbar-nav navbar-right">
+
+					<li class="clock-item" >
+						<p id="clockTime"></p><p id="clockDate"></p>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>
+		<!--Navigation bar ends here -->
+		<!-- fixed share button-->
+		<script>
+function returnFacebookShareUrl(){
+return "http://www.facebook.com/sharer.php?u="+window.location.href;
+
+}
+function returnTwitterShareUrl() {
+	return "http://twitter.com/home?status="+window.location.href;
+}
+
+</script>
+
+
+<div id="share-button-fixed">
+	<a id="share-btn1" href="#" onclick="return newShareWindow(returnFacebookShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-facebook"></i> share</a>
+
+	<a id="share-btn2" href="#" onclick="return newShareWindow(returnTwitterShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-twitter"></i> share</a>
+
+</div>		<!-- fixed share button end-->
+
+
+
+
+		<div class="container" id="content-container2">
+			<div class="row">
+				<div class="col-xs-2" id="content-left"></div>
+
+<div id="toolBar1" class="col-xs-8">
+<button class="intLink" title="Bold" onclick="wrapSelectedText ('html','textBox','1')"  ><b>B</b></button>
+<button class="intLink" title="Italic" onclick="wrapSelectedText('html','textBox','2');"  ><i>I</i></button>
+<button class="intLink" title="Underline" onclick="wrapSelectedText('html','textBox','3');"  ><u>U</u></button>
+<button class="intLink" title="Ordered list" onclick="wrapSelectedText('html','textBox','4');" >ol</button>
+<button class="intLink" title="Unordered list" onclick="wrapSelectedText('html','textBox','5');" >ul</button>
+<button class="intLink" title="List item" onclick="wrapSelectedText('html','textBox','6');" >li</button>
+<button class="intLink" title="Quote" onclick="wrapSelectedText('html','textBox','7');" >q</button>
+<button class="intLink" title="Block quote" onclick="wrapSelectedText('html','textBox','8');" >bq</button>
+<button class="intLink" title="Hyper Link" onclick="var sLnk=prompt('Put the URL here','http:\/\/');if(sLnk&&sLnk!=''&&sLnk!='http://'){htmlHyperLink('html','textBox','9',sLnk)}">a href</button>
+<button class="intLink" title="Pre formatted text" onclick="wrapSelectedText('html','textBox','10');" >pre</button>
+<button class="intLink" title="Code: <code></code>" onclick="wrapSelectedText('html','textBox','11');" >code</button>
+<button class="intLink" title="Pre code: <pre><code>" onclick="wrapSelectedText('html','textBox','12');" >pre/code</button>
+<!--<img class="intLink" title="Cut" onclick="wrapSelectedText('cut');" src="data:image/gif;base64,R0lGODlhFgAWAIQSAB1ChBFNsRJTySJYwjljwkxwl19vj1dusYODhl6MnHmOrpqbmpGjuaezxrCztcDCxL/I18rL1P///////////////////////////////////////////////////////yH5BAEAAB8ALAAAAAAWABYAAAVu4CeOZGmeaKqubDs6TNnEbGNApNG0kbGMi5trwcA9GArXh+FAfBAw5UexUDAQESkRsfhJPwaH4YsEGAAJGisRGAQY7UCC9ZAXBB+74LGCRxIEHwAHdWooDgGJcwpxDisQBQRjIgkDCVlfmZqbmiEAOw==" />
+<img class="intLink" title="Copy" onclick="wrapSelectedText('copy');" src="data:image/gif;base64,R0lGODlhFgAWAIQcAB1ChBFNsTRLYyJYwjljwl9vj1iE31iGzF6MnHWX9HOdz5GjuYCl2YKl8ZOt4qezxqK63aK/9KPD+7DI3b/I17LM/MrL1MLY9NHa7OPs++bx/Pv8/f///////////////yH5BAEAAB8ALAAAAAAWABYAAAWG4CeOZGmeaKqubOum1SQ/kPVOW749BeVSus2CgrCxHptLBbOQxCSNCCaF1GUqwQbBd0JGJAyGJJiobE+LnCaDcXAaEoxhQACgNw0FQx9kP+wmaRgYFBQNeAoGihCAJQsCkJAKOhgXEw8BLQYciooHf5o7EA+kC40qBKkAAAGrpy+wsbKzIiEAOw==" />
+<img class="intLink" title="Paste" onclick="wrapSelectedText('paste');" src="data:image/gif;base64,R0lGODlhFgAWAIQUAD04KTRLY2tXQF9vj414WZWIbXmOrpqbmpGjudClFaezxsa0cb/I1+3YitHa7PrkIPHvbuPs+/fvrvv8/f///////////////////////////////////////////////yH5BAEAAB8ALAAAAAAWABYAAAWN4CeOZGmeaKqubGsusPvBSyFJjVDs6nJLB0khR4AkBCmfsCGBQAoCwjF5gwquVykSFbwZE+AwIBV0GhFog2EwIDchjwRiQo9E2Fx4XD5R+B0DDAEnBXBhBhN2DgwDAQFjJYVhCQYRfgoIDGiQJAWTCQMRiwwMfgicnVcAAAMOaK+bLAOrtLUyt7i5uiUhADs=" />
+-->
+
+
+</div>
+<div class="col-xs-2" id="content-left"></div>
+</div>
+<div class="row">
+<div class="col-xs-2"></div>
+<div class="col-xs-8">
+
+<div id="editor"></div> 
+</div>
+<div class="col-xs-2"></div>
+</div>
+			</div>
+	
+		<!--Content  ends here -->
+				<div class="container-fluid" id="foot" >
+			<div class="row" id="footer">
+
+				<div class="col-xs-4">
+					<a href="#" id="sitemap">SiteMap</a>
+					<div id="sitemap-poem">
+						Take The Tour
+						<br />
+						Explore The Site
+						<br />
+						From One Place
+						<br />
+						Day Or Night
+						<br />
+					</div>
+				</div>
+				<div class="col-xs-4">
+
+					<ul id="footer-links">
+						<li>
+							<p id="suggested-links">
+								Suggested Links
+							</p>
+						</li>
+						<li>
+							<a href="shc">SHC</a>
+						</li>
+						<li>
+							<a href="tartos">Tartos</a>
+						</li>
+						<li>
+							<a href="JLIVECD">JLIVECD</a>
+						</li>
+						<li>
+							<a href="TicTacToe">Tic Tac Toe</a>
+						</li>
+						<li>
+							<a href="MARRIAGE29">29 (Card Game)</a>
+						</li>
+						<li>
+							<p id="copyright">
+								&copy; 2015, Neurobin, All rights reserved.
+							</p>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-4">
+					<p id="share-title">
+						Share Me:
+					</p>
+					<div class="share-buttons">
+						<a href="http://www.facebook.com/sharer.php?u=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="btn btn-social btn-facebook"><i class="fa fa-facebook"></i> share</a>
+						<a href="http://twitter.com/home?status=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="btn btn-social btn-twitter"><i class="fa fa-twitter"></i> share</a>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>		<script>
+var ce = document.getElementById("editor");
+// Probably needs more kludges to be portable... you get the idea
+var text ="fdslj" //ce.textContent || ce.innerText;
+var editor = CodeMirror(function(node){ce.parentNode.replaceChild(node, ce);}, {
+  value: text,
+    mode:  "javascript",
+  lineNumbers: true
+  /* , your options */
+});
+document.getElementById( 'editor' ).focus();
+</script>
+	</body>
+</html>
