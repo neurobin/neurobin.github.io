@@ -16,15 +16,11 @@ var jsonDefault = '{"html":[' +
 '{"id":"","start":"<ol>","end":"</ol>","title":"Ordered List","class":"editor-button","innerhtml":"ol"  },' +
 '{"id":"","start":"<ul>","end":"</ul>","title":"Unordered List","class":"editor-button","innerhtml":"ul"  },' +
 '{"id":"","start":"<li>","end":"</li>","title":"List Item","class":"editor-button","innerhtml":"li"  },' +
-'{"id":"","start":"<dl>","end":"</dl>","title":"Description List","class":"editor-button","innerhtml":"dl"  },' +
-'{"id":"","start":"<dt>","end":"</dt>","title":"Description Term","class":"editor-button","innerhtml":"dt"  },' +
-'{"id":"","start":"<dd>","end":"</dd>","title":"Description value","class":"editor-button","innerhtml":"dd"  },' +
 '{"id":"","start":"<quote>","end":"</quote>","title":"Quote","class":"editor-button","innerhtml":"q"  },' +
 '{"id":"","start":"<blockquote>","end":"</blockquote>","title":"Block Quote","class":"editor-button","innerhtml":"bq"  },' +
 '{"id":"","start":"<pre>","end":"</pre>","title":"pre","class":"editor-button","innerhtml":"pre"  },' +
 '{"id":"","start":"<code>","end":"</code>","title":"Inline Code","class":"editor-button","innerhtml":"code"  },' +
 '{"id":"","start":"<pre><code>","end":"</code></pre>","title":"Pre-formatted Code","class":"editor-button","innerhtml":"pre/code"  },' +
-'{"id":"","start":"<em>","end":"</em>","title":"em","class":"editor-button","innerhtml":"em"  },' +
 '{"id":"","start":"<img ","end":" />","title":"Image","class":"editor-button","innerhtml":"img","src":""  },' +
 '{"id":"","start":"<span>","end":"</span>","title":"Span","class":"editor-button","innerhtml":"span"  },' +
 '{"id":"","start":"<div>","end":"</div>","title":"Div","class":"editor-button","innerhtml":"div"  },' +
@@ -34,7 +30,7 @@ var jsonDefault = '{"html":[' +
 '{"id":"","start":"","end":"<hr>","title":"Horizontal Rule","class":"editor-button","innerhtml":"hr"  },' +
 '{"id":"","start":"","end":"<br>","title":"New Line","class":"editor-button","innerhtml":"br"  },' +
 '{"id":"","start":"<var>","end":"</var>","title":"Variable","class":"editor-button","innerhtml":"var"  },' +
-'{"id":"","start":"<del>","end":"</del>","title":"Deleted text","class":"editor-button","innerhtml":"del"  }]}';
+'{"id":"","start":"<del>","end":"</del>","title":"Deleted text","class":"editor-button","innerhtml":"<del>del</del>"  }]}';
 
 json=jsonDefault;
 

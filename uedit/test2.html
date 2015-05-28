@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en_US">
+<html xml:lang="en_US" lang="en_US">
 	<head>
 		<base href="../" />
 				<script>
@@ -30,16 +30,15 @@
 <script>hljs.initHighlightingOnLoad();</script>
 
 <link rel="shortcut icon" href="img/logo48.png" type="image/x-icon" />
-		<!--<script src="uedit/uedit.js"></script>-->
+		
+		<script src="uedit/scripts/src-noconflict/ace.js" type="text/javascript"></script>
+		<script src="uedit/scripts/src-noconflict/ext-language_tools.js"></script>
+		<script src="uedit/scripts/src-noconflict/mode-php.js"></script>
+		<script src="uedit/scripts/src-noconflict/ext-spellcheck.js"></script>
+		<script src="uedit/scripts/uedit.js" type="text/javascript"></script>
 		<meta name="description" content="Universal Text Editor">
 		<meta name="keywords" content="neurobin,text,editor,uedit" />
 		<title>Uedit @ Neurobin</title>
-		
-		
-<link rel="stylesheet" href="uedit/codemirror/lib/codemirror.css">
-<script src="uedit/codemirror/lib/codemirror.js"></script>
-
-
 	</head>
 	<body onload="startTime()">
 
@@ -186,8 +185,6 @@
 		</div>
 	</div>
 </nav>
-		<!--Navigation bar ends here -->
-		<!-- fixed share button-->
 		<script>
 function returnFacebookShareUrl(){
 return "http://www.facebook.com/sharer.php?u="+window.location.href;
@@ -206,117 +203,94 @@ function returnTwitterShareUrl() {
 	<a id="share-btn2" href="#" onclick="return newShareWindow(returnTwitterShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-twitter"></i> share</a>
 
 </div>		<!-- fixed share button end-->
+		
+<div id="openModal" class="modalDialog">
+	<div>
+		<a onclick="closeModalDialog()" title="Close" class="close">X</a>
+		<h2></h2>
+		<p></p>
+		<button name="No" value="left" id="openModal-btn-left" onclick="processModalDialgButtonEvent(this.id)"></button>
+		<button name="Yes" value="right" id="openModal-btn-right" onclick="processModalDialgButtonEvent(this.id)"></button>
+		</div>
+</div>
+		
+		
+		
 
+<div class="input-dialog" id="uedit-add-button-dialog">
+<p>Add Button</p>
+<input type="text" id="uedit-add-button-dialog-lang" placeholder="Language/Section" value="html" title="Put the language/section name" maxlength="30">
 
+<br>
+<input type="text" id="uedit-add-button-dialog-start" placeholder="Start" value="" title="Put the start tag">
+<br>
+<input type="text" id="uedit-add-button-dialog-end" placeholder="End" value="" title="Put the end tag">
+<br>
+<input type="text" id="uedit-add-button-dialog-title" placeholder="Title" value="Custom Button" title="Put the title" required="true">
+<span class="required-flag"> *</span>
+<br>
+<input type="text" id="uedit-add-button-dialog-class" placeholder="Class" value="" title="Put the class name">
+<br>
+<input type="text" id="uedit-add-button-dialog-innerhtml" placeholder="Button name" value="" title="Put the button name" required="true">
+<span class="required-flag"> *</span>
+<br>
+<input type="number" id="uedit-add-button-dialog-position" placeholder="Position" value="" title="Put the position index">
+<br>
+<button id="uedit-add-button-dialog-cancel-button" formnovalidate="true" onclick="itemGone('uedit-add-button-dialog')">Close</button>
+<button id="uedit-add-button-dialog-submit-button" onclick="validateForm('uedit-add-button-dialog','toolBar1')">Add</button>
 
-
-		<div class="container" id="content-container2">
-			<div class="row">
-				<div class="col-xs-2" id="content-left"></div>
-
-<div id="toolBar1" class="col-xs-8">
-<button class="intLink" title="Bold" onclick="wrapSelectedText ('html','textBox','1')"  ><b>B</b></button>
-<button class="intLink" title="Italic" onclick="wrapSelectedText('html','textBox','2');"  ><i>I</i></button>
-<button class="intLink" title="Underline" onclick="wrapSelectedText('html','textBox','3');"  ><u>U</u></button>
-<button class="intLink" title="Ordered list" onclick="wrapSelectedText('html','textBox','4');" >ol</button>
-<button class="intLink" title="Unordered list" onclick="wrapSelectedText('html','textBox','5');" >ul</button>
-<button class="intLink" title="List item" onclick="wrapSelectedText('html','textBox','6');" >li</button>
-<button class="intLink" title="Quote" onclick="wrapSelectedText('html','textBox','7');" >q</button>
-<button class="intLink" title="Block quote" onclick="wrapSelectedText('html','textBox','8');" >bq</button>
-<button class="intLink" title="Hyper Link" onclick="var sLnk=prompt('Put the URL here','http:\/\/');if(sLnk&&sLnk!=''&&sLnk!='http://'){htmlHyperLink('html','textBox','9',sLnk)}">a href</button>
-<button class="intLink" title="Pre formatted text" onclick="wrapSelectedText('html','textBox','10');" >pre</button>
-<button class="intLink" title="Code: <code></code>" onclick="wrapSelectedText('html','textBox','11');" >code</button>
-<button class="intLink" title="Pre code: <pre><code>" onclick="wrapSelectedText('html','textBox','12');" >pre/code</button>
-<!--<img class="intLink" title="Cut" onclick="wrapSelectedText('cut');" src="data:image/gif;base64,R0lGODlhFgAWAIQSAB1ChBFNsRJTySJYwjljwkxwl19vj1dusYODhl6MnHmOrpqbmpGjuaezxrCztcDCxL/I18rL1P///////////////////////////////////////////////////////yH5BAEAAB8ALAAAAAAWABYAAAVu4CeOZGmeaKqubDs6TNnEbGNApNG0kbGMi5trwcA9GArXh+FAfBAw5UexUDAQESkRsfhJPwaH4YsEGAAJGisRGAQY7UCC9ZAXBB+74LGCRxIEHwAHdWooDgGJcwpxDisQBQRjIgkDCVlfmZqbmiEAOw==" />
-<img class="intLink" title="Copy" onclick="wrapSelectedText('copy');" src="data:image/gif;base64,R0lGODlhFgAWAIQcAB1ChBFNsTRLYyJYwjljwl9vj1iE31iGzF6MnHWX9HOdz5GjuYCl2YKl8ZOt4qezxqK63aK/9KPD+7DI3b/I17LM/MrL1MLY9NHa7OPs++bx/Pv8/f///////////////yH5BAEAAB8ALAAAAAAWABYAAAWG4CeOZGmeaKqubOum1SQ/kPVOW749BeVSus2CgrCxHptLBbOQxCSNCCaF1GUqwQbBd0JGJAyGJJiobE+LnCaDcXAaEoxhQACgNw0FQx9kP+wmaRgYFBQNeAoGihCAJQsCkJAKOhgXEw8BLQYciooHf5o7EA+kC40qBKkAAAGrpy+wsbKzIiEAOw==" />
-<img class="intLink" title="Paste" onclick="wrapSelectedText('paste');" src="data:image/gif;base64,R0lGODlhFgAWAIQUAD04KTRLY2tXQF9vj414WZWIbXmOrpqbmpGjudClFaezxsa0cb/I1+3YitHa7PrkIPHvbuPs+/fvrvv8/f///////////////////////////////////////////////yH5BAEAAB8ALAAAAAAWABYAAAWN4CeOZGmeaKqubGsusPvBSyFJjVDs6nJLB0khR4AkBCmfsCGBQAoCwjF5gwquVykSFbwZE+AwIBV0GhFog2EwIDchjwRiQo9E2Fx4XD5R+B0DDAEnBXBhBhN2DgwDAQFjJYVhCQYRfgoIDGiQJAWTCQMRiwwMfgicnVcAAAMOaK+bLAOrtLUyt7i5uiUhADs=" />
--->
 
 
 </div>
-<div class="col-xs-2" id="content-left"></div>
+
+
+
+
+<div class="container" id="ueditor" >
+<div class="row" id="ueditor-row">
+
+<div class="col-xs-3" >
+<div class="row">
+<div class="col-xs-12" id="settings-bar">
+<button id="uedit-settings" title="Settings" class="options-button"></button>
+<button id="add-button" title="Add new button" class="options-button" onclick="showInputDialog('uedit-add-button-dialog')"></button>
+<button id="reset-toolBar1-button" title="Reset To Default" class="options-button" onclick="resetButtonsToDefault('toolBar1','html','editor-buttons')"></button>
+<br>
+</div>
 </div>
 <div class="row">
-<div class="col-xs-2"></div>
-<div class="col-xs-8">
+<div class="col-xs-12" id="toolBox">
+<div id="toolBar1">
 
-<div id="editor"></div> 
+
 </div>
-<div class="col-xs-2"></div>
+</div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="col-xs-9">
+<div id="editor-container" contenteditable="true" spellcheck="true" lang="en_US">
+</div>
+</div> 
+
+
 </div>
 			</div>
 	
-		<!--Content  ends here -->
-				<div class="container-fluid" id="foot" >
-			<div class="row" id="footer">
 
-				<div class="col-xs-4">
-					<a href="#" id="sitemap">SiteMap</a>
-					<div id="sitemap-poem">
-						Take The Tour
-						<br />
-						Explore The Site
-						<br />
-						From One Place
-						<br />
-						Day Or Night
-						<br />
-					</div>
-				</div>
-				<div class="col-xs-4">
+<script>
+initAceEditor();
+createButtonFromJSON('toolBar1',"html","editor-buttons");
+getFromStorage();
+setMainContentFromStorage();
 
-					<ul id="footer-links">
-						<li>
-							<p id="suggested-links">
-								Suggested Links
-							</p>
-						</li>
-						<li>
-							<a href="shc">SHC</a>
-						</li>
-						<li>
-							<a href="tartos">Tartos</a>
-						</li>
-						<li>
-							<a href="JLIVECD">JLIVECD</a>
-						</li>
-						<li>
-							<a href="TicTacToe">Tic Tac Toe</a>
-						</li>
-						<li>
-							<a href="MARRIAGE29">29 (Card Game)</a>
-						</li>
-						<li>
-							<p id="copyright">
-								&copy; 2015, Neurobin, All rights reserved.
-							</p>
-						</li>
-					</ul>
-				</div>
-				<div class="col-xs-4">
-					<p id="share-title">
-						Share Me:
-					</p>
-					<div class="share-buttons">
-						<a href="http://www.facebook.com/sharer.php?u=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="btn btn-social btn-facebook"><i class="fa fa-facebook"></i> share</a>
-						<a href="http://twitter.com/home?status=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="btn btn-social btn-twitter"><i class="fa fa-twitter"></i> share</a>
-
-					</div>
-
-				</div>
-
-			</div>
-		</div>		<script>
-var ce = document.getElementById("editor");
-// Probably needs more kludges to be portable... you get the idea
-var text ="fdslj" //ce.textContent || ce.innerText;
-var editor = CodeMirror(function(node){ce.parentNode.replaceChild(node, ce);}, {
-  value: text,
-    mode:  "javascript",
-  lineNumbers: true
-  /* , your options */
-});
-document.getElementById( 'editor' ).focus();
 </script>
 	</body>
 </html>
