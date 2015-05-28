@@ -20,27 +20,13 @@ editor = ace.edit("editor-container");
 
 var tagStart="",tagEnd="";
 sLnk="";
-var tagarrHTML=[
-["","","",""],
-["<b>","</b>","",""],
-["<i>","</i>","",""],
-["<u>","</u>","",""],
-["<ol>","</ol>","",""],
-["<ul>","</ul>","",""],
-["<li>","</li>","",""],
-["<quote>","</quote>","",""],
-["<blockquote>","</blockquote>","",""],
-["<a"+sLnk+">","</a>","",""],
-["<pre>","</pre>","",""],
-["<code>","</code>","",""],
-["<pre><code>","</code></pre>","",""],
-["<p>","</p>"]
-];
+localStoragePrefix="neurobin-uedit-";
+projectName="uedit";
 
-var json = '{"html":[' +
-'{"id":"","start":"<b>","end":"</b>","title":"Bold","class":"editor-button","innerhtml":"<b>B</b>"},' +
-'{"id":"","start":"<i>","end":"</i>","title":"Italic","class":"editor-button","innerhtml":"<i>I</i>"  },' +
-'{"id":"","start":"<u>","end":"</u>","title":"Unerline","class":"editor-button","innerhtml":"<u>U</u>"  },' +
+
+var jsonDefault = '{"html":[' +
+'{"id":"","start":"","end":"","title":"Define it manually","class":"editor-button","innerhtml":"General"},' +
+'{"id":"","start":"<!-- ","end":" -->","title":"Comment","class":"editor-button","innerhtml":"Comment"  },' +
 '{"id":"","start":"<p>","end":"</p>","title":"Paragraph","class":"editor-button","innerhtml":"P"  },' +
 '{"id":"","start":"<a ","end":"</a>","title":"Hyperlink","class":"editor-button","innerhtml":"a href","href":""  },' +
 '{"id":"","start":"<ol>","end":"</ol>","title":"Ordered List","class":"editor-button","innerhtml":"ol"  },' +
@@ -58,34 +44,18 @@ var json = '{"html":[' +
 '{"id":"","start":"<img ","end":" />","title":"Image","class":"editor-button","innerhtml":"img","src":""  },' +
 '{"id":"","start":"<span>","end":"</span>","title":"Span","class":"editor-button","innerhtml":"span"  },' +
 '{"id":"","start":"<div>","end":"</div>","title":"Div","class":"editor-button","innerhtml":"div"  },' +
-'{"id":"","start":"<nav>","end":"</nav>","title":"Navigation","class":"editor-button","innerhtml":"nav"  },' +
 '{"id":"","start":"<sup>","end":"</sup>","title":"Superscript","class":"editor-button","innerhtml":"sup"  },' +
 '{"id":"","start":"<sub>","end":"</sub>","title":"Subscript","class":"editor-button","innerhtml":"sub"  },' +
 '{"id":"","start":"<kbd>","end":"</kbd>","title":"Keboad key","class":"editor-button","innerhtml":"kbd"  },' +
 '{"id":"","start":"","end":"<hr>","title":"Horizontal Rule","class":"editor-button","innerhtml":"hr"  },' +
 '{"id":"","start":"","end":"<br>","title":"New Line","class":"editor-button","innerhtml":"br"  },' +
 '{"id":"","start":"<var>","end":"</var>","title":"Variable","class":"editor-button","innerhtml":"var"  },' +
-'{"id":"","start":"<del>","end":"</del>","title":"Deleted text","class":"editor-button","innerhtml":"del"  },' +
-'{"id":"","start":"<table>","end":"</table>","title":"Table","class":"editor-button","innerhtml":"table"  },' +
-'{"id":"","start":"<tr>","end":"</tr>","title":"Table Row","class":"editor-button","innerhtml":"tr"  },' +
-'{"id":"","start":"<td>","end":"</td>","title":"Table Cell","class":"editor-button","innerhtml":"td"  },' +
-'{"id":"","start":"<th>","end":"</th>","title":"Table Header Cell","class":"editor-button","innerhtml":"th"  },' +
-'{"id":"","start":"<thead>","end":"</thead>","title":"Table Header","class":"editor-button","innerhtml":"thead"  },' +
-'{"id":"","start":"<tbody>","end":"</tbody>","title":"Table Body","class":"editor-button","innerhtml":"tbody"  },' +
-'{"id":"","start":"<tfoot>","end":"</tfoot>","title":"Table Footer","class":"editor-button","innerhtml":"tfoot"  },' +
-'{"id":"","start":"<form>","end":"</form>","title":"Form","class":"editor-button","innerhtml":"form"  },' +
-'{"id":"","start":"<h1>","end":"</h1>","title":"Header 1","class":"editor-button","innerhtml":"h1"  },' +
-'{"id":"","start":"<h2>","end":"</h2>","title":"Header 2","class":"editor-button","innerhtml":"h2"  },' +
-'{"id":"","start":"<h3>","end":"</h3>","title":"Header 3","class":"editor-button","innerhtml":"h3"  },' +
-'{"id":"","start":"<h4>","end":"</h4>","title":"Header 4","class":"editor-button","innerhtml":"h4"  },' +
-'{"id":"","start":"<h5>","end":"</h5>","title":"Header 5","class":"editor-button","innerhtml":"h5"  },' +
-'{"id":"","start":"<h6>","end":"</h6>","title":"Header 6","class":"editor-button","innerhtml":"h6"  },' +
-'{"id":"","start":"<!-- ","end":" -->","title":"Comment","class":"editor-button","innerhtml":"<sup>**</sup>comment<sup>**</sup>"  },' +
-'{"id":"","start":"<article>","end":"</article>","title":"Article","class":"editor-button","innerhtml":"article"  }]}';
+'{"id":"","start":"<del>","end":"</del>","title":"Deleted text","class":"editor-button","innerhtml":"del"  }]}';
 
+json=jsonDefault;
 
 function findIndexByIdFromJSON(id){
-		    obj = JSON.parse(json);
+		   var obj = JSON.parse(json);
     array=obj.html;
     for(i=0;i<array.length;i++){
     if(array[i].id==id){return i;}
@@ -97,44 +67,88 @@ function findIndexByIdFromJSON(id){
 
 
 
-/*var myEvent = window.attachEvent || window.addEventListener;
+var myEvent = window.attachEvent || window.addEventListener;
 var chkevent = window.attachEvent ? 'onbeforeunload' : 'beforeunload'; /// make IE7, IE8 compitable
 
             myEvent(chkevent, function(e) { // For >=IE7, Chrome, Firefox
 
          var confirmationMessage = 'Are you sure to leave the page?';  // a space
-                (e || window.event).returnValue = confirmationMessage;
-                return confirmationMessage;
-            });*/
+                //(e || window.event).returnValue = fillStorage();
+                return fillStorage();
+            });
 
 
 function getFromStorage() { 
 
+/*	if (!!localStorage.getItem("neurobin-uedit-html-div")) {
+    document.getElementById("html-div").value=localStorage.getItem("neurobin-uedit-html-div");}*/
 
-	if (!!localStorage.getItem("neurobin-uedit-html-div")) {
-    document.getElementById("html-div").value=localStorage.getItem("neurobin-uedit-html-div");}
-    if (!!localStorage.getItem("neurobin-uedit-html-p")) {
-    document.getElementById("html-p").value=localStorage.getItem("neurobin-uedit-html-p");}
-    if (!!localStorage.getItem("neurobin-uedit-html-h1")) {
-    document.getElementById("html-h1").value=localStorage.getItem("neurobin-uedit-html-h1");}
-    if (!!localStorage.getItem("neurobin-uedit-html-h2")) {
-    document.getElementById("html-h2").value=localStorage.getItem("neurobin-uedit-html-h2");}
-    if (!!localStorage.getItem("neurobin-uedit-html-h3")) {
-    document.getElementById("html-h3").value=localStorage.getItem("neurobin-uedit-html-h3");}
-    if (!!localStorage.getItem("neurobin-uedit-html-h4")) {
-    document.getElementById("html-h4").value=localStorage.getItem("neurobin-uedit-html-h4");}
-    if (!!localStorage.getItem("neurobin-uedit-html-h5")) {
-    document.getElementById("html-h5").value=localStorage.getItem("neurobin-uedit-html-h5");}
-    if (!!localStorage.getItem("neurobin-uedit-html-span")) {
-    document.getElementById("html-span").value=localStorage.getItem("neurobin-uedit-html-span");}
-    if (!!localStorage.getItem("neurobin-uedit-html-ul")) {
-    document.getElementById("html-ul").value=localStorage.getItem("neurobin-uedit-html-ul");}
+var inputdialogfieldes=document.getElementById('uedit-add-button-dialog').getElementsByTagName('input');
+var toolBar1inputfields=document.getElementById('toolBar1').getElementsByTagName('input');
+
+
+for (var i=0;i<inputdialogfieldes.length;i++) {
+//if (!!localStorage.getItem("neurobin-uedit-"+inputdialogfieldes[i].id)) {
+inputdialogfieldes[i].value=localStorage.getItem("neurobin-uedit-"+inputdialogfieldes[i].id);}//}
+
+for (var i=0;i<toolBar1inputfields.length;i++) {
+//if (!!localStorage.getItem("neurobin-uedit-"+toolBar1inputfields[i].id)) {
+toolBar1inputfields[i].value=localStorage.getItem("neurobin-uedit-"+toolBar1inputfields[i].id);}//}
+
+
+var jsonString=localStorage.getItem('neurobin-uedit-json');
+if (jsonString!=null&&jsonString!="") {json=jsonString;}
+
+
+
 }
 
 document.addEventListener('DOMContentLoaded', function () {
 var fun=getFromStorage();
+var fun1=setMainContentFromStorage();
 $("body").css("overflow", "hidden");
     }, false);
+    
+function fillStorageById(id,value){
+	if (typeof(Storage) != "undefined") {
+localStorage.setItem(localStoragePrefix+id,value);
+}
+else {alert("Warning: Local Storage isn't supported..");}
+}
+
+function getFromStorageById(id){
+if (typeof(Storage) != "undefined") {
+
+return localStorage.getItem(localStoragePrefix+id);
+
+}
+else {alert("Warning: Local Storage isn't supported..");}
+
+}
+    
+function fillStorageFromInputDialogFields() {
+var inputdialogfieldes=document.getElementById('uedit-add-button-dialog').getElementsByTagName('input');
+    for (var i=0;i<inputdialogfieldes.length;i++) {
+localStorage.setItem("neurobin-uedit-"+inputdialogfieldes[i].id,inputdialogfieldes[i].value);}
+
+}
+
+
+function fillStorageFromToolBar1InputFields(){
+    var toolBar1inputfields=document.getElementById('toolBar1').getElementsByTagName('input');
+
+    for (var i=0;i<toolBar1inputfields.length;i++) {
+localStorage.setItem("neurobin-uedit-"+toolBar1inputfields[i].id,toolBar1inputfields[i].value);}
+
+}
+
+function filStorageWithMainContent(){
+fillStorageById("editor-main-content",editor.getSession().getValue());
+}
+function setMainContentFromStorage(){
+	editor.getSession().setValue(getFromStorageById("editor-main-content"));
+	
+}
 
 
 function fillStorage() {
@@ -142,24 +156,12 @@ function fillStorage() {
 if (typeof(Storage) != "undefined") {
     // Store
     
-    if (!!document.getElementById("html-div")) {
-    localStorage.setItem("neurobin-uedit-html-div",document.getElementById("html-div").value);}
-     if (!!document.getElementById("html-p")) {
-    localStorage.setItem("neurobin-uedit-html-p",document.getElementById("html-p").value);}
-    if (!!document.getElementById("html-h1")) {
-    localStorage.setItem("neurobin-uedit-html-h1",document.getElementById("html-h1").value);}
-    if (!!document.getElementById("html-h2")) {
-    localStorage.setItem("neurobin-uedit-html-h2",document.getElementById("html-h2").value);}
-    if (!!document.getElementById("html-h3")) {
-    localStorage.setItem("neurobin-uedit-html-h3",document.getElementById("html-h3").value);}
-    if (!!document.getElementById("html-h4")) {
-    localStorage.setItem("neurobin-uedit-html-h4",document.getElementById("html-h4").value);}
-    if (!!document.getElementById("html-h5")) {
-    localStorage.setItem("neurobin-uedit-html-h5",document.getElementById("html-h5").value);}
-    if (!!document.getElementById("html-span")) {
-    localStorage.setItem("neurobin-uedit-html-span",document.getElementById("html-span").value);}
-    if (!!document.getElementById("html-ul")) {
-    localStorage.setItem("neurobin-uedit-html-ul",document.getElementById("html-ul").value);}
+var call1=fillStorageFromInputDialogFields();
+var call1=fillStorageFromToolBar1InputFields();
+
+
+localStorage.setItem('neurobin-uedit-json',json);
+filStorageWithMainContent();
     // Retrieve
     //document.getElementById("result").innerHTML = localStorage.getItem("lastname");
 } else {
@@ -173,7 +175,7 @@ if (typeof(Storage) != "undefined") {
 
 
 
-function getIFrameDocument(aID){
+/*function getIFrameDocument(aID){
   // if contentDocument exists, W3C compliant (Mozilla)
   if (document.getElementById(aID).contentDocument){
     return document.getElementById(aID).contentDocument;
@@ -181,33 +183,16 @@ function getIFrameDocument(aID){
     // IE
     return document.frames[aID].document;
   }
-}
+}*/
 
 
-function setDesignModeOn(id){
+/*function setDesignModeOn(id){
  getIFrameDocument(id).designMode = "On";
 }
+*/
 
 
 
-
-/*function tagParse(lang,tagIndex) {
-	//if (tagIndex==1) {tagStart="<b>";tagEnd="</b>";}
-	if (lang=="html") {
-	tagStart=tagarrHTML[tagIndex][0];
-	tagEnd=tagarrHTML[tagIndex][1];
-	}
-	
-}*/
-
-/*function htmlHyperLink(lang,elementId,tagIndex,link) {
-		    obj = JSON.parse(json);
-    array=obj.html;
-	sLnk='<a href=\"'+link+'\">';
-var replacementText=sLnk+editor.getSelectedText()+"</a>";
-editor.session.replace(editor.selection.getRange(), replacementText);
-	
-}*/
 function getSelectedText(){var text="";
 if (window.getSelection) {text=window.getSelection();}
 else{text=document.selection.createRange().text;}
@@ -253,29 +238,26 @@ function replaceSelectedText(replacementText) {
 
 function wrapSelectedText(lang,elementId,id) {
 	//tagParse(lang,tagIndex);
-	var fun=fillStorage();
-	obj = JSON.parse(json);
+	//var fun=fillStorage();
+	var obj = JSON.parse(json);
     array=obj.html;
 	//alert(id+array[0].id);
 	tagIndex=findIndexByIdFromJSON(id);
 
-//var replacementText=tagStart+getSelectedText()+tagEnd;
-//replaceSelectedText(replacementText);
-//alert(array[tagIndex].start);
 
-var classname="",tagname="",lastchar="",tag="";
+
+var tagname="",lastchar="",tag="";
 tagname=array[tagIndex].start;
 lastchar=tagname.slice(-1);
 tag=tagname.substring(1,tagname.length-1);
 tagname="html-"+tag;
 //alert(tagname);
-if (!!document.getElementById(tagname)) {
-classname=document.getElementById(tagname).value;}
-if (classname!=null&&classname!="") {
-classname=" class=\""+classname+"\"";
-tagStart="<"+tag+classname+lastchar;
-}
-else {classname="";tagStart=array[tagIndex].start;}
+tagStart = document.getElementById(id+"-start").value;
+tagEnd   = document.getElementById(id+"-end").value;
+if (tagStart==null) {
+tagStart=array[tagIndex].start;}
+if (tagEnd==null) {
+tagEnd=array[tagIndex].end}
 
 
 var href,src;
@@ -285,7 +267,7 @@ if (href&&!src) {
 var sLnk=prompt('Put the URL here','http:\/\/');
 if(sLnk&&sLnk!=''&&sLnk!='http://'){
 	link=" href=\""+sLnk+"\">";
-var replacementText=tagStart+link+editor.getSelectedText()+array[tagIndex].end;
+var replacementText=tagStart+link+editor.getSelectedText()+tagEnd;
 editor.session.replace(editor.selection.getRange(), replacementText);
 }
 }
@@ -297,7 +279,7 @@ alt=alt[alt.length-1].substring(0,50);
 if (editor.getSelectedText()!="") {alt=editor.getSelectedText();}
 if(lnk&&lnk!=''){
 	link=" src=\""+lnk+"\"";
-var replacementText=tagStart+" alt=\""+alt+"\""+link+array[tagIndex].end;
+var replacementText=tagStart+" alt=\""+alt+"\""+link+tagEnd;
 editor.session.replace(editor.selection.getRange(), replacementText);
 }
 
@@ -307,62 +289,221 @@ else {
 
 
 
-var replacementText=tagStart+editor.getSelectedText()+array[tagIndex].end;
+var replacementText=tagStart+editor.getSelectedText()+tagEnd;
 editor.session.replace(editor.selection.getRange(), replacementText);
 }
 
 }
 
-function wrapSelectedTextInTextArea(lang,elementId,tagIndex) {
-	tagParse(lang,tagIndex);
-var textarea = document.getElementById(elementId);
-if (textarea.selectionStart === undefined) {	// Internet Explorer
-// create a range from the current selection
-var textRange = document.selection.createRange ();
-// check whether the selection is inside the textarea element
-var rangeParent = textRange.parentElement ();
-if (rangeParent && rangeParent.id == elementId) {
-textRange.text = tagStart + textRange.text + tagEnd;
-}
-}
-else {
-// check whether some text is selected inside the textarea element
-//if (textarea.selectionStart != textarea.selectionEnd) {
-var newText = textarea.value.substring (0, textarea.selectionStart) +
-tagStart + textarea.value.substring (textarea.selectionStart, textarea.selectionEnd) + tagEnd +
-textarea.value.substring (textarea.selectionEnd);
-textarea.value = newText;
-//}
-}
 
-
-}
-
-
-function createButtonFromJSON(parentId,lang,classname){
-    //Create an input type dynamically.   
-    obj = JSON.parse(json);
+function createButtonFromAnyJSON(jsonstring,parentId,lang,classname){
+	
+    var obj = JSON.parse(jsonstring);
     array=obj.html;
-    i=0;
-    for(i=0;i<array.length;i++){
+    for(var i=0;i<array.length;i++){
     var element = document.createElement("BUTTON");
     var brElement = document.createElement("BR");
+    var startInput = document.createElement("input");
+    var endInput = document.createElement("input");
     //Assign different attributes to the element. 
     element.innerHTML=array[i].innerhtml;
-    element.id=lang+"-btn"+i;
+    if(array[i].id==""||array[i].id==null){
+    element.id=lang+"-btn"+i;}
+    else {element.id=array[i].id;}
     element.title=array[i].title;
     array[i].id=element.id;
     json=JSON.stringify(obj);
+    localStorage.setItem('neurobin-uedit-json',json);
+    
     element.class=array[i].class+" "+classname;
     //alert('fds');
     element.onclick=function(){wrapSelectedText("html","editor-container",this.id);};
+//create input fields
+startInput.value=array[i].start;
+startInput.type="text";
+startInput.id=element.id+"-start";
+startInput.placeholder="start";
+startInput.title="This string will be inserted at the start of selection";
+    
+endInput.value=array[i].end;
+endInput.type="text";
+endInput.id=element.id+"-end";
+endInput.placeholder="end";
+endInput.title="This string will be inserted at the end of selection";
+    
+    
+    
     var foo = document.getElementById(parentId);
     //Append the element in page (in span).  
     foo.appendChild(element);
+    foo.appendChild(startInput);
+    foo.appendChild(endInput);
     foo.appendChild(brElement);
 }
 
 }
 
+function createButtonFromJSON(parentId,lang,classname){
+    //Create an input type dynamically.  
+json=getJSONString();   
+var call1=createButtonFromAnyJSON(json,parentId,lang,classname);
+
+var fun=getFromStorage();
+
+}
+
+
+function createNewButton(parentId,lang,start,end,title,classname,innerhtml,position){
+
+insertIntoJSON(lang,start,end,title,classname,innerhtml,position);
+
+document.getElementById(parentId).innerHTML="";
+createButtonFromJSON(parentId,lang,classname);
+
+
+
+
+}
+
+function validateForm(formId,parentId){
+var inputfields=document.getElementById(formId).getElementsByTagName("input");
+for(var i=0;i<inputfields.length;i++){
+if (inputfields[i].checkValidity()==false) {
+alert("Error: "+inputfields[i].title+" correctly");
+return;
+
+}
+
+
+}
+getFormDataAndCreateButton(formId,parentId);
+}
+
+
+
+function getFormDataAndCreateButton(formId,parentId){
+var lang=document.getElementById(formId+"-lang").value;
+var start=document.getElementById(formId+"-start").value;
+var end=document.getElementById(formId+"-end").value;
+var title=document.getElementById(formId+"-title").value;
+var classname=document.getElementById(formId+"-class").value;
+var innerhtml=document.getElementById(formId+"-innerhtml").value;
+var position=document.getElementById(formId+"-position").value;
+
+
+ createNewButton(parentId,lang,start,end,title,classname,innerhtml,position);
+ 
+
+
+}
+
+function itemGone(itemId){
+document.getElementById(itemId).style.transitionDuration="1s";
+document.getElementById(itemId).style.right="-40%";
+}
+
+
+function showInputDialog(formId){
+document.getElementById(formId).style.transitionDuration=".7s";
+document.getElementById(formId).style.right="0";
+}
+
+
+function insertIntoJSON(lang,start,end,title,classname,innerhtml,position){
+
+json=getJSONString();
+var obj=JSON.parse(json);
+array=obj.html;
+var patt=/^[0-9]+$/;
+var result = position.match(patt);
+if (position<0) {position=0;}
+else if (result==null||result==""||position>array.length) {position=array.length;}
+
+newarrayitem={"id":"","start":"","end":"","title":"","class":"editor-button","innerhtml":"" };
+newarrayitem.id=lang+"-btn"+array.length;
+newarrayitem.start=start;
+newarrayitem.end=end;
+newarrayitem.title=title;
+newarrayitem.class=classname;
+newarrayitem.innerhtml=innerhtml;
+//array.splice(position,0,newarrayitem);
+//array.push(newarrayitem);
+array.splice(position,0,newarrayitem);
+json=JSON.stringify(obj);
+
+localStorage.setItem('neurobin-uedit-json',json);
+fillStorageById(newarrayitem.id+"-start",start);
+fillStorageById(newarrayitem.id+"-end",end);
+
+}
+
+
+function getJSONString(){
+var jsonString=localStorage.getItem('neurobin-uedit-json');
+if (jsonString!=null&&jsonString!="") {json=jsonString;}  
+return json;
+}
+
+function createButtonFromDefaultJSON(parentId,lang,classname){
+document.getElementById(parentId).innerHTML="";
+var call1=createButtonFromAnyJSON(jsonDefault,parentId,lang,classname);
+
+}
+
+function resetButtonsToDefault(parentId,lang,classname){
+	currentParentId=parentId;
+	currentLang=lang;
+	currentClassName=classname;
+
+/*    if (confirm("Confirm Action: You are going to delete all custom toolBar buttons and reset them to default") == true) {
+        var call1=createButtonFromDefaultJSON(parentId,lang,classname);
+    } else {
+        
+    }	*/
+	
+var call1=openModalDialog("Attention!!","Are you sure you want to delete all custom buttons?");
+
+
+}
+
+function openModalDialog(head,msg){
+	var dialog=document.getElementById("openModal");
+
+   var header=dialog.getElementsByTagName('h2');
+   header[0].innerHTML=head;
+   var message=dialog.getElementsByTagName("p");
+   message[0].innerHTML=msg;
+	
+var buttons=dialog.getElementsByTagName("button");
+	for (var i=0;i<buttons.length;i++) {
+buttons[i].innerHTML=buttons[i].name;
+	}
+
+   dialog.style.display="block";
+	dialog.style.opacity="1";
+	dialog.style.pointerEvents="auto";
+   
+}
+
+function closeModalDialog(){
+	var dialog=document.getElementById("openModal");
+	dialog.style.opacity="0";
+	dialog.style.pointerEvents="none";
+	dialog.style.display="none";
+
+
+}
+
+function processModalDialgButtonEvent(id){
+	if (document.getElementById(id).value=="right") {
+	var call1=createButtonFromDefaultJSON(currentParentId,currentLang,currentClassName);
+	var call2=closeModalDialog();
+	}
+	else if(document.getElementById(id).value=="left"){
+var call1=closeModalDialog();	
+	}
+	
+
+}
 
 
