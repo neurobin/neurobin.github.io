@@ -888,7 +888,7 @@ body a:visited{
   padding: 0 0 0 0;
 }
 #toolBox{
- height: 80vh;;
+ height: 75vh;;
  overflow: auto;
  z-index: 999;
 
@@ -908,6 +908,7 @@ body a:visited{
   z-index: 999;
 }
 #toolBar1{
+  margin-top: .5em;
   margin-left: 1em;
   margin-bottom: 1em;
   -moz-box-shadow: 3px 1px 1px #000;
@@ -917,25 +918,24 @@ body a:visited{
 #ueditor-row{
   width: 100%!important;
 }
-#toolBar1 button,#toolBar1 input{
+#toolBar1 button, [name="toolBar1-input-field"]{
   height: 2em;
+      	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 3px 1px 1px blue;
+	-webkit-box-shadow: 1px 1px 3px blue;
+	box-shadow: 1px 1px 3px blue;
 }
 #toolBar1 button:not(.options-button){
-  margin-top: .2em;
   text-shadow: 0px .5px;
   text-align: center;
   font-family: serif!important;;
-  width: 40%;
+  width: 100%;
 	background: -moz-linear-gradient(#fff, #aaa);
 	background: -webkit-linear-gradient(#fff, #aaa);
 	background: -o-linear-gradient(#fff, #aaa);
   background: linear-gradient(#fff, #aaa);
-  	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	-moz-box-shadow: 3px 1px 1px #000;
-	-webkit-box-shadow: 1px 1px 3px #000;
-	box-shadow: 1px 1px 3px #000;
 }
 #toolBar1 button:not(.options-button):hover{
   font-family: Arial, Helvetica, sans-serif;
@@ -951,20 +951,20 @@ body a:visited{
   background-repeat: no-repeat;
   background-size: contain;
 }
-#toolBar1 input:not(.options){
-  width: 30%;
+[name="toolBar1-input-field"]:not(.options){
+ 
+  width: 100%;
   display: inline!important;
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif!important;
   text-shadow: 0px .5px;
   background-color: #fffffe;
-  	-moz-box-shadow: 3px 1px 1px blue;
-	-webkit-box-shadow: 1px 1px 3px blue;
-	box-shadow: 1px 1px 3px blue;
-  background: -moz-linear-gradient(#999, #fff);
-	background: -webkit-linear-gradient(#999, #fff);
-	background: -o-linear-gradient(#999, #fff);
+
+  background: -moz-linear-gradient(#eee, #fff);
+	background: -webkit-linear-gradient(#eee, #fff);
+	background: -o-linear-gradient(#eee, #fff);
   background: linear-gradient(#eee, #fff);
 }
+
 #add-button{
   width: 20px;
 	height: 20px;
@@ -975,6 +975,13 @@ body a:visited{
 #settings-bar{
   text-align: center;
   
+}
+#uedit-delete-button{
+  width: 20px;
+  height: 20px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wUcEwUt21vWFAAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAC+SURBVHja7d2xDQAQEEBRxB5K+4+jNMkZQCPRkLxfX3Uvp5UjIpKeqVgBEAEBIiBABASIgAAREAEBIiBABASIgAAREAEBIiBABASIgAAREO3V08HZu21d1sZwIZ4sAQEiIEAERECACAgQAQEiIEAEBIgVABEQIAICRECACAgQAREQIAICRECACAgQARGQH8r+oHIhAgJEQIAICBABASIgAgJEQIAICBABASIgAgJEQIAICBABASIgAgJEQL5uAaVkC8EyeAN6AAAAAElFTkSuQmCC');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 #settings-bar button{
   margin: 0 .2em .2em .2em;
@@ -998,13 +1005,13 @@ body a:visited{
   position: fixed;
   right: -40%;
 }
-.input-dialog input,.input-dialog button{
+.input-dialog [name="input-dialog-input-field"],.input-dialog button{
   margin-bottom: .5em;
   margin-top: .2em;
   
   background-color: bisque;
 }
-.input-dialog input:not([type="submit"]){
+.input-dialog [name="input-dialog-input-field"]:not([type="submit"]){
   
   width: 70%;
 }
@@ -1108,4 +1115,71 @@ body a:visited{
 	background: -o-linear-gradient(#eef, #999);
   background: linear-gradient(#eef, #999);
   
+}
+
+kbd{
+   color: black;
+  text-shadow: .3px .5px black;
+  background: -moz-linear-gradient(#eeeeee, #eeeeee);
+	background: -webkit-linear-gradient(#eeeeee, #eeeeee);
+	background: -o-linear-gradient(#eeeeee, #eeeeee);
+  background: linear-gradient(#eeeeee, #eeeeee);
+  
+}
+.button{
+  color: black;
+  text-shadow: .3px .5px black;
+  	background: -moz-linear-gradient(#eef, #999);
+	background: -webkit-linear-gradient(#eef, #999);
+	background: -o-linear-gradient(#eef, #999);
+  background: linear-gradient(#eef, #999);
+}
+#save-as-path-input-field,#uedit-save-as-button{
+  height: 2em!important;
+}
+#context-menu{
+  display: none;
+  padding: 0 0 0 0;
+  position: absolute;
+  z-index: 9999;
+	padding: 1em 2em 1em 0;
+	border-radius: 10px;
+	background: #ddd;
+	background: -moz-linear-gradient(#fff, #ddd);
+	background: -webkit-linear-gradient(#fff, #ddd);
+	background: -o-linear-gradient(#fff, #ddd);
+  background: linear-gradient(#fff, #ddd);
+  text-align: left;
+  overflow: auto;
+  
+}
+#context-menu ul{
+  width: 100%;
+  list-style: none;
+  
+}
+#context-menu li{
+  width: 100%;
+  text-align: left;
+  display: block;
+}
+#context-menu a{
+  width: 100%;
+display: block!important;;
+  outline: none!important;;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 2px 1em 2px .5em;
+  color: black;
+}
+#context-menu a:hover{
+  background-color: darkgrey;
+  border-radius: 2px;
+}
+button.unavailable{
+  opacity: .3;
+  pointer-events: none;
+}
+.warningcolor{
+  color: darkred!important;
 }
