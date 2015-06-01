@@ -17,17 +17,16 @@ var jsonDefault = '{"html":[' +
 '{"id":"","start":"<ol>","end":"</ol>","title":"Ordered List","class":"editor-button","innerhtml":"ol","type":"input"  },' +
 '{"id":"","start":"<ul>","end":"</ul>","title":"Unordered List","class":"editor-button","innerhtml":"ul","type":"input"  },' +
 '{"id":"","start":"<li>","end":"</li>","title":"List Item","class":"editor-button","innerhtml":"li","type":"input"  },' +
-'{"id":"","start":"<quote>","end":"</quote>","title":"Quote","class":"editor-button","innerhtml":"q","type":"input"  },' +
 '{"id":"","start":"<blockquote>","end":"</blockquote>","title":"Block Quote","class":"editor-button","innerhtml":"bq","type":"input"  },' +
 '{"id":"","start":"<pre>","end":"</pre>","title":"pre","class":"editor-button","innerhtml":"pre","type":"input"  },' +
 '{"id":"","start":"<code>","end":"</code>","title":"Inline Code","class":"editor-button","innerhtml":"code","type":"input"  },' +
 '{"id":"","start":"<pre><code>","end":"</code></pre>","title":"Pre-formatted Code","class":"editor-button","innerhtml":"pre/code","type":"input"  },' +
 '{"id":"","start":"<img ","end":" />","title":"Image","class":"editor-button","innerhtml":"img","src":"","type":"input"  },' +
 '{"id":"","start":"<span>","end":"</span>","title":"Span","class":"editor-button","innerhtml":"span","type":"input"  },' +
+'{"id":"","start":"<kbd>","end":"</kbd>","title":"Keboad key","class":"editor-button","innerhtml":"kbd","type":"input"  },' +
 '{"id":"","start":"<div>","end":"</div>","title":"Div","class":"editor-button","innerhtml":"div","type":"input"  },' +
 '{"id":"","start":"<sup>","end":"</sup>","title":"Superscript","class":"editor-button","innerhtml":"sup","type":"input"  },' +
 '{"id":"","start":"<sub>","end":"</sub>","title":"Subscript","class":"editor-button","innerhtml":"sub","type":"input"  },' +
-'{"id":"","start":"<kbd>","end":"</kbd>","title":"Keboad key","class":"editor-button","innerhtml":"kbd","type":"input"  },' +
 '{"id":"","start":"","end":"<hr>","title":"Horizontal Rule","class":"editor-button","innerhtml":"hr","type":"input"  },' +
 '{"id":"","start":"","end":"<br>","title":"New Line","class":"editor-button","innerhtml":"br","type":"input"  },' +
 '{"id":"","start":"<var>","end":"</var>","title":"Variable","class":"editor-button","innerhtml":"var","type":"input"  },' +
@@ -53,7 +52,7 @@ editor = ace.edit("editor-container");
     
 });
    // Use anything defined in the loaded script...
-
+return editor;
 }
 
 
@@ -678,7 +677,79 @@ createButtonFromJSON(parentId,lang,"editor-button");
 function saveAsUeditMainContent(){
 	var filename=document.getElementById("save-as-path-input-field").value;
 	if(filename==""||filename==null){filename="uedited-file";}
-var blob = new Blob([editor.session.getValue()], {type: "text/plain;charset=utf-8"});
+var blob = new Blob([editor.getSession().getValue()], {type: "text/plain;charset=utf-8"});
 saveAs(blob, filename);
 
+
 }
+function getSaveFileName(){
+var returnval=document.getElementById('save-as-path-input-field').value;
+if (returnval==""||returnval==null) {returnval="uedited-file";}
+return returnval;
+}
+
+function getSaveContent(){
+
+return editor.getSession().getValue();
+}
+
+function initDownloadify(){
+		Downloadify.create('uedit-save-as-button',{
+				filename: function(){
+					var ret=getSaveFileName();
+					return ret;
+				},
+				data: function(){ 
+				var ret=getSaveContent();
+					return ret;
+				},
+				onComplete: function(){  },
+				onCancel: function(){  },
+				onError: function(){ alert('You must put something in the File Contents or there will be nothing to save!'); },
+				swf: 'uedit/media/downloadify.swf',
+				downloadImage: 'uedit/images/download.png',
+				width: 100,
+				height: 30,
+				transparent: true,
+				append: false
+			});
+}
+function addCustomKeyBindingsForAce(){
+///ctrl+s key
+editor.commands.addCommand({
+name: 'save',
+bindKey: {win: 'Ctrl-S', mac: 'Command-S'},
+exec: function(editor) {
+saveAsUeditMainContent();
+},
+readOnly: true // false if this command should not apply in readOnly mode
+}); 
+
+///Changing default replace shortcut to ctrl+R
+editor.commands.addCommand({
+name: 'replace',
+bindKey: {win: 'Ctrl-R', mac: 'Command-Option-F'},
+exec: function(editor) {
+ace.config.loadModule("ace/ext/searchbox", function(e) {e.Search(editor, true)});
+},
+readOnly: true
+});
+
+}
+
+function showUeditInfo(){
+	var dir,file;
+	dir=window.location.href.substr(0,window.location.href.lastIndexOf("/")+1);
+	file=window.location.href.substr(window.location.href.lastIndexOf("/")+1);
+var ext=file.substr(file.lastIndexOf("."));
+var filename=file.substr(0,file.lastIndexOf("."));
+var width=screen.width/1.6,height=screen.height/1.3;
+if (width<=400) {width=screen.width;}
+if (height<=400) {height=screen.height;}
+showInfoURL=dir+"showinfo"+ext;
+window.open(showInfoURL,"Uedit Info","width="+width+", height="+height+", scrollbars=yes, resizable=yes ");
+
+}
+
+
+

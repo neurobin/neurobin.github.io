@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<base href="../" />
+				<script>
+	if (window.location.protocol != "http:")
+		window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
+</script>
+
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- CSS -->
+
+<meta name="author" content="Jahidul Hamid" >
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="style/mycss.css" />
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="script/myjs.js"></script>
+
+
+<link rel="stylesheet" href="Highlightjs/styles/github.css">
+<script src="Highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link rel="shortcut icon" href="img/logo48.png" type="image/x-icon" />
+		<meta name="description" content="Universal Text Editor Help">
+		<meta name="keywords" content="uedit,neurobin,universal text editor,text editor" />
+		<title>Uedit Info @ Neurobin</title>
+
+	</head>
+	<body onload="startTime()">
+
+		<nav class="navbar" id="navbar">
+	<div class="container-fluid" id="bar">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand"><img alt="neurobin logo" id="logo" src="img/neurobin400.png" /></a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav" id="menu">
+				<li class="active">
+					<a href="" target="_parent">Home</a>
+
+				</li>
+
+				<li class="dropdown">
+					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Projects">Projects<span class="caret-down"></span></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="menu-item " href="Projects/Softwares">Softwares<span class="caret-right"></span></a>
+
+							<ul >
+								<li>
+									<a class="menu-item" href="Projects/Softwares/linsofts.html">Linux</a>
+
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/winsofts.html">Windows</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/andapps.html">Android</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/webapps.html">Web Apps</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/games.html">Games</a>
+								</li>
+								
+								<li>
+									<a class="menu-item disabled-link" href="Projects/Softwares/genericsofts.html">Others</a>
+								</li>
+							</ul>
+
+						</li>
+						<li>
+							<a class="menu-item disabled-link" href="Projects/Research">Research</a>
+						</li>
+						<li>
+							<a class="menu-item disabled-link" href="Projects/Others">Others</a>
+						</li>
+
+					</ul>
+				</li>
+
+				<li class="dropdown">
+					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Tutorials">Tutorials<span class="caret-down"></span></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="menu-item hand-cursor" >Linux<span class="caret-right"></span></a>
+							<ul>
+
+								<li>
+									<a class="menu-item disabled-link" href="#">Generic</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Tutorials/linuxtutorials.html">Ubuntu</a>
+								</li>
+							</ul>
+						</li>
+						<li class="disabled-link">
+							<a class="menu-item disabled-link" >Programming<span class="caret-right"></span></a>
+							<ul class="programming">
+								<li>
+									<a class="menu-item disabled-link" href="#">C</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">C++</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">SQL</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">PHP</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">CSS</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Java</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">HTML</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Matlab</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">JavaScript</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Shell Scripting</a>
+								</li>
+							</ul>
+
+						</li>
+
+						<li>
+							<a class="menu-item disabled-link" href="#">Android</a>
+						</li>
+					</ul>
+
+				</li>
+
+				<!-- <li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Places<span class="caret-down"></span></a>
+				<ul class="dropdown-menu">
+				<li>
+				<a class="menu-item" href="http://github.com/neurobin"><i class="fa fa-github"></i> Github</a>
+
+				</li>
+				<li>
+				<a class="menu-item" href="http://bitbucket.org/neurobin"><i class="fa fa-bitbucket"></i> Bitbucket</a>
+				</li>
+
+				</ul>
+				</li> -->
+
+				<li>
+					<a class="menu-item disabled-link " href="Downloads">Downloads</a>
+				</li>
+
+			</ul>
+			<div class="clock">
+				<ul class="nav navbar-nav navbar-right">
+
+					<li class="clock-item" >
+						<p id="clockTime"></p><p id="clockDate"></p>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>
+		<!--Navigation bar ends here -->
+		<!-- fixed share button-->
+		<script>
+function returnFacebookShareUrl(){
+return "http://www.facebook.com/sharer.php?u="+window.location.href;
+
+}
+function returnTwitterShareUrl() {
+	return "http://twitter.com/home?status="+window.location.href;
+}
+
+</script>
+
+
+<div id="share-button-fixed">
+	<a id="share-btn1" href="#" onclick="return newShareWindow(returnFacebookShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-facebook"></i> share</a>
+
+	<a id="share-btn2" href="#" onclick="return newShareWindow(returnTwitterShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-twitter"></i> share</a>
+
+</div>		<!-- fixed share button end-->
+		<div class="container" id="showoff-soft">
+			<div class="row line-after">
+
+				<p class="project-name">
+					Uedit
+				</p>
+				<p class="project-tagline">
+					Universal Text Editor Info
+				</p>
+
+			</div>
+		</div>
+
+		<!-- show off ends here-->
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="head-buttons">
+						<a href="https://github.com/neurobin/uedit">View On Github</a>
+<a href="uedit/uedit.html">Editor</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="container" id="content-container2">
+			<div class="row">
+				<div class="col-xs-2" id="content-left"></div>
+				<div class="col-xs-8 " id="content-soft">
+<h1>Keyboard Shortcuts</h1>
+<h2>Line Operations</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Windows/Linux</th>
+<th style="text-align: left;">Mac</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ctrl-D</td>
+<td style="text-align: left;">Command-D</td>
+<td style="text-align: left;">Remove line</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Shift-Down</td>
+<td style="text-align: left;">Command-Option-Down</td>
+<td style="text-align: left;">Copy lines down</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Shift-Up</td>
+<td style="text-align: left;">Command-Option-Up</td>
+<td style="text-align: left;">Copy lines up</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Down</td>
+<td style="text-align: left;">Option-Down</td>
+<td style="text-align: left;">Move lines down</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Up</td>
+<td style="text-align: left;">Option-Up</td>
+<td style="text-align: left;">Move lines up</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Delete</td>
+<td style="text-align: left;">Ctrl-K</td>
+<td style="text-align: left;">Remove to line end</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Backspace</td>
+<td style="text-align: left;">Command-Backspace</td>
+<td style="text-align: left;">Remove to linestart</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Backspace</td>
+<td style="text-align: left;">Option-Backspace, Ctrl-Option-Backspace</td>
+<td style="text-align: left;">Remove word left</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Delete</td>
+<td style="text-align: left;">Option-Delete</td>
+<td style="text-align: left;">Remove word right</td>
+</tr>
+<tr>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">Ctrl-O</td>
+<td style="text-align: left;">Split line</td>
+</tr>
+</tbody>
+</table>
+<h2>Selection</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Windows/Linux</th>
+<th style="text-align: left;">Mac</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ctrl-A</td>
+<td style="text-align: left;">Command-A</td>
+<td style="text-align: left;">Select all</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-Left</td>
+<td style="text-align: left;">Shift-Left</td>
+<td style="text-align: left;">Select left</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-Right</td>
+<td style="text-align: left;">Shift-Right</td>
+<td style="text-align: left;">Select right</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-Left</td>
+<td style="text-align: left;">Option-Shift-Left</td>
+<td style="text-align: left;">Select word left</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-Right</td>
+<td style="text-align: left;">Option-Shift-Right</td>
+<td style="text-align: left;">Select word right</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-Home</td>
+<td style="text-align: left;">Shift-Home</td>
+<td style="text-align: left;">Select line start</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-End</td>
+<td style="text-align: left;">Shift-End</td>
+<td style="text-align: left;">Select line end</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Shift-Right</td>
+<td style="text-align: left;">Command-Shift-Right</td>
+<td style="text-align: left;">Select to line end</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Shift-Left</td>
+<td style="text-align: left;">Command-Shift-Left</td>
+<td style="text-align: left;">Select to line start</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-Up</td>
+<td style="text-align: left;">Shift-Up</td>
+<td style="text-align: left;">Select up</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-Down</td>
+<td style="text-align: left;">Shift-Down</td>
+<td style="text-align: left;">Select down</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-PageUp</td>
+<td style="text-align: left;">Shift-PageUp</td>
+<td style="text-align: left;">Select page up</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-PageDown</td>
+<td style="text-align: left;">Shift-PageDown</td>
+<td style="text-align: left;">Select page down</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-Home</td>
+<td style="text-align: left;">Command-Shift-Up</td>
+<td style="text-align: left;">Select to start</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-End</td>
+<td style="text-align: left;">Command-Shift-Down</td>
+<td style="text-align: left;">Select to end</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-D</td>
+<td style="text-align: left;">Command-Shift-D</td>
+<td style="text-align: left;">Duplicate selection</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-P</td>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">Select to matching bracket</td>
+</tr>
+</tbody>
+</table>
+<h2>Multicursor</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Windows/Linux</th>
+<th style="text-align: left;">Mac</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ctrl-Alt-Up</td>
+<td style="text-align: left;">Ctrl-Option-Up</td>
+<td style="text-align: left;">Add multi-cursor above</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Alt-Down</td>
+<td style="text-align: left;">Ctrl-Option-Down</td>
+<td style="text-align: left;">Add multi-cursor below</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Alt-Right</td>
+<td style="text-align: left;">Ctrl-Option-Right</td>
+<td style="text-align: left;">Add next occurrence to multi-selection</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Alt-Left</td>
+<td style="text-align: left;">Ctrl-Option-Left</td>
+<td style="text-align: left;">Add previous occurrence to multi-selection</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Alt-Shift-Up</td>
+<td style="text-align: left;">Ctrl-Option-Shift-Up</td>
+<td style="text-align: left;">Move multicursor from current line to the line above</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Alt-Shift-Down</td>
+<td style="text-align: left;">Ctrl-Option-Shift-Down</td>
+<td style="text-align: left;">Move multicursor from current line to the line below</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Alt-Shift-Right</td>
+<td style="text-align: left;">Ctrl-Option-Shift-Right</td>
+<td style="text-align: left;">Remove current occurrence from multi-selection and move to next</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Alt-Shift-Left</td>
+<td style="text-align: left;">Ctrl-Option-Shift-Left</td>
+<td style="text-align: left;">Remove current occurrence from multi-selection and move to previous</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-L</td>
+<td style="text-align: left;">Ctrl-Shift-L</td>
+<td style="text-align: left;">Select all from multi-selection</td>
+</tr>
+</tbody>
+</table>
+<h2>Go to</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Windows/Linux</th>
+<th style="text-align: left;">Mac</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Left</td>
+<td style="text-align: left;">Left, Ctrl-B</td>
+<td style="text-align: left;">Go to left</td>
+</tr>
+<tr>
+<td style="text-align: left;">Right</td>
+<td style="text-align: left;">Right, Ctrl-F</td>
+<td style="text-align: left;">Go to right</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Left</td>
+<td style="text-align: left;">Option-Left</td>
+<td style="text-align: left;">Go to word left</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Right</td>
+<td style="text-align: left;">Option-Right</td>
+<td style="text-align: left;">Go to word right</td>
+</tr>
+<tr>
+<td style="text-align: left;">Up</td>
+<td style="text-align: left;">Up, Ctrl-P</td>
+<td style="text-align: left;">Go line up</td>
+</tr>
+<tr>
+<td style="text-align: left;">Down</td>
+<td style="text-align: left;">Down, Ctrl-N</td>
+<td style="text-align: left;">Go line down</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Left, Home</td>
+<td style="text-align: left;">Command-Left, Home, Ctrl-A</td>
+<td style="text-align: left;">Go to line start</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Right, End</td>
+<td style="text-align: left;">Command-Right, End, Ctrl-E</td>
+<td style="text-align: left;">Go to line end</td>
+</tr>
+<tr>
+<td style="text-align: left;">PageUp</td>
+<td style="text-align: left;">Option-PageUp</td>
+<td style="text-align: left;">Go to page up</td>
+</tr>
+<tr>
+<td style="text-align: left;">PageDown</td>
+<td style="text-align: left;">Option-PageDown, Ctrl-V</td>
+<td style="text-align: left;">Go to page down</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Home</td>
+<td style="text-align: left;">Command-Home, Command-Up</td>
+<td style="text-align: left;">Go to start</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-End</td>
+<td style="text-align: left;">Command-End, Command-Down</td>
+<td style="text-align: left;">Go to end</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-L</td>
+<td style="text-align: left;">Command-L</td>
+<td style="text-align: left;">Go to line</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Down</td>
+<td style="text-align: left;">Command-Down</td>
+<td style="text-align: left;">Scroll line down</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Up</td>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">Scroll line up</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-P</td>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">Go to matching bracket</td>
+</tr>
+<tr>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">Option-PageDown</td>
+<td style="text-align: left;">Scroll page down</td>
+</tr>
+<tr>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">Option-PageUp</td>
+<td style="text-align: left;">Scroll page up</td>
+</tr>
+</tbody>
+</table>
+<h2>Find/Replace</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Windows/Linux</th>
+<th style="text-align: left;">Mac</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ctrl-F</td>
+<td style="text-align: left;">Command-F</td>
+<td style="text-align: left;">Find</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-R</td>
+<td style="text-align: left;">Command-Option-F</td>
+<td style="text-align: left;">Replace</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-K</td>
+<td style="text-align: left;">Command-G</td>
+<td style="text-align: left;">Find next</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-K</td>
+<td style="text-align: left;">Command-Shift-G</td>
+<td style="text-align: left;">Find previous</td>
+</tr>
+</tbody>
+</table>
+<h2>Folding</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Windows/Linux</th>
+<th style="text-align: left;">Mac</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Alt-L, Ctrl-F1</td>
+<td style="text-align: left;">Command-Option-L, Command-F1</td>
+<td style="text-align: left;">Fold selection</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Shift-L, Ctrl-Shift-F1</td>
+<td style="text-align: left;">Command-Option-Shift-L, Command-Shift-F1</td>
+<td style="text-align: left;">Unfold</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-0</td>
+<td style="text-align: left;">Command-Option-0</td>
+<td style="text-align: left;">Fold all</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Shift-0</td>
+<td style="text-align: left;">Command-Option-Shift-0</td>
+<td style="text-align: left;">Unfold all</td>
+</tr>
+</tbody>
+</table>
+<h2>Other</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Windows/Linux</th>
+<th style="text-align: left;">Mac</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ctrl-S</td>
+<td style="text-align: left;">Command-S</td>
+<td style="text-align: left;">Save</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tab</td>
+<td style="text-align: left;">Tab</td>
+<td style="text-align: left;">Indent</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-Tab</td>
+<td style="text-align: left;">Shift-Tab</td>
+<td style="text-align: left;">Outdent</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Z</td>
+<td style="text-align: left;">Command-Z</td>
+<td style="text-align: left;">undo</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-Z, Ctrl-Y</td>
+<td style="text-align: left;">Command-Shift-Z, Command-Y</td>
+<td style="text-align: left;">Redo</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-,</td>
+<td style="text-align: left;">Command-,</td>
+<td style="text-align: left;">Show the settings menu</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-/</td>
+<td style="text-align: left;">Command-/</td>
+<td style="text-align: left;">Toggle comment</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-T</td>
+<td style="text-align: left;">Ctrl-T</td>
+<td style="text-align: left;">Transpose letters</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Enter</td>
+<td style="text-align: left;">Command-Enter</td>
+<td style="text-align: left;">Enter full screen</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-U</td>
+<td style="text-align: left;">Ctrl-Shift-U</td>
+<td style="text-align: left;">Change to lower case</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-U</td>
+<td style="text-align: left;">Ctrl-U</td>
+<td style="text-align: left;">Change to upper case</td>
+</tr>
+<tr>
+<td style="text-align: left;">Insert</td>
+<td style="text-align: left;">Insert</td>
+<td style="text-align: left;">Overwrite</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-E</td>
+<td style="text-align: left;">Command-Shift-E</td>
+<td style="text-align: left;">Macros replay</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Alt-E</td>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">Macros recording</td>
+</tr>
+<tr>
+<td style="text-align: left;">Delete</td>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">Delete</td>
+</tr>
+<tr>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">Ctrl-L</td>
+<td style="text-align: left;">Center selection</td>
+</tr>
+</tbody>
+</table>	
+				</div>
+				<div class="col-xs-2" id="content-right"></div>
+
+			</div>
+		</div>
+
+		<!--Content  ends here -->
+				<div class="container-fluid" id="foot" >
+			<div class="row" id="footer">
+
+				<div class="col-xs-4">
+					<a href="#" id="sitemap">SiteMap</a>
+					<div id="sitemap-poem">
+						Take The Tour
+						<br />
+						Explore The Site
+						<br />
+						From One Place
+						<br />
+						Day Or Night
+						<br />
+					</div>
+				</div>
+				<div class="col-xs-4">
+
+					<ul id="footer-links">
+						<li>
+							<p id="suggested-links">
+								Suggested Links
+							</p>
+						</li>
+						<li>
+							<a href="shc">SHC</a>
+						</li>
+						<li>
+							<a href="tartos">Tartos</a>
+						</li>
+						<li>
+							<a href="JLIVECD">JLIVECD</a>
+						</li>
+						<li>
+							<a href="TicTacToe">Tic Tac Toe</a>
+						</li>
+						<li>
+							<a href="MARRIAGE29">29 (Card Game)</a>
+						</li>
+						<li>
+							<p id="copyright">
+								&copy; 2015, Neurobin, All rights reserved.
+							</p>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-4">
+					<p id="share-title">
+						Share Me:
+					</p>
+					<div class="share-buttons">
+						<a href="http://www.facebook.com/sharer.php?u=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="btn btn-social btn-facebook"><i class="fa fa-facebook"></i> share</a>
+						<a href="http://twitter.com/home?status=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="btn btn-social btn-twitter"><i class="fa fa-twitter"></i> share</a>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</body>
+</html>
