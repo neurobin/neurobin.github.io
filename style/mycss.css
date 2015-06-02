@@ -34,6 +34,10 @@ li{
 	transition-duration: .4s;
 
 }
+
+* {
+    box-sizing: border-box;
+}
 #editor-container *{
   transition: none!important;
 }
@@ -1199,16 +1203,13 @@ button.unavailable{
 .warningcolor{
   color: darkred!important;
 }
-table{
+table:not(#toolBar1){
   border-collapse: collapse;
 border-spacing: 0px;
   word-break: keep-all;
 }
 
-table td,table th{
+table:not(#toolBar1) td,table:not(#toolBar1) th{
  padding: 6px 13px;
 border: 1px solid #DDD;
-}
-* {
-    box-sizing: border-box;
 }
