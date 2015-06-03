@@ -854,7 +854,7 @@ pre
   margin-bottom: 10px;
   padding: 5px;
   background-color: white!important;
-  padding-bottom: 20px!ie7;
+  padding-bottom: 20px!important;
   max-height: 600px;
   font-size: .8em;
 }
@@ -1212,11 +1212,4 @@ border-spacing: 0px;
 table:not(#toolBar1) td,table:not(#toolBar1) th{
  padding: 6px 13px;
 border: 1px solid #DDD;
-}
-#uedit-save-as-table td{
-  border: 0px!important;
-  padding: 4px 0px 0 8px!important;
-}
-#uedit-save-as-table tr{
-  padding: 2px 0px 0px 6px!important;
 }

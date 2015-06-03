@@ -57,7 +57,7 @@ function startTime() {
 	mon = checkTime(mon);
 	document.getElementById('clockTime').innerHTML = h + ":" + m + ":" + s + " " + ampm;
 	document.getElementById('clockDate').innerHTML = day + "/" + mon + "/" + year;
-	var store=fillStorage();
+	
 	var t = setTimeout(function() {
 		startTime()
 	}, 500);

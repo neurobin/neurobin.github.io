@@ -18,11 +18,13 @@
 <meta name="author" content="Jahidul Hamid" >
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="style/mycss.css" />
+<!--<link rel="stylesheet" href="style/mycss.css" />-->
+<link rel="stylesheet" href="style/mycss.min.css" />
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="script/myjs.js"></script>
+<!--<script src="script/myjs.js"></script>-->
+<script src="script/myjs.min.js"></script>
 
 
 <link rel="stylesheet" href="Highlightjs/styles/github.css">
@@ -35,7 +37,8 @@
 		<script src="uedit/scripts/src-noconflict/ext-language_tools.js"></script>
 		<script src="uedit/scripts/src-noconflict/mode-php.js"></script>
 		<script src="uedit/scripts/src-noconflict/ext-spellcheck.js"></script>
-		<script src="uedit/scripts/uedit.js" type="text/javascript"></script>
+		<!--<script src="uedit/scripts/uedit.js" type="text/javascript"></script>-->
+		<script src="uedit/scripts/uedit.min.js" type="text/javascript"></script>
 		<script src="uedit/scripts/FileSaver.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="uedit/scripts/swfobject.js"></script>
 		<script type="text/javascript" src="uedit/scripts/downloadify.min.js"></script>
@@ -220,6 +223,14 @@ function returnTwitterShareUrl() {
 		<button name="Yes" value="right" id="openModal-btn-right" onclick="processModalDialgButtonEvent(this.id)"></button>
 		</div>
 </div>
+<div id="messageDialog" class="modalDialog">
+	<div>
+		<a onclick="closeMessageDialog()" title="Close" class="close">X</a>
+		<h2></h2>
+		<p></p>
+		<button name="Ok" value="ok" id="messageDialog-btn-ok" onclick="closeMessageDialog()"></button>
+		</div>
+</div>
 
 
 <nav id="context-menu">
@@ -259,7 +270,7 @@ function returnTwitterShareUrl() {
 <br>
 <input name="input-dialog-input-field" type="text" id="uedit-add-button-dialog-class" placeholder="Class" value="" title="Put the class name">
 <br>
-<input name="input-dialog-input-field" type="text" id="uedit-add-button-dialog-innerhtml" placeholder="Button name" value="" title="Put the button name" required="true">
+<input name="input-dialog-input-field" type="text" id="uedit-add-button-dialog-innerhtml" placeholder="Button name" value="" title="Put the button name (HTML Markup Allowed)" required="true">
 <span class="glyphicon glyphicon-asterisk required-flag"></span>
 <br>
 <select name="input-dialog-input-field" id="uedit-add-button-dialog-type" title="Type of input box">
@@ -289,7 +300,7 @@ function returnTwitterShareUrl() {
 <button id="add-button" title="Add new button" class="options-button" onclick="showInputDialog('uedit-add-button-dialog')"></button>
 <button id="uedit-delete-button" title="Delete button/s" class="options-button unavailable" onclick="showButtonDeleteDialog('uedit-delete-button-dialog')"></button>
 <button id="reset-toolBar1-button" title="Reset To Default" class="options-button" onclick="resetButtonsToDefault('toolBar1','html','editor-buttons')"></button>
-<button id="uedit-info-button" title="Show Help/Info Menu" class="options-button" onclick="showUeditInfo()"></button>
+<button id="uedit-info-button" title="Show Help/Info" class="options-button" onclick="showUeditInfo('')"></button>
 <br>
 <table id="uedit-save-as-table">
 <tr>
@@ -354,10 +365,26 @@ createButtonFromJSON('toolBar1',"html","editor-buttons");
 getFromStorage();
 setMainContentFromStorage();
 editor.getSession().on('change', function(e) {
-autoSaveMainContent();
-}); 
+fillStorageWithMainContent();
+console.log("Main content saved");
+});
+var filename=document.getElementById("save-as-path-input-field");
+if (filename.addEventListener) {
+  filename.addEventListener('input', function() {
+    fillStorage();
+    console.log("fillStorage successful, stored in local storage");
+  }, false);
+} else if (filename.attachEvent) {
+  filename.attachEvent('onpropertychange', function() {
+    // IE-specific event handling code
+    fillStorage();
+    console.log("fillStorage successful, stored in local storage");
+  });
+}
 initDownloadify();
 addCustomKeyBindingsForAce();
+
+
 </script>
 
 	</body>
