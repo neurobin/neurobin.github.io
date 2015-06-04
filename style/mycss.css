@@ -932,9 +932,7 @@ body a:visited{
 	box-shadow: 1px 1px 3px blue;
 }
 #toolBar1 button:not(.options-button){
-  text-shadow: 0px .5px;
   text-align: center;
-  font-family: serif!important;;
   width: 100%;
 	background: -moz-linear-gradient(#fff, #aaa);
 	background: -webkit-linear-gradient(#fff, #aaa);
@@ -957,13 +955,10 @@ body a:visited{
   background-size: contain;
 }
 [name="toolBar1-input-field"]:not(.options){
- 
   width: 100%;
   display: inline!important;
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif!important;
-  text-shadow: 0px .5px;
   background-color: #fffffe;
-
   background: -moz-linear-gradient(#eee, #fff);
 	background: -webkit-linear-gradient(#eee, #fff);
 	background: -o-linear-gradient(#eee, #fff);

@@ -25,6 +25,10 @@
 						<li>
 							<a href="shc">SHC</a>
 						</li>
+						
+						<li>
+							<a href="uedit">Uedit</a>
+						</li>
 						<li>
 							<a href="tartos">Tartos</a>
 						</li>
@@ -32,10 +36,10 @@
 							<a href="JLIVECD">JLIVECD</a>
 						</li>
 						<li>
-							<a href="TicTacToe">Tic Tac Toe</a>
+							<a href="php2html">PHP2HTML</a>
 						</li>
 						<li>
-							<a href="MARRIAGE29">29 (Card Game)</a>
+							<a href="TicTacToe">IMW Tic Tac Toe</a>
 						</li>
 						<li>
 							<p id="copyright">

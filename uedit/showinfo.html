@@ -827,7 +827,32 @@ property it is defined on. The catch is, you have to put all of that in a single
 </ol>
 <p><span class="quote">Note: To put <code>&lt;</code> or <code>&gt;</code> literally, you need to use <code>&amp;lt;</code> and <code>&amp;gt;</code> respectively.
 </span></p>
-<p>HTML Markup is only allowed in Button Name. Other fields in creating new button will take the literal meaning of any input string.</p>	
+<p>HTML Markup is only allowed in Button Name. Other fields in creating new button will take the literal meaning of any input string.</p>
+<div id="local-storage-not-found"></div>
+<h1>Local Storage:</h1>
+<p>Uedit uses local storage of browser to store user specific data and content. If Local storage is not
+available or disabled in the browser then nothing will be saved and simple reload of the page will make you
+lose all of your content. So before starting writing/editing make sure your browser supports the use of local
+storage and it is enabled. To check it, you don't have to do anything special, just reload the editor and if it
+finds everything right it won't say anything, otherwise it will warn you with a message box.</p>
+<div id="local-storage-disabled"></div>
+<h2>What will you do if the message box says local storage is disabled:</h2>
+<p>You just need to go to your browser settings and enable local storage (or cookie in some browsers).</p>
+<h3>For firefox:</h3>
+<ol>
+<li>In a new tab type <code>about:config</code> and hit <kbd>Enter</kbd> and confirm action.</li>
+<li>Put <code>Dom.storage.enabled</code> in the search bar and hit <kbd>Enter</kbd>.</li>
+<li>Check the <code>value</code>, if it's true, local storage is enabled or vice-versa.</li>
+<li>Double click on this to change the value.</li>
+</ol>
+<h3>Chrome:</h3>
+<ol>
+<li>Go to settings, then expand <q>Advanced settings</q>.</li>
+<li>navigate to <q>Privacy</q> section</li>
+<li>Click on <q>content settings</q></li>
+<li>Look in the <q>Cookie</q> section</li>
+<li>Check the check box that says <q>Allow local data to be set</q></li>
+</ol>	
 				</div>
 				<div class="col-xs-2" id="content-right"></div>
 
@@ -862,6 +887,10 @@ property it is defined on. The catch is, you have to put all of that in a single
 						<li>
 							<a href="shc">SHC</a>
 						</li>
+						
+						<li>
+							<a href="uedit">Uedit</a>
+						</li>
 						<li>
 							<a href="tartos">Tartos</a>
 						</li>
@@ -869,10 +898,10 @@ property it is defined on. The catch is, you have to put all of that in a single
 							<a href="JLIVECD">JLIVECD</a>
 						</li>
 						<li>
-							<a href="TicTacToe">Tic Tac Toe</a>
+							<a href="php2html">PHP2HTML</a>
 						</li>
 						<li>
-							<a href="MARRIAGE29">29 (Card Game)</a>
+							<a href="TicTacToe">IMW Tic Tac Toe</a>
 						</li>
 						<li>
 							<p id="copyright">
