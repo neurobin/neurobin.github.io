@@ -175,6 +175,8 @@ editor.getSession().setValue(getFromStorageById("editor-main-content"));
 }
 
 
+
+
 function fillStorage() {
 // Check browser support
 if (typeof(Storage) != "undefined") {
@@ -185,6 +187,7 @@ fillStorageFromToolBar1InputFields();
 
 
 localStorage.setItem('neurobin-uedit-json',json);
+
 fillStorageWithMainContent();
     // Retrieve
     //document.getElementById("result").innerHTML = localStorage.getItem("lastname");
@@ -845,5 +848,16 @@ window.open(getInfoURL(id),"Uedit Info","width="+width+", height="+height+", scr
 
 }
 
+function removeFirstRunTag() {
+localStorage.setItem('neurobin-uedit-firstRun',"notNull");
+}
 
+function ifItIsFirstRunThenResetToDefault(parentId,lang,classname){
+	currentParentId=parentId;
+	currentLang=lang;
+	currentClassName=classname;
+	if (localStorage.getItem('neurobin-uedit-firstRun')!="notNull") {
+createButtonFromDefaultJSON(currentParentId,currentLang,currentClassName);}
+removeFirstRunTag();
+}
 
