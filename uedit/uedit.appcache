@@ -1,0 +1,17 @@
+CACHE MANIFEST
+uedit.html
+/style/mycss.min.css
+/script/myjs.min.js
+/uedit/scripts/src-noconflict/ace.js
+/uedit/scripts/src-noconflict/ext-language_tools.js
+/uedit/scripts/src-noconflict/mode-php.js
+/uedit/scripts/src-noconflict/ext-spellcheck.js
+/uedit/scripts/uedit.min.js
+/uedit/scripts/FileSaver.min.js
+/uedit/scripts/swfobject.js
+/uedit/scripts/downloadify.min.js
+https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js
+http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css
+http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js
+/Highlightjs/styles/github.css
+/Highlightjs/highlight.pack.js
