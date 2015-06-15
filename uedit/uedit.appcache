@@ -10,6 +10,8 @@ showinfo.html
 /uedit/scripts/src-noconflict/ext-language_tools.js
 /uedit/scripts/src-noconflict/mode-php.js
 /uedit/scripts/src-noconflict/ext-spellcheck.js
+/uedit/scripts/src-noconflict/theme-eclipse.js
+/uedit/scripts/src-noconflict/ext-searchbox.js
 /uedit/scripts/uedit.min.js
 /uedit/scripts/FileSaver.min.js
 /uedit/scripts/swfobject.js
@@ -17,8 +19,6 @@ showinfo.html
 /Highlightjs/highlight.pack.js
 /script/jquery.min.1.7.1.custom.js
 /bootstrap/js/bootstrap.min.js
-/uedit/scripts/src-noconflict/theme-eclipse.js
-/uedit/scripts/src-noconflict/ext-searchbox.js
 images/download.png
 /img/neurobin400.png
 /img/logo48.png
@@ -33,3 +33,5 @@ media/downloadify.swf
 /bootstrap/fonts/glyphicons-halflings-regular.woff
 /bootstrap/fonts/glyphicons-halflings-regular.ttf
 /bootstrap/fonts/glyphicons-halflings-regular.svg
+#Uedit Version: 0.2.1
+#Updated: 05:30PM 15-06-2015 Dhaka/Asia Time
