@@ -6,7 +6,7 @@
 <link href="http://gmpg.org/xfn/11" rel="profile">
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <!--[if lt IE 9]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="script/html5.js"></script>
 <![endif]-->
 
 <!-- CSS -->
