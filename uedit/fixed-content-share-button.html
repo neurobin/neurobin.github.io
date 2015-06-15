@@ -5,7 +5,7 @@ function returnFacebookContentShareUrl(){
         '&link=' +encodeURIComponent(window.location.href)+
         '&name=' + encodeURIComponent(getSaveFileName()) +
         '&caption=' + encodeURIComponent('Content By Uedit') +
-        '&description=' + msg +
+        '&description=Content Shared From: '+encodeURIComponent(window.location.href)+
         '&redirect_uri=http://'+window.location.host+'/siteutility/closewindow/'+
         '&display=popup';
 return url;
