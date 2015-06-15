@@ -427,24 +427,6 @@ nav > ul > li a {
    background-repeat :no-repeat;
   background-size: contain;
 }
-.share-buttons a{
-font-size: .8em!important;;
-  margin-top: 1em;
-}
-.share-buttons a:nth-child(1){
-  background-color: #44619D;
-}
-.share-buttons a:nth-child(1):hover{
-  background-color: #449;
-}
-.share-buttons a:nth-child(2){
-  background-color: #0084B4;
-}
-.share-buttons a:nth-child(2):hover{
-  background-color: #0c7196;
-}
-
-
 
 #sitemap-poem{
   font-size: .7em;
@@ -514,8 +496,8 @@ text-align: center;
 }
 .social-button-fixed{
 	position: fixed;
-	right: -1.9em;
-  width: 5em;
+	right: -5.9em;
+  width: 9em;
 	transition-duration: .4s;
 	transition-property: all!important;;
 	transition-timing-function: linear;
@@ -537,23 +519,48 @@ text-align: center;
 #share-btn2{
   margin-top: 2em;
   background-color: #0084B4;
-    text-decoration: none;
+  text-decoration: none;
   color: #fff;
   outline: none;
-   text-align: left;
+  text-align: left;
+}
+#share-btn3{
+  margin-top: 4em;
+  background-color: #44619D;
+  text-decoration: none;
+  color: #fff;
+  outline: none;
+  text-align: left;
+  
+}
+#share-btn4{
+  margin-top: 6em;
+  background-color: #0084B4;
+  text-decoration: none;
+  color: #fff;
+  outline: none;
+  text-align: left;  
 }
 
 #share-btn1:hover{
   background-color: #449;
-  right: -1em;;
+  right: -4.5em;;
   
 }
 
 #share-btn2:hover{
   background-color: #0c7196;
+  right: -4.5em;;
+}
+#share-btn3:hover{
+  background-color: #449;
   right: -1em;;
 }
-#share-button-fixed{
+#share-btn4:hover{
+  background-color: #0c7196;
+  right: -1em;;
+}
+.share-button-fixed{
   transition-duration: 1s;
   transition-property: all;
   transition-timing-function: linear;
