@@ -10,7 +10,7 @@ function returnTwitterShareUrl() {
 </script>
 
 
-<div class="share-button-fixed">
+<div id="fixed-share-button" class="share-button-fixed">
 	<a id="share-btn1" href="#" onclick="return newShareWindow(returnFacebookShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-facebook"></i> share</a>
 
 	<a id="share-btn2" href="#" onclick="return newShareWindow(returnTwitterShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-twitter"></i> share</a>

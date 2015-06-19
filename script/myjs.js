@@ -103,9 +103,9 @@ function getDocHeight() {
 
 document.addEventListener("scroll", function (event) {
 	    if (getDocHeight() <= (getScrollXY()[1] + window.innerHeight+100)) {
-        hide('share-button-fixed');
+        hide('fixed-share-button');
     }
-    else{show('share-button-fixed');}
+    else{show('fixed-share-button');}
 	
 	if(getScrollXY()[1]>=190){document.getElementById('content-links').style.top="1em";}
 	else {document.getElementById('content-links').style.top=240-getScrollXY()[1]+"px";}
