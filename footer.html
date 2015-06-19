@@ -53,8 +53,8 @@
 						Share Me:
 					</p>
 					<div class="share-buttons">
-						<a href="http://www.facebook.com/sharer.php?u=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="btn btn-social btn-facebook"><i class="fa fa-facebook"></i> share</a>
-						<a href="http://twitter.com/home?status=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="btn btn-social btn-twitter"><i class="fa fa-twitter"></i> share</a>
+						<a href="#" onclick="return newShareWindow(returnFacebookShareUrl(),400,400)" class="btn btn-social btn-facebook"><i class="fa fa-facebook"></i> share</a>
+						<a href="#" onclick="return newShareWindow(returnTwitterShareUrl(),400,400)" class="btn btn-social btn-twitter"><i class="fa fa-twitter"></i> share</a>
 
 					</div>
 

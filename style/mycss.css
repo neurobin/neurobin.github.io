@@ -1162,3 +1162,15 @@ border: 1px solid #DDD;
 .edge{
   position: absolute;
 }
+.btn-facebook:hover{
+  background-color: #44499A;
+}
+.btn-twitter:hover{
+  background-color: #0C7196;
+}
+.btn-facebook{
+  background-color: #44619D;
+}
+.btn-twitter{
+  background-color: #0084B4;
+}
