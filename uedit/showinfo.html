@@ -831,6 +831,111 @@ property it is defined on. The catch is, you have to put all of that in a single
 <p><span class="quote">Note: To put <code>&lt;</code> or <code>&gt;</code> literally, you need to use <code>&amp;lt;</code> and <code>&amp;gt;</code> respectively.
 </span></p>
 <p>HTML Markup is only allowed in Button Name. Other fields in creating new button will take the literal meaning of any input string.</p>
+<p>You can apply CSS styling in custom buttons. Either you can use your own inline styling or available CSS classes which is used throughout this website. For example if you put <code>&lt;span class="warningcolor"&gt;buttonName&lt;/span&gt;</code> as the name, the button name will show as <code>buttonName</code> with dark red color.</p>
+<div id="btn-valid-classname"></div>
+<h2>Available CSS Classes:</h2>
+<p>The following list defines the valid set of CSS class names that are allowed in class field for custom buttons. There's absolutely no restriction in the name field of custom buttons; You can use whatever class you like inside HTML tags for button name (The effect will be your responsibility though :D).<br></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Class</th>
+<th style="text-align: left;">Preview</th>
+<th style="text-align: left;">Applicable To</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>warningcolor</code></td>
+<td style="text-align: left;"><span class="warningcolor">Text</span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>error</code></td>
+<td style="text-align: left;"><span class="error">Text</span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>message</code></td>
+<td style="text-align: left;"><span class="message">Text</span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>button</code></td>
+<td style="text-align: left;"><span class="button">Text</span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>quote</code></td>
+<td style="text-align: left;"><span class="quote">Text</span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>light-quote</code></td>
+<td style="text-align: left;"><span class="light-quote">Text</span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>warning</code></td>
+<td style="text-align: left;"><span class="warning">Text</span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>edit</code></td>
+<td style="text-align: left;"><span class="edit">Text</span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>comment</code></td>
+<td style="text-align: left;"><span class="comment">Text</span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>caret-right</code></td>
+<td style="text-align: left;"><span class="caret-right"></span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>caret-left</code></td>
+<td style="text-align: left;"><span class="caret-left"></span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>caret-up</code></td>
+<td style="text-align: left;"><span class="caret-up"></span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>caret-down</code></td>
+<td style="text-align: left;"><span class="caret-down"></span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>editor-button</code></td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>default</code></td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>custom</code></td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dummy</code></td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>uedit-btn-custom-*</code> (*=name)</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+</tr>
+</tbody>
+</table>
 <div id="local-storage-not-found"></div>
 <h1>Local Storage:</h1>
 <p>Uedit uses local storage of browser to store user specific data and content. If Local storage is not
