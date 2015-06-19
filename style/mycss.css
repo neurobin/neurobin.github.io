@@ -51,9 +51,10 @@ li{
 	display: block;
 }
 #menu > li > ul > li > ul {
+  margin-left: 0;
+  padding-left:0;
 	list-style: none;
 	display: none;
-	margin-left: 0;
 	text-decoration: none;
 	width: 100%;
 	height: auto;
@@ -61,7 +62,9 @@ li{
 
 #menu > li > ul > li > ul > li a {
 	text-decoration: none;
-	padding-bottom: .5em;
+	padding-bottom: .25em;
+  padding-top: .25em;
+  padding-left: 1.5em;
 }
 #menu > li > ul > li:not(.disabled-link):hover > ul {
 	display: block;
@@ -1155,4 +1158,7 @@ border: 1px solid #DDD;
 }
 #uedit-save-as-table tr{
   padding: 2px 0px 0px 6px!important;
+}
+.edge{
+  position: absolute;
 }

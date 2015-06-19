@@ -19,7 +19,7 @@
 					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Projects">Projects<span class="caret-down"></span></a>
 					<ul class="dropdown-menu">
 						<li>
-							<a class="menu-item " href="Projects/Softwares">Softwares <span class="caret-right"></span></a>
+							<a class="menu-item " href="Projects/Softwares">Softwares <span class="caret-right edge"></span></a>
 
 							<ul >
 								<li>
@@ -59,7 +59,7 @@
 					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Tutorials">Tutorials<span class="caret-down"></span></a>
 					<ul class="dropdown-menu">
 						<li>
-							<a class="menu-item hand-cursor" >Linux <span class="caret-right"></span></a>
+							<a class="menu-item hand-cursor" >Linux <span class="caret-right edge"></span></a>
 							<ul>
 
 								<li>
@@ -71,7 +71,7 @@
 							</ul>
 						</li>
 						<li class="disabled-link">
-							<a class="menu-item disabled-link" >Programming <span class="caret-right"></span></a>
+							<a class="menu-item disabled-link" >Programming <span class="caret-right edge"></span></a>
 							<ul class="programming">
 								<li>
 									<a class="menu-item disabled-link" href="#">C</a>
