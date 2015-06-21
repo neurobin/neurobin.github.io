@@ -862,6 +862,7 @@ var array=obj.html;
 for (var j=0;j<idarr.length;j++) {
 for (var i=0;i<array.length;i++) {
 	if (array[i].id==idarr[j]) {
+console.log(array[i].id+" = "+idarr[j]);
 document.getElementById(formId+"-lang").value="html";
 document.getElementById(formId+"-start").value=getFromStorageById(idarr[j]+"-start");
 document.getElementById(formId+"-end").value=getFromStorageById(idarr[j]+"-end");
@@ -871,6 +872,7 @@ document.getElementById(formId+"-innerhtml").value=array[i].innerhtml;
 document.getElementById(formId+"-type").value=array[i].type;
 document.getElementById(formId+"-position").value=i;
 currentId=idarr[j];
+console.log("array index="+i);
 }
 }}
 
