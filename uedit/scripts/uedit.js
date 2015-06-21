@@ -101,6 +101,7 @@ else {return "";}
 }
 
 
+
 function getInputDialogFieldsFromStorage() {
 var inputdialogfieldes=document.getElementsByName('input-dialog-input-field');
 for (var i=0;i<inputdialogfieldes.length;i++) {
@@ -187,6 +188,8 @@ function fillStorageFromToolBar1InputFields(){
 fillStorageByAbsoluteId("neurobin-uedit-"+toolBar1inputfields[i].id,toolBar1inputfields[i].value);}
 
 }
+
+
 
 function emptyStorageOfToolBar1InputFields() {
     var toolBar1inputfields=document.getElementsByName('toolBar1-input-field');
@@ -352,7 +355,6 @@ function createButtonFromAnyJSON(jsonstring,parentId,lang,classname){
     fillStorageByAbsoluteId('neurobin-uedit-json',json);
     
     element.className=array[i].class;
-    console.log(element.className);
     if(validateButtonClassName(element.className,"disabled") == "disabled"){
     	element.style.cssText = "pointer-events: auto !important";
     	
@@ -571,7 +573,6 @@ if (array[i].id===id) {
 	array[i].innerhtml=innerhtml;
 	array[i].type=type;
 	array.move(i,position);
-	console.log(i+" "+position);
 fillStorageById(array[position].id+"-start",start);
 fillStorageById(array[position].id+"-end",end);
 
@@ -615,6 +616,24 @@ else if (result==null||result==""||position>array.length) {position=array.length
 return position;
 }
 
+function returnUniqId(lang){
+json=getJSONString();
+var obj=JSON.parse(json);
+var array=obj.html;
+var id=lang+"-btn";
+var idinc=0;
+var idstring="";
+for(var i=0;i<array.length;i++){idstring+=" "+array[i].id;}
+
+for(var i=0;i<array.length;i++){
+if (idstring.indexOf(id+idinc)>-1) { idinc++;}
+}
+return id+idinc;
+
+}
+
+
+
 function insertIntoJSON(lang,start,end,title,classname,innerhtml,type,position){
 
 json=getJSONString();
@@ -626,7 +645,8 @@ if (position<0) {position=0;}
 else if (result==null||result==""||position>array.length) {position=array.length;}
 
 var newarrayitem={"id":"","start":"","end":"","title":"","class":"editor-button","innerhtml":"","type":"" };
-newarrayitem.id=lang+"-btn"+array.length;
+newarrayitem.id=returnUniqId(lang);
+console.log("Assigned Id: "+newarrayitem.id);
 newarrayitem.start=start;
 newarrayitem.end=end;
 newarrayitem.title=title;
@@ -641,7 +661,6 @@ json=JSON.stringify(obj);
 fillStorageByAbsoluteId('neurobin-uedit-json',json);
 fillStorageById(newarrayitem.id+"-start",start);
 fillStorageById(newarrayitem.id+"-end",end);
-
 }
 
 
@@ -774,7 +793,7 @@ ctxm.style.top=pos.y+"px";
 ctxmItems=ctxm.getElementsByTagName("a");
 for(var i=0;i<ctxmItems.length;i++){
 ctxmItems[i].onclick=function(){
-	console.log(id.id+this.name);
+	console.log("Id: "+id.id+" Action: "+this.name);
 processInputFromContextMenu(id,this.name);
 }}
 
@@ -830,10 +849,11 @@ deleteButtonFromArray("toolBar1","html",[id.id]);
 if (itemName=="edit") {
 	
 editButtonIntoArray("uedit-edit-button-dialog","toolBar1","html",[id.id]);
-console.log(id.id+itemName);
+console.log("Id: "+id.id+" Action: "+itemName);
 }
 
 }
+
 
 
 function deleteButtonFromArray(parentId,lang,idarr){
@@ -842,8 +862,15 @@ var obj=JSON.parse(json);
 var array=obj.html;
 for (var j=0;j<idarr.length;j++) {
 for (var i=0;i<array.length;i++) {
-	if (array[i].id==idarr[j]) {array.splice(i,1);}
-
+	if (array[i].id==idarr[j]) {
+	var toolBar1inputfields=document.getElementsByName('toolBar1-input-field');
+   if(typeof toolBar1inputfields[i] != 'undefined'){
+   	
+   	removeItemFromStorageByAbsoluteId("neurobin-uedit-"+array[i].id+"-start");
+   	removeItemFromStorageByAbsoluteId("neurobin-uedit-"+array[i].id+"-end");
+      console.log("Storage item removed: "+array[i].id+"-start and "+array[i].id+"-end");}
+      array.splice(i,1);
+   }
 }}
 
 json=JSON.stringify(obj);
@@ -862,7 +889,6 @@ var array=obj.html;
 for (var j=0;j<idarr.length;j++) {
 for (var i=0;i<array.length;i++) {
 	if (array[i].id==idarr[j]) {
-console.log(array[i].id+" = "+idarr[j]);
 document.getElementById(formId+"-lang").value="html";
 document.getElementById(formId+"-start").value=getFromStorageById(idarr[j]+"-start");
 document.getElementById(formId+"-end").value=getFromStorageById(idarr[j]+"-end");
