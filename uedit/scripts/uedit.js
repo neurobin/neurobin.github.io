@@ -672,7 +672,7 @@ function resetButtonsToDefault(parentId,lang,classname){
         
     }	*/
 	
-openModalDialog("Attention!!","Are you sure you want to delete all button customizaion and reset to default ?");
+openModalDialog("<span class=\"warningcolor\">Attention!!</span>","Are you sure you want to delete all button customizaion and reset to default ?");
 
 
 }
