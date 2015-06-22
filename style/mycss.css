@@ -951,13 +951,13 @@ body a:visited{
   position: fixed;
   right: -40%;
 }
-.input-dialog [name="input-dialog-input-field"],.input-dialog button{
+.input-dialog .input-dialog-input-field,.input-dialog button{
   margin-bottom: .5em;
   margin-top: .2em;
   
   background-color: bisque;
 }
-.input-dialog [name="input-dialog-input-field"]:not([type="submit"]){
+.input-dialog .input-dialog-input-field:not([type="submit"]){
   width: 85%;
 }
 #reset-toolBar1-button{
