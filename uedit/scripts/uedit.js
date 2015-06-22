@@ -12,24 +12,24 @@ localStorageNotSupported=0;
 currentId="";
 
 var jsonDefault = '{"html":[' +
-'{"id":"","start":"","end":"","title":"Define it manually","class":"editor-button","innerhtml":"General","type":"textarea"  },' +
-'{"id":"","start":"<!-- ","end":" -->","title":"Comment","class":"editor-button","innerhtml":"Comment","type":"input"  },' +
-'{"id":"","start":"<p>","end":"</p>","title":"Paragraph","class":"editor-button","innerhtml":"P","type":"input"  },' +
-'{"id":"","start":"<a ","end":"</a>","title":"Hyperlink","class":"editor-button","innerhtml":"a href","href":"","type":"input"  },' +
-'{"id":"","start":"<li>","end":"</li>","title":"List Item","class":"editor-button","innerhtml":"li","type":"input"  },' +
-'{"id":"","start":"<blockquote>","end":"</blockquote>","title":"Block Quote","class":"editor-button","innerhtml":"bq","type":"input"  },' +
-'{"id":"","start":"<pre>","end":"</pre>","title":"pre","class":"editor-button","innerhtml":"pre","type":"input"  },' +
-'{"id":"","start":"<code>","end":"</code>","title":"Inline Code","class":"editor-button","innerhtml":"code","type":"input"  },' +
-'{"id":"","start":"<pre><code>","end":"</code></pre>","title":"Pre-formatted Code","class":"editor-button","innerhtml":"pre/code","type":"input"  },' +
-'{"id":"","start":"<img ","end":" />","title":"Image","class":"editor-button","innerhtml":"img","src":"","type":"input"  },' +
-'{"id":"","start":"<span>","end":"</span>","title":"Span","class":"editor-button","innerhtml":"span","type":"input"  },' +
-'{"id":"","start":"<kbd>","end":"</kbd>","title":"Keboad key","class":"editor-button","innerhtml":"kbd","type":"input"  },' +
-'{"id":"","start":"<sup>","end":"</sup>","title":"Superscript","class":"editor-button","innerhtml":"sup","type":"input"  },' +
-'{"id":"","start":"<sub>","end":"</sub>","title":"Subscript","class":"editor-button","innerhtml":"sub","type":"input"  },' +
-'{"id":"","start":"","end":"<hr>","title":"Horizontal Rule","class":"editor-button","innerhtml":"hr","type":"input"  },' +
-'{"id":"","start":"","end":"<br>","title":"New Line","class":"editor-button","innerhtml":"br","type":"input"  },' +
-'{"id":"","start":"<var>","end":"</var>","title":"Variable","class":"editor-button","innerhtml":"var","type":"input"  },' +
-'{"id":"","start":"<del>","end":"</del>","title":"Deleted text","class":"editor-button","innerhtml":"<del>del</del>","type":"input"  }]}';
+'{"id":"","start":"","end":"","title":"Define it manually","class":"editor-button","innerhtml":"General","type":"textarea","winskey":"","macskey":""  },' +
+'{"id":"","start":"<!-- ","end":" -->","title":"Comment","class":"editor-button","innerhtml":"Comment","type":"input","winskey":"","macskey":""  },' +
+'{"id":"","start":"<p>","end":"</p>","title":"Paragraph","class":"editor-button","innerhtml":"P","type":"input","winskey":"","macskey":""  },' +
+'{"id":"","start":"<a ","end":"</a>","title":"Hyperlink","class":"editor-button","innerhtml":"a href","href":"","type":"input","winskey":"","macskey":""  },' +
+'{"id":"","start":"<li>","end":"</li>","title":"List Item","class":"editor-button","innerhtml":"li","type":"input","winskey":"","macskey":""  },' +
+'{"id":"","start":"<blockquote>","end":"</blockquote>","title":"Block Quote","class":"editor-button","innerhtml":"bq","type":"input","winskey":"","macskey":""  },' +
+'{"id":"","start":"<pre>","end":"</pre>","title":"pre","class":"editor-button","innerhtml":"pre","type":"input","winskey":"","macskey":""  },' +
+'{"id":"","start":"<code>","end":"</code>","title":"Inline Code","class":"editor-button","innerhtml":"code","type":"input","winskey":"","macskey":""  },' +
+'{"id":"","start":"<pre><code>","end":"</code></pre>","title":"Pre-formatted Code","class":"editor-button","innerhtml":"pre/code","type":"input","winskey":"","macskey":""  },' +
+'{"id":"","start":"<img ","end":" />","title":"Image","class":"editor-button","innerhtml":"img","src":"","type":"input","winskey":"","macskey":""  },' +
+'{"id":"","start":"<span>","end":"</span>","title":"Span","class":"editor-button","innerhtml":"span","type":"input","winskey":"","macskey":""  },' +
+'{"id":"","start":"<kbd>","end":"</kbd>","title":"Keboad key","class":"editor-button","innerhtml":"kbd","type":"input","winskey":"","macskey":""  },' +
+'{"id":"","start":"<sup>","end":"</sup>","title":"Superscript","class":"editor-button","innerhtml":"sup","type":"input","winskey":"","macskey":""  },' +
+'{"id":"","start":"<sub>","end":"</sub>","title":"Subscript","class":"editor-button","innerhtml":"sub","type":"input","winskey":"","macskey":""  },' +
+'{"id":"","start":"","end":"<hr>","title":"Horizontal Rule","class":"editor-button","innerhtml":"hr","type":"input","winskey":"","macskey":""  },' +
+'{"id":"","start":"","end":"<br>","title":"New Line","class":"editor-button","innerhtml":"br","type":"input","winskey":"","macskey":""  },' +
+'{"id":"","start":"<var>","end":"</var>","title":"Variable","class":"editor-button","innerhtml":"var","type":"input","winskey":"","macskey":""  },' +
+'{"id":"","start":"<del>","end":"</del>","title":"Deleted text","class":"editor-button","innerhtml":"<del>del</del>","type":"input","winskey":"","macskey":""  }]}';
 
 json=jsonDefault;
 
@@ -446,6 +446,11 @@ tr.appendChild(td3);
     
     
     foo.appendChild(tr);
+    if (array[i].winskey!=""&&array[i].macskey!="") {
+    addCustomKeyBindingsForAceById(element.id,lang,element.id,array[i].winskey,array[i].macskey);}
+    else {addCustomKeyBindingsForAceById(element.id,lang,element.id,"abracadabra","abracadabra");}
+    
+    
 }
 
 }
@@ -460,9 +465,9 @@ getFromStorage();
 }
 
 
-function createNewButton(parentId,lang,start,end,title,classname,innerhtml,type,position){
+function createNewButton(parentId,lang,start,end,title,classname,innerhtml,type,position,winsKey,macsKey){
 
-insertIntoJSON(lang,start,end,title,classname,innerhtml,type,position);
+insertIntoJSON(lang,start,end,title,classname,innerhtml,type,position,winsKey,macsKey);
 
 document.getElementById(parentId).innerHTML="";
 createButtonFromJSON(parentId,lang,classname);
@@ -471,6 +476,41 @@ createButtonFromJSON(parentId,lang,classname);
 
 
 }
+
+function validateShortCutKey(firstKey,secondKey,sKey){
+	var msg=["valid","valid"];
+	var readOnlyKeys="Ctrl-s ctrl-f ctrl-a ctrl-x ctrl-c ctrl-v ctrl-r ctrl-k ctrl-shift-k ctrl-space ctrl-tab alt-tab alt-space "+
+	"ctrl-z shift-up shift-down shift-left shift- right ctrl-shift-z shift-home shift-end shift-pagedown shift-pageup ctrl-shift-home ctrl-shift-end";
+	var invalidkeys=["^shift-\\S$"];
+	var key=firstKey+secondKey+sKey;
+	console.log(key);
+	var regex="\\b"+key;
+	regex=new RegExp(regex,"i");
+	var twonlyreg="\\-(Up|Down|Left|Right|Space|Tab|Enter|Home|PageUp|PageDown|End|Insert|Delete|Esc|F1|F2|F3|F4|F5|F6|F7|F8|F9|F10|F11|F12)";
+	twonlyreg=new RegExp(twonlyreg,"i");
+	var genkeyreg="^[^-]+\\-[^-\\s]+(\\-[\\S])?$";
+	genkeyreg=new RegExp(genkeyreg,"i");
+	
+   if (firstKey==""&&secondKey=="") {sKey="";}
+	else if(firstKey==secondKey){msg=["invalid","Both modifiers can't be the same"];}
+	else if(twonlyreg.test(key)&&(sKey!="")){msg=["invalid","This key binding can't have third key"];}
+	else if(!twonlyreg.test(key)&&(sKey==""||sKey==null)){msg=["invalid","Required Key field unfilled"];}
+   else if(regex.test(readOnlyKeys)){msg=["invalid","This is a default key binding which you can't change"];}
+   else if(!genkeyreg.test(key)){msg=["invalid","Are you sure you haven't put space as the last key?"];}
+   
+   
+   for (var i=0;i<invalidkeys.length;i++) {
+   var regex=new RegExp(invalidkeys[i],"i");
+   if (regex.test(key)) {msg=["invalid","This key binding may create too much confusion, which is not allowed"];}
+   
+   }
+
+return msg;
+
+}
+
+
+
 
 function validateForm(formId,parentId,task){
 var inputfields=document.getElementsByName("input-dialog-input-field");
@@ -519,6 +559,20 @@ if (validateButtonClassName(document.getElementById(formId+'-class').value,"inva
 openMessageDialog(head,msg);
 return;
 }
+	var firstKey=document.getElementById(formId+"-firstkey").value;
+	var secondKey=document.getElementById(formId+"-secondkey").value;
+	
+	var sKey=document.getElementById(formId+"-skey").value;
+	if (firstKey==""&&secondKey=="") {sKey="";}
+var message=validateShortCutKey(firstKey,secondKey,sKey);
+if(message[0]!="valid"){
+	var head="<span class=\"error\">Invalid Key!!</span>";
+	var msg=message[1]+"<br><a href=\""+getInfoURL("btn-custom-skey")+"\" target=\"_blank\">Learn more</a>";
+openMessageDialog(head,msg);
+return;
+}
+
+
 
 
 if(task=="add"){getFormDataAndCreateButton(formId,parentId);}
@@ -538,13 +592,26 @@ var classname=document.getElementById(formId+"-class").value;
 var innerhtml=document.getElementById(formId+"-innerhtml").value;
 var type=document.getElementById(formId+"-type").value;
 var position=document.getElementById(formId+"-position").value;
+var firstKey=document.getElementById(formId+"-firstkey").value;
+var secondKey=document.getElementById(formId+"-secondkey").value;
+var skey=document.getElementById(formId+"-skey").value;
+if (firstKey==""&&secondKey=="") {skey="";}
+var winsKey=firstKey+secondKey+skey;
+var macsKey=getMacKeyFromWinKey(firstKey)+getMacKeyFromWinKey(secondKey)+skey;
 
 if (type!="textarea") {type="input";}
 fillStorageFromInputDialogFields();
- createNewButton(parentId,lang,start,end,title,classname,innerhtml,type,position);
+ createNewButton(parentId,lang,start,end,title,classname,innerhtml,type,position,winsKey,macsKey);
  
 
 
+}
+
+
+function getMacKeyFromWinKey(key){
+if (key=="Ctrl-") {key="Command-";}
+if (key=="Alt-") {key="Option-";}
+return key;
 }
 
 
@@ -559,6 +626,13 @@ var innerhtml=document.getElementById(formId+"-innerhtml").value;
 var type=document.getElementById(formId+"-type").value;
 var position=document.getElementById(formId+"-position").value;
 position=getValidPosition(position);
+var firstKey=document.getElementById(formId+"-firstkey").value;
+var secondKey=document.getElementById(formId+"-secondkey").value;
+var skey=document.getElementById(formId+"-skey").value;
+if (firstKey==""&&secondKey=="") {skey="";}
+var winsKey=firstKey+secondKey+skey;
+var macsKey=getMacKeyFromWinKey(firstKey)+getMacKeyFromWinKey(secondKey)+skey;
+console.log(winsKey+" "+macsKey);
 if (type!="textarea") {type="input";}
 json=getJSONString();
 var obj=JSON.parse(json);
@@ -572,6 +646,8 @@ if (array[i].id===id) {
 	array[i].class=classname;
 	array[i].innerhtml=innerhtml;
 	array[i].type=type;
+	array[i].winskey=winsKey;
+	array[i].macskey=macsKey;
 	array.move(i,position);
 fillStorageById(array[position].id+"-start",start);
 fillStorageById(array[position].id+"-end",end);
@@ -634,7 +710,7 @@ return id+idinc;
 
 
 
-function insertIntoJSON(lang,start,end,title,classname,innerhtml,type,position){
+function insertIntoJSON(lang,start,end,title,classname,innerhtml,type,position,winsKey,macsKey){
 
 json=getJSONString();
 var obj=JSON.parse(json);
@@ -644,7 +720,8 @@ var result = position.match(patt);
 if (position<0) {position=0;}
 else if (result==null||result==""||position>array.length) {position=array.length;}
 
-var newarrayitem={"id":"","start":"","end":"","title":"","class":"editor-button","innerhtml":"","type":"" };
+var newarrayitem={"id":"","start":"","end":"","title":"","class":"","innerhtml":"","type":"","winskey":"","macskey":"" };
+
 newarrayitem.id=returnUniqId(lang);
 console.log("Assigned Id: "+newarrayitem.id);
 newarrayitem.start=start;
@@ -653,6 +730,9 @@ newarrayitem.title=title;
 newarrayitem.class=classname;
 newarrayitem.innerhtml=innerhtml;
 newarrayitem.type=type;
+newarrayitem.winskey=winsKey;
+newarrayitem.macskey=macsKey;
+
 //array.splice(position,0,newarrayitem);
 //array.push(newarrayitem);
 array.splice(position,0,newarrayitem);
@@ -880,6 +960,21 @@ createButtonFromJSON(parentId,lang,"editor-button");
 
 }
 
+function splitKey(key){
+	var genkeyreg="^([^-]+)\\-([^-\\s]+)(\\-([\\S]))?$";
+	genkeyreg=new RegExp(genkeyreg,"i");
+	var res=key.match(genkeyreg);
+	if(res!=null){
+	if (!!res[1]){firstKey=res[1]+"-";}else {firstKey="";}
+	if (!!res[3]){sKey=res[res.length-1];}else {sKey="";}
+	if (!!res[2]){if(res[2].length!=1){secondKey=res[2]+"-";}else {sKey=res[2];secondKey="";}}else {secondKey="";}
+	
+	}
+	else {firstKey="";secondKey="";sKey="";}
+	return [firstKey,secondKey,sKey];
+
+}
+
 
 function editButtonIntoArray(formId,parentId,lang,idarr){
 	
@@ -897,6 +992,14 @@ document.getElementById(formId+"-class").value=array[i].class;
 document.getElementById(formId+"-innerhtml").value=array[i].innerhtml;
 document.getElementById(formId+"-type").value=array[i].type;
 document.getElementById(formId+"-position").value=i;
+
+
+var keyarr=splitKey(array[i].winskey);
+console.log(keyarr[0]+keyarr[1]+keyarr[2])
+document.getElementById(formId+"-firstkey").value=keyarr[0];
+document.getElementById(formId+"-secondkey").value=keyarr[1];
+document.getElementById(formId+"-skey").value=keyarr[2];
+
 currentId=idarr[j];
 console.log("array index="+i);
 }
@@ -948,6 +1051,35 @@ function initDownloadify(){
 				append: false
 			});
 }
+
+function removeKeyBindingsFromAceByArray(nameArray){
+editor.commands.removeCommands(nameArray);
+}
+function removeKeyBindingsFromAceById(id){
+//editor.commands.bindKeys({"ctrl-l":null, "left":null})  // or
+editor.commands.bindKey(id, null); // or
+console.log("key remove");
+}
+
+function removeKeyBindingsFromAceByKey(key){
+editor.commands.bindKeys({key:null});
+}
+
+function addCustomKeyBindingsForAceById(id,lang,Name,winsKey,macsKey){
+	if ((winsKey!=null&&winsKey!="")||(macsKey!=null&&macsKey!="")) {
+editor.commands.addCommand({
+name: id,
+bindKey: {win: winsKey, mac: macsKey},
+exec: function(editor) {
+wrapSelectedText(lang,"editor-container",id);
+},
+readOnly: true
+});
+}
+else {}
+}
+
+
 function addCustomKeyBindingsForAce(){
 ///ctrl+s key
 editor.commands.addCommand({
@@ -968,6 +1100,7 @@ ace.config.loadModule("ace/ext/searchbox", function(e) {e.Search(editor, true)})
 },
 readOnly: true
 });
+
 
 }
 
@@ -1045,3 +1178,15 @@ function isLocalStorageEnabled(){
 function resetAllStorage() {
 	localStorage.clear();
 }
+
+function reloadAceEditor(){
+editor=initAceEditor();
+setMainContentFromStorage();
+editor.getSession().on('change', function(e) {
+fillStorageWithMainContent();
+console.log("Main content saved");
+});
+
+addCustomKeyBindingsForAce();
+}
+

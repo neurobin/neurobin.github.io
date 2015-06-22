@@ -19,8 +19,8 @@
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 <script src="script/jquery.min.1.7.1.custom.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<!--<script src="script/myjs.js"></script>-->
-<script src="script/myjs.min.js"></script>
+<script src="script/myjs.js"></script>
+<!--<script src="script/myjs.min.js"></script>-->
 
 
 <link rel="stylesheet" href="Highlightjs/styles/github.css">

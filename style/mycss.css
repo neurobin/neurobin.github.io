@@ -942,7 +942,7 @@ body a:visited{
   background-color: azure;
   width: 30%;
   text-align: left;
-  padding-left: 7%;
+  padding-left: 4%;
   position: absolute;
   z-index: 9999;
   transition-duration: 1s;
@@ -958,8 +958,7 @@ body a:visited{
   background-color: bisque;
 }
 .input-dialog [name="input-dialog-input-field"]:not([type="submit"]){
-  
-  width: 70%;
+  width: 85%;
 }
 #reset-toolBar1-button{
   background-color: #fff;
@@ -1173,4 +1172,15 @@ border: 1px solid #DDD;
 }
 .btn-twitter{
   background-color: #0084B4;
+}
+.noborder td,tr{
+  border: none!important;
+  margin: 0 0 0 0 !important;
+  padding: 0 0 0 0 !important;
+}
+.noborder td{
+  padding-left: 1em!important;
+}
+.uedit-skey-select{
+  width: 27%!important;
 }
