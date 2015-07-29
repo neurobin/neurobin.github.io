@@ -247,19 +247,36 @@ function returnTwitterShareUrl() {
 							Put the <span class="quote">oraji</span> file inside the folder where you have downloaded the archive of oracle jdk (tar.gz)
 						</li>
 						<li>
-							Give the install script execution permission <span class="inline-code">sudo chmod +x path_to_the_folder/oraji</span>
+							Give the install script execution permission. <pre><code>sudo chmod +x path_to_the_folder/oraji</code></pre>
 						</li>
 						<li>
-							Now run the script <span class="quote">oraji</span> in terminal, or just drag and drop it in terminal and hit enter.
+							Now run the script <span class="quote">oraji</span> in terminal, or just drag and drop it in terminal and hit <kbd>Enter</kbd>.
 						</li>
 						<li>
 							It will ask for version number. Give the version number. <span class="quote">Example: 8 or 8u25, must match with the archive</span>
 						</li>
+						<li>
+							You can provide the version number as command line argument too, i.e <pre><code>/path/to/the/oraji version_number</code></pre>For example: <pre><code>./oraji 8u25</code></pre>
+						</li>
 					</ol>
+					<h2>Uninstaller:</h2>
+					<p>An uninstaller is provided to uninstall Oracle Java installed by this script. To make use of it, follow the instructions below:</p>
+					
+<ol>
+    <li>Give the <span class="quote">uninstall</span> file execution permission and run it.</li>
+
+<li>    It will ask for version number. A suggestive default version number is provided automatically. If that is correct, just hit <kbd>Enter</kbd> without making any changes.
+</li>
+<li>    Otherwise if the version number provided by default isn't correct, provide manually and then hit <kbd>Enter</kbd>.
+</li></ol>
+Note that the version number points to the jdk install directory: <code>/usr/lib/jvm/jdk&lt;version_number&gt;</code>
+					
+					
+					
 
 					<h2>Contribute:</h2>
 					<p class="quote">
-						If you have any suggestion or see any problem, please open an issue <a href="https://github.com/neurobin/OracleJDKInstaller/issues">here</a>
+						If you have any suggestion/s or see any problem/s, please open an issue <a href="https://github.com/neurobin/OracleJDKInstaller/issues">here</a>
 					</p>
 
 				</div>
