@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<base href="../../"/>
+		<base href="../" />
 				<script>
 	if (window.location.protocol != "http:")
 		window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
@@ -32,10 +32,9 @@
 <script>hljs.initHighlightingOnLoad();</script>
 
 <link rel="shortcut icon" href="img/logo48.png" type="image/x-icon" />
-
-		<meta name="description" content="Softwares for Linux">
-		<meta name="keywords" content="linux, softwares, shell, softs, software, soft" />
-		<title>Linux Softwares @ Neurobin</title>
+		<meta name="description" content="Bulk rename utility for Linux">
+		<meta name="keywords" content="rename,bulk rename,rnm,linux,gnu" />
+		<title>rnm @ Neurobin</title>
 
 	</head>
 	<body onload="startTime()">
@@ -207,57 +206,126 @@ function returnTwitterShareUrl() {
 	<a id="share-btn2" href="#" onclick="return newShareWindow(returnTwitterShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-twitter"></i> share</a>
 
 </div>		<!-- fixed share button end-->
-		<div class="container" id="showoff-lin">
-			<div class="row" >
-				<div class="col-xs-12">
+		<div class="container" id="showoff-soft">
+			<div class="row line-after">
 
-					<div id="container" class="line-after">
-						<p><img alt="logo" src="img/linux.jpeg" />Linux<sup>Softwares</sup>
-						</p>
-					</div>
+				<p class="project-name">
+					rnm
+				</p>
+				<p class="project-tagline">
+					Bulk rename utility for GNU/Linux
+				</p>
 
-				</div>
 			</div>
 		</div>
 
 		<!-- show off ends here-->
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="head-buttons">
+						<a href="https://github.com/neurobin/rnm">View On Github</a>
+						<a href="https://github.com/neurobin/rnm/archive/release.zip">Download .zip</a>
+						<a href="https://github.com/neurobin/rnm/archive/release.tar.gz">Download .tar.gz</a>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
 
 		<div class="container" id="content-container2">
-
 			<div class="row">
 				<div class="col-xs-2" id="content-left"></div>
-				<div class="col-xs-8" id="content-lin">
-					<ul>
-						<li>
-							<a href="shc">Shell Script Compiler</a>
-						</li>
-						<li>
-							<a href="rnm">rnm (Bulk rename utility for GNU/Linux)</a>
-						</li>
-						<li>
-							<a href="tartos">Tartos (TAR to self extracting shell script)</a>
-						</li>
-						<li>
-							<a href="JLIVECD">JLIVECD (Live CD/DVD customization tool)</a>
-						</li>
-						<li>
-							<a href="JSiteCopier">JSiteCopier (Website copier)</a>
-						</li>
-						<li>
-							<a href="OracleJDKInstaller">OracleJDKInstaller</a>
-						</li>
-						<li>
-							<a href="php2html">PHP2HTML (PHP To HTML Converter)</a>
-						</li>
-						<li>
-							<a href="gccInstaller">GCC Installer</a>
-						</li>
-						<li>
-							<a href="MT7630E">MT7630E (driver for this Wifi+BT combo chip)</a>
-						</li>
+				<div class="col-xs-8 " id="content-soft">
+<h1>rnm</h1>
+<p>Bulk Rename Utility for GNU/Linux</p>
+<h1>Install:</h1>
+<ol>
+<li>Give the <span class="quote">install</span> file execution permission.</li>
+<li>Run it or just drag and dropt it on terminal.</li>
+</ol>
+<h1>Usage:</h1>
+<pre class="prettyprint"><code>rnm Directory/File/Path [options]</code></pre class="prettyprint">
+<p>One of the options of <code>[-ns]</code> or <code>[-nsf]</code> is mandatory.</p>
+<h2>Options:</h2>
+<p><code>-h</code>, <code>--help</code>: Show help menu.</p>
+<p><code>-i</code>  : Starting index.
+<code>-ifl</code> : Index field length. not occupied field will be
+filled with 0's.</p>
+<p><code>-ns</code>  : Name string.</p>
+<p><code>-nsf</code> : Name string file. File containing name string (one per line).
+<code>-l</code>   : Line number in name string file.</p>
+<p><code>-ss</code> : Search string.
+String that will be used to search for files with matching names.
+Regex is allowed (posix compliant extended regex).</p>
+<p><code>-sF</code> : Fixed search string (not treated as regex).</p>
+<p><code>-dp</code>  : Depth of folder. 0 means unlimited depth i.e all files and subdirectories will
+be included. Other values may be 1 2 3 etc...
+Default depth is 1.</p>
+<p><code>-D</code>   : Apply rename on direcotry as well as on files.
+This is a peculier option and may seem slightly confusing.
+No subdirectories will be renamed i.e only file and folders on the
+current directory. If only one directory is passed as the argument,
+that directory will be renamed not any file or folder inside that
+directory.</p>
+<p><code>-oD</code>  : Apply rename on directory only. </p>
+<p><code>-y</code>   : Confirm Yes to all.</p>
+<p><code>-v</code>   : Version info.</p>
+<p><code>-q</code>   : Quiet operation.</p>
+<h2>Technical Terms:</h2>
+<p><strong>Reserved Index    :</strong> Index will be incremented even if
+any file is skipped renaming in order
+to reserve the index for that skipped file</p>
+<p><strong>Name String       :</strong> A string, that is parsed to create names for new files. It can fixed name which can be modified for different files in runtime.
+Name sting is parsed by the following rules:</p>
+<ol>
+<li><code>/i/</code> in name string will be replaced with index.</li>
+<li><code>/ir/</code> in name string will be replaced with reserved index.</li>
+<li><code>/id/</code> in name string will be replaced with directory index (index inside a directory).</li>
+<li><code>/idr/</code> in name string will be replaced with reserved directory index</li>
+<li><code>/n/</code> in name string will be replaced with filename without extention. If used with <code>-nsf</code> option, the filename will be the name taken from the <em>Name String File</em>.</li>
+<li><code>/fn/</code> in name string will be replaced with full name of the files. If used with <code>-nsf</code> option, full name will be the name taken from the <em>Name String File</em>.</li>
+<li><code>/l/</code> in name string will be replaced with line number from <em>Name String File</em>.</li>
+<li><code>/dc/</code> in name string will be replaced with directory count</li>
+</ol>
+<p><strong>Name String File  :</strong> A file which contains a list of name string (one per line) to be applied to the new files.</p>
+<p><strong>Search String     :</strong> A string that is used to search for files with matching
+filenames against the search string. By default it is
+a regex if -sF option is not used.</p>
+<p><strong>Index Field Length:</strong> An integer value defining the field length of index.
+empty field will be filled with 0's. For example, if
+the value is 3, then index will be 001, 002, 003, etc..</p>
+<p><strong>Directory Index   :</strong> Index inside a directory i.e for every new directory
+index is counted from the start.</p>
+<h3>Example:</h3>
+<pre class="prettyprint"><code>rnm file -ns new_file
+rnm folder -ns "New Folder" -oD
+rnm ./New*/* -ns /i/.ext  (globbing is allowed)
+rnm "./New Folder" -ns /id//dc/.ext
+rnm ./New* -ns /id/.ext -ss "regex"
+rnm -nsf filepath -ns /n//id/.ext
+rnm -nsf filepath
+etc...</code></pre class="prettyprint">
+<h1>Things to care:</h1>
+<ol>
+<li>Newline in file or folder name is not supported. Make sure your folder doesn't contain any file/folder with new line.</li>
+<li>All options should always be separated by space. For Example: <code>-vy</code> won't mean two option <code>-v</code> and <code>-y</code>, rather it will mean a single option <code>-vy</code>.</li>
+<li>Any non option argument will be treated as file or directory path. For example in <pre><code>rnm file1 file2 -- -ns fd</code></pre><code>file1</code>, <code>file2</code> and <code>--</code> will be taken as file paths.</li>
+</ol>	
 
-					</ul>
-				</div>
+
+<h1>Contribute:</h1>
+<hr>
+<p>If you are a developer, you can consider contributing to this project by forking this 
+repository and making changes for better and do a pull request, or sharing ideas and suggestions or 
+finding bugs, anything at all, what you think will be beneficial for this project.
+</p><p>
+If you aren't a developer, but still want to contribute, then you can support 
+the contributing developers spiritually, by starring the repository and sharing ideas. 
+If you want to be notified of the continuous development, you can add this in your watch list in <a href="https://github.com/">Github</a>.
+</p>
+<p>If you see any problems or bugs please open an issue <a href="https://github.com/neurobin/rnm/issues">here</a></p>				</div>
 				<div class="col-xs-2" id="content-right"></div>
 
 			</div>
@@ -327,5 +395,6 @@ function returnTwitterShareUrl() {
 				</div>
 
 			</div>
-		</div>	</body>
+		</div>
+	</body>
 </html>
