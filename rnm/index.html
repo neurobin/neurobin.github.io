@@ -239,10 +239,10 @@ function returnTwitterShareUrl() {
 				<div class="col-xs-2" id="content-left"></div>
 				<div class="col-xs-8 " id="content-soft">
 <h1>rnm</h1>
-<p>Bulk Rename Utility for GNU/Linux written in Bash scripting language. Therefore the use of this script/tool depends on Bash. It uses <code>mv</code> and <code>sed</code> to rename and take filename from input file. Files and folders can be passed as command line arguments to rename them in bulk according to some naming scheme (Name String).</p>
+<p>Bulk Rename Utility for GNU/Linux written in Bash scripting language. Therefore the use of this script/tool depends on Bash. It uses <code>mv</code> and <code>sed</code> to rename and take filename from input file. GNU/Linux utility <span class="quote">find</span> and Bash filename globbing is used to search and iterate through files. Files and folders can be passed as command line arguments to rename them in bulk according to some naming scheme (Name String).</p>
 <h1>Install:</h1>
 <ol>
-<li>Give the <span class="quote">install</span> file execution permission.</li>
+<li>Give the <span class="quote">install</span> file execution permission and</li>
 <li>Run it or just drag and dropt it on terminal.</li>
 </ol>
 <h1>Usage:</h1>
@@ -270,7 +270,9 @@ current directory. If only one directory is passed as the argument,
 that directory will be renamed not any file or folder inside that
 directory.</p>
 <p><code>-oD</code>  : Apply rename on directory only. </p>
+<p><code>-ed</code>  : Apply rename on files only, exclude any and all directory and their contents.</p>
 <p><code>-y</code>   : Confirm Yes to all.</p>
+<p><code>-f</code>, <code>--force</code>: Force rename</p>
 <p><code>-v</code>   : Version info.</p>
 <p><code>-q</code>   : Quiet operation.</p>
 <h2>Technical Terms:</h2>
@@ -312,6 +314,7 @@ etc...</code></pre class="prettyprint">
 <li>Newline in file or folder name is not supported. Make sure your folder doesn't contain any file/folder with new line.</li>
 <li>All options should always be separated by space. For Example: <code>-vy</code> won't mean two option <code>-v</code> and <code>-y</code>, rather it will mean a single option <code>-vy</code>.</li>
 <li>Any non option argument will be treated as file or directory path. For example in <pre><code>rnm file1 file2 -- -ns fd</code></pre><code>file1</code>, <code>file2</code> and <code>--</code> will be taken as file paths.</li>
+<li>Be wary of filename globbing. Command like <code>rnm ./*</code> will take all files and folders as arguments and thus the files and immediate contents (by default) of the folders will be subject to rename operation. If you don't want to rename any folder contents (when the folder is passed as an argument), use <code>-ed</code> option to exclude any and all directory which have mistakenly or deliberately passed as arguments.</li>
 </ol>	
 
 
