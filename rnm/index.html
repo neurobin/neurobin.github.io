@@ -239,7 +239,7 @@ function returnTwitterShareUrl() {
 				<div class="col-xs-2" id="content-left"></div>
 				<div class="col-xs-8 " id="content-soft">
 <h1>rnm</h1>
-<p>Bulk Rename Utility for GNU/Linux written in Bash scripting language. Therefore, the use of this script/tool depends on Bash. Files and folders can be passed as command line arguments to rename them in bulk according to some naming scheme (Name String). It provides an undo functionality too to move back an unwanted rename operation.</p>
+<p>Bulk Rename Utility for GNU/Linux written in Bash scripting language. Therefore, the use of this script/tool depends on Bash. Files and folders can be passed as command line arguments to rename them in bulk according to some naming scheme (<em>Name String</em>). It provides an undo functionality too to move back an unwanted rename operation.</p>
 <h1>Features:</h1>
 <ol>
 <li>Both directories and files can be renamed.</li>
@@ -275,7 +275,7 @@ filled with 0's.</p>
 <code>-nsf /hist/</code> i.e a value passed <code>/hist/</code> as Name string file, will
 try to take the file from history.</p>
 <p><code>-l</code>, <code>-sl</code>         : Start Line number in name string file.</p>
-<p><code>-li</code>               : Same as <code>-l</code>, except line number will be decremented in each iteration.</p>
+<p><code>-li</code>, <code>-sli</code>       : Same as <code>-l</code> or -<code>sl</code>, except line number will be decremented in each iteration.</p>
 <p><code>-el</code>               : End line number. Line number to stop renaming from.</p>
 <p><code>-eli</code>              : Same as <code>-el</code>, except line number will be decremented in each iteration.</p>
 <p><code>-ss</code>               : Search string.
@@ -315,12 +315,13 @@ Name sting is parsed by the following rules:</p>
 <li><code>/l/</code> in name string will be replaced with line number from <em>Name String File</em>.</li>
 <li><code>/dc/</code> in name string will be replaced with directory count</li>
 <li><code>/-i/</code> in name string will be replaced with inverse index.</li>
-<li><code>/-ir/</code> in name string will be replaced with iverse reserved index. In general, <code>-</code> in the above replacement rules (applies to indexes excluding <code>/l/</code> and <code>/dc/</code>) will mean inverse index conforming to their meaning.</li>
+<li><code>/-ir/</code> in name string will be replaced with inverse reserved index. In general, <code>-</code> in the above replacement rules (applies to indexes excluding <code>/l/</code> and <code>/dc/</code>) will mean inverse index conforming to their meaning.</li>
 </ol>
+<p><strong>Inverse Index     :</strong> Decrementing index.</p>
 <p><strong>Name String File  :</strong> A file which contains a list of name string (one per line) to be applied to the new files.</p>
 <p><strong>Search String     :</strong> A string that is used to search for files with matching
 filenames against the search string. By default it is
-a regex if -sF option is not used.</p>
+a regex if <code>-sF</code> option is not used.</p>
 <p><strong>Index Field Length:</strong> An integer value defining the field length of index.
 empty field will be filled with 0's. For example, if
 the value is 3, then index will be 001, 002, 003, etc..</p>
@@ -328,8 +329,9 @@ the value is 3, then index will be 001, 002, 003, etc..</p>
 index is counted from the start.</p>
 <h3>Example:</h3>
 <pre class="prettyprint"><code>rnm file -ns new_file
-rnm folder -ns "New Folder" -oD
-rnm ./New*/* -ns /i/.ext  (globbing is allowed)
+rnm folder -ns "New Folder" -oD          (-oD forces Directory only mode)
+rnm ./New*/* -ns /i/.ext                 (globbing is allowed)
+rnm ./New*/* -ns /i/.ext -ed             (-ed forces file only mode)
 rnm "./New Folder" -ns /id//dc/.ext
 rnm ./New* -ns /id/.ext -ss "regex"
 rnm -nsf filepath -ns /n//id/.ext
@@ -341,7 +343,7 @@ etc...</code></pre class="prettyprint">
 <li>All options should always be separated by space. For Example: <code>-vy</code> won't mean two option <code>-v</code> and <code>-y</code>, rather it will mean a single option <code>-vy</code>.</li>
 <li>Any non option argument will be treated as file or directory path. For example in <pre><code>rnm file1 file2 -- -ns fd</code></pre><code>file1</code>, <code>file2</code> and <code>--</code> will be taken as file paths.</li>
 <li>Be wary of filename globbing. Command like <code>rnm ./*</code> will take all files and folders as arguments and thus the files and immediate contents (by default) of the folders will be subject to rename operation. If you don't want to rename any folder contents (when the folder is passed as an argument), use <code>-ed</code> option to exclude any and all directory which have mistakenly or deliberately passed as arguments.</li>
-<li>This is a dangerous tool like <code>rm</code>, so use with care. If you make a mistake and do some unwanted rename, immediately run <code>rnm -u</code> to undo.</li>
+<li>This is a dangerous tool like <code>rm</code>, so use with care. If you make a mistake and do some unwanted rename, run <code>rnm -u</code> to undo.</li>
 </ol><h1>ChangeLog:</h1>
 <h3>1.0.0:</h3>
 <p><strong>Birth of rnm</strong></p>
