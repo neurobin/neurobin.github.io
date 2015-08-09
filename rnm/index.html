@@ -239,42 +239,66 @@ function returnTwitterShareUrl() {
 				<div class="col-xs-2" id="content-left"></div>
 				<div class="col-xs-8 " id="content-soft">
 <h1>rnm</h1>
-<p>Bulk Rename Utility for GNU/Linux written in Bash scripting language. Therefore the use of this script/tool depends on Bash. It uses <code>mv</code> and <code>sed</code> to rename and take filename from input file. GNU/Linux utility <span class="quote">find</span> and Bash filename globbing is used to search and iterate through files. Files and folders can be passed as command line arguments to rename them in bulk according to some naming scheme (Name String).</p>
+<p>Bulk Rename Utility for GNU/Linux written in Bash scripting language. Therefore, the use of this script/tool depends on Bash. Files and folders can be passed as command line arguments to rename them in bulk according to some naming scheme (Name String). It provides an undo functionality too to move back an unwanted rename operation.</p>
+<h1>Features:</h1>
+<ol>
+<li>Both directories and files can be renamed.</li>
+<li>Undo functionality (<code>rnm -u</code>).</li>
+<li>Multiple directories and files can be passed as command line arguments.</li>
+<li>File name can be modified at runtime by passing a <em>Name String</em> as argument.</li>
+<li>Selective rename is possible by passing a <em>Search String</em> as argument which will take only the files that matches the search string ( <em>Search String</em> is a [regex] (<a href="https://en.wikipedia.org/wiki/Regular_expression">https://en.wikipedia.org/wiki/Regular_expression</a>) by default). To use a fixed string use the <code>-sF</code> option.</li>
+<li>Name can be taken from a file too. And these names (taken from a file) can be modified with <em>Name String</em> at runtime.</li>
+<li>Name can be taken from a file according to starting line number (<code>-l</code> or <code>-sl</code>) and ending line number (<code>-el</code>).</li>
+</ol>
 <h1>Install:</h1>
 <ol>
 <li>Give the <span class="quote">install</span> file execution permission and</li>
 <li>Run it or just drag and dropt it on terminal and hit <kbd>Enter</kbd>.</li>
 </ol>
+<h1>Uninstall:</h1>
+<p>To uninstall, run:</p>
+<pre class="prettyprint"><code>sudo rm /usr/bin/rnm</code></pre class="prettyprint">
 <h1>Usage:</h1>
 <pre class="prettyprint"><code>rnm Directory/File/Path [options]</code></pre class="prettyprint">
-<p>One of the options of <code>[-ns]</code> or <code>[-nsf]</code> is mandatory.</p>
+<p>One of the options of <code>-ns</code> or <code>-nsf</code> is mandatory.</p>
 <h2>Options:</h2>
-<p><code>-h</code>, <code>--help</code>: Show help menu.</p>
-<p><code>-i</code>  : Starting index.
-<code>-ifl</code> : Index field length. not occupied field will be
+<p><code>-h</code>, <code>--help</code>      : Show help menu.</p>
+<p><code>-i</code>,<code>-si</code>          : Starting index.</p>
+<p><code>-ei</code>               : End index i.e index to stop renaming from.
+Note that directory index <code>/id/</code> will renew in each directory
+i.e in each directory rename will be performed from start index
+to end index.</p>
+<p><code>-ifl</code>              : Index field length. not occupied field will be
 filled with 0's.</p>
-<p><code>-ns</code>  : Name string.</p>
-<p><code>-nsf</code> : Name string file. File containing name string (one per line).
-<code>-l</code>   : Line number in name string file.</p>
-<p><code>-ss</code> : Search string.
+<p><code>-ns</code>               : Name string.</p>
+<p><code>-nsf</code>              : Name string file. File containing name string (one per line).
+<code>-nsf /hist/</code> i.e a value passed <code>/hist/</code> as Name string file, will
+try to take the file from history.</p>
+<p><code>-l</code>, <code>-sl</code>         : Start Line number in name string file.</p>
+<p><code>-li</code>               : Same as <code>-l</code>, except line number will be decremented in each iteration.</p>
+<p><code>-el</code>               : End line number. Line number to stop renaming from.</p>
+<p><code>-eli</code>              : Same as <code>-el</code>, except line number will be decremented in each iteration.</p>
+<p><code>-ss</code>               : Search string.
 String that will be used to search for files with matching names.
 Regex is allowed (posix compliant extended regex).</p>
-<p><code>-sF</code> : Fixed search string (not treated as regex).</p>
-<p><code>-dp</code>  : Depth of folder. 0 means unlimited depth i.e all files and subdirectories will
+<p><code>-sF</code>               : Fixed search string (not treated as regex).</p>
+<p><code>-dp</code>               : Depth of folder. 0 means unlimited depth i.e all files and subdirectories will
 be included. Other values may be 1 2 3 etc...
 Default depth is 1.</p>
-<p><code>-D</code>   : Apply rename on direcotry as well as on files.
+<p><code>-D</code>                : Directories and files both will be treated in the same way,
+i.e apply rename on direcotry as well as on files.
 This is a peculier option and may seem slightly confusing.
 No subdirectories will be renamed i.e only file and folders on the
 current directory. If only one directory is passed as the argument,
 that directory will be renamed not any file or folder inside that
 directory.</p>
-<p><code>-oD</code>  : Apply rename on directory only. </p>
-<p><code>-ed</code>  : Apply rename on files only, exclude any and all directory and their contents.</p>
-<p><code>-y</code>   : Confirm Yes to all.</p>
-<p><code>-f</code>, <code>--force</code>: Force rename</p>
-<p><code>-v</code>   : Version info.</p>
-<p><code>-q</code>   : Quiet operation.</p>
+<p><code>-oD</code>                : Apply rename on directory only. No subdirectories.</p>
+<p><code>-ed</code>                : Apply rename on files only, exclude any and all directory and their contents.</p>
+<p><code>-y</code>                 : Confirm Yes to all.</p>
+<p><code>-f</code>, <code>--force</code>      : Force rename</p>
+<p><code>-u</code>, <code>-U</code>, <code>--undo</code> : Undo renaming</p>
+<p><code>-v</code>                 : Version info.</p>
+<p><code>-q</code>                 : Quiet operation.</p>
 <h2>Technical Terms:</h2>
 <p><strong>Reserved Index    :</strong> Index will be incremented even if
 any file is skipped renaming in order
@@ -290,6 +314,8 @@ Name sting is parsed by the following rules:</p>
 <li><code>/fn/</code> in name string will be replaced with full name of the files. If used with <code>-nsf</code> option, full name will be the name taken from the <em>Name String File</em>.</li>
 <li><code>/l/</code> in name string will be replaced with line number from <em>Name String File</em>.</li>
 <li><code>/dc/</code> in name string will be replaced with directory count</li>
+<li><code>/-i/</code> in name string will be replaced with inverse index.</li>
+<li><code>/-ir/</code> in name string will be replaced with iverse reserved index. In general, <code>-</code> in the above replacement rules (applies to indexes excluding <code>/l/</code> and <code>/dc/</code>) will mean inverse index conforming to their meaning.</li>
 </ol>
 <p><strong>Name String File  :</strong> A file which contains a list of name string (one per line) to be applied to the new files.</p>
 <p><strong>Search String     :</strong> A string that is used to search for files with matching
@@ -311,10 +337,23 @@ rnm -nsf filepath
 etc...</code></pre class="prettyprint">
 <h1>Things to care:</h1>
 <ol>
-<li>Newline in file or folder name is not supported. Make sure your folder doesn't contain any file/folder with new line.</li>
+<li>Newline in file or folder name is not supported. Make sure your folders/files don't contain any new line in their name.</li>
 <li>All options should always be separated by space. For Example: <code>-vy</code> won't mean two option <code>-v</code> and <code>-y</code>, rather it will mean a single option <code>-vy</code>.</li>
 <li>Any non option argument will be treated as file or directory path. For example in <pre><code>rnm file1 file2 -- -ns fd</code></pre><code>file1</code>, <code>file2</code> and <code>--</code> will be taken as file paths.</li>
 <li>Be wary of filename globbing. Command like <code>rnm ./*</code> will take all files and folders as arguments and thus the files and immediate contents (by default) of the folders will be subject to rename operation. If you don't want to rename any folder contents (when the folder is passed as an argument), use <code>-ed</code> option to exclude any and all directory which have mistakenly or deliberately passed as arguments.</li>
+<li>This is a dangerous tool like <code>rm</code>, so use with care. If you make a mistake and do some unwanted rename, immediately run <code>rnm -u</code> to undo.</li>
+</ol><h1>ChangeLog:</h1>
+<h3>1.0.0:</h3>
+<p><strong>Birth of rnm</strong></p>
+<h3>2.0.0:</h3>
+<ol>
+<li>Added undo feature.</li>
+<li>Added end index feature and end line number feature.</li>
+<li>Added inverse index feature</li>
+<li>Added new name string rules for inverse index.</li>
+<li>Added <code>/hist/</code> as a valid argument for <code>-nsf</code> option to take <em>Name String File</em> from history.</li>
+<li>Logging functionality. Log files are put in $HOME/.neurobin/rnm</li>
+<li>Lots of bug fixes.</li>
 </ol>	
 
 
