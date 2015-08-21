@@ -283,10 +283,10 @@ available through name string rule: <code>/-i/</code>, <code>/-id/</code> etc..<
 <code>-linc</code>              : The amount line count will be incremented in each iteration.
 This is always a positive integer.</p>
 <p><code>-ifl</code>               : Index field length. not occupied field will be
-filled with index field fillers (set with <code>-iff</code>). iff is set to 0 by default.</p>
+filled with index field fillers (set with <code>-iff</code>). iff is set to the character <code>0</code> by default.</p>
 <p><code>--index-field-filler</code>,
 <code>-iff</code>               : Not occupied field in index will be filled with a character
-set by this option.</p>
+which is set by this option.</p>
 <p><code>--index-field-precision</code>,
 <code>-ifp</code>               : Index is a floating point decimal value. This sets the precision
 i.e the number of digits should be taken after the decimal point.</p>
@@ -297,17 +297,17 @@ i.e the number of digits should be taken after the decimal point.</p>
 <code>-nsf /hist/</code> i.e a value passed <code>/hist/</code> as Name string file, will
 try to take the file from history.</p>
 <p><code>--name-string-file-null-terminated</code>,
-<code>-nsfn</code>              : Name String file. This takes a null terminated file. Null terminated
-files are good way to store filenames in files.</p>
+<code>-nsfn</code>              : Name String file. This takes a null terminated file (filenames are null terminated). Null terminated
+files are good way to store filenames.</p>
 <p><code>--line</code>, <code>--start-line</code>,
 <code>-l</code>, <code>-sl</code>          : Start Line number in name string file.</p>
 <p><code>--line-reverse</code>, <code>--start-line-reverse</code>,
-<code>-lv</code>, <code>-slv</code>        : Same as -l or -sl, except line number will be decremented in each
+<code>-lv</code>, <code>-slv</code>        : Same as <code>-l</code> or <code>-sl</code>, except line number will be decremented in each
 iteration.</p>
 <p><code>--end-line</code>,
 <code>-el</code>                : End line number. Line number to stop renaming from.</p>
 <p><code>--end-line-reverse</code>,
-<code>-elv</code>               : Same as -el, except line number will be decremented in each iteration.</p>
+<code>-elv</code>               : Same as <code>-el</code>, except line number will be decremented in each iteration.</p>
 <p><code>--search-string</code>,
 <code>-ss</code>                : Search string
 String that will be used to search for files with matching names.
@@ -317,7 +317,7 @@ Regex is allowed (<a href="http://www.cplusplus.com/reference/regex/ECMAScript/"
 <p><code>--depth</code>,
 <code>-dp</code>                : Depth of folder. -1(any negative number) means unlimited depth i.e all files and subdirectories
 will be included. Other values may be 0 1 2 3 etc...
-Default depth is 0, i.e directory contents will be ignored.</p>
+Default depth is <code>0</code>, i.e directory contents will be ignored.</p>
 <p><code>--file-only</code>,
 <code>-fo</code>                : File only mode. Only files are renamed (not directory).
 Goes to subdirectory/s if depth (<code>-dp</code>) is set to <code>1</code> or greater.
@@ -405,7 +405,7 @@ etc...</code></pre class="prettyprint">
 <ol>
 <li>All options should always be separated by space. For Example: <code>-vy</code> won't mean two option <code>-v</code> and <code>-y</code>, rather it will mean a single option <code>-vy</code>.</li>
 <li>Any non option argument will be treated as file or directory path. For example in <pre><code>rnm file1 file2 -- -ns fd</code></pre><code>file1</code>, <code>file2</code> and <code>--</code> will be taken as file paths.</li>
-<li>Be wary of filename globbing. Command like <code>rnm ./*</code> will take all files and directories as arguments and thus the files and directories will be subject to rename operation. If you don't want to rename directories, use file only mode (<code>-fo</code>). If you want to go inside directories, use depth (<code>-dp</code>) greater than <code>0</code>.</li>
+<li>Be wary of filename globbing. Command like <code>rnm ./*</code> will take all files and directories as arguments and thus the files and directories will be subject to rename operation. If you don't want to rename directories, use file only mode (<code>-fo</code>). If you want to go inside directories, use depth (<code>-dp</code>) greater than <code>0</code> with file only mode.</li>
 <li>If you run <code>rnm . -ns something</code> or <code>rnm ./ -ns something</code>, your current directory will be renamed (be careful).</li>
 <li>This is a dangerous tool like <code>rm</code>, so use with care. If you make a mistake and do some unwanted rename, run <code>rnm -u</code> to undo (before running any more rnm command).</li>
 </ol><h1>ChangeLog:</h1>
