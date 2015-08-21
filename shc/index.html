@@ -245,6 +245,8 @@ function returnTwitterShareUrl() {
 						specified on the command line and produces C source code. The
 						generated source code is then compiled and linked to produce a stripped binary.
 					</p>
+					<p>The compiled binary will still be dependent on the shell specified in the first line of the shell code (i.e shebang: <code>#!/bin/sh</code> or such), thus <code>shc</code> does not create completely independent binaries.</p>
+					<p><code>shc</code> itself is not a compiler such as <code>cc</code>, it rather encodes and encrypts a shell script and generates C source code with the added expiration capability. It then uses the system compiler to compile a stripped binary which behaves exactly like the original script. Upon execution, the compiled binary will decrypt and execute the code with the shells' <code>-c</code> option.</p>
 					<h2><a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install:</h2>
 					<a class="inline-code">cd</a> to directory "main"... 					<pre><code>cd main
 make
