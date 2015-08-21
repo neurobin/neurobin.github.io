@@ -263,7 +263,7 @@ function returnTwitterShareUrl() {
 <h1>Usage:</h1>
 <pre class="prettyprint"><code>rnm Directory/File/Path [options]</code></pre class="prettyprint">
 <p>One of the options of <code>-ns</code> or <code>-nsf</code> or <code>-rs</code> is mandatory. Options are <strong>not</strong> sequential, their position in the argument list have no siginificance. For example, <code>rnm filepath -ns name</code> is the same as <code>rnm -ns name filepath</code>. Though passing the <em>Directory/File</em> path at the end of the arguement list is considered to be safe and wise.</p>
-<p>Options are case insensitive, i.e <code>-ssF</code> and <code>-ssf</code> is the same.</p>
+<p>Options are case insensitive, i.e <code>-ssF</code> and <code>-ssf</code> are the same.</p>
 <h2>Options:</h2>
 <p><code>-h</code>, <code>--help</code>       : Show help menu.</p>
 <p><code>--index</code>, <code>--start-index</code>,
@@ -280,16 +280,16 @@ to end index.</p>
 incremented or decremented in each iteration. Decremented index is
 available through name string rule: <code>/-i/</code>, <code>/-id/</code> etc..</p>
 <p><code>--line-increment-value</code>,
-<code>-linc</code>              : The amount line count will be incremented in each iteration.
+<code>-linc</code>              : The amount line count will be incremented or decremented in each iteration.
 This is always a positive integer.</p>
-<p><code>-ifl</code>               : Index field length. not occupied field will be
+<p><code>-ifl</code>               : Index field length. Non occupied field will be
 filled with index field fillers (set with <code>-iff</code>). iff is set to the character <code>0</code> by default.</p>
 <p><code>--index-field-filler</code>,
 <code>-iff</code>               : Not occupied field in index will be filled with a character
 which is set by this option.</p>
 <p><code>--index-field-precision</code>,
 <code>-ifp</code>               : Index is a floating point decimal value. This sets the precision
-i.e the number of digits should be taken after the decimal point.</p>
+i.e the number of digits that should be taken after the decimal point.</p>
 <p><code>--name-string</code>,
 <code>-ns</code>                : Name string.</p>
 <p><code>--name-string-file</code>,
@@ -297,8 +297,8 @@ i.e the number of digits should be taken after the decimal point.</p>
 <code>-nsf /hist/</code> i.e a value passed <code>/hist/</code> as Name string file, will
 try to take the file from history.</p>
 <p><code>--name-string-file-null-terminated</code>,
-<code>-nsfn</code>              : Name String file. This takes a null terminated file (filenames are null terminated). Null terminated
-files are good way to store filenames.</p>
+<code>-nsfn</code>              : Name String file. This takes a null terminated <em>Name String</em> file, i.e
+filenames are terminated by null character (<code>\0</code>) instead of new line (<code>\n</code>).</p>
 <p><code>--line</code>, <code>--start-line</code>,
 <code>-l</code>, <code>-sl</code>          : Start Line number in name string file.</p>
 <p><code>--line-reverse</code>, <code>--start-line-reverse</code>,
@@ -311,7 +311,7 @@ iteration.</p>
 <p><code>--search-string</code>,
 <code>-ss</code>                : Search string
 String that will be used to search for files with matching names.
-Regex is allowed (<a href="http://www.cplusplus.com/reference/regex/ECMAScript/">ECMAScript</a> regex).</p>
+This is generally regex  (<a href="http://www.cplusplus.com/reference/regex/ECMAScript/">ECMAScript regex</a>) if not pass with <code>-ssf</code> option.</p>
 <p><code>--search-string-fixed</code>,
 <code>-ssf</code>               : Fixed search string (not treated as regex).</p>
 <p><code>--depth</code>,
@@ -338,7 +338,7 @@ any file is skipped renaming in order
 to reserve the index for that skipped file</p>
 <p><strong>Reverse Index     :</strong> Decrementing index.</p>
 <p><strong>Name String       :</strong> A string, that is parsed to create names for new files. It can be fixed name which then can be modified for different files at runtime.
-Name sting is parsed by the following rules (must be wrapped around with forward slash <code>/</code>):</p>
+Name sting is parsed by the following rules (must be wrapped around with filepath delimiter <code>/</code>):</p>
 <ol>
 <li><code>/i/</code> in name string will be replaced with index.</li>
 <li><code>/ir/</code> in name string will be replaced with reserved index.</li>
