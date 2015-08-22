@@ -238,8 +238,10 @@ function returnTwitterShareUrl() {
 			<div class="row">
 				<div class="col-xs-2" id="content-left"></div>
 				<div class="col-xs-8 " id="content-soft">
+<div id="description"></div>
 <h1>rnm</h1>
 <p>Bulk Rename Utility for GNU/Linux written in <code>C++</code>. Files and directories can be passed as command line arguments to rename them in bulk according to some naming scheme (<em>Name String</em>). It uses <code>C++</code> regex (<a href="http://www.cplusplus.com/reference/regex/ECMAScript/">ECMAScript regex</a>) to provide search (and replace) functionality. It provides an undo functionality too to move back an unwanted rename operation. </p>
+<div id="features"></div>
 <h1>Features:</h1>
 <ol>
 <li>Both directories and files can be renamed.</li>
@@ -252,18 +254,22 @@ function returnTwitterShareUrl() {
 <li>Name can be taken from a file according to starting line number (<code>-l</code> or <code>-sl</code>) and ending line number (<code>-el</code>).</li>
 <li>Null terminated file can be taken as Name String File.</li>
 </ol>
+<div id="install"></div>
 <h1>Install:</h1>
 <ol>
 <li>Give the <span class="quote">install</span> file execution permission and</li>
 <li>Run it or just drag and dropt it on terminal and hit <kbd>Enter</kbd> (requires root privilege).</li>
 </ol>
+<div id="un-install"></div>
 <h1>Uninstall:</h1>
 <p>To uninstall, run:</p>
 <pre class="prettyprint"><code>sudo rm /usr/bin/rnm</code></pre class="prettyprint">
+<div id="usage"></div>
 <h1>Usage:</h1>
 <pre class="prettyprint"><code>rnm Directory/File/Path [options]</code></pre class="prettyprint">
 <p>One of the options of <code>-ns</code> or <code>-nsf</code> or <code>-rs</code> is mandatory. Options are <strong>not</strong> sequential, their position in the argument list have no siginificance. For example, <code>rnm filepath -ns name</code> is the same as <code>rnm -ns name filepath</code>. Though passing the <em>Directory/File</em> path at the end of the arguement list is considered to be safe and wise.</p>
 <p>Options are case insensitive, i.e <code>-ssF</code> and <code>-ssf</code> are the same.</p>
+<div id="options"></div>
 <h2>Options:</h2>
 <p><code>-h</code>, <code>--help</code>       : Show help menu.</p>
 <p><code>--index</code>, <code>--start-index</code>,
@@ -331,6 +337,7 @@ contents. Forces file only mode regardless of depth (-dp) value.</p>
 <p><code>-u</code>, <code>-U</code>, <code>--undo</code> : Undo renaming</p>
 <p><code>-v</code>                 : Version info.</p>
 <p><code>-q</code>                 : Quiet operation.</p>
+<div id="technical-terms"></div>
 <h2>Technical Terms:</h2>
 <p><strong>Reserved Index    :</strong> Index will be incremented even if
 any file is skipped renaming in order
@@ -390,6 +397,7 @@ i stands case insensitive search (default is case sensitive).<em>Replace String<
 <a href="http://www.cplusplus.com/reference/regex/ECMAScript/">ECMAScript Regex</a>
 for more info.</p>
 <p>Only invalid characters for a file or directory name is the path delimiter and the null character (<code>\0</code>).</p>
+<div id="examples"></div>
 <h3>Example:</h3>
 <pre class="prettyprint"><code>rnm file -ns new_file
 rnm folder -ns "New Folder" -oD          (-oD forces Directory only mode)
@@ -400,6 +408,7 @@ rnm ./New* -ns /id/.ext -ss "regex"
 rnm -nsf filepath -ns /n//id/.ext
 rnm -nsf filepath
 etc...</code></pre class="prettyprint">
+<div id="things-to-care"></div>
 <h1>Things to care:</h1>
 <ol>
 <li>All options should always be separated by space. For Example: <code>-vy</code> won't mean two option <code>-v</code> and <code>-y</code>, rather it will mean a single option <code>-vy</code>.</li>
@@ -407,7 +416,7 @@ etc...</code></pre class="prettyprint">
 <li>Be wary of filename globbing. Command like <code>rnm ./*</code> will take all files and directories as arguments and thus the files and directories will be subject to rename operation. If you don't want to rename directories, use file only mode (<code>-fo</code>). If you want to go inside directories, use depth (<code>-dp</code>) greater than <code>0</code> with file only mode.</li>
 <li>If you run <code>rnm . -ns something</code> or <code>rnm ./ -ns something</code>, your current directory will be renamed (be careful).</li>
 <li>This is a dangerous tool like <code>rm</code>, so use with care. If you make a mistake and do some unwanted rename, run <code>rnm -u</code> to undo (before running any more rnm command).</li>
-</ol><h1>ChangeLog:</h1>
+</ol><div id="changelog"><h1>ChangeLog:</h1>
 <h3><code>1.0.0</code>: <span class="light-quote">Sat 14 Aug 2015</span></h3>
 <p><strong>Birth of rnm</strong></p>
 <h3><code>2.0.0</code>: <span class="light-quote">Sun Aug  9 23:18:00 BDT 2015</span></h3>
@@ -441,9 +450,9 @@ etc...</code></pre class="prettyprint">
 <li><code>-shop</code> and <code>-sim</code> (simulation) option added.</li>
 <li>New name string rule: <code>/la/</code> added.</li>
 <li>Removed <code>-f</code> (force rename) option.</li>
-</ol>	
+</ol></div>	
 
-
+<div id="contribute">
 <h1>Contribute:</h1>
 <hr>
 <p>If you are a developer, you can consider contributing to this project by forking this 
@@ -454,7 +463,8 @@ If you aren't a developer, but still want to contribute, then you can support
 the contributing developers spiritually, by starring the repository and sharing ideas. 
 If you want to be notified of the continuous development, you can add this in your watch list in <a href="https://github.com/">Github</a>.
 </p>
-<p>If you see any problems or bugs please open an issue <a href="https://github.com/neurobin/rnm/issues">here</a></p>				</div>
+<p>If you see any problems or bugs please open an issue <a href="https://github.com/neurobin/rnm/issues">here</a></p>
+</div>				</div>
 				<div class="col-xs-2" id="content-right"></div>
 
 			</div>
