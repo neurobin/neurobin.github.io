@@ -240,7 +240,7 @@ function returnTwitterShareUrl() {
 				<div class="col-xs-8 " id="content-soft">
 <div id="description"></div>
 <h1>rnm</h1>
-<p>Bulk Rename Utility for GNU/Linux written in <code>C++</code>. Files and directories can be passed as command line arguments to rename them in bulk according to some naming scheme (<em>Name String</em>). It uses <code>C++</code> regex (<a href="http://www.cplusplus.com/reference/regex/ECMAScript/">ECMAScript regex</a>) to provide search (and replace) functionality. It provides an undo functionality too to move back an unwanted rename operation. </p>
+<p>Bulk Rename Utility for GNU/Linux written in <code>C++</code>. Files and directories can be passed as command line arguments to rename them in bulk according to some naming scheme (<em>Name String</em>). If any file or directory path is not passed as command line arguement, it will wait for user to type the path i.e it will take the path from standard input <code>(&gt;=version 3.0.1)</code>. It uses <code>C++</code> regex (<a href="http://www.cplusplus.com/reference/regex/ECMAScript/">ECMAScript regex</a>) as the default regex to provide search (and replace) functionality, other regex modes are available through (<code>-re</code>) option. It provides an undo functionality too to move back an unwanted rename operation. You can also run a simulation instead of actual rename to view the potential outcome as program output on terminal with the <code>-sim</code> option.</p>
 <div id="features"></div>
 <h1>Features:</h1>
 <ol>
@@ -260,10 +260,16 @@ function returnTwitterShareUrl() {
 <li>Give the <span class="quote">install</span> file execution permission and</li>
 <li>Run it or just drag and dropt it on terminal and hit <kbd>Enter</kbd> (requires root privilege).</li>
 </ol>
+<h2>For Ubuntu:</h2>
+<pre class="prettyprint"><code>sudo add-apt-repository -y ppa:neurobin/ppa
+sudo apt-get update
+sudo apt-get install rnm</code></pre class="prettyprint">
 <div id="un-install"></div>
 <h1>Uninstall:</h1>
-<p>To uninstall, run:</p>
-<pre class="prettyprint"><code>sudo rm /usr/bin/rnm</code></pre class="prettyprint">
+<ol>
+<li>Give the <span class="quote">uninstall</span> file execution permission and</li>
+<li>Run it or just drag and dropt it on terminal and hit <kbd>Enter</kbd> (requires root privilege).</li>
+</ol>
 <div id="usage"></div>
 <h1>Usage:</h1>
 <pre class="prettyprint"><code>rnm Directory/File/Path [options]</code></pre class="prettyprint">
@@ -315,11 +321,21 @@ iteration.</p>
 <p><code>--end-line-reverse</code>,
 <code>-elv</code>               : Same as <code>-el</code>, except line number will be decremented in each iteration.</p>
 <p><code>--search-string</code>,
-<code>-ss</code>                : Search string
+<code>-ss</code>                : Search string.
 String that will be used to search for files with matching names.
-This is generally regex  (<a href="http://www.cplusplus.com/reference/regex/ECMAScript/">ECMAScript regex</a>) if not pass with <code>-ssf</code> option.</p>
+This is generally a regex  if not pass with <code>-ssf</code> option.</p>
 <p><code>--search-string-fixed</code>,
 <code>-ssf</code>               : Fixed search string (not treated as regex).</p>
+<p><code>--replace-string</code>,
+<code>-rs</code>                : Replace string. A string in the form <code>/search_string/replace_string/modifier</code>. See *<em>Replace String</em> in <a href="#technical-terms">Terminology</a> for details.</p>
+<p><code>--regex</code>,
+<code>-re</code>                : regex mode. Available regex modes are POSIX compliant basic &amp; extended regex,
+regex used by grep, awk, egrep and the default regex is ECMAScript regex.
+For example, to have a grep like regex, pass the option <code>-re grep</code>, to use
+POSIX compliant extended regex, pass <code>-re extended</code></p>
+<p><code>--regex-locale</code>,
+<code>-rel</code>                : If this is passed as argument, regex will follow Locale. that is regex like
+[a-z] will have their meaning according to the system locale.</p>
 <p><code>--depth</code>,
 <code>-dp</code>                : Depth of folder. -1(any negative number) means unlimited depth i.e all files and subdirectories
 will be included. Other values may be 0 1 2 3 etc...
@@ -335,8 +351,16 @@ Default depth is set to 0.</p>
 contents. Forces file only mode regardless of depth (-dp) value.</p>
 <p><code>-y</code>                 : Confirm Yes to all.</p>
 <p><code>-u</code>, <code>-U</code>, <code>--undo</code> : Undo renaming</p>
+<p><code>--force</code>, <code>-f</code>      : Force rename. Enables renaming some restricted files except <code>/</code> and the program itself.</p>
 <p><code>-v</code>                 : Version info.</p>
 <p><code>-q</code>                 : Quiet operation.</p>
+<p><code>--show-options</code>,
+<code>-shop</code>              : This shows an info about the various options passed as arguments
+and how they are being treated behind the scene.</p>
+<p><code>--simulation</code>,
+<code>-sim</code>               : This runs a simulation of rename instead of actual rename operation,
+and prints all kinds of available outputs. <code>-q</code> option won't have any
+effect if this option is passed.</p>
 <div id="technical-terms"></div>
 <h2>Technical Terms:</h2>
 <p><strong>Reserved Index    :</strong> Index will be incremented even if
@@ -365,8 +389,7 @@ Actual line number (which counts the empty lines too) is
 available through name string rule : <code>/la/</code>.</p>
 <p><strong>Search String     :</strong> A string that is used to search for files with matching
 filenames against the search string. By default it is
-a regex if <code>-ssF</code> option is not used. It's <code>C++</code> regex
-which uses the <a href="http://www.cplusplus.com/reference/regex/ECMAScript/">ECMAScript regex</a> syntax.</p>
+a regex if <code>-ssF</code> option is not used.</p>
 <p><strong>Index Field Length:</strong> An integer value defining the field length of index.
 By default empty field will be filled with 0's. For example, if
 the value is <code>3</code>, then index will be <code>001</code>, <code>002</code>, <code>003</code>, etc..
@@ -393,13 +416,13 @@ i stands case insensitive search (default is case sensitive).<em>Replace String<
 <pre class="prettyprint"><code>                Example: '/video/Episode /i//gi' will replace every instances
                 of 'video' with 'Episode index' i.e you will get new rname as:.
                 Episode 1..., Episode 2..., etc...</code></pre class="prettyprint">
-<p><strong>Regex             :</strong> Supported regex follows the ECMAScript regex syntax. Visit:
-<a href="http://www.cplusplus.com/reference/regex/ECMAScript/">ECMAScript Regex</a>
-for more info.</p>
+<p><strong>Regex             :</strong> Supported regexes are POSIX compliant <a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html#tag_09_03">basic</a> &amp; <a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html#tag_09_04">extended</a> regex, grep, <a href="http://pubs.opengroup.org/onlinepubs/9699919799/utilities/awk.html#tag_20_06_13_04">awk</a> an egrep type regexes and the default
+<a href="http://www.cplusplus.com/reference/regex/ECMAScript/">ECMAScript Regex</a>.</p>
 <p>Only invalid characters for a file or directory name is the path delimiter and the null character (<code>\0</code>).</p>
 <div id="examples"></div>
 <h3>Example:</h3>
 <pre class="prettyprint"><code>rnm file -ns new_file
+rnm file -rs "/f/F/"                     ( will replace f with F in the name, i.e new name will be: File)
 rnm folder -ns "New Folder" -oD          (-oD forces Directory only mode)
 rnm ./New*/* -ns /i/.ext                 (globbing is allowed)
 rnm ./New*/* -ns /i/.ext -ed             (-ed forces file only mode)
@@ -416,6 +439,7 @@ etc...</code></pre class="prettyprint">
 <li>Be wary of filename globbing. Command like <code>rnm ./*</code> will take all files and directories as arguments and thus the files and directories will be subject to rename operation. If you don't want to rename directories, use file only mode (<code>-fo</code>). If you want to go inside directories, use depth (<code>-dp</code>) greater than <code>0</code> with file only mode.</li>
 <li>If you run <code>rnm . -ns something</code> or <code>rnm ./ -ns something</code>, your current directory will be renamed (be careful).</li>
 <li>This is a dangerous tool like <code>rm</code>, so use with care. If you make a mistake and do some unwanted rename, run <code>rnm -u</code> to undo (before running any more rnm command).</li>
+<li>Pass all regex like strings within quotes.</li>
 </ol><div id="changelog"><h1>ChangeLog:</h1>
 <h3><code>1.0.0</code>: <span class="light-quote">Sat 14 Aug 2015</span></h3>
 <p><strong>Birth of rnm</strong></p>
@@ -450,6 +474,18 @@ etc...</code></pre class="prettyprint">
 <li><code>-shop</code> and <code>-sim</code> (simulation) option added.</li>
 <li>New name string rule: <code>/la/</code> added.</li>
 <li>Removed <code>-f</code> (force rename) option.</li>
+</ol>
+<h3><code>3.0.1</code>: <span class="light-quote">Sat Aug 22 21:28:14 BDT 2015</span></h3>
+<ol>
+<li>rnm now can take file or directory name from standard input, i.e if you run rnm without any file or directory path, it will wait for you to type it.</li>
+<li><code>--force</code> or <code>-f</code> i.e force rename option is back. It will enable some restricted files or directories to be renamed except the root filesystem (<code>/</code>).</li>
+<li>You no longer need confirmation for renaming single file or directory.</li>
+</ol>
+<h3><code>3.0.2</code>: <span class="light-quote">Mon Aug 24 17:01:25 BDT 2015</span></h3>
+<ol>
+<li>Added POSIX compliant basic and extended regex mode.</li>
+<li>Added awk, grep and egrep like regex mode.</li>
+<li>Added system locale support in regex.</li>
 </ol></div>	
 
 <div id="contribute">
