@@ -327,7 +327,7 @@ This is generally a regex  if not pass with <code>-ssf</code> option.</p>
 <p><code>--search-string-fixed</code>,
 <code>-ssf</code>               : Fixed search string (not treated as regex).</p>
 <p><code>--replace-string</code>,
-<code>-rs</code>                : Replace string. A string in the form <code>/search_string/replace_string/modifier</code>. See *<em>Replace String</em> in <a href="#technical-terms">Terminology</a> for details.</p>
+<code>-rs</code>                : Replace string. A string in the form <code>/search_string/replace_string/modifier</code>. See *<em>Replace String</em> in <a href="rnm/#technical-terms">Terminology</a> for details.</p>
 <p><code>--regex</code>,
 <code>-re</code>                : regex mode. Available regex modes are POSIX compliant basic &amp; extended regex,
 regex used by grep, awk, egrep and the default regex is ECMAScript regex.
@@ -440,53 +440,7 @@ etc...</code></pre class="prettyprint">
 <li>If you run <code>rnm . -ns something</code> or <code>rnm ./ -ns something</code>, your current directory will be renamed (be careful).</li>
 <li>This is a dangerous tool like <code>rm</code>, so use with care. If you make a mistake and do some unwanted rename, run <code>rnm -u</code> to undo (before running any more rnm command).</li>
 <li>Pass all regex like strings within quotes.</li>
-</ol><div id="changelog"><h1>ChangeLog:</h1>
-<h3><code>1.0.0</code>: <span class="light-quote">Sat 14 Aug 2015</span></h3>
-<p><strong>Birth of rnm</strong></p>
-<h3><code>2.0.0</code>: <span class="light-quote">Sun Aug  9 23:18:00 BDT 2015</span></h3>
-<ol>
-<li>Added undo feature.</li>
-<li>Added end index feature and end line number feature.</li>
-<li>Added inverse index feature</li>
-<li>Added new name string rules for inverse index.</li>
-<li>Added <code>/hist/</code> as a valid argument for <code>-nsf</code> option to take <em>Name String File</em> from history.</li>
-<li>Logging functionality. Log files are put in $HOME/.neurobin/rnm</li>
-<li>Lots of bug fixes.</li>
-</ol>
-<h3><code>2.0.1</code>: <span class="light-quote">Wed Aug  12 02:36:00 BDT 2015</span></h3>
-<ol>
-<li>Added name modification feature using <code>sed</code>.</li>
-<li>Added extra Name String Rule <code>/smn/</code> or <code>/rn/</code>.</li>
-</ol>
-<h3><code>3.0.0</code>: <span class="light-quote">Fri Aug 21 12:33:49 BDT 2015</span></h3>
-<ol>
-<li>Code rewritten in C++.</li>
-<li>Shell independent.</li>
-<li>Portable.</li>
-<li>Supports all characters allowed in file/directory name according to POSIX specs.</li>
-<li>Regex syntax changed to ECMAScript Regex.</li>
-<li><code>-rs</code> option added.</li>
-<li><code>-iff</code> option added.</li>
-<li><code>-ifp</code> option added.</li>
-<li><code>-inc</code> option added.</li>
-<li><code>-linc</code> option added.</li>
-<li>Renamed option <code>-li</code> to <code>-lv</code> and <code>-eli</code> to <code>-elv</code>.</li>
-<li><code>-shop</code> and <code>-sim</code> (simulation) option added.</li>
-<li>New name string rule: <code>/la/</code> added.</li>
-<li>Removed <code>-f</code> (force rename) option.</li>
-</ol>
-<h3><code>3.0.1</code>: <span class="light-quote">Sat Aug 22 21:28:14 BDT 2015</span></h3>
-<ol>
-<li>rnm now can take file or directory name from standard input, i.e if you run rnm without any file or directory path, it will wait for you to type it.</li>
-<li><code>--force</code> or <code>-f</code> i.e force rename option is back. It will enable some restricted files or directories to be renamed except the root filesystem (<code>/</code>).</li>
-<li>You no longer need confirmation for renaming single file or directory.</li>
-</ol>
-<h3><code>3.0.2</code>: <span class="light-quote">Mon Aug 24 17:01:25 BDT 2015</span></h3>
-<ol>
-<li>Added POSIX compliant basic and extended regex mode.</li>
-<li>Added awk, grep and egrep like regex mode.</li>
-<li>Added system locale support in regex.</li>
-</ol></div>	
+</ol><div id="changelog"></div>	
 
 <div id="contribute">
 <h1>Contribute:</h1>
