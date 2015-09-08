@@ -227,7 +227,7 @@ function returnTwitterShareUrl() {
 						<a href="https://github.com/neurobin/rnm">View On Github</a>
 						<a href="https://github.com/neurobin/rnm/archive/release.zip">Download .zip</a>
 						<a href="https://github.com/neurobin/rnm/archive/release.tar.gz">Download .tar.gz</a>
-
+                  <a href="rnm/man.html">ManPage</a>
 					</div>
 				</div>
 			</div>
@@ -256,6 +256,7 @@ function returnTwitterShareUrl() {
 </ol>
 <div id="install"></div>
 <h1>Install:</h1>
+<h3>Linux (32 or 64 bit):</h3>
 <ol>
 <li>Give the <span class="quote">install</span> file execution permission and</li>
 <li>Run it or just drag and dropt it on terminal and hit <kbd>Enter</kbd> (requires root privilege).</li>
@@ -272,7 +273,9 @@ sudo apt-get install rnm</code></pre class="prettyprint">
 </ol>
 <div id="usage"></div>
 <h1>Usage:</h1>
-<pre class="prettyprint"><code>rnm Directory/File/Path [options]</code></pre class="prettyprint">
+<pre class="prettyprint"><code>rnm directory/file/path -ns new_name [other options]
+rnm directory/file/path -rs "/search regex/replace string/gi" [other_options]
+rnm directory/file/path -nsf namestring/file/path</code></pre class="prettyprint">
 <p>One of the options of <code>-ns</code> or <code>-nsf</code> or <code>-rs</code> is mandatory. Options are <strong>not</strong> sequential, their position in the argument list have no siginificance. For example, <code>rnm filepath -ns name</code> is the same as <code>rnm -ns name filepath</code>. Though passing the <em>Directory/File</em> path at the end of the arguement list is considered to be safe and wise.</p>
 <p>Options are case insensitive, i.e <code>-ssF</code> and <code>-ssf</code> are the same.</p>
 <div id="options"></div>
@@ -374,14 +377,16 @@ Name sting is parsed by the following rules (must be wrapped around with filepat
 <li><code>/ir/</code> in name string will be replaced with reserved index.</li>
 <li><code>/id/</code> in name string will be replaced with directory index (index inside a directory).</li>
 <li><code>/idr/</code> in name string will be replaced with reserved directory index</li>
+<li><code>/-i/</code> in name string will be replaced with inverse index.</li>
+<li><code>/-ir/</code> in name string will be replaced with inverse reserved index. In general, <code>-i</code> in the above replacement rules (applies to indexes excluding line indexes) will mean inverse index conforming to their meaning.</li>
+<li><code>/dc/</code> in name string will be replaced with directory count</li>
+<li><code>/l/</code> in name string will be replaced with line number from <em>Name String File</em>.</li>
+<li><code>/la/</code> in name string will be replaced wiht actual line number from <em>Name String File</em>.</li>
 <li><code>/n/</code> in name string will be replaced with filename without extention. If used with <code>-nsf</code> option, the filename will be the name taken from the <em>Name String File</em>.</li>
 <li><code>/fn/</code> in name string will be replaced with full name of the files. If used with <code>-nsf</code> option, full name will be the name taken from the <em>Name String File</em>.</li>
 <li><code>/rn/</code> in name string will be replaced with Replaced Name.</li>
-<li><code>/l/</code> in name string will be replaced with line number from <em>Name String File</em>.</li>
-<li><code>/la/</code> in name string will be replaced wiht actual line number from <em>Name String File</em>.</li>
-<li><code>/dc/</code> in name string will be replaced with directory count</li>
-<li><code>/-i/</code> in name string will be replaced with inverse index.</li>
-<li><code>/-ir/</code> in name string will be replaced with inverse reserved index. In general, <code>-</code> in the above replacement rules (applies to indexes excluding <code>/l/</code>, <code>/la/</code> and <code>/dc/</code>) will mean inverse index conforming to their meaning.</li>
+<li><code>/pd/</code> in name string will be replaced with parent directory  name of the current file or directory. </li>
+<li><code>/wd/</code>  in  name  string will be replaced with the current working directory name. </li>
 </ol>
 <p><strong>Name String File  :</strong> A file which contains a list of name string (one per line).
 Empty lines will be ignored and line number won't be counted.
@@ -389,23 +394,27 @@ Actual line number (which counts the empty lines too) is
 available through name string rule : <code>/la/</code>.</p>
 <p><strong>Search String     :</strong> A string that is used to search for files with matching
 filenames against the search string. By default it is
-a regex if <code>-ssF</code> option is not used.</p>
+a regex if <code>-ssF</code> option is not used.It is generally in the form <code>/regex/modifier</code> ,
+where <u>regex</u> is the regex to search for and available modifier is <u>i</u> which implies  case
+insensitive  search. If no  modifier is used, the regex format can be
+reduced to <code>/regex/</code> or simply <code>regex</code>.</p>
 <p><strong>Index Field Length:</strong> An integer value defining the field length of index.
 By default empty field will be filled with 0's. For example, if
 the value is <code>3</code>, then index will be <code>001</code>, <code>002</code>, <code>003</code>, etc..
 Different filler (other than 0) can be provided with the <code>-iff</code> option.</p>
 <p><strong>Replaced Name     :</strong> The name can be modified at runtime using replace string.
-replace string will be parsed to create a new <em>Name String</em> rule: <code>/rname/</code>
+replace string will be parsed to create a new <em>Name String</em> rule: <code>/rn/</code>
 which can be used in <em>Name String</em>. If name string is not passed as argument,
-the new name of the file will be <code>rname</code>. <em>Replaced Name</em> is always
+the new name of the file will be <code>/rn/</code>. <em>Replaced Name</em> is always
 generated from the old filename.</p>
 <p><strong>Replace String    :</strong> <em>Replace String</em> is a regex of the form:
-<code>/search_string/replace_string/modifier</code>
-where search_string is the regex to search for and
-replace_string is the string to replace with. For replace string,
-there are four special cases:</p>
+<code>/search_part/replace_part/modifier</code>
+where search_part is the regex to search for and
+replace_part is the string to replace with. Name String rules are
+avalilable in search_part and replace_part in Replace String.
+Regarding replace string, there are four special cases:</p>
 <ol>
-<li><code>&amp;</code> will be taken as the entire match found by the regex (search_string).</li>
+<li><code>&amp;</code> will be taken as the entire match found by the regex (search_part).</li>
 <li><code>\1</code>, <code>\2</code> etc.. is the back-references, i.e you can access captured groups with these back-references.</li>
 <li><code>\p</code> is the prefix (i.e., the part of the target sequence that precedes the match)</li>
 <li><code>\s</code> is the suffix (i.e., the part of the target sequence that follows the match).</li>
@@ -416,7 +425,7 @@ i stands case insensitive search (default is case sensitive).<em>Replace String<
 <pre class="prettyprint"><code>Example: '/video/Episode /i//gi' will replace every instances
 of 'video' with 'Episode index' i.e you will get new rname as:.
 Episode 1..., Episode 2..., etc...</code></pre class="prettyprint">
-<p><strong>Regex             :</strong> Supported regexes are POSIX compliant <a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html#tag_09_03">basic</a> &amp; <a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html#tag_09_04">extended</a> regex, grep, <a href="http://pubs.opengroup.org/onlinepubs/9699919799/utilities/awk.html#tag_20_06_13_04">awk</a> an egrep type regexes and the default
+<p><strong>Regex             :</strong> Supported regexes are POSIX compliant <a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html#tag_09_03">basic</a> &amp; <a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html#tag_09_04">extended</a> regex, grep, <a href="http://pubs.opengroup.org/onlinepubs/9699919799/utilities/awk.html#tag_20_06_13_04">awk</a> an egrep type regexes and the default. Change the regex mode wiht <code>-re</code> or <code>--regex</code> option.
 <a href="http://www.cplusplus.com/reference/regex/ECMAScript/">ECMAScript Regex</a>.</p>
 <p>Only invalid characters for a file or directory name is the path delimiter and the null character (<code>\0</code>).</p>
 <div id="examples"></div>
@@ -438,9 +447,63 @@ etc...</code></pre class="prettyprint">
 <li>Any non option argument will be treated as file or directory path. For example in <pre><code>rnm file1 file2 -- -ns fd</code></pre><code>file1</code>, <code>file2</code> and <code>--</code> will be taken as file paths.</li>
 <li>Be wary of filename globbing. Command like <code>rnm ./*</code> will take all files and directories as arguments and thus the files and directories will be subject to rename operation. If you don't want to rename directories, use file only mode (<code>-fo</code>). If you want to go inside directories, use depth (<code>-dp</code>) greater than <code>0</code> with file only mode.</li>
 <li>If you run <code>rnm . -ns something</code> or <code>rnm ./ -ns something</code>, your current directory will be renamed (be careful).</li>
-<li>This is a dangerous tool like <code>rm</code>, so use with care. If you make a mistake and do some unwanted rename, run <code>rnm -u</code> to undo (before running any more rnm command).</li>
-<li>Pass all regex like strings within quotes.</li>
-</ol><div id="changelog"></div>	
+<li>This is a dangerous tool like <code>rm</code>, so use with care. If you make a mistake and do some unwanted rename, run <code>rnm -u</code> to undo (before running any more <code>rnm</code> command).</li>
+<li>Pass all regex like strings within quotes even if they don't contain any white space.</li>
+</ol><div id="changelog"><h1>ChangeLog:</h1>
+<h3><code>1.0.0</code>: <span class="light-quote">Sat 14 Aug 2015</span></h3>
+<p><strong>Birth of rnm</strong></p>
+<h3><code>2.0.0</code>: <span class="light-quote">Sun Aug  9 23:18:00 BDT 2015</span></h3>
+<ol>
+<li>Added undo feature.</li>
+<li>Added end index feature and end line number feature.</li>
+<li>Added inverse index feature</li>
+<li>Added new name string rules for inverse index.</li>
+<li>Added <code>/hist/</code> as a valid argument for <code>-nsf</code> option to take <em>Name String File</em> from history.</li>
+<li>Logging functionality. Log files are put in $HOME/.neurobin/rnm</li>
+<li>Lots of bug fixes.</li>
+</ol>
+<h3><code>2.0.1</code>: <span class="light-quote">Wed Aug  12 02:36:00 BDT 2015</span></h3>
+<ol>
+<li>Added name modification feature using <code>sed</code>.</li>
+<li>Added extra Name String Rule <code>/smn/</code> or <code>/rn/</code>.</li>
+</ol>
+<h3><code>3.0.0</code>: <span class="light-quote">Fri Aug 21 12:33:49 BDT 2015</span></h3>
+<ol>
+<li>Code rewritten in C++.</li>
+<li>Shell independent.</li>
+<li>Portable.</li>
+<li>Supports all characters allowed in file/directory name according to POSIX specs.</li>
+<li>Regex syntax changed to ECMAScript Regex.</li>
+<li><code>-rs</code> option added.</li>
+<li><code>-iff</code> option added.</li>
+<li><code>-ifp</code> option added.</li>
+<li><code>-inc</code> option added.</li>
+<li><code>-linc</code> option added.</li>
+<li>Renamed option <code>-li</code> to <code>-lv</code> and <code>-eli</code> to <code>-elv</code>.</li>
+<li><code>-shop</code> and <code>-sim</code> (simulation) option added.</li>
+<li>New name string rule: <code>/la/</code> added.</li>
+<li>Removed <code>-f</code> (force rename) option.</li>
+</ol>
+<h3><code>3.0.1</code>: <span class="light-quote">Sat Aug 22 21:28:14 BDT 2015</span></h3>
+<ol>
+<li>rnm now can take file or directory name from standard input, i.e if you run rnm without any file or directory path, it will wait for you to type it.</li>
+<li><code>--force</code> or <code>-f</code> i.e force rename option is back. It will enable some restricted files or directories to be renamed except the root filesystem (<code>/</code>).</li>
+<li>You no longer need confirmation for renaming single file or directory.</li>
+</ol>
+<h3><code>3.0.2</code>: <span class="light-quote">Mon Aug 24 17:01:25 BDT 2015</span></h3>
+<ol>
+<li>Added POSIX compliant basic and extended regex mode.</li>
+<li>Added awk, grep and egrep like regex mode.</li>
+<li>Added system locale support in regex.</li>
+</ol>
+<h3><code>3.0.3</code>: <span class="light-quote">Mon Aug 24 17:01:25 BDT 2015</span></h3>
+<p>Bug fix: inconsistency in reserved directory index.</p>
+<h3><code>3.0.4</code>: <span class="light-quote">Tue Sep  8 14:04:26 UTC 2015</span></h3>
+<ol>
+<li>New Name String rule: <code>/pd/</code> for parent directory, <code>/wd/</code> for working directory.</li>
+<li><code>/regex/</code> can be wrtten as <code>regex</code> if no modifier is passed.</li>
+<li>Directory index bug fixed. </li>
+</ol></div>	
 
 <div id="contribute">
 <h1>Contribute:</h1>
