@@ -359,6 +359,7 @@ contents. Forces file only mode regardless of depth (-dp) value.</p>
 <p><code>--force</code>, <code>-f</code>      : Force rename. Enables renaming some restricted files except <code>/</code> and the program itself.</p>
 <p><code>-v</code>                 : Version info.</p>
 <p><code>-q</code>                 : Quiet operation.</p>
+<p><code>--</code>                 : If this option is passed, anything and everything after it will be taken as file path. Put all options before passing this option.</p>
 <p><code>--show-options</code>,
 <code>-shop</code>              : This shows an info about the various options passed as arguments
 and how they are being treated behind the scene.</p>
@@ -450,6 +451,7 @@ etc...</code></pre class="prettyprint">
 <li>If you run <code>rnm . -ns something</code> or <code>rnm ./ -ns something</code>, your current directory will be renamed (be careful).</li>
 <li>This is a dangerous tool like <code>rm</code>, so use with care. If you make a mistake and do some unwanted rename, run <code>rnm -u</code> to undo (before running any more <code>rnm</code> command).</li>
 <li>Pass all regex like strings within quotes even if they don't contain any white space.</li>
+<li>To pass a filename that resembles an option, use <code>./</code>, i.e <code>./-ns</code> to pass a file named <code>-ns</code> in the current directory. Or you can use the <code>--</code> option make it a non-option argument; in that case make sure to pass all &quot;Option&quot; arguments before <code>--</code>, because everything after <code>--</code> will be taken as file path/s.</li>
 </ol><div id="changelog"><h1>ChangeLog:</h1>
 <h3><code>1.0.0</code>: <span class="light-quote">Sat 14 Aug 2015</span></h3>
 <p><strong>Birth of rnm</strong></p>
@@ -504,6 +506,11 @@ etc...</code></pre class="prettyprint">
 <li>New Name String rule: <code>/pd/</code> for parent directory, <code>/wd/</code> for working directory.</li>
 <li><code>/regex/</code> can be wrtten as <code>regex</code> if no modifier is passed.</li>
 <li>Directory index bug fixed. </li>
+</ol>
+<h3><code>3.0.5</code>: <span class="light-quote">Sat Sep 19 13:00:59 UTC 2015</span></h3>
+<ol>
+<li><code>--</code> option added. Anything after this option will be taken as file path.</li>
+<li>Added warning for multiple defintion of the same option i.e option override.</li>
 </ol></div>	
 
 <div id="contribute">
