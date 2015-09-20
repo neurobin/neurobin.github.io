@@ -1,5 +1,8 @@
 This is a tiny attempt to develop a Universal Text Editor.
 
+<div id="screenshots"></div>
+#Screenshots:
+<img  alt="screenshot1.png" src="uedit/images/screenshot1.png" />
 
 #Features Available:
 
@@ -15,6 +18,12 @@ This is a tiny attempt to develop a Universal Text Editor.
 
 <li>Buttons are customizable (create and delete).</li>
 </ol>
+
+<div id="install"></div>
+#Install:
+
+It doesn't require any special installation method. It resides on your browser. You just need to visit the page <a href="uedit/uedit.php">Go Edit</a> and let the necessary files (~1MB) be downloaded just once. You will then be able to use it offline when all of it's requirements are cached in the browser.
+
 <div id="usage"></div>
 #Usage:
 The salient feature is the custom buttons. A custom button can be defined to do various types of text manipulation.
