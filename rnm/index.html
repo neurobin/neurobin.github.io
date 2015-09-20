@@ -253,6 +253,7 @@ function returnTwitterShareUrl() {
 <li>Name can be taken from a file too. And these names (taken from a file) can be modified with <em>Name String</em> at runtime.</li>
 <li>Name can be taken from a file according to starting line number (<code>-l</code> or <code>-sl</code>) and ending line number (<code>-el</code>).</li>
 <li>Null terminated file can be taken as Name String File.</li>
+<li>Files or directories can be sorted in natural order or general alphabetical order.</li>
 </ol>
 <div id="install"></div>
 <h1>Install:</h1>
@@ -354,6 +355,10 @@ Default depth is set to 0.</p>
 <p><code>--exclude-directory</code>,
 <code>-ed</code>                : Apply rename on files only, exclude any and all directory and their
 contents. Forces file only mode regardless of depth (-dp) value.</p>
+<p><code>--count-directory</code>,
+<code>-cd</code>                : Count directory in reserved index, regardless of other options. Reserves indices for directories even if it is File Only mode.</p>
+<p><code>--count-file</code>,
+<code>-cf</code>                : Count file in reserved index, regardless of other options. Reserves indices for files even if it is Directory Only mode.</p>
 <p><code>-y</code>                 : Confirm Yes to all.</p>
 <p><code>-u</code>, <code>-U</code>, <code>--undo</code> : Undo renaming</p>
 <p><code>--force</code>, <code>-f</code>      : Force rename. Enables renaming some restricted files except <code>/</code> and the program itself.</p>
@@ -452,6 +457,7 @@ etc...</code></pre class="prettyprint">
 <li>This is a dangerous tool like <code>rm</code>, so use with care. If you make a mistake and do some unwanted rename, run <code>rnm -u</code> to undo (before running any more <code>rnm</code> command).</li>
 <li>Pass all regex like strings within quotes even if they don't contain any white space.</li>
 <li>To pass a filename that resembles an option, use <code>./</code>, i.e <code>./-ns</code> to pass a file named <code>-ns</code> in the current directory. Or you can use the <code>--</code> option make it a non-option argument; in that case make sure to pass all &quot;Option&quot; arguments before <code>--</code>, because everything after <code>--</code> will be taken as file path/s.</li>
+<li>Pass file or directory path list at the end of the argument sequence. Use <code>--</code> to make all the argumets after it as paths (not options).</li>
 </ol><div id="changelog"><h1>ChangeLog:</h1>
 <h3><code>1.0.0</code>: <span class="light-quote">Sat 14 Aug 2015</span></h3>
 <p><strong>Birth of rnm</strong></p>
@@ -511,6 +517,12 @@ etc...</code></pre class="prettyprint">
 <ol>
 <li><code>--</code> option added. Anything after this option will be taken as file path.</li>
 <li>Added warning for multiple defintion of the same option i.e option override.</li>
+</ol>
+<h3><code>3.0.6</code>: <span class="light-quote">Sun Sep 20 16:45:37 UTC 2015</span></h3>
+<ol>
+<li>Directory reserved index inconsistency fixed.</li>
+<li>Added <code>-cd</code> and <code>-cf</code> options.</li>
+<li>Added sort functionality. <code>-s</code> for default (natural) sort, <code>-s/g</code> for general sort. <code>-s/n</code> for natural sort. <code>-s/none</code> for no sort.</li>
 </ol></div>	
 
 <div id="contribute">

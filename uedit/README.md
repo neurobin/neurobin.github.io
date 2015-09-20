@@ -73,4 +73,8 @@ Use the <span class="button">SAVE TO DISK</span> button or keyboard shortcut (<k
 
 Set feasible keyboard shortcuts for your busy buttons to gain speed and productivity.
 
+#Things to care:
+
+1. The <span class="button">SAVE TO DISK</span> button requires Flash. Either enable Flash or use the alternative Keyboard Shortcut <kbd>Ctrl+S</kbd>.
+2. If you want to update the App, you will need to delete the cache (and/or cookie) from your browser. In Firefox you can delete cache selectively only for this app from <span class="light-quote">Preference->Advanced->Offline Web Content and User Data</span>.
 
