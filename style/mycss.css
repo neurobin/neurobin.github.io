@@ -1,4 +1,4 @@
-img{
+.full-width-img{
   width: 100%;
   height: auto;
   display: inline-block;
@@ -606,7 +606,7 @@ font-size: 6em;
   background-color: #CECECE;
 }
 img[alt="soft logo"]{
-  width: 2em;
+  width: 2em!important;
   height: auto;
   display: inline-block
 }

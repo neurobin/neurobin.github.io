@@ -2,7 +2,7 @@ This is a tiny attempt to develop a Universal Text Editor.
 
 <div id="screenshots"></div>
 #Screenshots:
-<img  alt="screenshot1.png" src="uedit/images/screenshot1.png" />
+<img class="full-width-img"  alt="screenshot1.png" src="uedit/images/screenshot1.png" />
 
 #Features Available:
 
