@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html class="csstransforms no-csstransforms3d csstransitions skrollr skrollr-desktop" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<!-- Meta -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta name="description" content="Use our all-over 3D online designer to design your own T-shirt. All over T-shirt printing, double sided full color.">
+		<meta name="author" content="">    
+    
+    <!-- Geo targeting -->
+    <link rel="alternate" hreflang="en" href="http://www.photo2fashion.com/design-your-own-t-shirt.php">
+    <link rel="alternate" hreflang="en-us" href="http://www.photo2fashion.com/design-your-own-t-shirt.php">
+    <link rel="alternate" hreflang="en-gb" href="http://www.photo2fashion.com/design-your-own-t-shirt.php">
+    <link rel="alternate" hreflang="en-au" href="http://www.photo2fashion.com/design-your-own-t-shirt.php">
+    <link rel="alternate" hreflang="en-ca" href="http://www.photo2fashion.com/design-your-own-t-shirt.php">
+    <link rel="alternate" hreflang="de" href="https://www.tshirtselbstgestaltenin3d.de/gestalte-dein-eigenes-t-shirt.php">
+    <link rel="alternate" hreflang="de-de" href="https://www.tshirtselbstgestaltenin3d.de/gestalte-dein-eigenes-t-shirt.php">
+  
+		<title>Design your own T-shirt in 3D, we print on 100% cotton</title>
+		
+		<!-- Bootstrap Core CSS -->
+		<link href="data/bootstrap.css" rel="stylesheet">
+		
+		<!-- Customizable CSS -->
+		<link href="data/main.css" rel="stylesheet" data-skrollr-stylesheet="">
+		<link href="data/green.css" rel="stylesheet" title="Color">
+		<link href="data/owl.css" rel="stylesheet">
+		<link href="data/owl_002.css" rel="stylesheet">
+		<link href="data/animate.css" rel="stylesheet">
+		
+		<!-- Fonts -->
+		<link href="data/css.css" rel="stylesheet">
+		<link href="data/css_002.css" rel="stylesheet">
+		
+		<!-- Icons/Glyphs -->
+		<link href="data/fontello.css" rel="stylesheet">
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="http://www.photo2fashion.com/assets/images/favicon.ico">
+		
+		<!-- HTML5 elements and media queries Support for IE8 : HTML5 shim and Respond.js -->
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+    
+    <link rel="stylesheet" href="data/icons2.css">
+    
+    <style>
+        .help li{
+            display: inline;
+            white-space: nowrap;
+        }
+        #controls {
+            font-size:1.5em;
+            background-color:rgba(255,255,255,0.6);            
+            width:50%;
+            border: 2px solid;
+            border-radius: 10px;
+            margin: 1em;
+            padding: 1em;
+        } 
+        .icon2{
+            font-size: 1.5em;
+            margin: 0em;
+            padding: 0em;
+        } 
+        .pickcolor {
+            float: left;
+            margin: 1em;
+        }
+        #text-control-img{
+            float: left;
+            margin: 0.5em;
+        }      
+        .infodiv{
+            padding: 2em;
+        }
+        .infodiv p{
+            text-align: justify;
+        }
+        code{
+            color: inherit;
+        } 
+              
+    </style>
+	<script style="" src="data/common.js" charset="UTF-8" type="text/javascript"></script><script src="data/util.js" charset="UTF-8" type="text/javascript"></script><script src="data/stats.js" charset="UTF-8" type="text/javascript"></script><script src="data/AuthenticationService.asc" charset="UTF-8" type="text/javascript"></script></head>
+	
+	<body style="height: 6856px;">
+  <script src="data/analytics.js" async=""></script><script>
+/*function logout(){
+    $.ajax({
+        type: "POST",
+        url: "logout.php"          
+    }).done(function(data) {
+        location.reload(true);               
+    }); 
+} */
+
+function logout() {
+    var req = false;
+    try{
+        // most browsers
+        req = new XMLHttpRequest();
+    } catch (e){
+        // IE
+        try{
+            req = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch(e) {
+            // try an older version
+            try{
+                req = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch(e) {
+                return false;
+            }
+        }
+    }
+    if (!req) return false;
+    req.onreadystatechange = function(){
+        if(req.readyState == 4) {            
+            location.reload(true);
+        }
+    }
+    req.open("GET", "logout.php", true);
+    req.send(null);
+    return req;
+}
+
+</script>
+
+<!-- ============================================================= HEADER ============================================================= -->
+		
+		<header>
+			<div class="navbar">
+				
+				<div class="navbar-header">
+					<div class="container">
+						
+						<ul class="info pull-left">
+							<li><a href="mailto:info@photo2fashion.com"><i class="icon-mail-1 contact"></i> info@photo2fashion.com</a></li>
+							<li><i class="icon-mobile contact"></i> +31(0) 644 335 990</li>
+              <li><a href="https://www.tshirtselbstgestaltenin3d.de/"><img src="data/flag_of_germany.svg" alt="T-shirt selbst gestalten in 3D" style="height:33%" ;=""></a></li>
+						</ul><!-- /.info -->
+						
+						<ul class="social pull-right">
+							<li><a href="http://www.facebook.com/photo2fashion" target="_blank"><i class="icon-s-facebook"></i></a></li>
+							<li><a href="https://plus.google.com/+Photo2fashionDesignYourOwnTShirt/posts" target="_blank"><i class="icon-s-gplus"></i></a></li>
+							<li><a href="http://twitter.com/Photo2Fashion" target="_blank"><i class="icon-s-twitter"></i></a></li>
+							<li><a href="http://www.pinterest.com/photo2fashion/" target="_blank"><i class="icon-s-pinterest"></i></a></li>							
+						</ul><!-- /.social -->
+						
+						<!-- ============================================================= LOGO MOBILE ============================================================= -->
+						
+						<a class="navbar-brand" href="http://www.photo2fashion.com/index.php"><img style="max-height: 40px;" data-300="max-height: 20px;" data-40="max-height: 40px;" src="data/photo2fashion-logo.svg" class="logo skrollable skrollable-before" alt="all over print shirts"></a>
+						
+						<!-- ============================================================= LOGO MOBILE : END ============================================================= -->
+						
+						<a class="btn responsive-menu pull-right" data-toggle="collapse" data-target=".navbar-collapse"><i class="icon-menu-1"></i></a>
+						
+					</div><!-- /.container -->
+				</div><!-- /.navbar-header -->
+				
+				<div class="yamm">
+					<div class="sticky-wrapper"><div><div style="padding-top: 30px; padding-bottom: 30px; box-shadow: 0px 10px 10px transparent;" data-300="padding-top: 0;padding-bottom: 0;-webkit-box-shadow: 0 10px 10px rgba(0,0,0,0.1);   -moz-box-shadow: 0 10px 10px rgba(0,0,0,0.1);box-shadow: 0 10px 10px rgba(0,0,0,0.1);" data-40="padding-top: 30px;padding-bottom: 30px;-webkit-box-shadow: 0 10px 10px rgba(0,0,0,0);   -moz-box-shadow: 0 10px 10px rgba(0,0,0,0.0);box-shadow: 0 10px 10px rgba(0,0,0,0);" class="navbar-collapse collapse skrollable skrollable-before">
+						<div class="container">
+							
+							<!-- ============================================================= LOGO ============================================================= -->
+							
+							<a class="navbar-brand" href="http://www.photo2fashion.com/index.php"><img style="max-height: 40px;" data-300="max-height: 20px;" data-40="max-height: 40px;" src="data/photo2fashion-logo.svg" class="logo skrollable skrollable-before" alt="all over print shirts"></a>
+							
+							<!-- ============================================================= LOGO : END ============================================================= -->
+							
+							
+							<!-- ============================================================= MAIN NAVIGATION ============================================================= -->
+							
+							<ul class="nav navbar-nav">
+								
+								<li class="dropdown">
+									<a href="http://www.photo2fashion.com/index.php">Home</a>								
+								</li><!-- /.dropdown -->
+								
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle js-activated">Design</a>
+									
+									<ul class="dropdown-menu">
+										<li><a href="http://www.photo2fashion.com/design-your-own-t-shirt.php">Design now</a></li>
+										<li><a href="http://www.photo2fashion.com/my-designs.php">Manage designs</a></li>
+										<li><a href="http://www.photo2fashion.com/free-t-shirt-design-templates.php">2D templates</a></li>										
+									</ul><!-- /.dropdown-menu -->
+								</li><!-- /.dropdown -->
+								
+								
+								
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle js-activated">View</a>
+									
+									<ul class="dropdown-menu">
+										<li><a href="http://www.photo2fashion.com/t-shirt-design-ideas.php">Search tees</a></li>
+										<li><a href="http://www.photo2fashion.com/funny-t-shirts.php">Funny T-shirts</a></li>
+										<li><a href="http://www.photo2fashion.com/creative-t-shirts.php">Creative T-shirts</a></li>
+										<li><a href="http://www.photo2fashion.com/photo-t-shirts.php">Photo T-shirts</a></li>
+										<li><a href="http://www.photo2fashion.com/other-t-shirts.php">Other T-shirts</a></li>										
+									</ul><!-- /.dropdown-menu -->
+								</li><!-- /.dropdown -->
+                
+                <li class="dropdown">
+									<a href="#" class="dropdown-toggle js-activated">Shop</a>
+									
+									<ul class="dropdown-menu">
+										<li><a href="http://www.photo2fashion.com/3d-t-shirt-online-shopping.php">Collections</a></li>
+										<li><a href="http://www.photo2fashion.com/cart.php">Cart</a></li>
+										<li><a href="http://www.photo2fashion.com/create-shop.php">Create shop</a></li>										
+									</ul><!-- /.dropdown-menu -->
+								</li><!-- /.dropdown -->
+                
+                <li class="dropdown">
+									<a href="http://www.photo2fashion.com/how-to-design-a-t-shirt-online.php">Help</a>																		
+								</li><!-- /.dropdown -->
+								
+								
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle js-activated">About</a>
+									
+									<ul class="dropdown-menu">
+										<li><a href="http://www.photo2fashion.com/our-t-shirt-printing-business.php">About us</a></li>
+                    <li><a href="http://www.photo2fashion.com/reviews.php">Customer testimonials</a></li>
+										<li><a href="http://www.photo2fashion.com/contact.php">Contact</a></li>
+									</ul><!-- /.dropdown-menu -->
+								</li><!-- /.dropdown -->
+                
+                <li class="dropdown">
+									<a href="#" class="dropdown-toggle js-activated">Blog</a>
+									
+									<ul class="dropdown-menu">
+                    <li><a href="http://www.photo2fashion.com/blog/virtual-fashion-designer-online.php">Virtual fashion</a></li>
+										<li><a href="http://www.photo2fashion.com/blog/gaga-wore-the-shirt.php">Gaga wore the shirt !</a></li>
+										<li><a href="http://www.photo2fashion.com/blog/realface-glamouflage-t-shirt-collection.php">Realface Glamouflage</a></li>
+										<li><a href="http://www.photo2fashion.com/blog/guestblog-by-a-happy-repeat-customer.php">Moudy's story</a></li>																				
+									</ul><!-- /.dropdown-menu -->
+								</li><!-- /.dropdown -->
+                
+                <li style="" class="dropdown">
+									<a href="#" class="dropdown-toggle js-activated">Account</a>
+									
+									<ul class="dropdown-menu">										
+                    <li><a href="http://www.photo2fashion.com/login.php?origin=/design-your-own-t-shirt.php" rel="nofollow">Sign in</a></li>
+                    <li><a href="http://www.photo2fashion.com/register-user.php" rel="nofollow">Sign up</a></li>                    																				
+									</ul><!-- /.dropdown-menu -->
+								</li><!-- /.dropdown -->
+                
+                <li style="display:none;" class="dropdown">
+									<a href="#" class="dropdown-toggle js-activated"></a>
+									
+									<ul class="dropdown-menu">										       
+                    <li><a href="http://www.photo2fashion.com/profile.php?userid=" rel="nofollow">Profile</a></li>
+                    <!--<li><a href="http://www.photo2fashion.com/logout.php?origin=/design-your-own-t-shirt.php" rel="nofollow">Sign out</a></li>-->
+                    <li style="cursor: pointer; cursor: hand;"><a onclick="logout()">Sign out</a></li>
+                    <li><a href="http://www.photo2fashion.com/my-designs.php" rel="nofollow">Manage designs</a></li>																				
+									</ul><!-- /.dropdown-menu -->
+								</li><!-- /.dropdown -->
+								
+								<li class="dropdown pull-right searchbox">
+									<a href="#" class="dropdown-toggle js-activated"><i class="icon-search"></i></a>
+											  
+									<div class="dropdown-menu">
+										<form id="search" class="navbar-form search" role="search" action="t-shirt-design-ideas.php" method="get">
+											<input class="form-control" placeholder="Type to search" name="search" type="search">
+											<button type="submit" class="btn btn-default btn-submit icon-right-open"></button>
+										</form>
+									</div><!-- /.dropdown-menu -->
+								</li><!-- /.searchbox -->                                                                                                                
+							</ul><!-- /.nav -->
+							
+							<!-- ============================================================= MAIN NAVIGATION : END ============================================================= -->
+							
+						</div><!-- /.container -->
+					</div></div></div><!-- /.navbar-collapse -->
+				</div><!-- /.yamm -->
+			</div><!-- /.navbar -->
+		</header>
+		
+		<!-- ============================================================= HEADER : END ============================================================= -->
+	
+		
+	
+		
+		<!-- ============================================================= MAIN ============================================================= -->
+		
+		<main>
+			
+			<!-- ============================================================= ISOTOPE – PORTFOLIO ============================================================= -->
+		
+			<section id="isotope" style="background-image: url(images/backgrounds/wall2.jpg);">
+				
+				<div class="container">
+					<div class="row">
+						<div style="opacity: 1;" class="col-md-8 col-sm-9 center-block text-center animated">
+							  <br>
+								<h1>Design your own T-shirt</h1>								
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+				
+				<div class="container inner-bottom">
+					<div class="row">
+						<div style="opacity: 1;" class="col-sm-12 portfolio animated fadeInUp">
+  						  <ul class="help text-center light-bg">
+  								<li><a href="#tutorial">Tutorial</a>: <a href="#select-images">selecting image</a></li>
+  								<li>- <a href="#pos-and-scale">position and scale</a></li>
+                  <li>- <a href="#background">background colors</a></li>
+  								<li>- <a href="#text">adding texts</a></li>
+                  <li>- <a href="#check">checking design</a></li>
+                  <li>- <a href="#upload">uploading and buying</a></li>
+                  <li>- <a href="#share">sharing and embedding</a></li>
+                  <!--<li>- <a href="#video">video tutorial</a></li> -->							
+  							</ul><!-- /.filter -->	
+							  
+                <ul style="opacity: 1; position: relative; overflow: hidden; height: 518px;" class="items col-3 animated isotope">
+                <li style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);" class="item thumb men isotope-item"><figure><a href="http://www.photo2fashion.com/t-shirt-design-software.php?modelpath=patterns%2F1S-XXL.dae&amp;modelid=11"><img class="img-rounded" src="data/example-white.jpg" alt="Create your own Men" s="" t-shirt="" no.1'=""></a><figcaption class="bordered no-top-border"><div class="info"><h4>Men's T-Shirt no.1</h4><p><a href="http://www.photo2fashion.com/model.php?modelid=11">sizes and info</a></p><p>$41.88</p></div><!-- /.info --></figcaption></figure></li><!-- /.item --><li style="position: absolute; left: 0px; top: 0px; transform: translate(393px, 0px);" class="item thumb women isotope-item"><figure><a href="http://www.photo2fashion.com/t-shirt-design-software.php?modelpath=patterns%2F7XS-XL.dae&amp;modelid=13"><img class="img-rounded" src="data/example-white_002.jpg" alt="Create your own Women" s="" t-shirt="" no.7'=""></a><figcaption class="bordered no-top-border"><div class="info"><h4>Women's T-shirt no.7</h4><p><a href="http://www.photo2fashion.com/model.php?modelid=13">sizes and info</a></p><p>$41.88</p></div><!-- /.info --></figcaption></figure></li><!-- /.item --><li style="position: absolute; left: 0px; top: 0px; transform: translate(786px, 0px);" class="item thumb women isotope-item"><figure><a href="http://www.photo2fashion.com/t-shirt-design-software.php?modelpath=patterns%2F4XS-XL.dae&amp;modelid=12"><img class="img-rounded" src="data/example-white_003.jpg" alt="Create your own Women" s="" t-shirt="" no.4'=""></a><figcaption class="bordered no-top-border"><div class="info"><h4>Women's T-Shirt no.4</h4><p><a href="http://www.photo2fashion.com/model.php?modelid=12">sizes and info</a></p><p>$41.88</p></div><!-- /.info --></figcaption></figure></li><!-- /.item -->										
+  							</ul><!-- /.items -->	
+							
+												
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+          
+          <div class="row outer-xs"><a name="tutorial"></a>
+            <div style="opacity: 0;" class="col-sm-2">
+            </div> 
+						<div style="opacity: 0;" class="col-sm-8 light-bg infodiv">
+                <h2>How to design a custom T-shirt</h2>
+                <h3>Designing for all over printing</h3>
+                <p>Designing an all over printed T-shirt, also called a full print T-shirt, is different because you would want to see
+                the result from all sides before you buy it. Therefore we developed our <strong>3D T-shirt designer</strong>.
+ Our software maps your 
+                design to the 2D T-shirt pattern accurately, also taking
+ care of seams and hems. We first print the pattern on fabric
+                and then cut and sew, so that the 3D online design will 
+be reproduced exactly in reality.
+                </p>  
+                <h3>Using our 3D online T-shirt designer</h3>
+                <p>Using the 3D online designer is easy. The <strong>best way to start designing</strong>
+ is actually to click one of the models above. That will start
+                the designer. Then follow the steps and click next (on 
+top of the page) until you are ready. Later you may check this
+                tutorial to see if you are using all the features that 
+you would like to use.  
+                </p>
+                <h3>Versions of the designer</h3>
+                <p>For the more technical readers. The designer has 3 
+versions: a Webgl version a Flash version and a JavaScript version. This
+ tutorial
+                describes the Webgl version. Webgl is the future for 3D 
+on the web and is supported by a growing number of browsers. If your 
+browser does
+                not support Webgl, you will see the Flash version of the
+ designer. If Flash is not installed in your browser, the JavaScript 
+version of the designer will be used.
+                The Flash and JavaScript versions are very similar to 
+the Webgl version.
+                </p>
+                <h3>New developments and call for ideas</h3>
+                <p>A recent development is that you can add multiple texts on top of the images. We will add Instagram type filters soon.
+                Also we love to hear about your ideas! Let us know about it because we give priority to ideas from actual users.
+                </p>                                             
+            </div><!-- /.col -->
+            <div style="opacity: 0;" class="col-sm-2">
+            </div>
+					</div><!-- /.row -->
+          
+          <div class="row outer-xs"> <a name="select-images" class="inpage-anchor"></a>
+            <div style="opacity: 0;" class="col-sm-2">
+            </div> 
+						<div style="opacity: 0;" class="col-sm-8 light-bg infodiv">
+                <h2>Selecting images for your T-shirt design</h2> 
+                <h3>Images for your customized all over printed T-shirt design</h3>
+                <p>With all over T-shirt printing, you can <b>use large images to cover the entire front
+                and back of the T-shirt</b>. You can use different 
+images for the front and the back.                 
+                Because we first print on fabric and then cut and sew, 
+the images will also be printed correctly on the seams and under the 
+armpits.                                
+                </p>
+                <h3>Taking photo's</h3>
+                <p>One way to get images is to use the camera of your device. In that way you <strong>make T-shirt designs directly with your mobile</strong>
+ or tablet. Our website and online designer work on any device.
+                If you start the designer (by selecting one of the 
+T-shirt models above) and click on it, you will see the option
+                to use the camera of your device (if it has one).
+                </p>
+                <h3>Using your own images</h3>
+                <p>You can also use images that you have stored. This 
+option is also automatically presented. These can be photo's
+                or digital artwork that you prepared in e.g. Photoshop, 
+Illustrator, GIMP or any other image editor. Some of the nicest
+                T-shirt designs have been made by applying special 
+effects in the image editor and then saving the results to use the 
+T-shirt designer.   
+                </p>
+                <h3>Finding images on the web</h3>
+                <p>The third possibility is to search for images on the web. It is important that the images you use are <b>free of intellectual property (ip) rights</b>.
+                A good way to find these images is to visit sites that 
+have public domain images. Just Google: 'public domain images'. You can 
+safely download and use these on
+                your full print T-shirt designs. Or enhance them first 
+with an image editor.
+                </p>
+                <h3>Image size and type</h3>
+                <p>The <strong>best printing results</strong> are 
+achieved with images of at least 1000x1000 pixels or more if you decide 
+to enlarge the image.
+                You will get a warning automatically if the resolution 
+is lower. The file size of the image cannot be larger than 20MB. If you 
+need to use
+                larger files, let us know and we will find a way. The 
+file type has to be jpeg, png or gif. 
+                </p>
+                
+            </div><!-- /.col -->
+            <div style="opacity: 0;" class="col-sm-2">
+            </div>
+					</div><!-- /.row -->
+          
+          <div class="row outer-xs"><a name="pos-and-scale" class="inpage-anchor"></a>
+            <div style="opacity: 0;" class="col-sm-2">
+            </div> 
+						<div style="opacity: 0;" class="col-sm-8 light-bg infodiv">
+                <h2>Positioning and scaling the images in the T-shirt designer</h2>
+                <h3>Using the design controls</h3>
+                <p>
+                </p><div id="controls">
+                    <span class="icon2 icontrol icon2-shrink"></span>    
+                    <span class="icon2 icontrol icon2-expand"></span>
+                    <span class="icon2 icontrol icon2-rotate-right"></span>
+                    <span class="icon2 icontrol icon2-rotatie-left"></span>
+                    <span class="icon2 icontrol icon2-flip-vertical"></span>
+                    <span class="icon2 icontrol icon2-flip-horizontal"></span>
+                    <span class="icon2 icontrol icon2-center-vertical"></span>
+                    <span class="icon2 icontrol icon2-center-horizontal"></span>
+                    <img src="data/palette-small.jpg">
+                    <span style="font-size:1.5em; position:relative; top:0.2em">T</span>    
+                </div>
+                Initially the images are positioned and scaled so that 
+they are upright and cover the entire front and back of the T-shirt.
+                However, you can change the position, scale and 
+orientation of both images independently.                   
+                <p></p>
+                <h3>Positioning</h3>
+                <p>Positioning of an image is done by simply dragging it
+ with the mouse or your finger 
+                (on touch screens). Note that when you start dragging 
+next to the T-shirt model, you will rotate the T-shirt.               
+                </p>
+                <h3>Scaling</h3>          
+                <p><span class="icon2 icontrol icon2-shrink"></span><span class="icon2 icontrol icon2-expand"></span>                                
+                Use these controls to shrink or expand the image you are working on.
+                If you expand the image too much, the app will ask you to make it smaller. 
+                </p>
+                <h3>Flipping</h3>
+                <p><span class="icon2 icontrol icon2-flip-verical"></span><span class="icon2 icontrol icon2-flip-horizontal"></span>
+              
+                Flipping (mirroring)an image has an interesting 
+application if the front and back images are the same. By flipping e.g. 
+only the back, it fits seamless to the front, which makes a great 
+design. 
+                </p>
+                <h3>Centering</h3>
+                <p><span class="icon2 icontrol icon2-center-vertical"></span><span class="icon2 icontrol icon2-center-horizontal"></span>
+                You can move the image back to its initial central 
+position by applying the center horizontal and center vertical controls.
+   
+                </p>
+                <h3>Rotating</h3>
+                <p><span class="icon2 icontrol icon2-rotate-right"></span><span class="icon2 icontrol icon2-rotatie-left"></span>
+                Initially the images have an upright orientation. If the image is a photo, the exif orientation of 
+                the photo will be applied. You can rotate the image with steps of 90 degrees using the rotate controls.
+                </p>
+                             
+            </div><!-- /.col -->
+            <div style="opacity: 0;" class="col-sm-2">
+            </div>
+					</div><!-- /.row -->
+          
+          <div class="row outer-xs"><a name="background" class="inpage-anchor"></a>
+            <div style="opacity: 0;" class="col-sm-2">
+            </div> 
+						<div style="opacity: 0;" class="col-sm-8 light-bg infodiv">
+                <h2>Designing background colors and collar of the T-shirt</h2>
+                <h3>Background colors</h3>
+                <p>We print all T-shirts on white cotton. If your images
+ do not completely cover the front or back side, you can
+                change the color of the white background. This hold also
+ for the color of the collar, which is white by default but can have any
+ color you choose.
+                Note that because we print on white cotton, the black 
+will not be as black as it would be if the fabric itself would have been
+ black!
+                </p>
+                <h3>Changing a background color</h3>
+                <p><img class="ccontrol pickcolor" src="data/palette-small.jpg">
+ 
+                If the white background is visible (because you shrunk 
+the image) or if you are designing the collar, you can change the color
+                with the color control. Alternatively you can <b>click on any white background</b>,
+ which will start the color picker as well. Then pick the color
+                from the color palette or from any spot on your T-shirt 
+design. In that way you can match the color to that of the image.       
+         
+                More technical users can fill in the hexadecimal color 
+codes such as <code>#000000</code> for black or <code>#ffffff</code> for white.
+                </p>                                                           
+            </div><!-- /.col -->
+            <div style="opacity: 0;" class="col-sm-2">
+            </div>
+					</div><!-- /.row -->
+          
+          <div class="row outer-xs"><a name="text" class="inpage-anchor"></a>
+            <div style="opacity: 0;" class="col-sm-2">
+            </div> 
+						<div style="opacity: 0;" class="col-sm-8 light-bg infodiv">
+                <h2>Adding texts to your T-shirt creation</h2>
+                <h3>Adding texts</h3>
+                <p><span style="font-size:1.5em; margin:0.5em">T</span>
+                You can add texts by <b>using the text control (T)</b> 
+in the design panel. The text will be initially: 'Change this text.'. 
+Then click on
+                the text so that the text panel opens. There you can 
+change the text, its color, font and size. You can add multiple texts to
+ each image. 
+                </p>
+                <h3>Using the design controls for texts</h3>
+                <p><img id="text-control-img" src="data/text-control.jpg">
+                In the text panel replace the initial text ('Change this
+ text.') by your own text. The new text will be visible on the T-shirt 
+design 
+                as you type. In the text panel you can also change the 
+font, the text color, the line color (contour around the text) and the 
+line width.       
+                </p>
+                <h3 style="clear:both">Moving, rotating and scaling texts</h3>
+                <p>Move the text <b>in the same way as with the images</b>
+ by dragging it with the mouse or your finger. Also the controls
+                in the T-shirt design panel work in the same way for 
+texts, so that you can rotate and scale them in the same way as with 
+images.
+                </p>
+                <h3>Removing texts</h3>
+                <p>Remove a text by clicking on it so that the text panel opens and press: 'Remove Text'.                             
+                </p>
+            </div><!-- /.col -->
+            <div style="opacity: 0;" class="col-sm-2">
+            </div>
+					</div><!-- /.row -->                    
+          
+          <div class="row outer-xs"><a name="check" class="inpage-anchor"></a>
+            <div style="opacity: 0;" class="col-sm-2">
+            </div> 
+						<div style="opacity: 0;" class="col-sm-8 light-bg infodiv">
+                <h2>Checking your T-shirt creation</h2>
+                <h3>Check your design before you upload</h3>
+                <p>By applying the mouse or your finger on the area next
+ to the T-shirt model you can view it from all angles. 
+                In that way you can check if there are any unintended 
+white areas and use a background color or move or expand the image.
+                Note that it is not (yet) possible to change designs 
+that have been uploaded.
+                </p>                                             
+            </div><!-- /.col -->
+            <div style="opacity: 0;" class="col-sm-2">
+            </div>
+					</div><!-- /.row -->
+          
+          <div class="row outer-xs"><a name="upload" class="inpage-anchor"></a>
+            <div style="opacity: 0;" class="col-sm-2">
+            </div> 
+						<div style="opacity: 0;" class="col-sm-8 light-bg infodiv">
+                <h2>Uploading and buying the T-shirt you made</h2>
+                <h3>Uploading to Photo2Fashion</h3>
+                <p>When you are ready with the design and you press 
+next, you can upload it. 
+                Before uploading you will be asked if you would like to 
+show the design in Photo2Fashion's design gallery.
+                You can also give your design a title and a category, so
+ that it can be found better. Then press 'upload'.
+                Depending on the image sizes and the speed of your 
+connection, this can take a few seconds to a few minutes.               
+                                 
+                After uploading you will see your 3D animated T-shirt 
+and it is available in your shopping cart.
+                </p>
+                <h3>Saving, finding and removing designs</h3>
+                <p>When you sign in, your design will be saved in your account and you can see it in your shopping cart and in 'manage designs'.
+                You can also search for designs using the search button and (part of) the title you gave it when uploading.
+                Designs can be removed from the 'manage designs' page using the little red cross.
+                </p>                                                                                               
+            </div><!-- /.col -->
+            <div style="opacity: 0;" class="col-sm-2">
+            </div>
+					</div><!-- /.row -->
+          
+          <div class="row outer-xs"><a name="share" class="inpage-anchor"></a>
+            <div style="opacity: 0;" class="col-sm-2">
+            </div> 
+						<div style="opacity: 0;" class="col-sm-8 light-bg infodiv">
+                <h2>Sharing and embedding a T-shirt design</h2>
+                <h3>Sharing on social media</h3>
+                <p>Under the design you will see buttons for sharing it 
+on Facebook, Twitter and Pinterest. This is a great way to
+                let people know about your creation. An image of the 
+design will be automatically added to your social media post.
+                You can also share the designs of others.
+                </p> 
+                <h3>Embedding your custom animated 3D T-shirt design</h3>
+                <p>You can even embed the design on your own website by pressing the embed button below the design and copying the code 
+                you will see into your web page.
+                </p>                                                                                                                
+            </div><!-- /.col -->
+            <div style="opacity: 0;" class="col-sm-2">
+            </div>
+					</div><!-- /.row -->
+          
+				</div><!-- /.container -->
+			</section>
+			
+			<!-- ============================================================= SECTION – ISOTOPE : END ============================================================= -->
+			
+			
+			
+		</main>
+		
+		<!-- ============================================================= MAIN : END ============================================================= -->
+		
+			<!-- ============================================================= FOOTER ============================================================= -->
+		
+		<footer class="dark-bg">
+			<div class="container inner">
+				<div class="row">
+					
+					<div class="col-md-3 col-sm-6 inner">
+						<h4>Who we are</h4>
+						<a href="http://www.photo2fashion.com/index.php"><img class="logo img-intext" src="data/photo2fashion-logo.svg" alt="all over print shirts"></a>
+						<p>Photo2Fashion is a 21st century lean network organisation dedicated to the design and production
+            of premium quality all over printed T-shirts for individuals, designers and small shops and boutiques.
+            </p>
+						<a href="http://www.photo2fashion.com/our-t-shirt-printing-business.php" class="txt-btn">More about us</a>
+					</div><!-- /.col -->
+					
+					<div class="col-md-3 col-sm-6 inner">
+						<h4>Terms</h4>
+            <ul style="list-style:none; padding-left:0;">
+                <li><a href="http://www.photo2fashion.com/docs/General%20Terms%20and%20Conditions%20of%20Photo2Fashion.pdf" target="_blank" rel="nofollow">Terms and Conditions </a></li>
+                <li><a href="http://www.photo2fashion.com/docs/General%20Terms%20and%20Conditions%20for%20Shop%20Owners.pdf" target="_blank" rel="nofollow">Term and Conditions for Shop Owners</a></li>
+                <li><a href="http://www.photo2fashion.com/docs/Privacy%20Policy%20of%20Photo2Fashion.pdf" target="_blank" rel="nofollow">Privacy Policy</a></li>    						
+						</ul>
+					</div><!-- /.col -->
+					
+					
+					<div class="col-md-3 col-sm-6 inner">
+						<h4>Get In Touch</h4>						
+						<ul class="contacts">
+              <li><a href="mailto:info@photo2fashion.com"><i class="icon-mail-1 contact"></i> info@photo2fashion.com</a></li>
+              <li><i class="icon-mobile contact"></i> +31 (0) 644 335 990</li>
+							<li><i class="icon-location contact"></i> Koningin Julianalaan 224, 2274JP Voorburg, the Netherlands</li>													
+						</ul><!-- /.contacts -->
+            <ul class="social list-inline" style="font-size:200%">
+							<li><a href="http://www.facebook.com/photo2fashion"><i style="font-size:100%" class="icon-s-facebook"></i></a></li>
+							<li><a href="https://plus.google.com/+Photo2fashionDesignYourOwnTShirt/posts"><i style="font-size:100%" class="icon-s-gplus"></i></a></li>
+							<li><a href="http://twitter.com/Photo2Fashion"><i style="font-size:100%" class="icon-s-twitter"></i></a></li>
+							<li><a href="http://www.pinterest.com/photo2fashion/"><i style="font-size:100%" class="icon-s-pinterest"></i></a></li>							
+						</ul><!-- /.social -->
+					</div><!-- /.col -->
+					
+					<div class="col-md-3 col-sm-6 inner">
+						<h4>Instant updates</h4>
+						<p>Subscribe with your email address and get informed about special actions and new features.</p>
+						<form id="newsletter" class="form-inline newsletter" role="form" action="register-user.php" method="get">
+							<label class="sr-only" for="exampleInputEmail">Email address</label>
+							<input class="form-control" id="exampleInputEmail" placeholder="Enter your email address" name="email" type="email">
+							<button type="submit" class="btn btn-default btn-submit">Subscribe</button>
+						</form>
+					</div><!-- /.col -->
+					
+				</div><!-- /.row --> 
+			</div><!-- .container -->
+		  
+			<div class="footer-bottom">
+				<div class="container inner">
+					<p class="pull-left">� 2015 Photo2Fashion. All rights reserved.</p>
+					<ul class="footer-menu pull-right">
+						<li><a href="http://www.photo2fashion.com/index.php">Home</a></li>
+						<li><a href="http://www.photo2fashion.com/design-your-own-t-shirt.php">Design</a></li>
+						<li><a href="http://www.photo2fashion.com/t-shirt-design-ideas.php">View</a></li>
+						<li><a href="http://www.photo2fashion.com/3d-t-shirt-online-shopping.php">Shop</a></li>
+						<li><a href="http://www.photo2fashion.com/how-to-design-a-t-shirt-online.php">Help</a></li>
+						<li><a href="http://www.photo2fashion.com/our-t-shirt-printing-business.php">About</a></li>
+            <li><a href="http://www.photo2fashion.com/blog">Blog</a></li>
+					</ul><!-- .footer-menu -->
+				</div><!-- .container -->
+			</div><!-- .footer-bottom -->
+		</footer>
+  
+  
+  <!-- ============================================================= FOOTER : END ============================================================= -->
+		
+		<!-- JavaScripts placed at the end of the document so the pages load faster -->
+		<script src="data/jquery_006.js"></script>
+		<script src="data/jquery_004.js"></script>
+		<script src="data/jquery_005.js"></script>
+		<script src="data/jquery_003.js"></script>
+		<script src="data/bootstrap.js"></script>
+		<script src="data/bootstrap-hover-dropdown.js"></script>
+		<script src="data/skrollr.js"></script>
+		<script src="data/skrollr_002.js"></script>
+		<script src="data/waypoints.js"></script>
+		<script src="data/waypoints-sticky.js"></script>
+		<script src="data/owl.js"></script>
+		<script src="data/jquery.js"></script>
+		<script src="data/jquery_002.js"></script>
+		<script src="data/google.js"></script><script src="data/main.js"></script>
+		<script src="data/viewport-units-buggyfill.js"></script>
+		<script src="data/scripts.js"></script>
+		
+		<!-- OnScroll CSS3 Animations for Modern Browsers and IE10+ -->
+		<!--[if !IE]> -->
+			<script src="data/onscroll.js"></script>
+		<!-- <![endif]-->
+		
+		
+    
+    <!-- Start of Google Analytics Tracking Code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+
+  ga('create', 'UA-42427269-1', 'auto');  ga('send', 'pageview');
+
+</script>    
+<!-- End of Google Analytics Tracking Code -->
+
+
+   
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">var sc_project=7739063;var sc_invisible=1;var sc_security='d323d994';</script><script type="text/javascript" src="data/counter.js"></script><noscript><div class='statcounter'><a title='counter forvBulletin' href='http://statcounter.com/vbulletin/'target='_blank'><img class='statcounter'src='http://c.statcounter.com/7739063/0/d323d994/0/'alt='counter for vBulletin'></a></div></noscript><!-- End of StatCounter Code for Default Guide -->	
+	
+	
+<a style="display: none; position: fixed; z-index: 1001;" href="#top" id="scrollUp"><i class="icon-up-open-mini"></i></a></body></html>
