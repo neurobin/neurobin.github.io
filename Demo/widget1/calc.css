@@ -1,0 +1,27 @@
+#neurobin-com-widget-calc{
+width: 28em;
+height: 22em;
+padding-left: 2em;
+padding-top: 1em;
+background-color: #FFF;
+}
+#neurobin-com-widget-calc>div{
+  width: 24em;
+  height: 18em;
+  background-color: #283E89;
+  border-radius: 10px;
+  padding-left: .8em;
+  color: #FFF;
+}
+#neurobin-com-widget-calc>div>input{
+  width: 10em;
+  height: 1.5em;
+  color: #000;
+}
+#neurobin-com-widget-calc>div>button{
+  height: 1.4em;
+  margin-left: .6em;
+  background-color: #D2212B;
+  border-radius: 4px;
+  border: 0px;
+}
