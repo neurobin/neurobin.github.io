@@ -249,6 +249,26 @@ function returnTwitterShareUrl() {
 
 						The name and identity elements of a distro are trademarked and copyrighted. Unless you have approval from appropriate authorization you can't use those (identity elements and name).
 					</p>
+					<h2 id="features">Features:</h2>
+					<ol>
+<li>
+You can save your project in a suitable directory and keep adding and changing things while checking the ISOs' built on those changes.
+</li>
+<li>
+Your changes are always saved. You can resume it whenever you like.
+</li>
+<li>
+It remembers your previous choice (the project directory, the desired ISO name and the original ISO path). Just hit <kbd>Enter</kbd> when you are prompt for input in such cases.
+</li>
+<li>You only need to give it the original ISO once, every time after that, you can just go to the chroot terminal and keep customizing things.</li>
+
+					
+					
+					
+					</ol>
+					
+					
+					
 
 					<h2>Requirements:</h2>
 					<ol>
@@ -287,6 +307,31 @@ Is this a fresh start: (y/n)?n
 					<p>
 						Hints are given on the go, follow them to successfully create a customized live cd/dvd.
 					</p>
+<h2>Directories & Files:</h2>
+<ol>
+<li>
+In your project directory, you will find some default directories. Don't change their names. The directories are:
+<ol>
+<li>
+<span class="quote">debcache:</span> <span class="light-quote">.deb</span> files are kept here. See <a href="JLIVECD/#debcache-management">debcache management</a> for more details.
+</li>
+<li>
+<span class="quote">edit:</span> This is the root filesystem (i.e /) for the live system (chroot system). Any change you make here will appear in the finalized ISO.
+</li>
+<li>
+<span class="quote">extracted:</span> This is where the original ISO is extracted. You can change several things here, like Diskname, release, date, splash screen, etc.
+</li>
+<li>
+<span class="quote">mnt:</span> A directory used only for mounting ISO image.
+</li>
+</ol>
+<li>
+There's also an additional file named <span class="quote">disk</span>, which contains the target ISO name. You can edit this file to edit the name. Dont' delete it though.
+</li>
+</li>
+
+</ol>					
+					
 
 					<h2>Things To Care:</h2>
 					<ol>
@@ -308,9 +353,13 @@ Is this a fresh start: (y/n)?n
 						<li>
 							Don't use <span class="quote">spaces</span> in project path (only allowed in base iso path).
 						</li>
+						<li>
+In a fresh start, don't close the terminal when it is extracting the original ISO. You can close it safely after it finishes extracting and the chroot is closed and another prompt for input is appeared.			
+						</li>
+						<li>Don't close the chroot and host terminal simultaneously. You can close the host terminal safely after an input prompt appears after closing the chroot terminal.</li>
 					</ol>
 
-					<h2>Special Feature:</h2>
+					<h2 id="debcache-management">Special Feature:</h2>
 
 					<p>
 						I call it <span class="quote">debcache management!</span>
@@ -398,6 +447,26 @@ Is this a fresh start: (y/n)?n
 							</p>
 
 							<a href="https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1325142">https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1325142</a>
+						</li>
+						<li>
+						<p>
+In Ubuntu 14.04 Gnome LTS you might encounter two more bugs: 						
+						</p>
+						<p>One should be solved by editing:</p><pre><code>/var/lib/dpkg/info/whoopsie.prerm
+/var/lib/dpkg/info/libpam-systemd\:amd64.prerm
+/var/lib/dpkg/info/libpam-systemd\:amd64.postinst</code></pre>
+
+(change <code>exit $?</code> to <code>exit 0</code> in the <span class="light-quote">invoke-rc.d</span> lines)
+<p>Other one should be solved by editing:</p><pre><code>/etc/kernel/postrm.d/zz-update-grub
+/etc/kernel/postinst.d/zz-update-grub</code></pre>
+find the following and comment out the <code>if</code> an <code>fi</code> line:
+<pre><code>if [ -e /boot/grub/grub.cfg ]; then
+   #exec update-grub
+fi
+</code></pre>
+<p>Follow the following link for bug report:</p>
+<a href="https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1325142">https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1325142</a>
+						
 						</li>
 						<li>
 							<p>
