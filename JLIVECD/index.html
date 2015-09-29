@@ -357,6 +357,9 @@ There's also an additional file named <span class="quote">disk</span>, which con
 In a fresh start, don't close the terminal when it is extracting the original ISO. You can close it safely after it finishes extracting and the chroot is closed and another prompt for input is appeared.			
 						</li>
 						<li>Don't close the chroot and host terminal simultaneously. You can close the host terminal safely after an input prompt appears after closing the chroot terminal.</li>
+<li>
+The default answer is <span class="quote">no</span> for all <span class="quote">yes/no</span> type questions.
+</li>					
 					</ol>
 
 					<h2 id="debcache-management">Special Feature:</h2>
@@ -464,6 +467,7 @@ find the following and comment out the <code>if</code> an <code>fi</code> line:
    #exec update-grub
 fi
 </code></pre>
+<p>Revert these changes before exiting the chroot.</p>
 <p>Follow the following link for bug report:</p>
 <a href="https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1325142">https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1325142</a>
 						
