@@ -255,9 +255,13 @@ function returnTwitterShareUrl() {
 <li>Null terminated file can be taken as Name String File.</li>
 <li>Files or directories can be sorted in natural order or general alphabetical order.</li>
 </ol>
+<div id="dependency"></div>
+<h1>Dependency:</h1>
+<p>It was built with GCC 4.9.3. Therefore you at least need <code>libstdc++6-4.9.3</code> to run this program.</p>
 <div id="install"></div>
 <h1>Install:</h1>
 <h3>Unix (32 or 64 bit):</h3>
+<p>Make sure <code>libstdc++6 (&gt;=4.9.3)</code> or <code>GCC (g++&gt;=4.9.3)</code> is available in your system.</p>
 <ol>
 <li>Give the <span class="quote">install</span> file execution permission (<code>chmod +x install</code>) and</li>
 <li>Run it or just drag and dropt it on terminal and hit <kbd>Enter</kbd> (requires root privilege).</li>
@@ -266,6 +270,11 @@ function returnTwitterShareUrl() {
 <h3>Ubuntu:</h3>
 <p>Aside from the above generalized method, you can also install it in Ubuntu from PPA (<code>ppa:neurobin/ppa</code>).</p>
 <pre class="prettyprint"><code>sudo add-apt-repository -y ppa:neurobin/ppa
+sudo apt-get update
+sudo apt-get install rnm</code></pre class="prettyprint">
+<p>If you are in Ubuntu 14.04 or 12.04 (trusty or precise), you will need to add ubuntu-toolchain repository to make <code>libstdc++6 (&gt;=4.9.3)</code> available:</p>
+<pre class="prettyprint"><code>sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo add-apt-repository -y ppa:neurobin/ppa
 sudo apt-get update
 sudo apt-get install rnm</code></pre class="prettyprint">
 <div id="un-install"></div>
