@@ -1,0 +1,170 @@
+<div id='3'></div>
+#Mechanism:
+
+I am going to use `DialogFragment` (api >=11) to host the Time Picker. DialogFragment manages the life cycle and allows different layout configurations for the `TimePicker`.
+
+To show a time picker dialog, we need to define a fragment class (`TimePickerFragment`) which extends the DialogFragment class and returns a `TimePickerDialog` from its `onCreateDialog()` method.
+
+#Let's start the project:
+
+<div id="4"></div>
+##Java Part:
+
+First create an empty project in Android Studio with a blank Activity. Then create a new Fragment class named *TimePickerFragment*, and let it extend *DialogFragment* and implement *TimePickerDialog.OnTimeSetListener*.
+
+To be specific, copy paste the following codes in your *TimePickerFragment* class:
+
+```
+package com.neurobin.aapps.timepicker;
+
+import android.app.Dialog;
+import android.app.TimePickerDialog;
+import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.text.format.DateFormat;
+import android.widget.TextView;
+import android.widget.TimePicker;
+
+import java.util.Calendar;
+
+/**
+ * Created by jahid on 12/10/15.
+ */
+public class TimePickerFragment extends DialogFragment
+        implements TimePickerDialog.OnTimeSetListener {
+
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        // Use the current time as the default values for the picker
+        final Calendar c = Calendar.getInstance();
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+        int minute = c.get(Calendar.MINUTE);
+
+        // Create a new instance of TimePickerDialog and return it
+        return new TimePickerDialog(getActivity(), this, hour, minute,
+                DateFormat.is24HourFormat(getActivity()));
+    }
+
+    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+        // Do something with the time chosen by the user
+        TextView tv1=(TextView) getActivity().findViewById(R.id.textView1);
+        tv1.setText("Hour: "+view.getCurrentHour()+" Minute: "+view.getCurrentMinute());
+
+
+    }
+}
+```
+
+The method `onTimeSet()` is where you get the time set by user. Here, I am taking the Hour and Minute and displaying them with the `TextView` in the `MainActivity`.
+
+Now, Make your *MainActivity* class look like this:
+
+```
+package com.neurobin.aapps.timepicker;
+
+
+import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    public void showTimePickerDialog(View v) {
+        DialogFragment newFragment = new TimePickerFragment();
+        newFragment.show(getSupportFragmentManager(), "timePicker");
+    }
+
+
+}
+```
+
+The last method in this class is the one which is responsible for showing the *TimePickerDialog*.
+
+<div id='5'></div>
+##XML Part:
+
+The XML part is simple, just a *TextView* and a *Button*:
+
+*activity_main.xml:*
+
+```
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/init_text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pick_time"
+        android:onClick="showTimePickerDialog"
+        android:layout_marginTop="125dp"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
+
+```
+*strings.xml:*
+
+```
+<resources>
+    <string name="app_name">Time Picker</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="init_text">Neurobin Time Picker Example</string>
+    <string name="pick_time">Pick Time</string>
+</resources>
+```
+
+That's it. Run and see the outcome.
+
+Without making all these changes yourself you can just download the whole project and import it to Android Studio (Links at top).
+

@@ -4,14 +4,12 @@
 </script>
 
 <link href="http://gmpg.org/xfn/11" rel="profile">
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
 <!-- CSS -->
 
-<meta name="author" content="Jahidul Hamid" >
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="style/mycss.css" />
@@ -28,3 +26,12 @@
 <script>hljs.initHighlightingOnLoad();</script>
 
 <link rel="shortcut icon" href="img/logo48.png" type="image/x-icon" />
+  <meta name="author" content="Jahidul Hamid" >
+  <meta name="copyright" content="Copyright Neurobin - 2015">
+  <meta name="email" content="admin@neurobin.com">
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="Charset" content="UTF-8">
+  <meta name="Rating" content="General">
+  <meta name="Distribution" content="Global">
+  <meta name="Robots" content="INDEX,FOLLOW">
+  <meta name="Revisit-after" content="7 Days">
