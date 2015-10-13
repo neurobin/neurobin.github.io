@@ -483,9 +483,9 @@ text-align: center;
 }
 #share-btn3{
   margin-top: 4em;
-  background-color: #44619D;
+  background-color: #fffD;
   text-decoration: none;
-  color: #fff;
+  color: #000;
   outline: none;
   text-align: left;
   
@@ -507,12 +507,12 @@ text-align: center;
   right: -4.5em;;
 }
 #share-btn3:hover{
-  background-color: #449;
-  right: -1em;;
+  background-color: #fff;
+  right: -4.5em;;
 }
 #share-btn4:hover{
   background-color: #0c7196;
-  right: -1em;;
+  right: -4.5em;;
 }
 .share-button-fixed{
   transition-duration: 1s;
@@ -1190,4 +1190,7 @@ border: 1px solid #DDD;
 }
 .uedit-skey-select{
   width: 27%!important;
+}
+#like-button-div{
+  text-align: center;
 }

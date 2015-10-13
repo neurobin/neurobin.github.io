@@ -1,4 +1,53 @@
-		<div class="container-fluid" id="foot" >
+<hr>
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div id="like-button-div" class="like-button-div">
+<html>
+<head>
+    <title>Your Website Title</title>
+    <!-- You can use open graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+    <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Your Website Title" />
+    <meta property="og:description"   content="Your description" />
+    <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+</head>
+<body>
+
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript">
+function returnPageUrl() {
+	return window.location.href;
+}
+</script>
+
+    <!-- Your like button code -->
+    <div class="fb-like" 
+        data-href="returnPageUrl()" 
+        data-layout="button_count" 
+        data-action="like" 
+        data-show-faces="true">
+    </div>
+
+</body>
+</html>
+
+</div>
+</div>	
+</div>
+</div>
+		
+<div class="container-fluid" id="foot" >
 			<div class="row" id="footer">
 
 				<div class="col-xs-4">

@@ -47,7 +47,15 @@
 	</head>
 	<body onload="startTime()">
 
-		<nav class="navbar" id="navbar">
+		<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=748792438520405";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<nav class="navbar" id="navbar">
 	<div class="container-fluid" id="bar">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -196,14 +204,27 @@ return "http://www.facebook.com/sharer.php?u="+window.location.href;
 function returnTwitterShareUrl() {
 	return "http://twitter.com/home?status="+window.location.href;
 }
-
+function returnPageUrl() {
+	return window.location.href;
+}
 </script>
 
 
-<div id="fixed-share-button" class="share-button-fixed">
+<div id="fixed-share-button">
 	<a id="share-btn1" href="#" onclick="return newShareWindow(returnFacebookShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-facebook"></i> share</a>
 
 	<a id="share-btn2" href="#" onclick="return newShareWindow(returnTwitterShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-twitter"></i> share</a>
+
+<div class="social-button-fixed" id="share-btn3">
+<g:plus action="share" href="returnPageUrl()" annotation="bubble" height="60" align="left" expandTo="left"></g:plus>
+</div>
+<script >
+  window.___gcfg = {
+    lang: 'en-US',
+    parsetags: 'onload'
+  };
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 </div>		<!-- fixed share button end-->
 		<div class="container" id="showoff-lin">
@@ -243,7 +264,56 @@ function returnTwitterShareUrl() {
 
 		<!--Content  ends here -->
 
-				<div class="container-fluid" id="foot" >
+		<hr>
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div id="like-button-div" class="like-button-div">
+<html>
+<head>
+    <title>Your Website Title</title>
+    <!-- You can use open graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+    <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Your Website Title" />
+    <meta property="og:description"   content="Your description" />
+    <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+</head>
+<body>
+
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript">
+function returnPageUrl() {
+	return window.location.href;
+}
+</script>
+
+    <!-- Your like button code -->
+    <div class="fb-like" 
+        data-href="returnPageUrl()" 
+        data-layout="button_count" 
+        data-action="like" 
+        data-show-faces="true">
+    </div>
+
+</body>
+</html>
+
+</div>
+</div>	
+</div>
+</div>
+		
+<div class="container-fluid" id="foot" >
 			<div class="row" id="footer">
 
 				<div class="col-xs-4">
