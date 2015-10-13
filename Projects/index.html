@@ -269,39 +269,31 @@ function returnPageUrl() {
 
 		<hr>
 <div class="container-fluid">
-<div class="row">
-<div class="col-xs-12">
-<div id="like-button-div" class="like-button-div">
-<html>
-<head>
-    <title>Your Website Title</title>
-<script type="text/javascript">
-function returnPageUrl() {
-	return window.location.href;
-}
+<div class="row" id="footer-social-button-row-div">
+<div class="col-xs-4">
+<div id="facebook-like-button-div" class="footer-social-button-div">
 
-</script>
-    <!-- You can use open graph tags to customize link previews.
-    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
-    <meta property="og:url"           content="returnPageUrl()" />
-    <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="Your Website Title" />
-    <meta property="og:description"   content="Your description" />
-</head>
-<body>
+
     <!-- Your like button code -->
-    <div class="fb-like" 
-        data-href="returnPageUrl()" 
+    <div class="fb-like"
         data-layout="button_count" 
         data-action="like" 
         data-show-faces="true">
     </div>
 
-</body>
-</html>
-
 </div>
-</div>	
+</div>
+<div class="col-xs-4">
+<div class="footer-social-button-div">
+<a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="Neurobin" data-via="@jahidulhamid" data-count="horizontal"></a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div>
+</div>
+<div class="col-xs-4">
+<div class="footer-social-button-div">
+<div class="g-plusone" data-size="standard" data-annotation="bubble" ></div>
+</div>
+</div>
 </div>
 </div>
 		

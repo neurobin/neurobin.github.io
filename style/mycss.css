@@ -1191,6 +1191,9 @@ border: 1px solid #DDD;
 .uedit-skey-select{
   width: 27%!important;
 }
-#like-button-div{
+.footer-social-button-div{
   text-align: center;
+}
+#footer-social-button-row-div{
+  padding: 0 30em 0 30em;
 }
