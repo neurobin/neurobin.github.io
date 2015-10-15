@@ -448,7 +448,7 @@ where <u>regex</u> is the regex to search for and available modifier is <u>i</u>
 insensitive  search. If no  modifier is used, the regex format can be
 reduced to <code>/regex/</code> or simply <code>regex</code>.</p>
 <p>Terminate search strings (<code>/regex/</code> fromat only) with <code>;</code> to provide multiple search strings, e.g <code>'/s1/i;/s2/;/s3/'</code>. This applies to fixed search strings as well.</p>
-<p>Also you can provide multiple search strings with repeated <code>-ss</code> option and file with repeated <code>-ss/f</code> options. These options can be combined together too.</p>
+<p>Also you can provide multiple search strings with repeated <code>-ss</code> and/or <code>-ssf</code> options and files with repeated <code>-ss/f</code> and/or <code>-ssf/f</code> options. These options can be mixed with each other too.</p>
 <p><strong>Index Field Length:</strong> An integer value defining the field length of index.
 By default empty field will be filled with 0's. For example, if
 the value is <code>3</code>, then index will be <code>001</code>, <code>002</code>, <code>003</code>, etc..
@@ -474,7 +474,7 @@ Regarding replace string, there are four special cases:</p>
 g stands for global and replaces every instances of match found.
 i stands case insensitive search (default is case sensitive).<em>Replace String</em> is always performed on old file name.</p>
 <p>Terminate replace strings with <code>;</code> to provide multiple replace strings, e.g <code>'/s1/r1/gi;/s2/r2/i;/s3/r3/'</code>.</p>
-<p>You can provide multiple replace strings with repeated <code>-rs</code> option and multiple file with repeated <code>-rs/f</code> options. These options can be combined together too.</p>
+<p>You can provide multiple replace strings with repeated <code>-rs</code> option and multiple file with repeated <code>-rs/f</code> options. These options can be mixed with each other too.</p>
 <pre class="prettyprint"><code>Example: '/video/Episode /i//gi' will replace every instances
 of 'video' with 'Episode index' i.e you will get new rname as:.
 Episode 1..., Episode 2..., etc...</code></pre class="prettyprint">
