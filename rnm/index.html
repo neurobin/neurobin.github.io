@@ -214,7 +214,7 @@ function returnPageUrl() {
 	<a id="share-btn2" href="#" onclick="return newShareWindow(returnTwitterShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-twitter"></i> share</a>
 
 <div class="social-button-fixed" id="share-btn3">
-<g:plus action="share" href="returnPageUrl()" annotation="bubble" height="60" align="left" expandTo="left"></g:plus>
+<g:plus action="share" href="returnPageUrl()" annotation="bubble" height="60" align="left"></g:plus>
 </div>
 <script >
   window.___gcfg = {
@@ -259,7 +259,7 @@ function returnPageUrl() {
 				<div class="col-xs-8 " id="content-soft">
 <div id="description"></div>
 <h1>rnm</h1>
-<p>Bulk Rename Utility written in <code>C++</code>. Files and directories can be passed as command line arguments to rename them in bulk according to some naming scheme (<em>Name String</em>). If any file or directory path is not passed as command line arguement, it will wait for user to type the path i.e it will take the path from standard input <code>(&gt;=version 3.0.1)</code>. It uses <code>C++</code> regex (<a href="http://www.cplusplus.com/reference/regex/ECMAScript/">ECMAScript regex</a>) as the default regex to provide search (and replace) functionality, other regex modes are available through (<code>-re</code>) option. It provides an undo functionality too to move back an unwanted rename operation. You can also run a simulation instead of actual rename to view the potential outcome as program output on terminal with the <code>-sim</code> option.</p>
+<p>Bulk Rename Utility written in <code>C++</code>. Files and directories can be passed as command line arguments to rename them in bulk according to some naming scheme (<em>Name String</em>). If any file or directory path is not passed as command line argument, it will wait for user to type the path i.e it will take the path from standard input <code>(&gt;=version 3.0.1)</code>. It uses <code>C++</code> regex (<a href="http://www.cplusplus.com/reference/regex/ECMAScript/">ECMAScript regex</a>) as the default regex to provide search (and replace) functionality, other regex modes are available through (<code>-re</code>) option. It provides an undo functionality too to move back an unwanted rename operation. You can also run a simulation instead of actual rename to view the potential outcome as program output on terminal with the <code>-sim</code> option.</p>
 <div id="features"></div>
 <h1>Features:</h1>
 <ol>
@@ -274,16 +274,12 @@ function returnPageUrl() {
 <li>Null terminated file can be taken as Name String File.</li>
 <li>Files or directories can be sorted in natural order or general alphabetical order.</li>
 </ol>
-<div id="dependency"></div>
-<h1>Dependency:</h1>
-<p>It was built with GCC 4.9.3. Therefore you at least need <code>libstdc++6-4.9.3</code> to run this program.</p>
 <div id="install"></div>
 <h1>Install:</h1>
 <h3>Unix (32 or 64 bit):</h3>
-<p>Make sure <code>libstdc++6 (&gt;=4.9.3)</code> or <code>GCC (g++&gt;=4.9.3)</code> is available in your system.</p>
 <ol>
 <li>Give the <span class="quote">install</span> file execution permission (<code>chmod +x install</code>) and</li>
-<li>Run it or just drag and dropt it on terminal and hit <kbd>Enter</kbd> (requires root privilege).</li>
+<li>Run it or just drag and drop it on terminal and hit <kbd>Enter</kbd> (requires root privilege).</li>
 </ol>
 <p>The install script depends on <span class="quote">Bash Shell</span>. If you don't have <code>bash</code> installed, then just copy the suitable binary file (<code>rnm</code>) from <em>bin/x32</em> or <em>bin/x64</em> directory to <em>/usr/bin</em> directory, and copy the <span class="quote">rnm.1</span> file to <em>/usr/share/man/man1</em> directory.</p>
 <h3>Ubuntu:</h3>
@@ -291,23 +287,18 @@ function returnPageUrl() {
 <pre class="prettyprint"><code>sudo add-apt-repository -y ppa:neurobin/ppa
 sudo apt-get update
 sudo apt-get install rnm</code></pre class="prettyprint">
-<p>If you are in Ubuntu 14.04 or 12.04 (trusty or precise), you will need to add ubuntu-toolchain repository to make <code>libstdc++6 (&gt;=4.9.3)</code> available:</p>
-<pre class="prettyprint"><code>sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-sudo add-apt-repository -y ppa:neurobin/ppa
-sudo apt-get update
-sudo apt-get install rnm</code></pre class="prettyprint">
 <div id="un-install"></div>
 <h1>Uninstall:</h1>
 <ol>
 <li>Give the <span class="quote">uninstall</span> file execution permission and</li>
-<li>Run it or just drag and dropt it on terminal and hit <kbd>Enter</kbd> (requires root privilege).</li>
+<li>Run it or just drag and drop it on terminal and hit <kbd>Enter</kbd> (requires root privilege).</li>
 </ol>
 <div id="usage"></div>
 <h1>Usage:</h1>
 <pre class="prettyprint"><code>rnm directory/file/path -ns new_name [other options]
 rnm directory/file/path -rs "/search regex/replace string/gi" [other_options]
 rnm directory/file/path -nsf namestring/file/path</code></pre class="prettyprint">
-<p>One of the options of <code>-ns</code> or <code>-nsf</code> or <code>-rs</code> is mandatory. Options are <strong>not</strong> sequential, their position in the argument list have no siginificance. For example, <code>rnm filepath -ns name</code> is the same as <code>rnm -ns name filepath</code>. Though passing the <em>Directory/File</em> path at the end of the arguement list is considered to be safe and wise.</p>
+<p>One of the options of <code>-ns</code> or <code>-nsf</code> or <code>-rs</code> is mandatory. Options are <strong>not</strong> sequential, their position in the argument list have no significance. For example, <code>rnm filepath -ns name</code> is the same as <code>rnm -ns name filepath</code>. Though passing the <em>Directory/File</em> path at the end of the argument list is considered to be safe and wise.</p>
 <p>Options are case insensitive, i.e <code>-ssF</code> and <code>-ssf</code> are the same.</p>
 <div id="options"></div>
 <h2>Options:</h2>
@@ -339,12 +330,13 @@ i.e the number of digits that should be taken after the decimal point.</p>
 <p><code>--name-string</code>,
 <code>-ns</code>                : Name string.</p>
 <p><code>--name-string-file</code>,
-<code>-nsf</code>               : Name string file. File containing name string (one per line).
+<code>-nsf</code>, <code>-ns/f</code>      : Name string file. File containing name string (one per line).
 <code>-nsf /hist/</code> i.e a value passed <code>/hist/</code> as Name string file, will
-try to take the file from history.</p>
+try to take the file from history. <code>-nsf</code> is deprecated, use <code>-ns/f</code> instead.</p>
 <p><code>--name-string-file-null-terminated</code>,
-<code>-nsfn</code>              : Name String file. This takes a null terminated <em>Name String</em> file, i.e
-filenames are terminated by null character (<code>\0</code>) instead of new line (<code>\n</code>).</p>
+<code>-nsfn</code>,<code>-ns/fn</code>     : Name String file. This takes a null terminated <em>Name String</em> file, i.e
+filenames are terminated by null character (<code>\0</code>) instead of new line (<code>\n</code>).
+<code>-nsfn</code> is deprecated, use <code>-ns/fn</code> instead.</p>
 <p><code>--line</code>, <code>--start-line</code>,
 <code>-l</code>, <code>-sl</code>          : Start Line number in name string file.</p>
 <p><code>--line-reverse</code>, <code>--start-line-reverse</code>,
@@ -357,11 +349,17 @@ iteration.</p>
 <p><code>--search-string</code>,
 <code>-ss</code>                : Search string.
 String that will be used to search for files with matching names.
-This is generally a regex  if not pass with <code>-ssf</code> option.</p>
+This is generally a regex  if not passed with <code>-ssf</code> option.</p>
+<p><code>--search-string-file</code>,
+<code>-ss/f</code>              : Search string file. A file containing search string per line.</p>
 <p><code>--search-string-fixed</code>,
 <code>-ssf</code>               : Fixed search string (not treated as regex).</p>
+<p><code>--search-string-fixed-file</code>,
+<code>-ssf/f</code>             : Search string file. Contains fixed search string per line.</p>
 <p><code>--replace-string</code>,
 <code>-rs</code>                : Replace string. A string in the form <code>/search_string/replace_string/modifier</code>. See <strong>Replace String</strong> in <a href="rnm/#technical-terms">Terminology</a> for details.</p>
+<p><code>--replace-string-file</code>,
+<code>-rs/f</code>              : Replace string file. A file containing replace string per line.</p>
 <p><code>--regex</code>,
 <code>-re</code>                : regex mode. Available regex modes are POSIX compliant basic &amp; extended regex,
 regex used by grep, awk, egrep and the default regex is ECMAScript regex.
@@ -419,8 +417,8 @@ Name sting is parsed by the following rules (must be wrapped around with filepat
 <li><code>/-ir/</code> in name string will be replaced with inverse reserved index. In general, <code>-i</code> in the above replacement rules (applies to indexes excluding line indexes) will mean inverse index conforming to their meaning.</li>
 <li><code>/dc/</code> in name string will be replaced with directory count</li>
 <li><code>/l/</code> in name string will be replaced with line number from <em>Name String File</em>.</li>
-<li><code>/la/</code> in name string will be replaced wiht actual line number from <em>Name String File</em>.</li>
-<li><code>/n/</code> in name string will be replaced with filename without extention. If used with <code>-nsf</code> option, the filename will be the name taken from the <em>Name String File</em>.</li>
+<li><code>/la/</code> in name string will be replaced with actual line number from <em>Name String File</em>.</li>
+<li><code>/n/</code> in name string will be replaced with filename without extension. If used with <code>-nsf</code> option, the filename will be the name taken from the <em>Name String File</em>.</li>
 <li><code>/fn/</code> in name string will be replaced with full name of the files. If used with <code>-nsf</code> option, full name will be the name taken from the <em>Name String File</em>.</li>
 <li><code>/rn/</code> in name string will be replaced with Replaced Name.</li>
 <li><code>/pd/</code> in name string will be replaced with parent directory  name of the current file or directory. </li>
@@ -435,7 +433,7 @@ filenames against the search string. By default it is
 a regex if <code>-ssF</code> option is not used.It is generally in the form <code>/regex/modifier</code> ,
 where <u>regex</u> is the regex to search for and available modifier is <u>i</u> which implies  case
 insensitive  search. If no  modifier is used, the regex format can be
-reduced to <code>/regex/</code> or simply <code>regex</code>.</p>
+reduced to <code>/regex/</code> or simply <code>regex</code>. Terminate search strings (/regex/ fromat only) with <code>;</code> to provide multiple search strings, e.g <code>'/s1/i;/s2/;/s3/'</code>. This applies to fixed search strings too.</p>
 <p><strong>Index Field Length:</strong> An integer value defining the field length of index.
 By default empty field will be filled with 0's. For example, if
 the value is <code>3</code>, then index will be <code>001</code>, <code>002</code>, <code>003</code>, etc..
@@ -457,9 +455,10 @@ Regarding replace string, there are four special cases:</p>
 <li><code>\p</code> is the prefix (i.e., the part of the target sequence that precedes the match)</li>
 <li><code>\s</code> is the suffix (i.e., the part of the target sequence that follows the match).</li>
 </ol>
-<p>to insert a <code>&amp;</code> literally, use <code>\&amp;</code> and for <code>\</code> use <code>\\</code>.Two modifiers are avalilable: g and i.
+<p>to insert a <code>&amp;</code> literally, use <code>\&amp;</code> and for <code>\</code> use <code>\\</code>.Two modifiers are available: g and i.
 g stands for global and replaces every instances of match found.
 i stands case insensitive search (default is case sensitive).<em>Replace String</em> is always performed on old file name.</p>
+<p>Terminate replace strings with <code>;</code> to provide multiple replace strings, e.g <code>'/s1/r1/gi;/s2/r2/i;/s3/r3/'</code>.</p>
 <pre class="prettyprint"><code>Example: '/video/Episode /i//gi' will replace every instances
 of 'video' with 'Episode index' i.e you will get new rname as:.
 Episode 1..., Episode 2..., etc...</code></pre class="prettyprint">
@@ -487,7 +486,7 @@ etc...</code></pre class="prettyprint">
 <li>This is a dangerous tool like <code>rm</code>, so use with care. If you make a mistake and do some unwanted rename, run <code>rnm -u</code> to undo (before running any more <code>rnm</code> command).</li>
 <li>Pass all regex like strings within quotes even if they don't contain any white space.</li>
 <li>To pass a filename that resembles an option, use <code>./</code>, i.e <code>./-ns</code> to pass a file named <code>-ns</code> in the current directory. Or you can use the <code>--</code> option make it a non-option argument; in that case make sure to pass all &quot;Option&quot; arguments before <code>--</code>, because everything after <code>--</code> will be taken as file path/s.</li>
-<li>Pass file or directory path list at the end of the argument sequence. Use <code>--</code> to make all the argumets after it as paths (not options).</li>
+<li>Pass file or directory path list at the end of the argument sequence. Use <code>--</code> to make all the arguments after it as paths (not options).</li>
 </ol><div id="changelog"><h1>ChangeLog:</h1>
 <h3><code>1.0.0</code>: <span class="light-quote">Sat 14 Aug 2015</span></h3>
 <p><strong>Birth of rnm</strong></p>
@@ -553,6 +552,13 @@ etc...</code></pre class="prettyprint">
 <li>Directory reserved index inconsistency fixed.</li>
 <li>Added <code>-cd</code> and <code>-cf</code> options.</li>
 <li>Added sort functionality. <code>-s</code> for default (natural) sort, <code>-s/g</code> for general sort. <code>-s/n</code> for natural sort. <code>-s/none</code> for no sort.</li>
+</ol>
+<h3><code>3.1.0</code>: <span class="light-quote">Thu Oct 15 00:04:43 UTC 2015</span></h3>
+<ol>
+<li>Multiple search string support added.</li>
+<li>Multiple replace string support added.</li>
+<li>Search strings can be taken from a file.</li>
+<li>Replace strings can be taken from a file.</li>
 </ol></div>	
 
 <div id="contribute">
