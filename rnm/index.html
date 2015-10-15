@@ -273,6 +273,8 @@ function returnPageUrl() {
 <li>Name can be taken from a file according to starting line number (<code>-l</code> or <code>-sl</code>) and ending line number (<code>-el</code>).</li>
 <li>Null terminated file can be taken as Name String File.</li>
 <li>Files or directories can be sorted in natural order or general alphabetical order.</li>
+<li>Multiple search strings or search string files supported.</li>
+<li>Multiple replace strings or replace string files supported.</li>
 </ol>
 <div id="dependency"></div>
 <h1>Dependency:</h1>
@@ -444,7 +446,9 @@ filenames against the search string. By default it is
 a regex if <code>-ssF</code> option is not used.It is generally in the form <code>/regex/modifier</code> ,
 where <u>regex</u> is the regex to search for and available modifier is <u>i</u> which implies  case
 insensitive  search. If no  modifier is used, the regex format can be
-reduced to <code>/regex/</code> or simply <code>regex</code>. Terminate search strings (/regex/ fromat only) with <code>;</code> to provide multiple search strings, e.g <code>'/s1/i;/s2/;/s3/'</code>. This applies to fixed search strings too.</p>
+reduced to <code>/regex/</code> or simply <code>regex</code>.</p>
+<p>Terminate search strings (<code>/regex/</code> fromat only) with <code>;</code> to provide multiple search strings, e.g <code>'/s1/i;/s2/;/s3/'</code>. This applies to fixed search strings as well.</p>
+<p>Also you can provide multiple search strings with repeated <code>-ss</code> option and file with repeated <code>-ss/f</code> options. These options can be combined together too.</p>
 <p><strong>Index Field Length:</strong> An integer value defining the field length of index.
 By default empty field will be filled with 0's. For example, if
 the value is <code>3</code>, then index will be <code>001</code>, <code>002</code>, <code>003</code>, etc..
@@ -470,6 +474,7 @@ Regarding replace string, there are four special cases:</p>
 g stands for global and replaces every instances of match found.
 i stands case insensitive search (default is case sensitive).<em>Replace String</em> is always performed on old file name.</p>
 <p>Terminate replace strings with <code>;</code> to provide multiple replace strings, e.g <code>'/s1/r1/gi;/s2/r2/i;/s3/r3/'</code>.</p>
+<p>You can provide multiple replace strings with repeated <code>-rs</code> option and multiple file with repeated <code>-rs/f</code> options. These options can be combined together too.</p>
 <pre class="prettyprint"><code>Example: '/video/Episode /i//gi' will replace every instances
 of 'video' with 'Episode index' i.e you will get new rname as:.
 Episode 1..., Episode 2..., etc...</code></pre class="prettyprint">
@@ -570,6 +575,13 @@ etc...</code></pre class="prettyprint">
 <li>Multiple replace string support added.</li>
 <li>Search strings can be taken from a file.</li>
 <li>Replace strings can be taken from a file.</li>
+</ol>
+<h3><code>3.1.1</code>: <span class="light-quote">Thu Oct 15 13:14:24 UTC 2015</span></h3>
+<ol>
+<li>Multiple search strings or files can now be provided by repeating options.</li>
+<li>Multiple replace strings or files can now be provided by repeating options.</li>
+<li>Multiple file support for replace string and search string.</li>
+<li>Status of skipping files due to existing files with same names is changed to Warning from Error.</li>
 </ol></div>	
 
 <div id="contribute">
