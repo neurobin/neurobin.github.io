@@ -291,6 +291,9 @@ It remembers your previous choice (the project directory, the desired ISO name a
 
 					<h2>Requirements:</h2>
 					<ol>
+					<li>
+bash (This is installed by default in most Linux distros)					
+					</li>
 						<li>
 
 							squashfs-tools
@@ -298,19 +301,24 @@ It remembers your previous choice (the project directory, the desired ISO name a
 						<li>
 							genisoimage
 						</li>
+						<li>xterm (optional)</li>
 					</ol>
 
 					<p>
 						Install requirements:
 					</p>
 					<pre><code>sudo apt-get install squashfs-tools genisoimage</code></pre>
+					<p>Optionally you can keep <code>xterm</code> installed. It will act as a backup terminal if the default terminal fails to run.</p>
+					<pre><code>sudo apt-get install xterm</code></pre>
 					<h2>Installation:</h2>
 
-					Give the <span class="quote">install.sh</span> file execution permission and run it in terminal: 					<pre><code>./install.sh	</code></pre>
+					Give the <span class="quote">install.sh</span> file execution permission and run it in terminal: 
+					<pre><code>chmod +x ./install.sh
+./install.sh</code></pre>
 					<h2>How to use:</h2>
 
 					<p>
-						Run <span class="inline-code">JLstart</span> in a terminal:
+						Run <code>JLstart</code> in a terminal:
 					</p>
 					<pre><code>~$ JLstart
 
@@ -391,8 +399,18 @@ The default answer is <span class="quote">no</span> for all <span class="quote">
 					<pre><code>sudo echo timeout_value > /usr/local/JLIVECD/main/timeout</code></pre><span class="quote">timeout_value</span> should be replaced with your desired time in seconds. Ex: for 12 seconds timeout:
 					<pre><code>sudo echo 12 > /usr/local/JLIVECD/main/timeout</code></pre>
 					</li>
-					
-					
+					<li>
+JLIVECD seems to have problem running the <code>mate-terminal</code> properly. For mate DE, install <code>xterm</code> instead:
+<pre><code>sudo apt-get install xterm</code></pre> 			
+					</li>
+					<li>
+You can change the default terminal JLIVECD uses for chroot applying patch to the source code. To change the primary default terminal, run the following command in a terminal in your main system:
+<pre><code>sudo sed -i "s/\(primary_jl_terminal='\)[^']*/\1your-custom-terminal/" /usr/local/JLIVECD/main/custom_desktop</code></pre>
+To change the secondary default:
+<pre><code>sudo sed -i "s/\(secondary_jl_terminal='\)[^']*/\1your-custom-terminal/" /usr/local/JLIVECD/main/custom_desktop</code></pre>
+<p>Where <code>your-custom-terminal</code> should be changed to the actutal terminal command ( <code>xfce4-terminal</code>, <code>gnome-terminal</code>, <code>xterm</code> etc...). 
+</p><p><span class="quote">Don't type the above command, copy-paste in terminal and then edit the part: <code>your-custom-terminal</code>.</span>	
+		</p>			</li>
 					
 					</ol>
 
@@ -440,6 +458,36 @@ The default answer is <span class="quote">no</span> for all <span class="quote">
 						<li>
 							You can use full path wih or without <span class="quote">.iso</span>
 						</li>
+					</ol>
+					
+					<span class="quote">version 2.0.5:</span>
+					<ol>
+					<li>
+					New install or update of this tool will not delete the history i.e hitting <kbd>Enter</kbd> to take the previous choice won't be affected. This was first implemented in version 2.0.4, i.e version >=2.0.4 can be safely updated to any later version.
+					</li>
+					<li>
+					Added another compression method (fast compression).
+					</li>
+<li>
+Minor potential bug fixes.
+</li>					
+<li>
+Docs updated.
+</li>
+					
+					</ol>
+					
+					<span class="quote">version 2.0.7:</span>
+					<ol>
+<li>
+<code>xterm</code> is added as a secondary terminal besides the default <code>x-terminal-emulator</code>.
+</li>	
+<li>
+Docs updated.
+</li>
+					
+					
+					
 					</ol>
 
 					<h2>Tested OS:</h2>
