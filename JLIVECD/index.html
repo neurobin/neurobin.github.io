@@ -280,7 +280,7 @@ Your changes are always saved. You can resume it whenever you like.
 It remembers your previous choice (the project directory, the desired ISO name and the original ISO path). Just hit <kbd>Enter</kbd> when you are prompt for input in such cases.
 </li>
 <li>You only need to give it the original ISO once, every time after that, you can just go to the chroot terminal and keep customizing things.</li>
-
+<li>It remembers user choices for various options and prompts both globally and locally (project-wise).</li>
 					
 					
 					
@@ -314,7 +314,7 @@ bash (This is installed by default in most Linux distros)
 
 					Give the <span class="quote">install.sh</span> file execution permission and run it in terminal: 
 					<pre><code>chmod +x ./install.sh
-./install.sh</code></pre>
+./install.sh     # or you can just drag & drop in terminal</code></pre>
 					<h2>How to use:</h2>
 
 					<p>
@@ -322,7 +322,7 @@ bash (This is installed by default in most Linux distros)
 					</p>
 					<pre><code>~$ JLstart
 
-Is this a fresh start: (y/n)?n
+Is this a new project: (y/n)?n
 
 [sudo] password for user:
 
@@ -353,7 +353,7 @@ In your project directory, you will find some default directories. Don't change 
 </li>
 </ol>
 <li>
-There's also an additional file named <span class="quote">disk</span>, which contains the target ISO name. You can edit this file to edit the name. Dont' delete it though.
+There's also an additional file named <span class="quote">.config</span>, which contains configuration of the corresponding project i.e DiskName and some other defaults for various options.
 </li>
 </li>
 
@@ -385,32 +385,37 @@ In a fresh start, don't close the terminal when it is extracting the original IS
 						</li>
 						<li>Don't close the chroot and host terminal simultaneously. You can close the host terminal safely after an input prompt appears after closing the chroot terminal.</li>
 <li>
-The default answer is <span class="quote">no</span> for all <span class="quote">yes/no</span> type questions.
-</li>					
+The default answer is <span class="quote">no</span> for all <span class="quote">yes/no</span> type questions unless specified otherwise.
+</li>		
+<li>
+The default answers for <code>yes/no</code> type questions are changed according to previous choices for some questions (retain home directory? etc..). For example, if you choose <code>y</code> for the question <code>retain home directory (y/n)?</code>; next time if you just hit <kbd>Enter</kbd>, it will take <code>y</code> instead of <code>n</code>. This is project specific i.e each project remembers its own options.
+
+</li>
+			
 					</ol>
 					
 					<h2>Some Tips & Tricks:</h2>
 					<ol>
 					<li>
-					If you are not being able to get connected to internet in chroot, you can try running the code: <code>JLRefreshNetwork</code> in another terminal in your main system. This may happen if you start JLIVECD before connecting your pc to the internet
+					If you are not being able to get connected to internet in chroot, you can try running the code: <code>JLopt -rn</code> in another terminal in your main system. This may happen if you start JLIVECD before connecting your pc to the internet
 					</li>
 					<li>
 					If you want to change the timeout value then run this code in another terminal in your main system:
-					<pre><code>sudo echo timeout_value > /usr/local/JLIVECD/main/timeout</code></pre><span class="quote">timeout_value</span> should be replaced with your desired time in seconds. Ex: for 12 seconds timeout:
-					<pre><code>sudo echo 12 > /usr/local/JLIVECD/main/timeout</code></pre>
+					<pre><code>JLopt -t timeout_value</code></pre><span class="quote">timeout_value</span> should be replaced with your desired time in seconds. Ex: for 12 seconds timeout:
+					<pre><code>JLopt -t 12</code></pre>
 					</li>
 					<li>
 JLIVECD seems to have problem running the <code>mate-terminal</code> properly. For mate DE, install <code>xterm</code> instead:
 <pre><code>sudo apt-get install xterm</code></pre> 			
 					</li>
 					<li>
-You can change the default terminal JLIVECD uses for chroot applying patch to the source code. To change the primary default terminal, run the following command in a terminal in your main system:
-<pre><code>sudo sed -i "s/\(primary_jl_terminal='\)[^']*/\1your-custom-terminal/" /usr/local/JLIVECD/main/custom_desktop</code></pre>
+You can change the default terminal JLIVECD uses for chroot. To change the primary default terminal, run the following command in a terminal in your main system:
+<pre><code>JLopt -t1 actual-terminal-command</code></pre>
 To change the secondary default:
-<pre><code>sudo sed -i "s/\(secondary_jl_terminal='\)[^']*/\1your-custom-terminal/" /usr/local/JLIVECD/main/custom_desktop</code></pre>
-<p>Where <code>your-custom-terminal</code> should be changed to the actutal terminal command ( <code>xfce4-terminal</code>, <code>gnome-terminal</code>, <code>xterm</code> etc...). 
-</p><p><span class="quote">Don't type the above command, copy-paste in terminal and then edit the part: <code>your-custom-terminal</code>.</span>	
-		</p>			</li>
+<pre><code>JLopt -t2 actual-terminal-command</code></pre>
+For Example, adding gnome-terminal as the primary default:
+<pre><code>JLopt -t1 gnome-terminal</code></pre>
+		</li>
 					
 					</ol>
 
@@ -489,6 +494,20 @@ Docs updated.
 					
 					
 					</ol>
+					<span class="quote">version 2.1.0</span>
+<ol>
+<li>You can change default terminals without applying patch to the source code.</li>
+<li>It now remembers several project-wise options (delete home directory?, fast compression?, etc..).</li>
+<li>Options are handled with config files both globally and project-wise.</li>
+<li>Added show version info (`JLopt -v`)</li>
+<li>Added show help menu (`JLopt -h`)</li>
+<li>New script `JLopt` contains several useful functionality.</li>
+<li>Several potential bug fixes.</li>
+<li>Docs updated.</li>
+
+
+</ol>					
+					
 
 					<h2>Tested OS:</h2>
 					<ul>
@@ -602,7 +621,7 @@ If you want to be notified of the continuous development, you can add this in yo
 					<h2><a id="authors--" class="anchor" href="#authors--" aria-hidden="true"><span class="octicon octicon-link"></span></a>Author: </h2>
 
 					<p>
-						Jahidul Hamid
+						Md. Jahidul Hamid
 					</p>
 					<p>
 						<a href="http://github.com/neurobin">http://github.com/neurobin</a>
