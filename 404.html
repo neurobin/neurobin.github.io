@@ -17,7 +17,7 @@
 <![endif]-->
 
 <!-- CSS -->
-<meta name="author" content="jahidul hamid" >
+<meta name="author" content="Jahidul Hamid" >
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -25,7 +25,7 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link rel="shortcut icon" href="img/logo48.png" type="image/x-icon" />
 
-		<title>Wrong Turn, Dead End</title>
+		<title>Wrong Turn, Dead End | Neurobin</title>
 
 <style type="text/css">
 li{

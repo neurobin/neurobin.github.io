@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<base href="../../../" />
+				<script>
+	if (window.location.protocol != "http:")
+		window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
+</script>
+
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- CSS -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="style/mycss.css" />
+<!--<link rel="stylesheet" href="style/mycss.min.css" />-->
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="script/myjs.js"></script>
+<!--<script src="script/myjs.min.js"></script>-->
+
+
+<link rel="stylesheet" href="Highlightjs/styles/github.css">
+<script src="Highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link rel="shortcut icon" href="img/nbglobe2.png" type="image/x-icon" />
+  <meta name="author" content="Md. Jahidul Hamid" >
+  <meta name="copyright" content="Copyright Neurobin - 2015">
+  <meta name="email" content="admin@neurobin.com">
+  <meta http-equiv="Content-Language" content="en-US">
+  <meta name="Charset" content="UTF-8">
+  <meta name="Rating" content="General">
+  <meta name="Distribution" content="Global">
+  <meta name="Robots" content="INDEX,FOLLOW">
+  <meta name="Revisit-after" content="1 Days">
+		<meta name="description" content="Installing Softwares On Linux">
+		<meta name="keywords" content="tutorial, on, how, to, install, softwares, linux, app, installing, software" />
+
+		<title>Installing Softwares On Linux | Neurobin</title>
+
+	</head>
+	<body onload="startTime()">
+
+		<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=748792438520405";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<nav class="navbar" id="navbar">
+	<div class="container-fluid" id="bar">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand"><img alt="neurobin logo" id="logo" src="img/neurobin400.png" /></a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav" id="menu">
+				<li class="active">
+					<a href="" target="_parent">Home</a>
+
+				</li>
+
+				<li class="dropdown">
+					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Projects">Projects<span class="caret-down"></span></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="menu-item " href="Projects/Softwares">Softwares <span class="caret-right edge"></span></a>
+
+							<ul >
+								<li>
+									<a class="menu-item" href="Projects/Softwares/linsofts.html">Linux</a>
+
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/winsofts.html">Windows</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/andapps.html">Android</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/webapps.html">Web Apps</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/games.html">Games</a>
+								</li>
+								
+								<li>
+									<a class="menu-item disabled-link" href="Projects/Softwares/genericsofts.html">Others</a>
+								</li>
+							</ul>
+
+						</li>
+						<li>
+							<a class="menu-item disabled-link" href="Projects/Research">Research</a>
+						</li>
+						<li>
+							<a class="menu-item disabled-link" href="Projects/Others">Others</a>
+						</li>
+
+					</ul>
+				</li>
+
+				<li class="dropdown">
+					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Docs">Docs<span class="caret-down"></span></a>
+					<ul class="dropdown-menu">
+					<li>
+							<a class="menu-item hand-cursor" href="Docs/Linux">Linux</a>
+						
+						</li>
+						<li class="disabled-link">
+							<a class="menu-item disabled-link" >Programming <span class="caret-right edge"></span></a>
+							<ul class="programming">
+								<li>
+									<a class="menu-item disabled-link" href="#">C</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">C++</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">SQL</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">PHP</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">CSS</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Java</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">HTML</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Matlab</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">JavaScript</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Shell Scripting</a>
+								</li>
+							</ul>
+
+						</li>
+
+						<li>
+							<a class="menu-item" href="Docs/Android">Android</a>
+						</li>
+					</ul>
+
+				</li>
+
+				<!-- <li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Places<span class="caret-down"></span></a>
+				<ul class="dropdown-menu">
+				<li>
+				<a class="menu-item" href="http://github.com/neurobin"><i class="fa fa-github"></i> Github</a>
+
+				</li>
+				<li>
+				<a class="menu-item" href="http://bitbucket.org/neurobin"><i class="fa fa-bitbucket"></i> Bitbucket</a>
+				</li>
+
+				</ul>
+				</li> -->
+
+				<li>
+					<a class="menu-item disabled-link " href="Downloads">Downloads</a>
+				</li>
+
+			</ul>
+			<div class="clock">
+				<ul class="nav navbar-nav navbar-right">
+
+					<li class="clock-item" >
+						<p id="clockTime"></p><p id="clockDate"></p>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>
+		<!--Navigation bar ends here -->
+		<!-- fixed share button-->
+		<script>
+function returnFacebookShareUrl(){
+return "http://www.facebook.com/sharer.php?u="+window.location.href;
+
+}
+function returnTwitterShareUrl() {
+	return "http://twitter.com/home?status="+window.location.href;
+}
+function returnPageUrl() {
+	return window.location.href;
+}
+</script>
+
+
+<div id="fixed-share-button">
+	<a id="share-btn1" href="#" onclick="return newShareWindow(returnFacebookShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-facebook"></i> share</a>
+
+	<a id="share-btn2" href="#" onclick="return newShareWindow(returnTwitterShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-twitter"></i> share</a>
+
+<div class="social-button-fixed" id="share-btn3">
+<g:plus action="share" href="returnPageUrl()" annotation="bubble" height="60" align="left"></g:plus>
+</div>
+<script >
+  window.___gcfg = {
+    lang: 'en-US',
+    parsetags: 'onload'
+  };
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</div>		<!-- fixed share button end-->
+		<div class="container" id="showoff-soft">
+			<div class="row line-after">
+
+				<p class="tutorial-name">
+					Installing Softwares In Linux
+				</p>
+				<p class="tutorial-tagline">
+					<a class="disabled-link" id="applicable-to">Applicable To:</a> Ubuntu, Ubuntu family distributions, Linux Mint, Debian(partial) and derivatives.
+				</p>
+
+			</div>
+		</div>
+
+		<!-- show off ends here-->
+
+		<div class="container" id="content-container2">
+			<div class="row">
+				<div class="col-xs-2" id="content-left">
+					<nav>
+						<div id="content-links">
+							<p>
+								Content
+							</p>
+							<ol>
+								<li>
+									<a href="Docs/Linux/how-to-install-softwares-in-linux.html#1">Through a software manager</a>
+								</li>
+								<li>
+									<a href="Docs/Linux/how-to-install-softwares-in-linux.html#2">Through synaptic package manager</a>
+								</li>
+								<li>
+									<a href="Docs/Linux/how-to-install-softwares-in-linux.html#3">Through terminal</a>
+								</li>
+								<li>
+									<a href="Docs/Linux/how-to-install-softwares-in-linux.html#4">PPA installation</a>
+								</li>
+								<li>
+									<a href="Docs/Linux/how-to-install-softwares-in-linux.html#5">Installing .deb packages</a>
+								</li>
+								<li>
+									<a href="Docs/Linux/how-to-install-softwares-in-linux.html#6">Installing .rpm packages</a>
+								</li>
+								<li>
+									<a href="Docs/Linux/how-to-install-softwares-in-linux.html#7">Installing from archives</a>
+								</li>
+								<li>
+									<a href="Docs/Linux/how-to-install-softwares-in-linux.html#8">Pre-installed archives</a>
+								</li>
+								<li>
+									<a href="Docs/Linux/how-to-install-softwares-in-linux.html#9">Installing .sh files</a>
+								</li>
+								<li>
+									<a href="Docs/Linux/how-to-install-softwares-in-linux.html#10">Installing .run files</a>
+								</li>
+
+							</ol>
+
+						</div>
+					</nav>
+				</div>
+				<div class="col-xs-8 " id="content-tutorial">
+					<!-- This is where you will put the content-->
+					<p>
+						There are several ways of installing softwares in linux and they are described in many tutorials. this tutorial will cover most of the processes of installing softwares in a linux system.
+					</p>
+					<p class="section-head">
+						Online installation:
+					</p>
+
+					<p class="section-sub2" id="1">
+						#1. Through a software manager:
+					</p>
+
+					First open the terminal and run this command to get the latest version of the software:
+					<pre><code>sudo apt-get update</code></pre>																				
+					
+
+Then
+
+
+
+
+
+					<ol>
+						<li>
+							Open software manager/center. it's in the menu.
+						</li>
+						<li>
+							Search your desired software in the search box
+						</li>
+						<li>
+							If it's in the list then it will appear before you .
+						</li>
+						<li class="message">
+							If it's not in the list follow the instructions in the ppa installation section of this tutorial.
+						</li>
+						<li>
+							Now double click on the desired software entry and then click "install".
+						</li>
+						<li>
+							It will be installed on your system as per your network connection speed.
+						</li>
+					</ol>
+					<p class="section-sub2" id="2">
+						#2. Through synaptic package manager:
+					</p>
+
+					If it is absent in your linux distribution then you will have to install it through software manager/center first.
+
+					To me it's the best way to install softwares in linux.
+					<ol>
+						<li>
+							Open synaptic package manager. click reload to get the latest version of the softwares.
+						</li>
+						<li>
+							Search your desired software/s in the search box.
+						</li>
+						<li>
+							Right click each software you want to install and mark them for installing. it will mark additional dependencies on it's own.
+						</li>
+						<li class="message">
+							If your softwares not in the list follow the instructions in the ppa installation section of this tutorial.
+						</li>
+						<li>
+							After marking for installing, click apply
+						</li>
+						<li>
+							It will download and install the marked softwares.
+						</li>
+					</ol>
+					<p class="section-sub2">
+						Additional info:
+					</p>
+
+					If you have a list of softwares then save the file with the list, with .list extension (this file should contain the exact package name one at every line with an extra string "install" included after each package name preceding by an space/tab). then go to file->read markings  and then brows to the file and open it. synaptic will mark the softwares in the list automatically.
+
+					<p class="section-sub2" id="3">
+						#3. Through terminal:
+					</p>
+
+					If you know the exact name of the software then you can install it through terminal by simply entering the command:
+					<pre><code>sudo apt-get update    <span class="comment">(to get the latest version)</span> 
+sudo apt-get install software-package-name
+</code></pre>
+					That's it. <span class="message">If it says "unable to locate package..."  then follow the instructions in the ppa installation section of this tutorial. </span>
+					<p class="section-sub2" id="4">
+						#4. PPA installation:
+					</p>
+
+					If your software's not in the software list then it may come from private package archives (PPA's).
+					<br />
+
+					These are private development of softwares so use it at your own risk.
+					<br />
+
+					Steps:
+					<ol>
+						<li>
+							Search google for the ppa address for your software. (like ppa for package-name)
+						</li>
+						<li>
+							Then add it to the repository by entering this command in terminal:
+
+							<p class="inline-code">
+								sudo add-apt-repository ppa:.....whatever_it_is
+							</p>
+						</li>
+						<li>
+							Then run this command (must)
+
+							<p class="inline-code">
+								sudo apt-get update
+							</p>
+						</li>
+						<li>
+							Now your desired software is in the list. so you can follow one of the above processes (#1,#2,#3)
+						</li>
+					</ol>
+
+					<p class="section-head">
+						Offline installation:
+					</p>
+
+					Say, you downloaded your desired softwares from some website. in this case if you don't trust the origin of the software then don't install it or install it at your own risk.
+
+					Your downloaded softwares may come as a .zip,  tar.gz, tar.bz2,    .deb,   .rpm,  .tgz,   tar.xz  or any other types of archives.
+
+					If you are in linux mint or in ubuntu or in a debian based OS try to download .deb packages because it's easier to install in debian based OS.
+
+					<p class="section-sub2" id="5">
+						#5. Installing .deb packages:
+					</p>
+
+					<p class="section-sub3">
+						through terminal:
+					</p>
+					<pre><code>cd path_to_the_directory_that_contains_the_.deb_file
+sudo dpkg -i filename.deb
+</code></pre>
+					<p class="section-sub3">
+						Through gdebi package manager:
+					</p>
+
+					<p class="message">
+						if gdebi is not installed then you have to install it through one of the processes #1,#2,#3 (requires internet connection)
+					</p>
+
+					Then double click on the .deb file or open the file with gdebi package manager and click install.
+
+					It will be istalled soon.
+					<p class="section-sub2" id="6">
+						#6. Installing .rpm packages:
+					</p>
+
+					rpm has to be installed in the system, otherwise follow one of the processes #1,#2,#3 to install rpm (requires internet connection)
+					<pre><code>cd path_to_the_directory_that_contains_the_.rpm_file
+sudo rpm -i filename.rpm
+</code></pre>																				
+
+
+
+
+
+					<p class="section-sub2" id="7">
+						#7. Installing from archives(.zip tar.gz.......etc):
+					</p>
+
+					these archives generally conatains the source of the package. each of them generally has a different approach to install. I will be discussing a common method which will supposedly work for all of them.
+
+					General requirements:
+					<ol>
+
+						<li>
+							flex
+						</li>
+
+						<li>
+							bison or bison++
+						</li>
+
+						<li>
+							python
+						</li>
+					</ol>
+					<p>
+						As these archives contains the source, your system needs the required programming languages to compile and build the source. so the general requirement packages stated above may not be sufficient for you. in that case you have to install the required packages through one of the processes #1,#2,#3 (requires internet connection).
+						You can know about the dependencies about your software in a readme file included in the archives.
+					</p>
+					Steps:
+					<ol>
+						<li>
+							Open the archives with archive manager by double clicking it, then extract it.
+							<pre><code>cd path-to-the-extracted-folder</code></pre>																												
+
+
+
+
+
+						</li>
+						<li>
+							Inside the extracted folder look carefully....
+							<ol>
+								<li>
+									If you find a file named <span class="quote">configure</span> then : 									<pre><code>./configure
+make
+sudo make install
+</code></pre>
+									
+If the first code fails to execute then run this code before above codes:
+ 									<pre><code>chmod +x configure</code></pre>
+								</li>
+								<li>
+									If you find a file named <span class="quote">install.sh</span> then 									<pre><code>chmod +x install.sh
+./install.sh or sudo ./install.sh <span class="comment">(if it needs root permission)</span>
+</code></pre>
+									
+or you can double click it and select run in terminal or simply run.
+
+
+
+
+
+									<p class="message">
+										N.B: Sometimes there is a file, something like your_software_name.sh is found instead of install.sh. for this case you have to replace install.sh with the correct name in the previous codes.
+									</p>
+								</li>
+								<li>
+									If you find a file named <span class="quote">install</span> then 									<pre><code>chmod +x install
+./install or sudo ./install <span class="comment"> (if it needs root permission)</span>
+</code></pre>
+									
+or you can double click it and select run in terminal or simply run
+
+
+
+
+
+								</li>
+								<li>
+									If you find a file named <span class="quote">make</span> (if there is no configure file) then 									<pre><code>make
+sudo make install</code></pre>
+
+
+
+
+
+								</li>
+							</ol>
+						</li>
+					</ol>
+					If you still can't find the required files
+
+					then it may be in a special folder (generally in a folder named 'bin'). move to this folder with cd command with appropriate path and then look again and follow the same process.
+
+					<p class="section-sub2" id="8">
+						#8. Pre installed archives:
+					</p>
+
+					Some packages are archived as pre installed packages i.e you don't have to install them , you just need to extract them in a secure place and theres an executable file (name is generally same as the software name) in the extracted folder or in child folders like bin,build etc. you have to find it and make it executable.
+					<br />
+					<p class="qoute">
+						Example: eclipse, adt bundle (android developing tool)
+					</p>
+
+					Code to make executable:
+					<pre><code>chmod +x filename_with_exact_path
+</code></pre>																									
+Then you can run it with :
+
+ 					<pre><code>cd filename_with_exact_path
+./filename</code></pre>
+
+or double clicking it and selecting run in terminal or run, whatever supports your software.
+
+
+
+
+
+
+					<p class="section-sub2" id="9">
+						#9. Installing .sh files:
+					</p>
+
+					Some softwares come with a .sh file to install it
+					<pre><code>chmod +x filename.sh 
+./filename.sh <span class="comment"> or sudo ./filename.sh (if it needs root permission)</span>
+</code></pre>																									
+or double click it and select run in terminal or run, whatever supports your software.
+
+
+
+
+
+
+					<p class="section-sub2" id="10">
+						#10. Installing .run files:
+					</p>
+
+					Some softwares come with a .run file to install it
+					<pre><code>chmod +x filename.run
+./filename.run <span class="comment"> or sudo ./filename.run (if it needs root permission)</span>
+</code></pre>																									
+or double click it and select run in terminal or run, whatever supports your software.
+
+
+
+
+
+
+					<p class="section-sub3">
+						Additional info about offline installation:
+					</p>
+
+					Often, softwares generally have a lot of dependencies. You need to download all of them, which sometimes can be very difficult and tiring. for this you can follow the instructions here which will save your time and effort.
+
+					<p class="error">
+						W: The first three online methods are the safest way to install a software. For other methods you have to take risks of potential damage of your system or software dependencies.
+					</p>
+					<!-- This is where you will put the content-->
+				</div>
+				<div class="col-xs-2" id="content-right"></div>
+
+			</div>
+		</div>
+
+		<!--Content  ends here -->
+		<hr>
+<div class="container-fluid">
+<div class="row" id="footer-social-button-row-div">
+<div class="col-xs-4">
+<div id="facebook-like-button-div" class="footer-social-button-div">
+
+
+    <!-- Your like button code -->
+    <div class="fb-like"
+        data-layout="button_count" 
+        data-action="like" 
+        data-show-faces="true">
+    </div>
+
+</div>
+</div>
+<div class="col-xs-4">
+<div class="footer-social-button-div">
+<a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="Neurobin" data-via="jahidulhamid" data-count="horizontal"></a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div>
+</div>
+<div class="col-xs-4">
+<div class="footer-social-button-div">
+<div class="g-plusone" data-size="standard" data-annotation="bubble" ></div>
+</div>
+</div>
+</div>
+</div>
+		
+<div class="container-fluid" id="foot" >
+			<div class="row" id="footer">
+
+				<div class="col-xs-4">
+					<a href="#" id="sitemap">SiteMap</a>
+					<div id="sitemap-poem">
+						Take The Tour
+						<br />
+						Explore The Site
+						<br />
+						From One Place
+						<br />
+						Day Or Night
+						<br />
+					</div>
+				</div>
+				<div class="col-xs-4">
+
+					<ul id="footer-links">
+						<li>
+							<p id="suggested-links">
+								Suggested Links
+							</p>
+						</li>
+						<li>
+							<a href="shc">SHC</a>
+						</li>
+						<li>
+							<a href="rnm">rnm</a>
+						</li>
+						<li>
+							<a href="uedit">Uedit</a>
+						</li>
+						<li>
+							<a href="JLIVECD">JLIVECD</a>
+						</li>
+						<li>
+							<a href="php2html">PHP2HTML</a>
+						</li>
+						<li>
+							<a href="TicTacToe">IMW Tic Tac Toe</a>
+						</li>
+						<li>
+							<p id="copyright">
+								&copy; 2015, Neurobin, All rights reserved.
+							</p>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-4">
+					<p id="share-title">
+						Share Me:
+					</p>
+					<div class="share-buttons">
+						<a href="#" onclick="return newShareWindow(returnFacebookShareUrl(),400,400)" class="btn btn-social btn-facebook"><i class="fa fa-facebook"></i> share</a>
+						<a href="#" onclick="return newShareWindow(returnTwitterShareUrl(),400,400)" class="btn btn-social btn-twitter"><i class="fa fa-twitter"></i> share</a>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</body>
+</html>

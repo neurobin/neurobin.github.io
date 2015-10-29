@@ -1,0 +1,923 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<base href="../../../" />
+				<script>
+	if (window.location.protocol != "http:")
+		window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
+</script>
+
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- CSS -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="style/mycss.css" />
+<!--<link rel="stylesheet" href="style/mycss.min.css" />-->
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="script/myjs.js"></script>
+<!--<script src="script/myjs.min.js"></script>-->
+
+
+<link rel="stylesheet" href="Highlightjs/styles/github.css">
+<script src="Highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link rel="shortcut icon" href="img/nbglobe2.png" type="image/x-icon" />
+  <meta name="author" content="Md. Jahidul Hamid" >
+  <meta name="copyright" content="Copyright Neurobin - 2015">
+  <meta name="email" content="admin@neurobin.com">
+  <meta http-equiv="Content-Language" content="en-US">
+  <meta name="Charset" content="UTF-8">
+  <meta name="Rating" content="General">
+  <meta name="Distribution" content="Global">
+  <meta name="Robots" content="INDEX,FOLLOW">
+  <meta name="Revisit-after" content="1 Days">
+		<meta name="description" content="Rename files folders/directories in bulk in Unix/Linux">
+		<meta name="keywords" content="rename files in linux, rename files folders in bulk in linux, bulk rename files in linux" />
+
+		<title>Bulk rename files/directories in Linux | Neurobin</title>
+
+	</head>
+	<body onload="startTime()">
+
+		<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=748792438520405";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<nav class="navbar" id="navbar">
+	<div class="container-fluid" id="bar">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand"><img alt="neurobin logo" id="logo" src="img/neurobin400.png" /></a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav" id="menu">
+				<li class="active">
+					<a href="" target="_parent">Home</a>
+
+				</li>
+
+				<li class="dropdown">
+					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Projects">Projects<span class="caret-down"></span></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="menu-item " href="Projects/Softwares">Softwares <span class="caret-right edge"></span></a>
+
+							<ul >
+								<li>
+									<a class="menu-item" href="Projects/Softwares/linsofts.html">Linux</a>
+
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/winsofts.html">Windows</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/andapps.html">Android</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/webapps.html">Web Apps</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/games.html">Games</a>
+								</li>
+								
+								<li>
+									<a class="menu-item disabled-link" href="Projects/Softwares/genericsofts.html">Others</a>
+								</li>
+							</ul>
+
+						</li>
+						<li>
+							<a class="menu-item disabled-link" href="Projects/Research">Research</a>
+						</li>
+						<li>
+							<a class="menu-item disabled-link" href="Projects/Others">Others</a>
+						</li>
+
+					</ul>
+				</li>
+
+				<li class="dropdown">
+					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Docs">Docs<span class="caret-down"></span></a>
+					<ul class="dropdown-menu">
+					<li>
+							<a class="menu-item hand-cursor" href="Docs/Linux">Linux</a>
+						
+						</li>
+						<li class="disabled-link">
+							<a class="menu-item disabled-link" >Programming <span class="caret-right edge"></span></a>
+							<ul class="programming">
+								<li>
+									<a class="menu-item disabled-link" href="#">C</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">C++</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">SQL</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">PHP</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">CSS</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Java</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">HTML</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Matlab</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">JavaScript</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Shell Scripting</a>
+								</li>
+							</ul>
+
+						</li>
+
+						<li>
+							<a class="menu-item" href="Docs/Android">Android</a>
+						</li>
+					</ul>
+
+				</li>
+
+				<!-- <li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Places<span class="caret-down"></span></a>
+				<ul class="dropdown-menu">
+				<li>
+				<a class="menu-item" href="http://github.com/neurobin"><i class="fa fa-github"></i> Github</a>
+
+				</li>
+				<li>
+				<a class="menu-item" href="http://bitbucket.org/neurobin"><i class="fa fa-bitbucket"></i> Bitbucket</a>
+				</li>
+
+				</ul>
+				</li> -->
+
+				<li>
+					<a class="menu-item disabled-link " href="Downloads">Downloads</a>
+				</li>
+
+			</ul>
+			<div class="clock">
+				<ul class="nav navbar-nav navbar-right">
+
+					<li class="clock-item" >
+						<p id="clockTime"></p><p id="clockDate"></p>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>
+		<!--Navigation bar ends here -->
+		<!-- fixed share button-->
+		<script>
+function returnFacebookShareUrl(){
+return "http://www.facebook.com/sharer.php?u="+window.location.href;
+
+}
+function returnTwitterShareUrl() {
+	return "http://twitter.com/home?status="+window.location.href;
+}
+function returnPageUrl() {
+	return window.location.href;
+}
+</script>
+
+
+<div id="fixed-share-button">
+	<a id="share-btn1" href="#" onclick="return newShareWindow(returnFacebookShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-facebook"></i> share</a>
+
+	<a id="share-btn2" href="#" onclick="return newShareWindow(returnTwitterShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-twitter"></i> share</a>
+
+<div class="social-button-fixed" id="share-btn3">
+<g:plus action="share" href="returnPageUrl()" annotation="bubble" height="60" align="left"></g:plus>
+</div>
+<script >
+  window.___gcfg = {
+    lang: 'en-US',
+    parsetags: 'onload'
+  };
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</div>		<!-- fixed share button end-->
+		<div class="container" id="showoff-soft">
+			<div class="row line-after">
+
+				<h1 class="tutorial-name">
+					Bulk rename files or directories in Linux
+				</h1>
+				<p class="tutorial-tagline">
+					<a class="disabled-link" id="applicable-to">Applicable To: </a> Unix, Linux, All 32/64 bit Unix like OS.
+				</p>
+
+			</div>
+		</div>
+		
+				<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="head-buttons">
+					
+<div id="downloads-from-github">
+<a href="https://github.com/neurobin/rnm">View On Github</a>
+<a href="https://github.com/neurobin/rnm/archive/release.zip">Download .zip</a>
+<a href="https://github.com/neurobin/rnm/archive/release.tar.gz">Download .tar.gz</a>
+</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- show off ends here-->
+
+		<div class="container" id="content-container2">
+			<div class="row">
+				<div class="col-xs-2" id="content-left">
+					<nav>
+						<div id="content-links">
+							<p>
+								Content
+							</p>
+					<div id="content-index"><ol><li><a href="Docs/Linux/bulk-rename-in-linux/#1"> Lowercase-Uppercase conversion</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#1.1"> Changing the full filename to uppercase or lower case</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#1.2"> Applying uppercase-lowercase conversion on filenames partially</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#1.3"> Applying multiple uppercase-lowercase conversions</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#2"> Replace, modify, delete, swap part of a filename</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#2.1"> Delete part of a filename</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#2.2"> Modify part of a filename</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#2.3"> Swap part of filenames with another part</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#2.4"> Another replacement example</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#2.5"> Mixing with case-conversion</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#3"> Indexing of files</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#3.1"> Insert general index in filenames</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#3.2"> Insert directory-wise index in filenames</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#3.3"> Set start index and/or end index for file indexing</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#3.4"> Reserve index for skipped files</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#3.5"> Negative indexing of files (Decremented index)</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#3.6"> Configure increment value for file indexing</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#4"> Search for files and rename</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#4.1"> Search for files with regex and rename</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#4.2"> Search for files with fixed strings and rename</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#4.3"> Search for files with multiple search strings and rename</a></li><li><a href="Docs/Linux/bulk-rename-in-linux/#4.4"> Search for files with case-insensitive search and rename</a></li></ol></div>
+						</div>
+					</nav>
+				</div>
+				<div class="col-xs-8 " id="content-tutorial">
+<p>We will use a bunch of files to demonstrate the use of the Unix bulk renaming tool: rnm. We will apply replacement, modification, case-conversion, indexing etc.. on the file names and rename them accordingly. We will also apply selective renaming (search functionality) to the files/directories.</p>
+<p>These are the files that we are going use for our examples:</p>
+<pre class="prettyprint"><code>abc.png
+def.png
+ghi.png
+jkl.png
+abc.jpg
+def.jpg
+ghi.jpg
+jkl.jpg</code></pre class="prettyprint">
+<p>These files will get changed in each operation and in some cases we may undo some rename operation with <code>rnm -u</code> command for specific purposes.</p>
+<div id="1"></div>
+<h1>1. Lowercase-Uppercase conversion:</h1>
+<p>A common task which appears in mind for file renaming is to convert uppercase file names to lower case and vice-versa. With <code>rnm</code>, we can apply case-conversion to the whole file name as well as part of the file name. To change the case for a part of the file name, we will select that part with regex and replace it with it's upper or lower case (<code>\c</code> for lower case, <code>\C</code> for uppercase).</p>
+<div id="1.1"></div>
+<h2>1.1 Changing the full filename to uppercase or lower case:</h2>
+<p>We will pass all the filenames in current directory (<code>./*</code>) as arguments.</p>
+<pre class="prettyprint"><code>rnm -rs '/.*/\C/' ./*</code></pre class="prettyprint">
+<p>This is how the files will look like after the above command:</p>
+<pre class="prettyprint"><code>ABC.JPG
+ABC.PNG
+DEF.JPG
+DEF.PNG
+GHI.JPG
+GHI.PNG
+JKL.JPG
+JKL.PNG</code></pre class="prettyprint">
+<h4>Explanation:</h4>
+<blockquote>
+<p><code>-rs</code> takes a replace string. Replace string is comprised of three parts (separated by <code>/</code>): selection part, replace part and modifier. In the above command, <code>.*</code> is the selection part, it selects all i.e the full name of the file, and <code>\C</code> is the replace part. Modifier part is empty here. In the replace part <code>\C</code> (capital C) points to the upper case version of the actual selected part of the filename (for lowercase it's <code>\c</code> with a small c). So basically, the selected part (whole filename) is being replaced with its uppercase version.</p>
+</blockquote>
+<p>Now let's do a lowercase conversion:</p>
+<pre class="prettyprint"><code>rnm -y -rs '/.*/\c/' ./*</code></pre class="prettyprint">
+<p>Now it will look like this:</p>
+<pre class="prettyprint"><code>abc.jpg
+abc.png
+def.jpg
+def.png
+ghi.jpg
+ghi.png
+jkl.jpg
+jkl.png</code></pre class="prettyprint">
+<blockquote>
+<p>The <code>-y</code> flag confirms all to <code>yes</code>. If it is not given, <code>rnm</code> asks for confirmation before actual renaming.</p>
+</blockquote>
+<div id="1.2"></div>
+<h2>1.2 Applying uppercase-lowercase conversion on filenames partially:</h2>
+<p>Now, lets change the case of filenames without the extensions, i.e .jpg, .png should be intact. To do that we will have to select the part before the last <code>.</code> and replace it with its case-converted version.</p>
+<p>This command will do that:</p>
+<pre class="prettyprint"><code>rnm -rs '/.*\./\C/' ./*</code></pre class="prettyprint">
+<p>Now the files in our directory:</p>
+<pre class="prettyprint"><code>ABC.jpg
+ABC.png
+DEF.jpg
+DEF.png
+GHI.jpg
+GHI.png
+JKL.jpg
+JKL.png</code></pre class="prettyprint">
+<blockquote>
+<p><code>.*\.</code> selects the string from beginning to the occurrence of <code>.</code> and replaces with its uppercase-version. You could do the same with the extension too. To select the extension, you would have to use the regex <code>\.*</code>.</p>
+</blockquote>
+<p><code>rnm</code> has built-in support for extension management. For filename extensions, you generally have to care for several things, like for a file named <code>.config</code>, you can't say that the <code>config</code> part is the extension. Hidden files in Linux starts with a dot at the beginning and those don't generally have extensions. So it's better to use the built-in functionality of <code>rnm</code> to handle filename extensions. Here's an example of doing the same thing as above with built-in filename extension support:</p>
+<pre class="prettyprint"><code>rnm -rs '//n//\C/' ./*</code></pre class="prettyprint">
+<blockquote>
+<p><code>/n/</code> is a <em>Name String Rule</em> and equals to the filename without extension.</p>
+</blockquote>
+<p>To do the same on the extensions:</p>
+<pre class="prettyprint"><code>rnm -rs '//e/$/\C/' ./*</code></pre class="prettyprint">
+<blockquote>
+<p><code>/e/</code> is another <em>Name String Rule</em> which equals to the extension of the file. For files like <code>.config</code> this remains empty. The <code>$</code> (regex) makes sure the extension is selected at the end, not anywhere else in the filename.</p>
+</blockquote>
+<div id="1.3"></div>
+<h2>1.3 Applying multiple uppercase-lowercase conversions:</h2>
+<p>This time we are going to change the case of several letters in the file name, literally 'a', 'j', 'n'. Obviously we can do it in three steps with three <code>rnm</code> commands, but we are going to do it with a single command. The current sate of the filenames in our directory are all small-letters.</p>
+<p>Files:</p>
+<pre class="prettyprint"><code>abc.jpg  abc.png  def.jpg  def.png  ghi.jpg  ghi.png  jkl.jpg  jkl.png</code></pre class="prettyprint">
+<p>Let's run the command:</p>
+<pre class="prettyprint"><code>rnm -rs '/a/\C/;/g/\C/g;/n/\C/' ./*</code></pre class="prettyprint">
+<p>The files will look like:</p>
+<pre class="prettyprint"><code>Abc.jpG  Abc.pNG  def.jpG  def.pNG  Ghi.jpG  Ghi.pNG  jkl.jpG  jkl.pNG</code></pre class="prettyprint">
+<blockquote>
+<p>As you can see, the <code>-rs</code> option can take multiple <em>Replace Strings</em> terminated with a semicolon (<code>;</code>). Notice the replace string: <code>/g/\C/g</code>, here we have used a modifier <code>g</code> which means global i.e the replacement will be applied to every occurrences (Not only the first occurrence) of <code>g</code> found on the filename.</p>
+</blockquote>
+<div id="2"></div>
+<h1>2 Replace, modify, delete, swap part of a filename:</h1>
+<p>As we have already seen that <code>-rs</code> option takes a <em>Replace String</em> and performs replacement on filenames, we can use this to replace, modify or delete part of a filename or the change the whole filename altogether.</p>
+<p>The current state of the files in our directory:</p>
+<pre class="prettyprint"><code>abc.jpg
+abc.png
+def.jpg
+def.png
+ghi.jpg
+ghi.png
+jkl.jpg
+jkl.png</code></pre class="prettyprint">
+<p>A general replacement example:</p>
+<pre class="prettyprint"><code>rnm -rs '/a/AbracaDabra/' ./*</code></pre class="prettyprint">
+<blockquote>
+<p>This will replace the first occurrence of an 'a' in the filenames with 'AbracaDabra'</p>
+</blockquote>
+<p>Now the files look like:</p>
+<pre class="prettyprint"><code>AbracaDabrabc.jpg
+AbracaDabrabc.png
+def.jpg
+def.png
+ghi.jpg
+ghi.png
+jkl.jpg
+jkl.png</code></pre class="prettyprint">
+<div id="2.1"></div>
+<h2>2.1 Delete part of a filename:</h2>
+<p>To delete part of a filename we just need to replace that part with an empty string. Let's delete all d's from the filenames:</p>
+<pre class="prettyprint"><code>rnm -rs '/d//gi' ./*</code></pre class="prettyprint">
+<p>Now the files look like:</p>
+<pre class="prettyprint"><code>Abracaabrabc.jpg
+Abracaabrabc.png
+ef.jpg
+ef.png
+ghi.jpg
+ghi.png
+jkl.jpg
+jkl.png</code></pre class="prettyprint">
+<blockquote>
+<p>We are selecting <code>d</code> and replacing it with empty string (delete operation). We have used two modifiers here: <code>g</code> and <code>i</code>. We already know that <code>g</code> is for global, and the newly introduced <code>i</code> is for case-insensitive search/selection. Thus you can see that the capital <code>D</code> in <code>AbracaDabra</code> is been deleted too.</p>
+</blockquote>
+<div id="2.2"></div>
+<h2>2.2 Modify part of a filename:</h2>
+<p>Now let's delete <code>Abrac</code> and <code>abra</code> from the filenames and insert a <code>d</code> for the filenames starting with <code>ef</code>:</p>
+<pre class="prettyprint"><code>rnm -rs '/abrac//i;/abra//i;/^ef/d&amp;/' ./*</code></pre class="prettyprint">
+<p>Now the files look like:</p>
+<pre class="prettyprint"><code>abc.jpg
+abc.png
+def.jpg
+def.png
+ghi.jpg
+ghi.png
+jkl.jpg
+jkl.png</code></pre class="prettyprint">
+<blockquote>
+<p>As you have already noticed, <code>-rs</code> option can take multiple <em>Replace Strings</em>. Notice the <em>Replace String</em>: <code>/^ef/d&amp;/</code>, the regex <code>^ef</code> selects/matches <code>ef</code> at the beginning and replaces it with <code>d</code> and the match (<code>&amp;</code> is the match found by the regex <code>^ef</code> i.e <code>ef</code> itself).</p>
+</blockquote>
+<div id="2.3"></div>
+<h2>2.3 Swap part of filenames with another part:</h2>
+<p>Let's swap the parts on either side of the dot (.) in each filename:</p>
+<pre class="prettyprint"><code>rnm -rs '/(.*)\.(.*)/\2.\1/' ./*</code></pre class="prettyprint">
+<p>Now the state of files in our directory:</p>
+<pre class="prettyprint"><code>jpg.abc
+jpg.def
+jpg.ghi
+jpg.jkl
+png.abc
+png.def
+png.ghi
+png.jkl</code></pre class="prettyprint">
+<blockquote>
+<p><code>\n</code> is the n'th back-reference, i.e <code>\1</code> is the first captured group in the search/select/match regex <code>(.*)\.(.*)</code>, and <code>\2</code> is the second captured group.</p>
+</blockquote>
+<div id="2.4"></div>
+<h2>2.4 Another replacement example:</h2>
+<p>We will now replace 'a' with 'AbracaDabra' but not all 'a'; only the files containing 'png' at first will be subject to this replacement:</p>
+<pre class="prettyprint"><code>rnm -rs '/(^png.*)a/\1AbracaDabra/' ./*</code></pre class="prettyprint">
+<p>The files now:</p>
+<pre class="prettyprint"><code>jpg.abc
+jpg.def
+jpg.ghi
+jpg.jkl
+png.AbracaDabrabc
+png.def
+png.ghi
+png.jkl</code></pre class="prettyprint">
+<blockquote>
+<p>Yap, that's one file only. That file was the only one matching the regex <code>(^png.*)a</code> and we kept the <code>(^png.*)</code> part unchanged with the back-reference <code>\</code>.</p>
+</blockquote>
+<div id="2.5"></div>
+<h2>2.5 Mixing with case-conversion:</h2>
+<p>Yes, you can mix other replacement methods with case-conversion too. Case-conversion is nothing but a specialized form of <em>Replace String</em>. Let's swap the two sides of the dot (.) once again and convert them to uppercase excluding extensions:</p>
+<pre class="prettyprint"><code>rnm -rs '/(.*)\.(.*)/\2.\1/;/.*\./\C/' ./*</code></pre class="prettyprint">
+<p>The files now look like:</p>
+<pre class="prettyprint"><code>ABC.jpg
+ABRACADABRABC.png
+DEF.jpg
+DEF.png
+GHI.jpg
+GHI.png
+JKL.jpg
+JKL.png</code></pre class="prettyprint">
+<blockquote>
+<p>You may be wondering why the png and jpg were taken as extensions, they were at the beginning not at end. Yes that's right, but the first <em>Replace String</em> changed that order by swapping the two sides of the dot (.) i.e when the second <em>Replace String</em> were executed, it got the png and jpg as the file extensions.</p>
+<p>N.B: the <em>Name String Rule</em> <code>/e/</code> always contains the actual extension and <code>/n/</code> always contains the actual filename without extension.</p>
+</blockquote>
+<p>Let's see what happens if we use built-in filename extension support. First let's undo the last operation:</p>
+<pre class="prettyprint"><code>rnm -u</code></pre class="prettyprint">
+<p>Files will look like:</p>
+<pre class="prettyprint"><code>jpg.abc
+jpg.def
+jpg.ghi
+jpg.jkl
+png.AbracaDabrabc
+png.def
+png.ghi
+png.jkl</code></pre class="prettyprint">
+<p>Now let's use <code>/n/</code> for the filename without extension instead of the regex <code>.*\.</code> like the previous command:</p>
+<pre class="prettyprint"><code>rnm -rs '/(.*)\.(.*)/\2.\1/;//n//\C/' ./*</code></pre class="prettyprint">
+<p>The files will look like:</p>
+<pre class="prettyprint"><code>abc.JPG
+AbracaDabrabc.PNG
+def.JPG
+def.PNG
+ghi.JPG
+ghi.PNG
+jkl.JPG
+jkl.PNG</code></pre class="prettyprint">
+<blockquote>
+<p>The actual filename-without-extension (left side of the dot) was jpg or png and thus those two are the only ones which got capitalized. The <em>Name String Rule</em> <code>/n/</code> always contains the actual filename-without-extension no matter how many times replacement is occurred on the filename.</p>
+</blockquote>
+<div id="3"></div>
+<h1>3 Indexing of files:</h1>
+<p><code>rnm</code> provides certain <em>Name String Rules</em> for filename indexing. Name string rules are some predefined rules which provide some extended functionalities. Each of them has a unique definition and meaning and can be used in <em>Replace String</em> or <em>Name String</em> to generate new names for files. Name string is a string that simply implies a name for a file (<em>Name String</em>=name of file).</p>
+<div id="3.1"></div>
+<h2>3.1 Insert general index in filenames:</h2>
+<p><code>/i/</code> is the <em>Name String Rule</em> for general indexing. Let's insert an index before the dot (.) in those files:</p>
+<pre class="prettyprint"><code>rnm -rs '//n//&amp;/i//' ./*</code></pre class="prettyprint">
+<p>The files now:</p>
+<pre class="prettyprint"><code>abc1.JPG
+AbracaDabrabc2.PNG
+def3.JPG
+def4.PNG
+ghi5.JPG
+ghi6.PNG
+jkl7.JPG
+jkl8.PNG</code></pre class="prettyprint">
+<p>Now, let's replace those indexes with better indexes:</p>
+<pre class="prettyprint"><code>rnm -rs '/\d//i//' -ifl 3 ./*</code></pre class="prettyprint">
+<p>The files now:</p>
+<pre class="prettyprint"><code>abc001.JPG
+AbracaDabrabc002.PNG
+def003.JPG
+def004.PNG
+ghi005.JPG
+ghi006.PNG
+jkl007.JPG
+jkl008.PNG</code></pre class="prettyprint">
+<blockquote>
+<p><code>-ifl</code> stands for index field length, empty field will be filled index field filler (defaults to 0).</p>
+</blockquote>
+<p>Let's fill the empty field of indexes with other character than a zero (0). First undo <code>rnm -u</code> so that files look like:</p>
+<pre class="prettyprint"><code>abc1.JPG
+AbracaDabrabc2.PNG
+def3.JPG
+def4.PNG
+ghi5.JPG
+ghi6.PNG
+jkl7.JPG
+jkl8.PNG</code></pre class="prettyprint">
+<p>Now run command:</p>
+<pre class="prettyprint"><code>rnm -rs '/\d//i//' -ifl 3 -iff '*' ./*</code></pre class="prettyprint">
+<p>Now the files look like:</p>
+<pre class="prettyprint"><code>abc**1.JPG
+AbracaDabrabc**2.PNG
+def**3.JPG
+def**4.PNG
+ghi**5.JPG
+ghi**6.PNG
+jkl**7.JPG
+jkl**8.PNG</code></pre class="prettyprint">
+<blockquote>
+<p><code>-iff</code> stands for index field filler, empty field will be filled with specified character.</p>
+</blockquote>
+<p>You want all the PNGs to be indexed first and JPGs second:</p>
+<pre class="prettyprint"><code>rnm -rs '/\d//i//' -ifl 3 *.PNG *.JPG</code></pre class="prettyprint">
+<p>Files now:</p>
+<pre class="prettyprint"><code>abc**005.JPG
+AbracaDabrabc**001.PNG
+def**002.PNG
+def**006.JPG
+ghi**003.PNG
+ghi**007.JPG
+jkl**004.PNG
+jkl**008.JPG</code></pre class="prettyprint">
+<blockquote>
+<p>4 PNGs were indexed first.</p>
+</blockquote>
+<p>Let's insert another index after the first letter in every filename:</p>
+<pre class="prettyprint"><code>rnm -rs '/./&amp;/i//' -ifl 4 ./*</code></pre class="prettyprint">
+<p>Files now:</p>
+<pre class="prettyprint"><code>a0001bc**005.JPG
+A0002bracaDabrabc**001.PNG
+d0003ef**002.PNG
+d0004ef**006.JPG
+g0005hi**003.PNG
+g0006hi**007.JPG
+j0007kl**004.PNG
+j0008kl**008.JPG</code></pre class="prettyprint">
+<p>Let's insert another index at the end:</p>
+<pre class="prettyprint"><code>rnm -rs '/$//i//' -ifl 5 ./*</code></pre class="prettyprint">
+<p>Files now:</p>
+<pre class="prettyprint"><code>a0001bc**005.JPG00001
+A0002bracaDabrabc**001.PNG00002
+d0003ef**002.PNG00003
+d0004ef**006.JPG00004
+g0005hi**003.PNG00005
+g0006hi**007.JPG00006
+j0007kl**004.PNG00007
+j0008kl**008.JPG00008</code></pre class="prettyprint">
+<p>That's enough general indexing, let's get back our original files:</p>
+<pre class="prettyprint"><code>rnm -rs '/\d+//g;/\*+//g;/Abrac//;/Dabra//' ./*</code></pre class="prettyprint">
+<p>Files now:</p>
+<pre class="prettyprint"><code>abc.JPG
+abc.PNG
+def.JPG
+def.PNG
+ghi.JPG
+ghi.PNG
+jkl.JPG
+jkl.PNG</code></pre class="prettyprint">
+<div id="3.2"></div>
+<h2>3.2 Insert directory-wise index in filenames:</h2>
+<p>The name string rule for directory-wise indexing is <code>/id/</code>. It is the same as <code>/i/</code> except in every directory it is initialized to 1 or a user set value. It is useful if you rename files recursively in multiple directories. In every directory <code>/id/</code> is reinitialized where <code>/i/</code> always increases or decreases. To see it in action, let's create a directory named <code>folder1</code> and copy the files there. Thus we have the same set of files in two directories.</p>
+<p>Now, let's run an indexing command:</p>
+<pre class="prettyprint"><code>rnm -rs '/$//id//' -ifl 3 -fo -dp -1 ./*</code></pre class="prettyprint">
+<p>Files:</p>
+<pre class="prettyprint"><code>./abc.JPG001
+./abc.PNG002
+./def.JPG003
+./def.PNG004
+./folder1/abc.JPG001
+./folder1/abc.PNG002
+./folder1/def.JPG003
+./folder1/def.PNG004
+./folder1/ghi.JPG005
+./folder1/ghi.PNG006
+./folder1/jkl.JPG007
+./folder1/jkl.PNG008
+./ghi.JPG005
+./ghi.PNG006
+./jkl.JPG007
+./jkl.PNG008</code></pre class="prettyprint">
+<blockquote>
+<p><code>-fo</code> stands for file only mode. <code>-dp</code> stands for depth of directory. <code>-1</code> makes unlimited depth i.e it will go through as many subdirectories there are. <code>-dp</code> without file only mode (<code>-fo</code>) is meaningless.</p>
+</blockquote>
+<div id="3.3"></div>
+<h2>3.3 Set start index and/or end index for file indexing:</h2>
+<p>You can set an starting index from where the indexing will start and also an end index where the index will stop. When end index is reached it will stop renaming files.</p>
+<p>Let's set an starting index of <code>50</code> and insert that index at the beginning of every file:</p>
+<pre class="prettyprint"><code>rnm -rs '/^//i//' -ifl 3 -si 50 -fo -dp -1 ./*</code></pre class="prettyprint">
+<p>Files now:</p>
+<pre class="prettyprint"><code>./050abc.JPG001
+./051abc.PNG002
+./052def.JPG003
+./053def.PNG004
+./062ghi.JPG005
+./063ghi.PNG006
+./064jkl.JPG007
+./065jkl.PNG008
+./folder1/054abc.JPG001
+./folder1/055abc.PNG002
+./folder1/056def.JPG003
+./folder1/057def.PNG004
+./folder1/058ghi.JPG005
+./folder1/059ghi.PNG006
+./folder1/060jkl.JPG007
+./folder1/061jkl.PNG008</code></pre class="prettyprint">
+<blockquote>
+<p><code>-si</code> or <code>-i</code> stands for starting index.</p>
+</blockquote>
+<p>Let's set an starting index of 40 and end index of 44 and see what happens:</p>
+<pre class="prettyprint"><code>rnm -rs '/^//id//' -ifl 3 -i 40 -ei 44 -fo -dp -1 ./*</code></pre class="prettyprint">
+<p>Files now:</p>
+<pre class="prettyprint"><code>./040050abc.JPG001
+./041051abc.PNG002
+./042052def.JPG003
+./043053def.PNG004
+./044062ghi.JPG005
+./045063ghi.PNG006
+./046064jkl.JPG007
+./047065jkl.PNG008
+./folder1/040054abc.JPG001
+./folder1/041055abc.PNG002
+./folder1/042056def.JPG003
+./folder1/043057def.PNG004
+./folder1/044058ghi.JPG005
+./folder1/059ghi.PNG006
+./folder1/060jkl.JPG007
+./folder1/061jkl.PNG008</code></pre class="prettyprint">
+<blockquote>
+<p>As you can see, the end index only worked inside the directory. When you pass files with filename globbing like <code>./*</code> or <code>*</code>, every files and directories are passed as each arguments and each argument for <code>rnm</code> is important and thus <code>rnm</code> doesn't skip any of them, not even if the index ends. The end index is valid only for files which are inside a directory that has been passed as a command line argument or taken recursively by <code>rnm</code> itself. In a nut-shell, end index works on directory index only.</p>
+</blockquote>
+<div id="3.4"></div>
+<h2>3.4 Reserve index for skipped files:</h2>
+<p>Some files may be skipped for various reasons. Also you can manually skip a file from renaming. In these cases the index for that file is not reserved i.e the index of that file is given to the next file. But there's a name string rule which keeps track of these indexes. These indexes are called reserved indexes. To form a name string rule that reserves indexes for skipped file simply add a <code>r</code> at the end of the index name in a <em>Name String Rule</em>. For example, <code>/i/</code> to <code>/ir/</code>, <code>/id/</code> to <code>/idr/</code> etc...</p>
+<p>Let's see it in action:</p>
+<pre class="prettyprint"><code>rnm -sim -f -ns '/ir/' /*
+
+/bin    ----&gt;    /1
+
+Select action:
+
+    1. Confirm for this file only.
+    2. Confirm for all.
+    3. Skip this file.
+    4. Skip all and exit
+
+Your choice: 3
+
+/boot    ----&gt;    /2
+
+Select action:
+
+    1. Confirm for this file only.
+    2. Confirm for all.
+    3. Skip this file.
+    4. Skip all and exit
+
+Your choice: 3
+
+/cdrom    ----&gt;    /3
+
+Select action:
+
+    1. Confirm for this file only.
+    2. Confirm for all.
+    3. Skip this file.
+    4. Skip all and exit
+
+Your choice: </code></pre class="prettyprint">
+<blockquote>
+<p>We have used the <code>/</code> directory here. Don't worry, it's perfectly safe. The <code>-sim</code> option runs a simulation (not actual rename). Just note the fact that even if the files are skipped, the index continues to increase i.e those indexes are being reserved for those skipped files/directories. <code>-ns</code> is name string (simply name of file).</p>
+</blockquote>
+<div id="3.5"></div>
+<h2>3.5 Negative indexing of files (Decremented index):</h2>
+<p>A minus sign (<code>-</code>) inside Name string rule implies negative index. The -ve of <code>/i/</code> is <code>/-i/</code>, -ve of <code>/id/</code> is <code>/-id/</code> etc.. More appropriately it's decremented index.</p>
+<pre class="prettyprint"><code>rnm -ifl 2 -rs '/^//-id//' ./*</code></pre class="prettyprint">
+<p>Files now:</p>
+<pre class="prettyprint"><code>-01040050abc.JPG001
+-02041051abc.PNG002
+-03042052def.JPG003
+-04043053def.PNG004
+-05044062ghi.JPG005
+-06045063ghi.PNG006
+-07046064jkl.JPG007
+-08047065jkl.PNG008
+-09folder1</code></pre class="prettyprint">
+<blockquote>
+<p>Note that, it didn't go inside the directory, instead it renamed the directory itself.</p>
+</blockquote>
+<div id="3.6"></div>
+<h2>3.6 Configure increment value for file indexing:</h2>
+<p>You can configure the increment value of the index with the <code>-inc</code> option. It can take floating point decimal +ve number. -ve number is not allowed because decremented index will be available through name string rules <code>/-i/</code>, <code>/-id/</code> etc.</p>
+<p>Let's set increment of 4 starting from 6.</p>
+<pre class="prettyprint"><code>rnm -rs '/-\d+//id//' -inc 4 -si 6 ./*</code></pre class="prettyprint">
+<p>Files now:</p>
+<pre class="prettyprint"><code>6abc.JPG001
+10abc.PNG002
+14def.JPG003
+18def.PNG004
+22ghi.JPG005
+26ghi.PNG006
+30jkl.JPG007
+34jkl.PNG008
+38folder1</code></pre class="prettyprint">
+<p>Let's set the increment value at 4.5 and start from 6:</p>
+<pre class="prettyprint"><code>rnm -rs '/\d+//id//' -inc 4.5 -si 6 ./*</code></pre class="prettyprint">
+<p>Files now:</p>
+<pre class="prettyprint"><code>6abc.PNG002
+10.5def.JPG003
+15def.PNG004
+19.5ghi.JPG005
+24ghi.PNG006
+28.5jkl.JPG007
+33jkl.PNG008
+37.5folder1
+42abc.JPG001</code></pre class="prettyprint">
+<div id="4"></div>
+<h1>4 Search for files and rename:</h1>
+<p><code>rnm</code> has built-in search functionality. It uses regex or fixed string to search for files/directories. The <code>-ss</code> and <code>-ssf</code> option takes search strings. <code>-ss</code> is for regex search and <code>-ssf</code> is for fixed string search.</p>
+<div id="4.1"></div>
+<h2>4.1 Search for files with regex and rename:</h2>
+<p>Let's apply rename if only some specific string exists in the filename. We will rename those files which starts with a <code>1</code> at the beginning:</p>
+<p>Current state of files:</p>
+<pre class="prettyprint"><code>6def.PNG004
+11ghi.JPG005
+15ghi.PNG006
+20jkl.JPG007
+24jkl.PNG008
+29abc.JPG001
+33abc.PNG002
+38folder1
+42def.JPG003</code></pre class="prettyprint">
+<p>Let's run the command:</p>
+<pre class="prettyprint"><code>rnm -rs '/\d+\.?\d*//' -ss '^1' ./*</code></pre class="prettyprint">
+<p>Files now:</p>
+<pre class="prettyprint"><code>ghi.JPG005
+ghi.PNG006
+6def.PNG004
+20jkl.JPG007
+24jkl.PNG008
+29abc.JPG001
+33abc.PNG002
+38folder1
+42def.JPG003</code></pre class="prettyprint">
+<div id="4.2"></div>
+<h2>4.2 Search for files with fixed strings and rename:</h2>
+<p>For fixed string search we will use the <code>-ssf</code> option.</p>
+<pre class="prettyprint"><code>rnm -rs '/\d+\.?\d*//' -ssf '.' ./*</code></pre class="prettyprint">
+<p>Files now:</p>
+<pre class="prettyprint"><code>abc.JPG001
+abc.PNG002
+def.JPG003
+def.PNG004
+ghi.JPG
+ghi.PNG
+jkl.JPG007
+jkl.PNG008
+38folder1</code></pre class="prettyprint">
+<blockquote>
+<p>Dot (<code>.</code>) matches any character when used as regex. But as a fixed string it's just dot. The <code>38folder1</code> doesn't contain any dot and thus skipped.</p>
+</blockquote>
+<div id="4.3"></div>
+<h2>4.3 Search for files with multiple search strings and rename:</h2>
+<p>The option <code>-ss</code> or <code>-ssf</code> can take multiple search strings. In such cases search strings are to be wrapped around with <code>/</code> and terminated with semicolon (<code>;</code>).</p>
+<pre class="prettyprint"><code>rnm -rs '/\d+\.?\d*//' -ssf '/./;/8/' ./*</code></pre class="prettyprint">
+<pre class="prettyprint"><code>abc.JPG
+abc.PNG
+def.JPG
+def.PNG
+folder1
+ghi.JPG
+ghi.PNG
+jkl.JPG
+jkl.PNG</code></pre class="prettyprint">
+<div id="4.4"></div>
+<h2>4.4 Search for files with case-insensitive search and rename:</h2>
+<p>For case insensitive search we can use a modifier (<code>i</code>). To use modifier search strings are to be wrapped around with <code>/</code>.</p>
+<pre class="prettyprint"><code>rnm -rs '/.//i/&amp;/' -ss '/A/i' ./*</code></pre class="prettyprint">
+<p>Files now:</p>
+<pre class="prettyprint"><code>def.JPG
+def.PNG
+folder1
+ghi.JPG
+ghi.PNG
+jkl.JPG
+jkl.PNG
+1abc.JPG
+2abc.PNG</code></pre class="prettyprint">
+<blockquote>
+<p>Even though we searched for capital 'A', it worked on small 'a' because of the case-insensitive search.</p>
+</blockquote>				</div>
+				<div class="col-xs-2" id="content-right"></div>
+
+			</div>
+		</div>
+
+		<!--Content  ends here -->
+<hr>
+<div class="container-fluid">
+<div class="row" id="footer-social-button-row-div">
+<div class="col-xs-4">
+<div id="facebook-like-button-div" class="footer-social-button-div">
+
+
+    <!-- Your like button code -->
+    <div class="fb-like"
+        data-layout="button_count" 
+        data-action="like" 
+        data-show-faces="true">
+    </div>
+
+</div>
+</div>
+<div class="col-xs-4">
+<div class="footer-social-button-div">
+<a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="Neurobin" data-via="jahidulhamid" data-count="horizontal"></a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div>
+</div>
+<div class="col-xs-4">
+<div class="footer-social-button-div">
+<div class="g-plusone" data-size="standard" data-annotation="bubble" ></div>
+</div>
+</div>
+</div>
+</div>
+		
+<div class="container-fluid" id="foot" >
+			<div class="row" id="footer">
+
+				<div class="col-xs-4">
+					<a href="#" id="sitemap">SiteMap</a>
+					<div id="sitemap-poem">
+						Take The Tour
+						<br />
+						Explore The Site
+						<br />
+						From One Place
+						<br />
+						Day Or Night
+						<br />
+					</div>
+				</div>
+				<div class="col-xs-4">
+
+					<ul id="footer-links">
+						<li>
+							<p id="suggested-links">
+								Suggested Links
+							</p>
+						</li>
+						<li>
+							<a href="shc">SHC</a>
+						</li>
+						<li>
+							<a href="rnm">rnm</a>
+						</li>
+						<li>
+							<a href="uedit">Uedit</a>
+						</li>
+						<li>
+							<a href="JLIVECD">JLIVECD</a>
+						</li>
+						<li>
+							<a href="php2html">PHP2HTML</a>
+						</li>
+						<li>
+							<a href="TicTacToe">IMW Tic Tac Toe</a>
+						</li>
+						<li>
+							<p id="copyright">
+								&copy; 2015, Neurobin, All rights reserved.
+							</p>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-4">
+					<p id="share-title">
+						Share Me:
+					</p>
+					<div class="share-buttons">
+						<a href="#" onclick="return newShareWindow(returnFacebookShareUrl(),400,400)" class="btn btn-social btn-facebook"><i class="fa fa-facebook"></i> share</a>
+						<a href="#" onclick="return newShareWindow(returnTwitterShareUrl(),400,400)" class="btn btn-social btn-twitter"><i class="fa fa-twitter"></i> share</a>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</body>
+</html>
