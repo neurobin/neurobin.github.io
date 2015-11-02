@@ -342,13 +342,12 @@ i.e the number of digits that should be taken after the decimal point.</p>
 <p><code>--name-string</code>,
 <code>-ns</code>                : Name string.</p>
 <p><code>--name-string-file</code>,
-<code>-nsf</code>, <code>-ns/f</code>      : Name string file. File containing name string (one per line).
+<code>-ns/f</code>      : Name string file. File containing name string (one per line).
 <code>-nsf /hist/</code> i.e a value passed <code>/hist/</code> as Name string file, will
-try to take the file from history. <code>-nsf</code> is deprecated, use <code>-ns/f</code> instead.</p>
+try to take the file from history.</p>
 <p><code>--name-string-file-null-terminated</code>,
-<code>-nsfn</code>,<code>-ns/fn</code>     : Name String file. This takes a null terminated <em>Name String</em> file, i.e
-filenames are terminated by null character (<code>\0</code>) instead of new line (<code>\n</code>).
-<code>-nsfn</code> is deprecated, use <code>-ns/fn</code> instead.</p>
+<code>-ns/fn</code>     : Name String file. This takes a null terminated <em>Name String</em> file, i.e
+filenames are terminated by null character (<code>\0</code>) instead of new line (<code>\n</code>).</p>
 <p><code>--line</code>, <code>--start-line</code>,
 <code>-l</code>, <code>-sl</code>          : Start Line number in name string file.</p>
 <p><code>--line-reverse</code>, <code>--start-line-reverse</code>,
@@ -389,10 +388,10 @@ Default depth is <code>0</code>, i.e directory contents will be ignored.</p>
 Goes to subdirectory/s if depth (<code>-dp</code>) is set to <code>1</code> or greater.
 Default depth is set to 0.</p>
 <p><code>--directory-only</code>,
-<code>-do</code>                : Apply rename on directory only. No subdirectories.</p>
+<code>-do</code>                : Apply rename on directory only.</p>
 <p><code>--exclude-directory</code>,
 <code>-ed</code>                : Apply rename on files only, exclude any and all directory and their
-contents. Forces file only mode regardless of depth (-dp) value.</p>
+contents. This option is equivalent to file only mode with a zero (<code>0</code>) depth value.</p>
 <p><code>--count-directory</code>,
 <code>-cd</code>                : Count directory in reserved index, regardless of other options. Reserves indices for directories even if it is File Only mode.</p>
 <p><code>--count-file</code>,
@@ -592,6 +591,12 @@ etc...</code></pre class="prettyprint">
 <li>Fix suffix in regex replace in replace string.</li>
 <li>Fix index field precision.</li>
 <li>Added back-reference isolation with <code>{}</code> i.e <code>\{12}</code>, <code>\{1}</code> etc..</li>
+</ol>
+<h3><code>3.2.0</code>: <span class="light-quote">Mon Nov 02 18:10:26 UTC 2015</span></h3>
+<ol>
+<li>Directories can be renamed recursively in subdirectories.</li>
+<li>Potential bug fixes.</li>
+<li><code>-nsf</code> and <code>-nsfn</code> option is removed. Use <code>-ns/f</code> or <code>-ns/fn</code> instead.</li>
 </ol></div>	
 
 <div id="contribute">
