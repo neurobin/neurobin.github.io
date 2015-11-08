@@ -1,3 +1,8 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html xml:lang="en_US" lang="en_US" manifest="uedit.appcache">
 	<head>
@@ -17,7 +22,7 @@
 
 <!-- CSS -->
 
-<meta name="author" content="Jahidul Hamid" >
+<meta name="author" content="Md. Jahidul Hamid" >
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="style/mycss.css" />
@@ -54,15 +59,34 @@
 	</head>
 	<body onload="startTime()">
 
-		<div id="fb-root"></div>
+		
+
+<div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=748792438520405";
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=837818929600426";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<nav class="navbar" id="navbar">
+}(document, "script", "facebook-jssdk"));</script>
+
+<script >
+  window.___gcfg = {
+    lang: "en-US",
+    parsetags: "onload"
+  };
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+<script>
+!function(d,s,id){
+	var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";
+	if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
+	fjs.parentNode.insertBefore(js,fjs);}}(document, "script", "twitter-wjs");
+</script>
+
+<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script><nav class="navbar" id="navbar">
 	<div class="container-fluid" id="bar">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -70,9 +94,16 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand"><img alt="neurobin logo" id="logo" src="img/neurobin400.png" /></a>
+			<div id="navbar-brand">
+			<img alt="neurobin-logo1"  src="img/nbglobe2.png" class="logo"/>
+<img alt="neurobin-logo2" src="img/nblogo100.png" class="logo"/>
+<div class="vertical-rule-bold"></div>
+			</div>
+			
 		</div>
+		
 		<div class="collapse navbar-collapse" id="myNavbar">
+		
 			<ul class="nav navbar-nav" id="menu">
 				<li class="active">
 					<a href="" target="_parent">Home</a>
@@ -80,7 +111,7 @@
 				</li>
 
 				<li class="dropdown">
-					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Projects">Projects<span class="caret-down"></span></a>
+					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Projects">Projects</a>
 					<ul class="dropdown-menu">
 						<li>
 							<a class="menu-item " href="Projects/Softwares">Softwares <span class="caret-right edge"></span></a>
@@ -120,7 +151,7 @@
 				</li>
 
 				<li class="dropdown">
-					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Docs">Docs<span class="caret-down"></span></a>
+					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Docs">Docs</a>
 					<ul class="dropdown-menu">
 					<li>
 							<a class="menu-item hand-cursor" href="Docs/Linux">Linux</a>
@@ -171,7 +202,7 @@
 				</li>
 
 				<!-- <li class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Places<span class="caret-down"></span></a>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Places</a>
 				<ul class="dropdown-menu">
 				<li>
 				<a class="menu-item" href="http://github.com/neurobin"><i class="fa fa-github"></i> Github</a>
@@ -201,7 +232,8 @@
 		</div>
 	</div>
 </nav>
-		<script>
+		
+<script>
 function returnFacebookShareUrl(){
 return "http://www.facebook.com/sharer.php?u="+window.location.href;
 
@@ -214,51 +246,43 @@ function returnPageUrl() {
 }
 </script>
 
-
 <div id="fixed-share-button">
-	<a id="share-btn1" href="#" onclick="return newShareWindow(returnFacebookShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-facebook"></i> share</a>
 
-	<a id="share-btn2" href="#" onclick="return newShareWindow(returnTwitterShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-twitter"></i> share</a>
+	<div class="social-button-fixed">
+	
+<script type="IN/Share" data-counter="top"></script>
+	</div>
 
-<div class="social-button-fixed" id="share-btn3">
-<g:plus action="share" href="returnPageUrl()" annotation="bubble" height="60" align="left"></g:plus>
-</div>
-<script >
-  window.___gcfg = {
-    lang: 'en-US',
-    parsetags: 'onload'
-  };
-</script>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
 
-</div><script>
-function returnFacebookContentShareUrl(){
-	var msg=getSaveContent();
-	var url=  'http://www.facebook.com/dialog/feed?app_id=1663039703924731' +
-        '&link=' +encodeURIComponent(window.location.href)+
-        '&name=' + encodeURIComponent(getSaveFileName()) +
-        '&caption=' + encodeURIComponent('Content By Uedit') +
-        '&description=Content Shared From: '+encodeURIComponent(window.location.href)+
-        '&redirect_uri=http://'+window.location.host+'/siteutility/closewindow/'+
-        '&display=popup';
-return url;
+	<div class="social-button-fixed">
+	
+<a href="https://twitter.com/share" 
+   class="twitter-share-button" 
+   data-hashtags="Neurobin" 
+   data-via="jahidulhamid" 
+   data-count="vertical">
+</a>
+	</div>
 
-}
-function returnTwitterContentShareUrl() {
-	var msg=getSaveContent();
-	return "http://twitter.com/home?status="+msg;
-}
+	<div class="social-button-fixed">
+	
+<g:plusone
+    size="tall" 
+    annotation="bubble"
+    align="left" >
+</g:plusone>
+	</div>
+	<div class="social-button-fixed">
+	
+<div class="fb-like"
+ data-layout="box_count"
+ data-action="like"
+ data-share="true">
+ </div>
+	</div>
+	
 
-</script>
-
-<div class="share-button-fixed">
-	<a id="share-btn3" href="#" onclick="return newShareWindow(returnFacebookContentShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-facebook"></i> Content share</a>
-
-	<a id="share-btn4" href="#" onclick="return newShareWindow(returnTwitterContentShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-twitter"></i> Content share</a>
-
-</div>
-
-		<!-- fixed share button end-->
+</div>		<!-- fixed share button end-->
 		
 <div id="openModal" class="modalDialog">
 	<div>

@@ -1,3 +1,4 @@
+
 <script>
 function returnFacebookShareUrl(){
 return "http://www.facebook.com/sharer.php?u="+window.location.href;
@@ -13,19 +14,39 @@ function returnPageUrl() {
 
 
 <div id="fixed-share-button">
-	<a id="share-btn1" href="#" onclick="return newShareWindow(returnFacebookShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-facebook"></i> share</a>
 
-	<a id="share-btn2" href="#" onclick="return newShareWindow(returnTwitterShareUrl(),400,400)" class="social-button-fixed"><i class="fa fa-twitter"></i> share</a>
+	<div class="social-button-fixed">
+	
+<script type="IN/Share" data-counter="top"></script>
+	</div>
 
-<div class="social-button-fixed" id="share-btn3">
-<g:plus action="share" href="returnPageUrl()" annotation="bubble" height="60" align="left"></g:plus>
-</div>
-<script >
-  window.___gcfg = {
-    lang: 'en-US',
-    parsetags: 'onload'
-  };
-</script>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+	<div class="social-button-fixed">
+	
+<a href="https://twitter.com/share" 
+   class="twitter-share-button" 
+   data-hashtags="Neurobin" 
+   data-via="jahidulhamid" 
+   data-count="vertical">
+</a>
+	</div>
+
+	<div class="social-button-fixed">
+	
+<g:plusone
+    size="tall" 
+    annotation="bubble"
+    align="left" >
+</g:plusone>
+	</div>
+	<div class="social-button-fixed">
+	
+<div class="fb-like"
+ data-layout="box_count"
+ data-action="like"
+ data-share="true">
+ </div>
+	</div>
+	
 
 </div>

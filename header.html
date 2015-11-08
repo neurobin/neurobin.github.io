@@ -1,12 +1,31 @@
+
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=748792438520405";
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=837818929600426";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<nav class="navbar" id="navbar">
+}(document, "script", "facebook-jssdk"));</script>
+
+<script >
+  window.___gcfg = {
+    lang: "en-US",
+    parsetags: "onload"
+  };
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+<script>
+!function(d,s,id){
+	var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";
+	if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
+	fjs.parentNode.insertBefore(js,fjs);}}(document, "script", "twitter-wjs");
+</script>
+
+<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script><nav class="navbar" id="navbar">
 	<div class="container-fluid" id="bar">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -14,9 +33,16 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand"><img alt="neurobin logo" id="logo" src="img/neurobin400.png" /></a>
+			<div id="navbar-brand">
+			<img alt="neurobin-logo1"  src="img/nbglobe2.png" class="logo"/>
+<img alt="neurobin-logo2" src="img/nblogo100.png" class="logo"/>
+<div class="vertical-rule-bold"></div>
+			</div>
+			
 		</div>
+		
 		<div class="collapse navbar-collapse" id="myNavbar">
+		
 			<ul class="nav navbar-nav" id="menu">
 				<li class="active">
 					<a href="" target="_parent">Home</a>
@@ -24,7 +50,7 @@
 				</li>
 
 				<li class="dropdown">
-					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Projects">Projects<span class="caret-down"></span></a>
+					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Projects">Projects</a>
 					<ul class="dropdown-menu">
 						<li>
 							<a class="menu-item " href="Projects/Softwares">Softwares <span class="caret-right edge"></span></a>
@@ -64,7 +90,7 @@
 				</li>
 
 				<li class="dropdown">
-					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Docs">Docs<span class="caret-down"></span></a>
+					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Docs">Docs</a>
 					<ul class="dropdown-menu">
 					<li>
 							<a class="menu-item hand-cursor" href="Docs/Linux">Linux</a>
@@ -115,7 +141,7 @@
 				</li>
 
 				<!-- <li class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Places<span class="caret-down"></span></a>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Places</a>
 				<ul class="dropdown-menu">
 				<li>
 				<a class="menu-item" href="http://github.com/neurobin"><i class="fa fa-github"></i> Github</a>

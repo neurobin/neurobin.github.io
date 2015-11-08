@@ -25,7 +25,7 @@ function show(id){
 		document.getElementById(id).style.transition="opacity .5s linear";
 		document.getElementById(id).style.opacity=1;
 		document.getElementById(id).style.pointerEvents="auto";
-		document.getElementById(id).style.cursor="hand";
+		document.getElementById(id).style.cursor="pointer";
 }
 function newShareWindow(url,w,h) {
   var left = (screen.width/2)-(w/2);
@@ -115,7 +115,7 @@ function getDocHeight() {
 }
 
 document.addEventListener("scroll", function (event) {
-	    if (getDocHeight() <= (getScrollXY()[1] + window.innerHeight+100)) {
+	    if (getDocHeight() <= (getScrollXY()[1] + window.innerHeight+230)) {
         hide('fixed-share-button');
     }
     else{show('fixed-share-button');}
