@@ -1,0 +1,1316 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<base href="../" />
+		
+
+
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!--[if lt IE 9]>
+<script src="script/html5.js"></script>
+<![endif]-->
+
+<!-- CSS -->
+
+<meta name="author" content="Md. Jahidul Hamid" >
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="style/mycss.css" />
+<!--<link rel="stylesheet" href="style/mycss.min.css" />-->
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<script src="script/jquery.min.1.7.1.custom.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="script/myjs.js"></script>
+<!--<script src="script/myjs.min.js"></script>-->
+
+
+<link rel="stylesheet" href="Highlightjs/styles/github.css">
+<script src="Highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link rel="shortcut icon" href="img/logo48.png" type="image/x-icon" />
+
+		<meta name="description" content="Universal Text Editor User Manual">
+		<meta name="keywords" content="uedit,neurobin,universal text editor,text editor" />
+		<title>Uedit User Manual | Neurobin</title>
+
+	</head>
+	<body onload="startTime()">
+
+		
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=837818929600426";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, "script", "facebook-jssdk"));</script>
+
+<script >
+  window.___gcfg = {
+    lang: "en-US",
+    parsetags: "onload"
+  };
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+<script>
+!function(d,s,id){
+	var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";
+	if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
+	fjs.parentNode.insertBefore(js,fjs);}}(document, "script", "twitter-wjs");
+</script>
+
+<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script><nav class="navbar" id="navbar">
+	<div class="container-fluid" id="bar">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<div id="navbar-brand">
+			<img alt="neurobin-logo1"  src="img/nbglobe2.png" class="logo"/>
+<img alt="neurobin-logo2" src="img/nblogo100.png" class="logo"/>
+<div class="vertical-rule-bold"></div>
+			</div>
+			
+		</div>
+		
+		<div class="collapse navbar-collapse" id="myNavbar">
+		
+			<ul class="nav navbar-nav" id="menu">
+				<li class="active">
+					<a href="" target="_parent">Home</a>
+
+				</li>
+
+				<li class="dropdown">
+					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Projects">Projects</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="menu-item " href="Projects/Softwares">Softwares <span class="caret-right edge"></span></a>
+
+							<ul >
+								<li>
+									<a class="menu-item" href="Projects/Softwares/linsofts.html">Linux</a>
+
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/winsofts.html">Windows</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/andapps.html">Android</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/webapps.html">Web Apps</a>
+								</li>
+								<li>
+									<a class="menu-item" href="Projects/Softwares/games.html">Games</a>
+								</li>
+								
+								<li>
+									<a class="menu-item disabled-link" href="Projects/Softwares/genericsofts.html">Others</a>
+								</li>
+							</ul>
+
+						</li>
+						<li>
+							<a class="menu-item disabled-link" href="Projects/Research">Research</a>
+						</li>
+						<li>
+							<a class="menu-item disabled-link" href="Projects/Others">Others</a>
+						</li>
+
+					</ul>
+				</li>
+
+				<li class="dropdown">
+					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Docs">Docs</a>
+					<ul class="dropdown-menu">
+					<li>
+							<a class="menu-item hand-cursor" href="Docs/Linux">Linux</a>
+						
+						</li>
+						<li class="disabled-link">
+							<a class="menu-item disabled-link" >Programming <span class="caret-right edge"></span></a>
+							<ul class="programming">
+								<li>
+									<a class="menu-item disabled-link" href="#">C</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">C++</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">SQL</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">PHP</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">CSS</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Java</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">HTML</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Matlab</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">JavaScript</a>
+								</li>
+								<li>
+									<a class="menu-item disabled-link" href="#">Shell Scripting</a>
+								</li>
+							</ul>
+
+						</li>
+
+						<li>
+							<a class="menu-item" href="Docs/Android">Android</a>
+						</li>
+					</ul>
+
+				</li>
+
+				<!-- <li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Places</a>
+				<ul class="dropdown-menu">
+				<li>
+				<a class="menu-item" href="http://github.com/neurobin"><i class="fa fa-github"></i> Github</a>
+
+				</li>
+				<li>
+				<a class="menu-item" href="http://bitbucket.org/neurobin"><i class="fa fa-bitbucket"></i> Bitbucket</a>
+				</li>
+
+				</ul>
+				</li> -->
+
+				<li>
+					<a class="menu-item disabled-link " href="Downloads">Downloads</a>
+				</li>
+
+			</ul>
+			<div class="clock">
+				<ul class="nav navbar-nav navbar-right">
+
+					<li class="clock-item" >
+						<p id="clockTime"></p><p id="clockDate"></p>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>
+		<!--Navigation bar ends here -->
+		<!-- fixed share button-->
+		
+<script>
+function returnFacebookShareUrl(){
+return "http://www.facebook.com/sharer.php?u="+window.location.href;
+
+}
+function returnTwitterShareUrl() {
+	return "http://twitter.com/home?status="+window.location.href;
+}
+function returnPageUrl() {
+	return window.location.href;
+}
+</script>
+
+<div id="fixed-share-button">
+
+	<div class="social-button-fixed">
+	
+<script type="IN/Share" data-counter="top"></script>
+	</div>
+
+
+	<div class="social-button-fixed">
+	
+<a href="https://twitter.com/share" 
+   class="twitter-share-button" 
+   data-hashtags="Neurobin" 
+   data-via="jahidulhamid" 
+   data-count="vertical">
+</a>
+	</div>
+
+	<div class="social-button-fixed">
+	
+<g:plusone
+    size="tall" 
+    annotation="bubble"
+    align="left" >
+</g:plusone>
+	</div>
+	<div class="social-button-fixed">
+	
+<div class="fb-like"
+ data-layout="box_count"
+ data-action="like"
+ data-share="true">
+ </div>
+	</div>
+	
+
+</div>		<!-- fixed share button end-->
+		<div class="container" id="showoff-soft">
+			<div class="row line-after">
+
+				<p class="project-name">
+					Uedit
+				</p>
+				<p class="project-tagline">
+					Universal Text Editor User Manual
+				</p>
+
+			</div>
+		</div>
+
+		<!-- show off ends here-->
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="head-buttons">
+						<a href="https://github.com/neurobin/uedit">View On Github</a>
+<a href="uedit/uedit.html">Editor</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="container" id="content-container2">
+			<div class="row">
+				<div class="col-xs-2" id="content-left"></div>
+				<div class="col-xs-8 " id="content-soft">
+
+<p>This is a tiny attempt to develop a Universal Text Editor.</p>
+<h1>Usage:</h1>
+<p>The salient feature is the custom buttons. A custom button can be defined to do various types of text manipulation.</p>
+<p>For example:</p>
+<ol>
+<li>
+<p>If the <kbd class="button">General</kbd> button has a <code>start</code> value <code>&lt;span class="quote"&gt;</code> and <code>end</code> value of <code>&lt;/span&gt;</code>
+then by clicking it you can simply enter the whole string as <code>start</code> <code>end</code> or if you perform this action on
+a selected text, it will replace the text with <code>&lt;span class="quote"&gt;text&lt;/span&gt;</code> i.e <code>start</code>text<code>end</code></p>
+</li>
+<li>
+<p>If you define the <code>start</code> value with <code>&lt;!-- </code> and <code>end</code> value with <code> --&gt;</code>, you will get HTML Comment.</p>
+</li>
+<li>
+<p>If you define the <code>start</code> value with <code>//</code> and leave <code>end</code> empty, you will get single line comment which is the same for several languages.</p>
+</li>
+<li>
+<p>If you define the start value with <code>/*</code> and end value with <code>*/</code>, you get a multiline comment.</p>
+</li>
+<li>
+<p>You can put your code snippet in the <code>start</code> and <code>end</code> boxes and insert them into editor by simply clicking on the corresponding button.</p>
+</li>
+<li>You can even put an entire file content into those two boxes and insert them anywhere in the editor by simple button click.</li>
+<li>To edit properties of a button, right click on that button and select <q>edit</q>.</li>
+<li>To delete a button, right click on that button and select <q>delete</q>.</li>
+<li>You can set keyboard shortcuts for your custom buttons. To set a keyboard shortcut for an existing button, right click on the button and fill the fileds marked by the name <span class="quote">KBDS</span>. The same applies for adding a new button too.</li>
+</ol>   
+<div id="kbd-shortcuts"><br></div>
+<h1>Keyboard Shortcuts</h1>
+<h2>Line Operations</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Windows/Linux</th>
+<th style="text-align: left;">Mac</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ctrl-D</td>
+<td style="text-align: left;">Command-D</td>
+<td style="text-align: left;">Remove line</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Shift-Down</td>
+<td style="text-align: left;">Command-Option-Down</td>
+<td style="text-align: left;">Copy lines down</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Shift-Up</td>
+<td style="text-align: left;">Command-Option-Up</td>
+<td style="text-align: left;">Copy lines up</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Down</td>
+<td style="text-align: left;">Option-Down</td>
+<td style="text-align: left;">Move lines down</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Up</td>
+<td style="text-align: left;">Option-Up</td>
+<td style="text-align: left;">Move lines up</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Delete</td>
+<td style="text-align: left;">Ctrl-K</td>
+<td style="text-align: left;">Remove to line end</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Backspace</td>
+<td style="text-align: left;">Command-Backspace</td>
+<td style="text-align: left;">Remove to line start</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Backspace</td>
+<td style="text-align: left;">Option-Backspace, Ctrl-Option-Backspace</td>
+<td style="text-align: left;">Remove word left</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Delete</td>
+<td style="text-align: left;">Option-Delete</td>
+<td style="text-align: left;">Remove word right</td>
+</tr>
+<tr>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">Ctrl-O</td>
+<td style="text-align: left;">Split line</td>
+</tr>
+</tbody>
+</table>
+<h2>Selection</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Windows/Linux</th>
+<th style="text-align: left;">Mac</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ctrl-A</td>
+<td style="text-align: left;">Command-A</td>
+<td style="text-align: left;">Select all</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-Left</td>
+<td style="text-align: left;">Shift-Left</td>
+<td style="text-align: left;">Select left</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-Right</td>
+<td style="text-align: left;">Shift-Right</td>
+<td style="text-align: left;">Select right</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-Left</td>
+<td style="text-align: left;">Option-Shift-Left</td>
+<td style="text-align: left;">Select word left</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-Right</td>
+<td style="text-align: left;">Option-Shift-Right</td>
+<td style="text-align: left;">Select word right</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-Home</td>
+<td style="text-align: left;">Shift-Home</td>
+<td style="text-align: left;">Select line start</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-End</td>
+<td style="text-align: left;">Shift-End</td>
+<td style="text-align: left;">Select line end</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Shift-Right</td>
+<td style="text-align: left;">Command-Shift-Right</td>
+<td style="text-align: left;">Select to line end</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Shift-Left</td>
+<td style="text-align: left;">Command-Shift-Left</td>
+<td style="text-align: left;">Select to line start</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-Up</td>
+<td style="text-align: left;">Shift-Up</td>
+<td style="text-align: left;">Select up</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-Down</td>
+<td style="text-align: left;">Shift-Down</td>
+<td style="text-align: left;">Select down</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-PageUp</td>
+<td style="text-align: left;">Shift-PageUp</td>
+<td style="text-align: left;">Select page up</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-PageDown</td>
+<td style="text-align: left;">Shift-PageDown</td>
+<td style="text-align: left;">Select page down</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-Home</td>
+<td style="text-align: left;">Command-Shift-Up</td>
+<td style="text-align: left;">Select to start</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-End</td>
+<td style="text-align: left;">Command-Shift-Down</td>
+<td style="text-align: left;">Select to end</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-D</td>
+<td style="text-align: left;">Command-Shift-D</td>
+<td style="text-align: left;">Duplicate selection</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-P</td>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">Select to matching bracket</td>
+</tr>
+</tbody>
+</table>
+<h2>Multicursor</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Windows/Linux</th>
+<th style="text-align: left;">Mac</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ctrl-Alt-Up</td>
+<td style="text-align: left;">Ctrl-Option-Up</td>
+<td style="text-align: left;">Add multi-cursor above</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Alt-Down</td>
+<td style="text-align: left;">Ctrl-Option-Down</td>
+<td style="text-align: left;">Add multi-cursor below</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Alt-Right</td>
+<td style="text-align: left;">Ctrl-Option-Right</td>
+<td style="text-align: left;">Add next occurrence to multi-selection</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Alt-Left</td>
+<td style="text-align: left;">Ctrl-Option-Left</td>
+<td style="text-align: left;">Add previous occurrence to multi-selection</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Alt-Shift-Up</td>
+<td style="text-align: left;">Ctrl-Option-Shift-Up</td>
+<td style="text-align: left;">Move multicursor from current line to the line above</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Alt-Shift-Down</td>
+<td style="text-align: left;">Ctrl-Option-Shift-Down</td>
+<td style="text-align: left;">Move multicursor from current line to the line below</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Alt-Shift-Right</td>
+<td style="text-align: left;">Ctrl-Option-Shift-Right</td>
+<td style="text-align: left;">Remove current occurrence from multi-selection and move to next</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Alt-Shift-Left</td>
+<td style="text-align: left;">Ctrl-Option-Shift-Left</td>
+<td style="text-align: left;">Remove current occurrence from multi-selection and move to previous</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-L</td>
+<td style="text-align: left;">Ctrl-Shift-L</td>
+<td style="text-align: left;">Select all from multi-selection</td>
+</tr>
+</tbody>
+</table>
+<h2>Go to</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Windows/Linux</th>
+<th style="text-align: left;">Mac</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Left</td>
+<td style="text-align: left;">Left, Ctrl-B</td>
+<td style="text-align: left;">Go to left</td>
+</tr>
+<tr>
+<td style="text-align: left;">Right</td>
+<td style="text-align: left;">Right, Ctrl-F</td>
+<td style="text-align: left;">Go to right</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Left</td>
+<td style="text-align: left;">Option-Left</td>
+<td style="text-align: left;">Go to word left</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Right</td>
+<td style="text-align: left;">Option-Right</td>
+<td style="text-align: left;">Go to word right</td>
+</tr>
+<tr>
+<td style="text-align: left;">Up</td>
+<td style="text-align: left;">Up, Ctrl-P</td>
+<td style="text-align: left;">Go line up</td>
+</tr>
+<tr>
+<td style="text-align: left;">Down</td>
+<td style="text-align: left;">Down, Ctrl-N</td>
+<td style="text-align: left;">Go line down</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Left, Home</td>
+<td style="text-align: left;">Command-Left, Home, Ctrl-A</td>
+<td style="text-align: left;">Go to line start</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Right, End</td>
+<td style="text-align: left;">Command-Right, End, Ctrl-E</td>
+<td style="text-align: left;">Go to line end</td>
+</tr>
+<tr>
+<td style="text-align: left;">PageUp</td>
+<td style="text-align: left;">Option-PageUp</td>
+<td style="text-align: left;">Go to page up</td>
+</tr>
+<tr>
+<td style="text-align: left;">PageDown</td>
+<td style="text-align: left;">Option-PageDown, Ctrl-V</td>
+<td style="text-align: left;">Go to page down</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Home</td>
+<td style="text-align: left;">Command-Home, Command-Up</td>
+<td style="text-align: left;">Go to start</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-End</td>
+<td style="text-align: left;">Command-End, Command-Down</td>
+<td style="text-align: left;">Go to end</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-L</td>
+<td style="text-align: left;">Command-L</td>
+<td style="text-align: left;">Go to line</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Down</td>
+<td style="text-align: left;">Command-Down</td>
+<td style="text-align: left;">Scroll line down</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Up</td>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">Scroll line up</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-P</td>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">Go to matching bracket</td>
+</tr>
+<tr>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">Option-PageDown</td>
+<td style="text-align: left;">Scroll page down</td>
+</tr>
+<tr>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">Option-PageUp</td>
+<td style="text-align: left;">Scroll page up</td>
+</tr>
+</tbody>
+</table>
+<h2>Find/Replace</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Windows/Linux</th>
+<th style="text-align: left;">Mac</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ctrl-F</td>
+<td style="text-align: left;">Command-F</td>
+<td style="text-align: left;">Find</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-R</td>
+<td style="text-align: left;">Command-Option-F</td>
+<td style="text-align: left;">Replace</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-K</td>
+<td style="text-align: left;">Command-G</td>
+<td style="text-align: left;">Find next</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-K</td>
+<td style="text-align: left;">Command-Shift-G</td>
+<td style="text-align: left;">Find previous</td>
+</tr>
+</tbody>
+</table>
+<h2>Folding</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Windows/Linux</th>
+<th style="text-align: left;">Mac</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Alt-L, Ctrl-F1</td>
+<td style="text-align: left;">Command-Option-L, Command-F1</td>
+<td style="text-align: left;">Fold selection</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Shift-L, Ctrl-Shift-F1</td>
+<td style="text-align: left;">Command-Option-Shift-L, Command-Shift-F1</td>
+<td style="text-align: left;">Unfold</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-0</td>
+<td style="text-align: left;">Command-Option-0</td>
+<td style="text-align: left;">Fold all</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Shift-0</td>
+<td style="text-align: left;">Command-Option-Shift-0</td>
+<td style="text-align: left;">Unfold all</td>
+</tr>
+</tbody>
+</table>
+<h2>Other</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Windows/Linux</th>
+<th style="text-align: left;">Mac</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ctrl-S</td>
+<td style="text-align: left;">Command-S</td>
+<td style="text-align: left;">Save</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tab</td>
+<td style="text-align: left;">Tab</td>
+<td style="text-align: left;">Indent</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-Tab</td>
+<td style="text-align: left;">Shift-Tab</td>
+<td style="text-align: left;">Outdent</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Z</td>
+<td style="text-align: left;">Command-Z</td>
+<td style="text-align: left;">undo</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-Z, Ctrl-Y</td>
+<td style="text-align: left;">Command-Shift-Z, Command-Y</td>
+<td style="text-align: left;">Redo</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-,</td>
+<td style="text-align: left;">Command-,</td>
+<td style="text-align: left;">Show the settings menu</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-/</td>
+<td style="text-align: left;">Command-/</td>
+<td style="text-align: left;">Toggle comment</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-T</td>
+<td style="text-align: left;">Ctrl-T</td>
+<td style="text-align: left;">Transpose letters</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Enter</td>
+<td style="text-align: left;">Command-Enter</td>
+<td style="text-align: left;">Enter full screen</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-U</td>
+<td style="text-align: left;">Ctrl-Shift-U</td>
+<td style="text-align: left;">Change to lower case</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-U</td>
+<td style="text-align: left;">Ctrl-U</td>
+<td style="text-align: left;">Change to upper case</td>
+</tr>
+<tr>
+<td style="text-align: left;">Insert</td>
+<td style="text-align: left;">Insert</td>
+<td style="text-align: left;">Overwrite</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-E</td>
+<td style="text-align: left;">Command-Shift-E</td>
+<td style="text-align: left;">Macros replay</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Alt-E</td>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">Macros recording</td>
+</tr>
+<tr>
+<td style="text-align: left;">Delete</td>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">Delete</td>
+</tr>
+<tr>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">Ctrl-L</td>
+<td style="text-align: left;">Center selection</td>
+</tr>
+</tbody>
+</table>
+<div id="btn-custom-skey"></div>
+<h1>Custom Keyboard Shortcuts:</h1>
+<p>You can set custom keyboard shortcuts for buttons (i.e tasks) which you require more often for your editing. Keyboard shortcuts are limited to 3 primary modifiers (Ctrl, Alt, Shift). The secondary modifier is optional and it's limited to 30 options. The third one is the key and you can put almost anything here (1 character only). Thus combining 1 mandatory modifier and one optional modifier and a key, you can create suitable keyboard shortcuts as you like. When creating keyboard shortcuts you need to consider certain things:</p>
+<ol>
+<li>Keyboard shortcut, which tries to overwrite any existing shortcut, may or may not work depending on the environment and priority.</li>
+<li>Keyboard shortcut, which conflicts with basic functions (such as <kbd>shift+a</kbd> and such, which is actually capitalizaion or writing printable characters)  won't be allowed and you will be rendered with an error message.</li>
+<li>Watch out for spaces. If you have space in the third key field  it will show error message and you may not find what's causing this error because the white space is not visible (that's why it is called white space in the first place).</li>
+<li>There are two types of shortcuts. One is three keys and other is two keys. There are some predefined keys in the second modifier field which forces the shrotcut to be two keys, i.e it will show error if you try to use a third key.
+These keys are:
+<kbd>Space Bar</kbd> <kbd>Tab</kbd> <kbd>Enter</kbd> <kbd>Esc</kbd> <kbd>Insert</kbd> <kbd>Home</kbd> <kbd>End</kbd> <kbd>Del</kbd> <kbd>PgUp</kbd> <kbd>PgDn</kbd> <kbd>Arrow Keys</kbd> <kbd>F1...F12</kbd>
+<script>
+function getPageURLById(id) {
+var dir,file;
+dir=window.location.href.substr(0,window.location.href.lastIndexOf("/")+1);
+file=window.location.href.substr(window.location.href.lastIndexOf("/")+1);
+if (file.lastIndexOf("#")>-1) {
+var filename=file.substr(0,file.lastIndexOf("#"));
+}
+var showInfoURL=dir+filename+"#"+id;
+return showInfoURL;
+}
+</script></li>
+<li>There are some default keyboard shortcuts which are not allowed to be changed. <a href="uedit/showinfo.html#btn-invalid-custom-skey">This is a list of these keyboard shortcuts.</a></li>
+<li>There are some keyboard shortcuts which are not allowed to be set, because they are system default or browser default or some other reasons. <a href="uedit/showinfo.html#btn-invalid-custom-skey-others">This is a list of these keyboard shortcuts.</a></li>
+</ol>
+<div id="btn-invalid-custom-skey"></div>
+<h2>Default Shortcuts That Are Not Allowed To Be Changed:</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Windows/Linux</th>
+<th style="text-align: left;">Mac</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ctrl-S</td>
+<td style="text-align: left;">Command-S</td>
+<td style="text-align: left;">Save</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Z</td>
+<td style="text-align: left;">Command-Z</td>
+<td style="text-align: left;">undo</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-Z</td>
+<td style="text-align: left;">Command-Shift-Z</td>
+<td style="text-align: left;">Redo</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-A</td>
+<td style="text-align: left;">Command-A</td>
+<td style="text-align: left;">Select all</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-F</td>
+<td style="text-align: left;">Command-F</td>
+<td style="text-align: left;">Find</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-R</td>
+<td style="text-align: left;">Command-Option-F</td>
+<td style="text-align: left;">Replace</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-K</td>
+<td style="text-align: left;">Command-G</td>
+<td style="text-align: left;">Find next</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-K</td>
+<td style="text-align: left;">Command-Shift-G</td>
+<td style="text-align: left;">Find previous</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-Left</td>
+<td style="text-align: left;">Shift-Left</td>
+<td style="text-align: left;">Select left</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-Right</td>
+<td style="text-align: left;">Shift-Right</td>
+<td style="text-align: left;">Select right</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-Up</td>
+<td style="text-align: left;">Shift-Up</td>
+<td style="text-align: left;">Select up</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-Down</td>
+<td style="text-align: left;">Shift-Down</td>
+<td style="text-align: left;">Select down</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-Home</td>
+<td style="text-align: left;">Shift-Home</td>
+<td style="text-align: left;">Select line start</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-End</td>
+<td style="text-align: left;">Shift-End</td>
+<td style="text-align: left;">Select line end</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-PageUp</td>
+<td style="text-align: left;">Shift-PageUp</td>
+<td style="text-align: left;">Select page up</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift-PageDown</td>
+<td style="text-align: left;">Shift-PageDown</td>
+<td style="text-align: left;">Select page down</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-Home</td>
+<td style="text-align: left;">Command-Shift-Up</td>
+<td style="text-align: left;">Select to start</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Shift-End</td>
+<td style="text-align: left;">Command-Shift-Down</td>
+<td style="text-align: left;">Select to end</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-C</td>
+<td style="text-align: left;">Command-C</td>
+<td style="text-align: left;">Copy to clipboard</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-V</td>
+<td style="text-align: left;">Command-V</td>
+<td style="text-align: left;">Paste From clipboard</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-X</td>
+<td style="text-align: left;">Command-X</td>
+<td style="text-align: left;">Cut to clipboard</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Space</td>
+<td style="text-align: left;">Command-Space</td>
+<td style="text-align: left;">Content Assist</td>
+</tr>
+</tbody>
+</table>
+<div id="btn-invalid-custom-skey-others"></div>
+<h2>Other Invalid Custom Shortcuts:</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Windows/Linux</th>
+<th style="text-align: left;">Mac</th>
+<th style="text-align: left;">Possible Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ctrl-D</td>
+<td style="text-align: left;">Command-D</td>
+<td style="text-align: left;">May be a browser default</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ctrl-Tab</td>
+<td style="text-align: left;">Command-Tab</td>
+<td style="text-align: left;">May be a browser default</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Tab</td>
+<td style="text-align: left;">Option-Tab</td>
+<td style="text-align: left;">OS default</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alt-Space</td>
+<td style="text-align: left;">Option-Space</td>
+<td style="text-align: left;">Possible OS default</td>
+</tr>
+</tbody>
+</table>
+<div id="btn-valid-markups"></div>
+<h1>Markups In Button Names!!</h1>
+<p>You can use HTML Markups in custom button name. That means you get to design your own custom button with
+HTML Markup. For example, if you put <code>&lt;b&gt;buttonName&lt;/b&gt;</code> as the button name then your button will
+show with text <b>buttonName</b> bolded. You can put inline styling as well. The funny thing is, you can even put
+JavaScript code in the name field so that it executes onmouseout or onmouseover or on whatever
+property it is defined on. The catch is, you have to put all of that in a single line.</p>
+<h2>Valid Markups In Custom Buttons:</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Markup</th>
+<th style="text-align: left;">Interpretation/Preview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>&lt;span&gt;&lt;/span&gt;</code></td>
+<td style="text-align: left;"><span>Span</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&lt;kbd&gt;&lt;/kbd&gt;</code></td>
+<td style="text-align: left;"><kbd>Keyboard key</kbd></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&lt;var&gt;&lt;/var&gt;</code></td>
+<td style="text-align: left;"><var>Variable</var></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&lt;s&gt;&lt;/s&gt;</code></td>
+<td style="text-align: left;"><s>Deleted text</s></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&lt;del&gt;&lt;/del&gt;</code></td>
+<td style="text-align: left;"><del>Deleted text</del></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&lt;q&gt;&lt;/q&gt;</code></td>
+<td style="text-align: left;"><q>Short quotation</q></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&lt;b&gt;&lt;/b&gt;</code></td>
+<td style="text-align: left;"><b>Bold text</b></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&lt;i&gt;&lt;/i&gt;</code></td>
+<td style="text-align: left;"><i>Italic text</i></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&lt;u&gt;&lt;/u&gt;</code></td>
+<td style="text-align: left;"><u>Underlined text</u></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&lt;code&gt;&lt;/code&gt;</code></td>
+<td style="text-align: left;"><code>Code</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&lt;em&gt;&lt;/em&gt;</code></td>
+<td style="text-align: left;"><em>Emphasis</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&lt;small&gt;&lt;/small&gt;</code></td>
+<td style="text-align: left;"><small>Small text</small></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&lt;sub&gt;&lt;/sub&gt;</code></td>
+<td style="text-align: left;"><sub>Subscript</sub></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&lt;sup&gt;&lt;/sup&gt;</code></td>
+<td style="text-align: left;"><sup>Superscript</sup></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&lt;mark&gt;&lt;/mark&gt;</code></td>
+<td style="text-align: left;"><mark>Mark</mark></td>
+</tr>
+</tbody>
+</table>
+<h2>Rules To use Markups in Custom Button Name:</h2>
+<p>The only rule is to not use any spaces between <code>&lt;</code> and <code>tagname</code> or <code>&lt;</code> and <code>/</code> or <code>/tagname</code> and <code>&gt;</code> or <code>/</code> and <code>tagname</code>.</p>
+<p>Example:</p>
+<ol>
+<li><code>&lt; span&gt;name&lt;/span&gt;</code> is wrong, space between <code>&lt;</code> and <code>span</code> </li>
+<li><code>&lt;span&gt;name&lt; /span&gt;</code> is wrong, space between <code>&lt;</code> and <code>/span</code></li>
+<li><code>&lt;span&gt;name&lt;/ span&gt;</code> is wrong, space between <code>/</code> and <code>span</code></li>
+<li><code>&lt;span&gt;name&lt;/span &gt;</code> is wrong, space between <code>/span</code> and <code>&gt;</code></li>
+<li><code>&lt;span &gt;name&lt;/span&gt;</code> is correct</li>
+<li><code>&lt;span class="classname"&gt;name&lt;/span&gt;</code> is correct</li>
+</ol>
+<p><span class="quote">Note: To put <code>&lt;</code> or <code>&gt;</code> literally, you need to use <code>&amp;lt;</code> and <code>&amp;gt;</code> respectively.
+</span></p>
+<p>HTML Markup is only allowed in Button Name. Other fields in creating new button will take the literal meaning of any input string.</p>
+<p>You can apply CSS styling in custom buttons. Either you can use your own inline styling or available CSS classes which is used throughout this website. For example if you put <code>&lt;span class="warningcolor"&gt;buttonName&lt;/span&gt;</code> as the name, the button name will show as <code>buttonName</code> with dark red color.</p>
+<div id="btn-valid-classname"></div>
+<h2>Available CSS Classes:</h2>
+<p>The following list defines the valid set of CSS class names that are allowed in class field for custom buttons. There's absolutely no restriction in the name field of custom buttons; You can use whatever class you like inside HTML tags for button name (The effect will be your responsibility though :D).<br></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Class</th>
+<th style="text-align: left;">Preview</th>
+<th style="text-align: left;">Applicable To</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>warningcolor</code></td>
+<td style="text-align: left;"><span class="warningcolor">Text</span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>error</code></td>
+<td style="text-align: left;"><span class="error">Text</span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>message</code></td>
+<td style="text-align: left;"><span class="message">Text</span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>button</code></td>
+<td style="text-align: left;"><span class="button">Text</span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>quote</code></td>
+<td style="text-align: left;"><span class="quote">Text</span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>light-quote</code></td>
+<td style="text-align: left;"><span class="light-quote">Text</span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>warning</code></td>
+<td style="text-align: left;"><span class="warning">Text</span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>edit</code></td>
+<td style="text-align: left;"><span class="edit">Text</span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>comment</code></td>
+<td style="text-align: left;"><span class="comment">Text</span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>caret-right</code></td>
+<td style="text-align: left;"><span class="caret-right"></span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>caret-left</code></td>
+<td style="text-align: left;"><span class="caret-left"></span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>caret-up</code></td>
+<td style="text-align: left;"><span class="caret-up"></span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>caret-down</code></td>
+<td style="text-align: left;"><span class="caret-down"></span></td>
+<td style="text-align: left;">Button/Button Name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>editor-button</code></td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>default</code></td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>custom</code></td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dummy</code></td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>uedit-btn-custom-*</code> (*=name)</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+</tr>
+</tbody>
+</table>
+<div id="local-storage-not-found"></div>
+<h1>Local Storage:</h1>
+<p>Uedit uses local storage of browser to store user specific data and content. If Local storage is not
+available or disabled in the browser then nothing will be saved and simple reload of the page will make you
+lose all of your content. So before starting writing/editing make sure your browser supports the use of local
+storage and it is enabled. To check it, you don't have to do anything special, just reload the editor and if it
+finds everything right it won't say anything, otherwise it will warn you with a message box.</p>
+<div id="local-storage-disabled"></div>
+<h2>What will you do if the message box says local storage is disabled:</h2>
+<p>You just need to go to your browser settings and enable local storage (or cookie in some browsers).</p>
+<h3>For firefox:</h3>
+<ol>
+<li>In a new tab type <code>about:config</code> and hit <kbd>Enter</kbd> and confirm action.</li>
+<li>Put <code>Dom.storage.enabled</code> in the search bar and hit <kbd>Enter</kbd>.</li>
+<li>Check the <code>value</code>, if it's true, local storage is enabled or vice-versa.</li>
+<li>Double click on this to change the value.</li>
+</ol>
+<h3>Chrome:</h3>
+<ol>
+<li>Go to settings, then expand <q>Advanced settings</q>.</li>
+<li>navigate to <q>Privacy</q> section</li>
+<li>Click on <q>content settings</q></li>
+<li>Look in the <q>Cookie</q> section</li>
+<li>Check the check box that says <q>Allow local data to be set</q></li>
+</ol>	
+				</div>
+				<div class="col-xs-2" id="content-right"></div>
+
+			</div>
+		</div>
+
+		<!--Content  ends here -->
+		
+<hr>
+<div class="container-fluid">
+<div class="row" id="footer-social-button-row-div">
+<div class="col-xs-3">
+<div id="facebook-like-button-div" class="social-button-fixed">
+    <!-- Your like button code -->
+
+<div class="fb-like"
+ data-layout="button_count"
+ data-action="like"
+ data-share="true">
+ </div>
+</div>
+</div>
+<div class="col-xs-3">
+<div class="social-button-fixed">
+
+<a href="https://twitter.com/share" 
+   class="twitter-share-button" 
+   data-hashtags="Neurobin" 
+   data-via="jahidulhamid" 
+   data-count="horizontal">
+</a>
+</div>
+</div>
+<div class="col-xs-3">
+<div class="social-button-fixed">
+
+<g:plusone
+    size="standard" 
+    annotation="bubble"
+    align="left" >
+</g:plusone>
+</div>
+</div>
+<div class="col-xs-3">
+<div class="social-button-fixed">
+
+<script type="IN/Share" data-counter="right"></script>
+</div>
+</div>
+</div>
+</div>
+		
+<div class="container-fluid" id="foot" >
+			<div class="row" id="footer">
+
+				<div class="col-xs-4 footer-mini-div">
+					<h2>SiteMap</h2>
+					<a href="sitemap">
+					<span>
+						Take The Tour
+						<br />
+						Explore The Site
+						<br />
+						From One Place
+						<br />
+						Day Or Night
+						</span>
+					</a>
+				</div>
+				<div class="col-xs-4 footer-mini-div">
+							<h2>
+								Suggested Links
+							</h2>
+					
+							<a href="rnm">rnm</a>
+					
+							<a href="shc">SHC</a>
+					
+							<a href="uedit">Uedit</a>
+		
+							<a href="JLIVECD">JLIVECD</a>
+		
+
+							<a href="php2html">PHP2HTML</a>
+
+							<a href="TicTacToe">IMW Tic Tac Toe</a>
+				</div>
+				<div class="col-xs-4 footer-mini-div">
+					<h2>
+						Others
+					</h2>
+
+							<a href="about">About</a>
+							<a href="about/contacts">Contancts</a>
+							<a href="about/philosophy">Neurobin's Philosophy</a>
+				</div>
+
+			</div>
+			<div class="row">
+			<div class="col-xs-12"  id="copyright">
+							<p>
+								&copy; 2015, Neurobin, All rights reserved.
+							</p>
+			</div>
+			</div>
+		</div>
+	</body>
+</html>
