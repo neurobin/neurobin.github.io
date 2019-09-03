@@ -1,0 +1,10 @@
+type:		article
+title:		Uedit user manual
+keywords:		text editor, on-line text editor, browser text editor
+description:		User manual for the text editor uedit
+showoffhead:		Uedit user manual
+name:		uedit
+tag:		Universal text editor user manual
+gitorg:		neurobin
+gitrepo:		uedit
+gitbranch:		master

@@ -1048,8 +1048,8 @@ function initDownloadify(){
 				onComplete: function(){  },
 				onCancel: function(){  },
 				onError: function(){  },
-				swf: 'uedit/media/downloadify.swf',
-				downloadImage: 'uedit/images/download.png',
+				swf: 'media/downloadify.swf',
+				downloadImage: 'images/download.png',
 				width: 100,
 				height: 30,
 				transparent: true,
@@ -1116,7 +1116,7 @@ function getInfoURL(id) {
 var ext=file.substr(file.lastIndexOf("."));
 var filename=file.substr(0,file.lastIndexOf("."));
 
-showInfoURL=dir+"showinfo"+ext+"#"+id;
+showInfoURL=dir+"showinfo/#"+id;
 return showInfoURL;
 }
 

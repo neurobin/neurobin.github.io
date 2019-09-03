@@ -1,0 +1,10 @@
+type:		project
+title:		Universal text editor
+keywords:		text editor, on-line text editor, browser text editor
+description:		A tiny attempte to develop a universal text editor
+showoffhead:		Uedit
+name:		uedit
+tag:		Universal text editor
+gitorg:		neurobin
+gitrepo:		uedit
+gitbranch:		master

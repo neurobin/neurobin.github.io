@@ -1,13 +1,43 @@
+<?php error_reporting(E_ERROR | E_PARSE); ?>
+<?php
+chdir(rtrim(dirname($_SERVER['PHP_SELF']),'/')); //must stay at the top most line of the page.
+   $__CURDIR=dirname($_SERVER['PHP_SELF']);
+   $pat='/(\/|^)[^\/]*/';
+   $__CURDIR = preg_replace('/^\.\//', '', $__CURDIR);
+   $__CURDIR = preg_replace('/^\//', '', $__CURDIR);
+   if($__CURDIR=='.'||$__CURDIR=='./'||$__CURDIR=='/'||$__CURDIR==''){$__RDOCROOT='./';$__CURDIR='./';}
+   else {$__RDOCROOT=preg_replace($pat,'../',$__CURDIR);$__CURDIR=$__RDOCROOT.$__CURDIR;}
+   include_once($__RDOCROOT.'essentials.php'); //$__RDOCROOT contains a / at end
+?><?php
+$configfile='.config';
+if(($string=file_get_contents($configfile))===FALSE){
+$title='';
+$desc='';
+$showoffhead='';
+$keywords='';
+$type='';
+$name='';
+$tag='';
+}
+else{
+$string='
+'.$string;
+if(preg_match('/(?<=\ntitle=).*/i',$string,$match)){$title=$match[0];}else {$title='';}
+if(preg_match('/(?<=\ndescription=).*/i',$string,$match)){$desc=$match[0];}else {$desc='';}
+if(preg_match('/(?<=\nshowoffhead=).*/i',$string,$match)){$showoffhead=$match[0];}else {$showoffhead='';}
+if(preg_match('/(?<=\nkeywords=).*/i',$string,$match)){$keywords=$match[0];}else {$keywords='';}
+if(preg_match('/(?<=\ntype=).*/i',$string,$match)){$type=$match[0];}else {$type='';}
+if(preg_match('/(?<=\nname=).*/i',$string,$match)){$name=$match[0];}else {$name='NDemo';}
+if(preg_match('/(?<=\ntag=).*/i',$string,$match)){$tag=$match[0];}else {$tag='A Neurobin app';}
+
+}
 
 
-
-
-
-
-
+?>
 <!DOCTYPE html>
 <html xml:lang="en_US" lang="en_US" manifest="uedit.appcache">
 	<head>
+
 
 <link href="http://gmpg.org/xfn/11" rel="profile">
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -52,232 +82,16 @@
 		<meta name="description" content="Universal Text Editor">
 		<meta name="keywords" content="neurobin,text,editor,uedit" />
 		<title>Uedit | Neurobin</title>
-	</head>
-	<body onload="startTime()">
+<?php include_once($__RDOCROOT."terminate-head-and-start-body.php"); ?>
 
-		
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=837818929600426";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, "script", "facebook-jssdk"));</script>
+		<?php
+		include_once ($__RDOCROOT.'header.php');
+		?>
 
-<script >
-  window.___gcfg = {
-    lang: "en-US",
-    parsetags: "onload"
-  };
-</script>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-
-
-<script>
-!function(d,s,id){
-	var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";
-	if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
-	fjs.parentNode.insertBefore(js,fjs);}}(document, "script", "twitter-wjs");
-</script>
-
-<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script><nav class="navbar" id="navbar">
-	<div class="container-fluid" id="bar">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<div id="navbar-brand">
-			<img alt="neurobin-logo1"  src="/img/nbglobe2.png" class="logo"/>
-<img alt="neurobin-logo2" src="/img/nblogo100.png" class="logo"/>
-<div class="vertical-rule-bold"></div>
-			</div>
-			
-		</div>
-		
-		<div class="collapse navbar-collapse" id="myNavbar">
-		
-			<ul class="nav navbar-nav" id="menu">
-				<li class="active">
-					<a href="/" target="_parent">Home</a>
-
-				</li>
-
-				<li class="dropdown">
-					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="/projects">Projects</a>
-					<ul class="dropdown-menu">
-						<li>
-							<a class="menu-item " href="/projects/softwares">Softwares <span class="caret-right edge"></span></a>
-
-							<ul >
-								<li>
-									<a class="menu-item" href="/projects/softwares/linux">Linux</a>
-
-								</li>
-								<li>
-									<a class="menu-item" href="/projects/softwares/windows">Windows</a>
-								</li>
-								<li>
-									<a class="menu-item" href="/projects/softwares/android">Android</a>
-								</li>
-								<li>
-									<a class="menu-item" href="/projects/softwares/webapps">Web Apps</a>
-								</li>
-								<li>
-									<a class="menu-item" href="/projects/softwares/games">Games</a>
-								</li>
-								
-								<li>
-									<a class="menu-item disabled-link" href="/projects/softwares/others">Others</a>
-								</li>
-							</ul>
-
-						</li>
-						<li>
-							<a class="menu-item disabled-link" href="/projects/research">Research</a>
-						</li>
-						<li>
-							<a class="menu-item disabled-link" href="/projects/others">Others</a>
-						</li>
-
-					</ul>
-				</li>
-
-				<li class="dropdown">
-					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="/docs">Docs</a>
-					<ul class="dropdown-menu">
-					<li>
-							<a class="menu-item hand-cursor" href="/docs/linux">Linux</a>
-						
-						</li>
-						<li class="disabled-link">
-							<a class="menu-item disabled-link" >Programming <span class="caret-right edge"></span></a>
-							<ul class="programming">
-								<li>
-									<a class="menu-item disabled-link" href="/docs/programming/c">C</a>
-								</li>
-								<li>
-									<a class="menu-item disabled-link" href="/docs/programming/c-plus-plus">C++</a>
-								</li>
-								<li>
-									<a class="menu-item disabled-link" href="/docs/programming/sql">SQL</a>
-								</li>
-								<li>
-									<a class="menu-item disabled-link" href="/docs/programming/php">PHP</a>
-								</li>
-								<li>
-									<a class="menu-item disabled-link" href="/docs/programming/css">CSS</a>
-								</li>
-								<li>
-									<a class="menu-item disabled-link" href="/docs/programming/java">Java</a>
-								</li>
-								<li>
-									<a class="menu-item disabled-link" href="/docs/programming/html">HTML</a>
-								</li>
-								<li>
-									<a class="menu-item disabled-link" href="/docs/programming/matlab">Matlab</a>
-								</li>
-								<li>
-									<a class="menu-item disabled-link" href="/docs/programming/javascript">JavaScript</a>
-								</li>
-								<li>
-									<a class="menu-item disabled-link" href="/docs/programming/shell-scripting">Shell Scripting</a>
-								</li>
-							</ul>
-
-						</li>
-
-						<li>
-							<a class="menu-item" href="/docs/android">Android</a>
-						</li>
-					</ul>
-
-				</li>
-
-				<!-- <li class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Places</a>
-				<ul class="dropdown-menu">
-				<li>
-				<a class="menu-item" href="http://github.com/neurobin"><i class="fa fa-github"></i> Github</a>
-
-				</li>
-				<li>
-				<a class="menu-item" href="http://bitbucket.org/neurobin"><i class="fa fa-bitbucket"></i> Bitbucket</a>
-				</li>
-
-				</ul>
-				</li> -->
-
-				<li>
-					<a class="menu-item disabled-link " href="/downloads">Downloads</a>
-				</li>
-
-			</ul>
-			<div class="clock">
-				<ul class="nav navbar-nav navbar-right">
-
-					<li class="clock-item" >
-						<p id="clockTime"></p><p id="clockDate"></p>
-					</li>
-
-				</ul>
-			</div>
-		</div>
-	</div>
-</nav>
-		
-<script>
-function returnFacebookShareUrl(){
-return "http://www.facebook.com/sharer.php?u="+window.location.href;
-
-}
-function returnTwitterShareUrl() {
-	return "http://twitter.com/home?status="+window.location.href;
-}
-function returnPageUrl() {
-	return window.location.href;
-}
-</script>
-
-<div id="fixed-share-button">
-
-	<div class="social-button-fixed">
-	
-<script type="IN/Share" data-counter="top"></script>
-	</div>
-
-
-	<div class="social-button-fixed">
-	
-<a href="https://twitter.com/share" 
-   class="twitter-share-button" 
-   data-hashtags="Neurobin" 
-   data-via="jahidulhamid" 
-   data-count="vertical">
-</a>
-	</div>
-
-	<div class="social-button-fixed">
-	
-<g:plusone
-    size="tall" 
-    annotation="bubble"
-    align="left" >
-</g:plusone>
-	</div>
-	<div class="social-button-fixed">
-	
-<div class="fb-like"
- data-layout="box_count"
- data-action="like"
- data-share="true">
- </div>
-	</div>
-	
-
-</div>		<!-- fixed share button end-->
+		<?php
+		include_once ($__RDOCROOT.'fixedsharebutton.php');
+		?>
+		<!-- fixed share button end-->
 		
 <div id="openModal" class="modalDialog">
 	<div>

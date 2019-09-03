@@ -1,14 +1,15 @@
 CACHE MANIFEST
 uedit.html
 showinfo.html
-/style/mycss.min.css
+styles.css
+/style/mycss.css
 /Highlightjs/styles/github.css
-/script/myjs.min.js
+/script/myjs.js
 /uedit/scripts/src-noconflict/ace.js
 /uedit/scripts/src-noconflict/ext-language_tools.js
 /uedit/scripts/src-noconflict/mode-php.js
 /uedit/scripts/src-noconflict/ext-spellcheck.js
-/uedit/scripts/uedit.min.js
+/uedit/scripts/uedit.js
 /uedit/scripts/FileSaver.min.js
 /uedit/scripts/swfobject.js
 /uedit/scripts/downloadify.min.js
